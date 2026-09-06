@@ -60,6 +60,9 @@ checks around them.
 | §9 — cylinders of both direction classes on the Veech locus | `probes/s437_oblique_cylinders.py` |
 | §9 — the separatrix / complete-periodicity census | `probes/s438_oddclass_cp.py` |
 | §9 — a strip's cells of constant word, exactly | `probes/s439_exact_cells.py` |
+| **the four figures** — Fig. 1 the triangle and the launch; Fig. 2 the development and its vertical wall-copy; Fig. 3 the exact branch partition with the traced `J`-pairing; Fig. 4 the genus-zero base marked by ramification | `probes/s503_paper_figures.py` |
+
+⚠ `probes/s503_paper_figures.py` is a figure generator and asserts nothing new: its `verify()` re-derives every quantity its captions state — the turnaround index, the turnaround type, `Σw = 1`, and that the traced pairing is an involution with exactly `[P odd]` fixed points — and raises before drawing if any of them fails. Two of the four figures are DATA and two are SCHEMATIC, and each says which on its own face.
 
 ⚠ `probes/s500_evenP_stratum.py` reports `488` rows at `Q ≤ 40`. Where the paper quotes
 the Weierstrass census it quotes a far stronger independent result (`12230/12230` coprime
