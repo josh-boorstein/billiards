@@ -87,6 +87,15 @@ Taken from the paper's own provenance table.
 | 7 — the Veech locus | `probes/s468_ordering.py`, `probes/s469_profile_proof.py`, `probes/s470_tent_proof.py` |
 | 8 — overlap | `probes/s447_overlap_disk.py`; figures `probes/s447_figure.py`; Cor. 8.2's even-`P` half `probes/s472_legswap_existence.py` |
 | 9 — complete periodicity | `probes/s457_cp_char.py`, `probes/s459_corner_deep.py`, `probes/s466_cp_transfer.py` |
+| **the four figures** — Fig. 1 the kite, and `B` as the necklace; Fig. 2 the `+P` gluing as the star polygon `{Q/P}`; Fig. 3 the chain `D` with its through band, fold and two degeneracies; Fig. 4 the interval model and the quotient path | `probes/s506_necklace_figures.py` |
+
+⚠ `probes/s506_necklace_figures.py` is a figure generator and asserts nothing new: its `verify()`
+re-derives every quantity its captions state — the Euler count, both cone angles, the gluing law
+`j' = j ± P` from the direction arithmetic alone, the closed form for the interface measures, the
+palindrome, the closure of the global coordinate, the nesting, and `|J_i| = |cos(iPπ/Q)|` — and raises
+before drawing if any of them fails. Three of those checks are scored against a control that FAILS
+(the `+1` and `+2` gluing orders, and a perturbed sector rule), so they are not vacuous. Two of the
+four figures are DATA and two are SCHEMATIC, and each says which on its own face.
 
 Also in the strand, cited outside the table: `probes/s464_realisable.py` (realisability),
 `probes/s482_boundary_incidence.py` and `probes/s482_regular_leaves.py` (the surface-side
