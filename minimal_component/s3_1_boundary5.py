@@ -21,8 +21,6 @@ Statements checked:
     filled by new, longer return words with other translations.  For alpha < 4pi/15 the
     two words either side of boundary 5 still abut -- the break is a bare jump -- and the
     new words appear elsewhere on the transversal (at its right end, and near boundary 2).
-    The paper's sentence "it opens into a gap, as wide as the jump" describes the first
-    side only.
 
 How: the translations as functions of alpha come from the formal development of each
 word (`lib/develop.py`), which composes the three reflections symbolically and never

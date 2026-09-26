@@ -14,9 +14,9 @@ Statements checked:
     periodic.
 
 How: the branch words are proposed by the tracer and each is certified by its exact
-validity interval in Q(zeta_60); the tiling is exact (`lib/triangle.py`).  This replaces
-the partition tree the paper's Figure 1 caption refers to by an equivalent, smaller
-certificate: a tiling of L1 by necessary-and-sufficient validity intervals.
+validity interval in Q(zeta_60); the tiling is exact (`lib/triangle.py`): a tiling of L1
+by necessary-and-sufficient validity intervals is a complete certificate of the branch
+partition.
 """
 from t0 import T, Q, M_PERP, branch_words, check, done, trunc
 

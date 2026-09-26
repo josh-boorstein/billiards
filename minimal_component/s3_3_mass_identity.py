@@ -13,7 +13,7 @@ Statements checked:
     = 6.81388711127619849790209...; Sigma_cyl = 6.135251512382014...
   * The minimal component's mass from the interval exchange alone (Kac on Sigma_Hbar,
     flux |cos theta_Hbar| ds = cos(4pi/15) ds, roof constant on each of the seven words):
-    mu(M) = 7.37080915208558428507..., mu(M)/cot(alpha) =
+    mu(M) = 7.37080915208558428506..., mu(M)/cot(alpha) =
     12 + 4cos(pi/15) - 12cos(2pi/15) + 4cos(pi/5); the widths w_j and roofs r_j of the
     seven words as tabulated, with w1 = l1, w2 = l2, w3 + ... + w7 = l3.
   * Proposition 5: Sigma_cyl / cot(alpha) + mu(M) / cot(alpha) = Q = 15 exactly;
@@ -24,8 +24,6 @@ and nothing else; the Kac side from the seven return words on Sigma_Hbar and not
 else.  No quantity of one enters the other, so their sum being the integer 15 is a
 check that could have failed.
 """
-from mpmath import nstr
-
 from t0 import T, F, Q, KAPPA, M_H, M_PERP, cpi15, c, return_words, check, done, trunc
 from s3_1_return_map import lambdas
 from s4_branch_count import branches, cylinders
@@ -106,9 +104,7 @@ def main():
     check('w1 = l1, w2 = l2, w3 + ... + w7 = l3',
           w[0] == l1 and w[1] == l2 and w[2] + w[3] + w[4] + w[5] + w[6] == l3)
     muk = mu / KAPPA
-    # the paper prints this one ROUNDED (7.37080915208558428506976...), unlike the tables
-    check(f'mu(M) = {nstr(mu.value(), 21)}... (rounded)',
-          nstr(mu.value(), 21) == '7.37080915208558428507')
+    check(f'mu(M) = {trunc(mu.value(), 20)}...', trunc(mu.value(), 20) == '7.37080915208558428506')
     check('mu(M)/cot(alpha) = 12 + 4cos(pi/15) - 12cos(2pi/15) + 4cos(pi/5)',
           muk == 12 + 4 * cpi15(1) - 12 * cpi15(2) + 4 * cpi15(3))
     check('PROPOSITION 5: Sigma_cyl/cot(alpha) + mu(M)/cot(alpha) = 15 exactly', g15 + muk == Q)

@@ -30,17 +30,21 @@ Statements checked (odd Q <= 31, the table of Section 5):
   * 15 | Q: at Q = 30 the 6 non-Veech directions are all certified.
 
 MODES
-  python s5_census.py            recompute odd Q <= 31 at cap 3e6 (about an hour) and
-                                 check it against the record and the paper
-  python s5_census.py --quick    the same for odd Q <= 21 (a few minutes)
+  python s5_census.py            recompute odd Q <= 31, each row at the cap the record
+                                 says it needs (about 1.5 hours), and check it against the
+                                 record and the paper
+  python s5_census.py --quick    the same for odd Q <= 19 (a few minutes)
   python s5_census.py --record   read every verdict from census_record.json and check
                                  all the figures above without recomputing
   python s5_census.py --rows Q [Q ...] [--cap N]
                                  recompute the given denominators at cap N (default: the
                                  record's cap per row) and compare with the record
 census_record.json was produced by the same algorithm in the research repository
-(gated identical to lib/closure.py on every class row with Q <= 25).  Its rows past the
-3e6 base cap were escalated to caps up to 1e9; to reproduce one, pass that cap.
+(gated identical to lib/closure.py on every class row with Q <= 25).  Most rows resolve
+at a step cap of 3e6; the rest were escalated, and each row records the cap it was
+decided at (up to 1e9).  At odd Q <= 31 five directions need more than 3e6 -- 4/21,
+3/23, 10/23 (1e8), 14/29 (3e7), 14/31 (1e8) -- so a run at a flat 3e6 cap leaves them
+undecided, which is an absence of verdict and not a disagreement.
 """
 import json
 import os
@@ -206,8 +210,8 @@ def main(argv):
             qs = [q for q in qs if q != cap]
         recompute(qs, cap, rec)
     else:
-        qmax = 21 if '--quick' in argv else 31
-        rows = recompute(range(3, qmax + 1, 2), 3_000_000, rec)
+        qmax = 19 if '--quick' in argv else 31
+        rows = recompute(range(3, qmax + 1, 2), None, rec)
         if qmax == 31:
             table31(rows)
         else:
