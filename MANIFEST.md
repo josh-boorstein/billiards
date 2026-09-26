@@ -4,7 +4,7 @@ Which script supports which statement. Each script's own docstring carries its
 pre-registration, its arms and its controls: **the manuscript presents, the docstring is
 the source.** Where a docstring and this table disagree, the docstring wins.
 
-The minimal-component scripts need no setup. The legacy orphan/necklace scripts run with `PYTHONPATH=engine:probes` set; some write JSON to `data/`.
+The minimal-component and orphan scripts need no setup. The legacy necklace scripts run with `PYTHONPATH=engine:probes` set; some write JSON to `data/`.
 
 ---
 
@@ -61,37 +61,22 @@ primitives the per-result scripts are built on.
 
 ---
 
-## The orphan paper
+## The orphan paper (`orphan/`)
 
-Mapped from Appendix A and from each script's own pre-registration. The counts of §5 and
-§9.3 come from the core above via `n_pq_certified`; the scripts below are the per-result
-checks around them.
+Built on `lib/` alone (`partition.py` for every count). Each script's docstring lists the
+statements it checks.
 
 | Statement | Script |
 |---|---|
-| Theorem D — existence, uniqueness, parity, turnaround type of the orphan | `probes/orphan_theorem.py` |
-| the vertex gap | `probes/s332_vertexfree.py` |
-| word normalisation against the tracer's full word | `probes/s373_word_normalise.py` |
-| graze structure | `probes/s374_graze_structure.py` |
-| continuity of the first-return involution `T` at a cell boundary | `probes/s374_tcont.py` |
-| does the limit orbit at a `J`-fold boundary reverse at the midpoint | `probes/s375_foldmid.py` |
-| the residual audit behind the converse | `probes/s377_residual_audit.py` |
-| §5, §9.3 — exact cylinder words and counts at large `Q` | `probes/s196_ringwords.py` |
-| cylinder count and area reconciliation | `probes/s315_cylinder_count.py` |
-| the odd-`P` separatrix census | `probes/s315_oddP_census.py`, `probes/s276_separatrix_census.py` |
-| §7 — the unfolded surface `S_α`, identification and verification | `probes/veech_stratum.py` |
-| §7 — the Apisa import, reconciled with our surface | `probes/veech_apisa.py` |
-| §7, Thm 7.1 — **the even-`P` stratum**; the odd-`P` table does not apply there | `probes/s500_evenP_stratum.py` |
-| §9 — cylinders of both direction classes on the Veech locus | `probes/s437_oblique_cylinders.py` |
-| §9 — the separatrix / complete-periodicity census | `probes/s438_oddclass_cp.py` |
-| §9 — a strip's cells of constant word, exactly | `probes/s439_exact_cells.py` |
-| **the four figures** — Fig. 1 the triangle and the launch; Fig. 2 the development and its vertical wall-copy; Fig. 3 the exact branch partition with the traced `J`-pairing; Fig. 4 the genus-zero base marked by ramification | `probes/s503_paper_figures.py` |
-
-⚠ `probes/s503_paper_figures.py` is a figure generator and asserts nothing new: its `verify()` re-derives every quantity its captions state — the turnaround index, the turnaround type, `Σw = 1`, and that the traced pairing is an involution with exactly `[P odd]` fixed points — and raises before drawing if any of them fails. Two of the four figures are DATA and two are SCHEMATIC, and each says which on its own face.
-
-⚠ `probes/s500_evenP_stratum.py` reports `488` rows at `Q ≤ 40`. Where the paper quotes
-the Weierstrass census it quotes a far stronger independent result (`12230/12230` coprime
-`(P,Q)` with `Q ≤ 200`), not this probe's coverage.
+| §1.2, §5, Rem 5.4, §9.1, §10 item 2, §A.3 — the named counts `n(5/22)`, `n(5/24)`, `n(17/22)`, `n(19/24)`, `n(8/15)`, `n(5/9)`, `n(2/9)`, `n(2/3)`, `n(3/4)`, `n(3/29)` | `s1_named_counts.py` |
+| Theorem D (Thms 4.6, 4.7), Cor 5.1, Prop 4.4 | `s4_theorem_d.py` |
+| Props 5.2, 5.3, 9.4 — the closed-form counts, and Prop 5.2's boundary pattern | `s5_closed_forms.py` |
+| Theorem 5.5 — the three-sided refinement at the 116 centres `4 ≤ Q ≤ 19` | `s5_5_three_sided.py` |
+| Thm 7.1, Props 8.1, 8.2 — `S_α`, its hyperelliptic involution and its base, built from the gluing at every coprime `(P,Q)`, `Q ≤ 200` | `s7_8_surface.py` |
+| §9.1 — right-angle boundaries fold, acute ones never do; the `P = Q−2` orphan-flank pattern | `s9_1_folds.py` |
+| Remark 9.6 — the `8/15` decomposition (runs the minimal-component scripts) | `s9_4_remark_9_6.py` |
+| Figures 1–5 | `figures.py` (+ `partition_record.json`) |
+| the census record | `export_record.py` (from the research repository's census run) |
 
 ---
 
