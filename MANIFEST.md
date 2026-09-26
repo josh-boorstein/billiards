@@ -4,7 +4,32 @@ Which script supports which statement. Each script's own docstring carries its
 pre-registration, its arms and its controls: **the manuscript presents, the docstring is
 the source.** Where a docstring and this table disagree, the docstring wins.
 
-Run anything here with `PYTHONPATH=engine:probes` set. Some write JSON to `data/`.
+The minimal-component scripts need no setup. The legacy orphan/necklace scripts run with `PYTHONPATH=engine:probes` set; some write JSON to `data/`.
+
+---
+
+## The minimal-component paper (`minimal_component/`)
+
+Built on `lib/` alone. Each script's docstring lists the statements it checks.
+
+| Statement | Script |
+|---|---|
+| §2 — the 30 directions met, the phase space and `area(B)`; the field `K`, its basis and determinant `8`; `cot α ∉ K` (§3.3) | `s2_phase_space.py` |
+| §3.1 — the first return to `Σ_H̄` is a three-interval exchange: the seven words, the exact translations, `λ₁, λ₂, λ₃` and their coordinates, the boundary table | `s3_1_return_map.py` |
+| §3.1 — *why boundary 5 is different*: `V(α)`, the `12°` identity, the rates `85.21` and `114.7`, the trace of the deformed flow; Figure 2's data | `s3_1_boundary5.py` |
+| §3.2 — Lemma 3 (rank `3`), Lemma 4, the tower, the roof's four values | `s3_2_minimality.py` |
+| §3.3 — the cylinder table, `15 g_len`, the Kac integral `μ(M)`, **Proposition 5** | `s3_3_mass_identity.py` |
+| §3.4 — first-return condition, the exact tiling of `[0,1]` by seven intervals, the mass budget | `s3_4_completeness.py` |
+| §4 — the second route: `n(8/15) = 6` by an exact tiling of `L1`, three equal-width pairs | `s4_branch_count.py` |
+| §5 — every direction of `S¹(2d′)` is an image of a perpendicular direction (`Q ≤ 120`) | `s5_coverage.py` |
+| §5, abstract, §6 — the census: the table at odd `Q ≤ 31`, the per-`Q` counts, *beyond the table*, 2.2(e) at `d ≤ 50`, `T₀`'s two class rows | `s5_census.py` (+ `census_record.json`) |
+| §6 — the saddle connection `O → A`, its arrival identity, the `3`/`5`-family test, the leaves either side, its rate under deformation | `s6_connection.py` |
+| Appendix — the seven return words and the six cylinder half-words | `appendix_words.py` |
+| Figures 1–4 | `figures.py` |
+
+⚠ **Scope.** The census is exact per row and one-sided: `capped == 0` proves complete
+periodicity, a capped row is no verdict, and the undecided rows are listed by name. The
+failure at `T₀` is not certified by the census at all; it is §3's result.
 
 ---
 

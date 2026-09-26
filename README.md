@@ -1,16 +1,55 @@
 # Billiards in rational right triangles — code deposit
 
-Exact-arithmetic code supporting two papers on the perpendicular-beam partition of a
-rational right triangle:
+Exact-arithmetic code supporting three papers on rational right triangles:
 
-- **The orphan theorem: degenerate perpendicular orbits in rational right triangles**
-- **The necklace of a rational right triangle: exact counting and integrality in genus zero**
+- **A minimal component in a rational right triangle: an exact decomposition, and a
+  conjecture of Boshernitzan** — `lib/` + `minimal_component/`
+- **The orphan theorem: degenerate perpendicular orbits in rational right triangles** —
+  `engine/` + `probes/` (legacy layout, see below)
+- **The necklace of a rational right triangle: exact counting and integrality in genus
+  zero** — `engine/` + `probes/` (legacy layout)
 
-Both are in preparation. This repository is the deposit promised in the orphan paper's
-Appendix A ("Code availability"). `MANIFEST.md` maps each script to the statement it
-supports.
+All three are in preparation. `MANIFEST.md` maps each script to the statement it supports.
 
-## What the code does
+**The repository is being rebuilt paper by paper** into a small core library (`lib/`) and
+one directory per paper holding one script per statement, each named for what it checks.
+The minimal-component paper is done. The other two still use the legacy layout — the
+research code as it ran, with session-numbered script names — and move over in turn; the
+legacy tree is removed when both have.
+
+## The minimal-component paper: `lib/` and `minimal_component/`
+
+```sh
+python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python minimal_component/run_all.py          # about 3 minutes
+.venv/bin/python minimal_component/run_all.py --full   # recomputes the census, about an hour
+.venv/bin/python minimal_component/figures.py          # the four figures -> minimal_component/figs/
+```
+
+No `PYTHONPATH` is needed: each script puts `lib/` on the path itself. Every script prints
+the statements it checks, one line each, and exits nonzero if any fails.
+
+`lib/` holds five modules, and everything in the paper is computed from them:
+
+| Module | What it is |
+|---|---|
+| `cyclofield.py` | exact arithmetic in `ℚ(ζ_N)`; the sign of a real element is read off a certified interval enclosure, zero off the reduced polynomial |
+| `triangle.py` | the triangle and the exact unfolding of an orbit along a fixed word: positions, hitting times and path lengths are affine in the launch parameter with coefficients in `ℚ(ζ_4Q)`, so a word's validity region is one interval with exact endpoints, and a tiling of a segment by such intervals is a complete certificate |
+| `closure.py` | the closure certificate of §5: every separatrix of the genus-zero base walked to its end, arrival decided by exact equality in `ℤ[ζ_4Q]` |
+| `develop.py` | the formal development of a word, giving a return word's translation as a function of the angle |
+| `tracer.py` | a 60-digit floating-point tracer, used only to **propose** words (which the exact code then verifies or rejects) and to trace the deformed flow of §3.1 |
+
+**What is exact and what is not.** Every statement of §§2–4 and §6 about `T₀` is decided in
+`ℚ(ζ₆₀)`, with no tolerance: the interval lengths, both cuts, the seven validity intervals
+and their tiling of `Σ_H̄`, the six branch intervals and their tiling of `L1`, the cylinder
+table, the Kac integral and Proposition 5. The words themselves come from the tracer, but
+a missed word leaves a gap in a tiling and a wrong one has an empty interval, so neither
+can pass. The deformed-angle statements of §3.1 compare an exact formula with a 60-digit
+trace, as the paper says. The census of §5 is exact per row and **one-sided**: a capped row
+is no verdict. `minimal_component/census_record.json` holds every class row's verdict for
+odd `Q ≤ 39` and even `Q ≤ 40`; `s5_census.py` recomputes any of them.
+
+## The legacy layout (orphan and necklace papers)
 
 Every count in the orphan paper is an exact algebraic computation, never a numerical
 estimate, and every one is gated by a certificate that the partition it counts is
@@ -62,6 +101,7 @@ directly (`python3 probes/<name>.py`) once `PYTHONPATH` is set; some write JSON 
 ## Layout
 
 ```
+lib/, minimal_component/   the minimal-component paper (above)
 engine/      18 modules — the reusable exact-arithmetic core
 probes/      58 modules — the per-result scripts, named by the session that wrote them
 reproduce/   drivers that regenerate the headline numbers
