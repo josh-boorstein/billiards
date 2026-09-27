@@ -13,7 +13,8 @@ All three are in preparation. `MANIFEST.md` maps each script to the statement it
 
 **The repository is being rebuilt paper by paper** into a small core library (`lib/`) and
 one directory per paper holding one script per statement, each named for what it checks.
-The minimal-component and orphan papers are done. The necklace paper still uses the legacy
+The minimal-component and orphan papers are done. The necklace paper is being moved into
+`neck/` (`lib/necklace.py`; see MANIFEST.md for what has moved); the rest still uses the legacy
 layout — the research code as it ran, with session-numbered script names — and moves over
 next; the legacy tree is removed when it has.
 
@@ -132,6 +133,7 @@ directly (`python3 probes/<name>.py`) once `PYTHONPATH` is set; some write JSON 
 ```
 lib/, minimal_component/   the minimal-component paper (above)
 lib/, orphan/              the orphan paper (above)
+lib/, neck/                the necklace paper, in progress
 engine/      18 modules — the reusable exact-arithmetic core
 probes/      58 modules — the per-result scripts, named by the session that wrote them
 reproduce/   drivers that regenerate the headline numbers

@@ -199,3 +199,45 @@ def first_run_escapes(ch, lo, hi, k):
         if t == m:
             crossed = True
     return crossed
+
+
+def quotient_trace(ch, lo, hi, k, cap=200_000):
+    """Follow R_k's prong in the global coordinate, where the leaf's height is constant
+    between folds and a fold at kite k' sends y to (the fold's tail sum) - y.  Returns
+    (end, folds, crossed_fix, steps): end is ('R'|'ZO'|'ZA', kite) or ('CAP', None), and
+    crossed_fix whether the leaf reached interface m or transited kite 0 (a Fix(iota) arc).
+    Every comparison is `closure.Chain.cmp`, exact when close; y's float is refreshed from
+    its exact vector every 512 steps (it is rebuilt by s - y at each fold, so it drifts)."""
+    from closure import half
+    Q, m = ch.Q, ch.m_idx
+    imv = ch.ring.imvals
+    y, d, t = pole_y(ch, lo, hi, k)
+    folds, crossed, steps = 0, (t == m), 0
+    while True:
+        steps += 1
+        if steps > cap:
+            return ('CAP', None), folds, crossed, steps
+        if not steps & 511:
+            y.f = float(y.v @ imv)
+            a = int(abs(y.v).max())
+            ch._gate = ch.gate(a)
+        t2 = (t + d) % Q
+        kk = t2 if d == 1 else (t2 + 1) % Q
+        cl, chg = ch.cmp(y, lo[t2]), ch.cmp(y, hi[t2])
+        if cl == 0:
+            return ('ZO', kk), folds, crossed, steps
+        if chg == 0:
+            return ('ZA', kk), folds, crossed, steps
+        if cl > 0 and chg < 0:                                   # through
+            if (d == 1 and t == Q - 1) or (d == -1 and t == 0):
+                crossed = True
+            t = t2
+            if t == m:
+                crossed = True
+            continue
+        s = (hi[t2] + hi[t]) if lo[t].eq(lo[t2]) else (lo[t] + lo[t2])
+        if y.eq(half(s)):
+            return ('R', kk), folds, crossed, steps
+        y = s - y
+        d = -d
+        folds += 1

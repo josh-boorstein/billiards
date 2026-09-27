@@ -4,7 +4,7 @@ Which script supports which statement. Each script's own docstring carries its
 pre-registration, its arms and its controls: **the manuscript presents, the docstring is
 the source.** Where a docstring and this table disagree, the docstring wins.
 
-The minimal-component and orphan scripts need no setup. The legacy necklace scripts run with `PYTHONPATH=engine:probes` set; some write JSON to `data/`.
+The minimal-component, orphan and neck scripts need no setup. The legacy necklace scripts run with `PYTHONPATH=engine:probes` set; some write JSON to `data/`.
 
 ---
 
@@ -80,7 +80,23 @@ statements it checks.
 
 ---
 
-## The necklace paper
+## The necklace paper (`neck/`) — rebuild in progress
+
+Built on `lib/` (`closure.py` walks, `necklace.py` readout and interval model). The legacy rows
+below it remain until every statement has moved.
+
+| Statement | Script |
+|---|---|
+| Lemma 3.2a, Thms 3.1, 3.3, Cor 9.8, the swapped-edge detector, even-`Q` `C = Q/2` — every census class row | `s3_s9_identities.py` |
+| Thm 4.1, Cor 4.2, Rem 4.3 — the interval model at every odd `Q ≤ 31` class row | `s4_interval_model.py` |
+| Thms 10.2, 10.6, 10.7 — the window certificates, their controls and finite rows | `s10_windows.py` (+ `window_prover.py`) |
+| Figures 1–4 | `figures.py` |
+
+Not yet moved: §6 (prong-length and cylinder-area arithmetic, the lattice tests), §7.7's fold
+statistics, §9.2's `8/15` witness relation (Prop 9.10).
+
+### Legacy rows (necklace)
+
 
 Taken from the paper's own provenance table.
 
