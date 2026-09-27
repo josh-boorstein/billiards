@@ -74,6 +74,7 @@ statements it checks.
 | Theorem 5.5 — the three-sided refinement at the 116 centres `4 ≤ Q ≤ 19` | `s5_5_three_sided.py` |
 | Thm 7.1, Props 8.1, 8.2 — `S_α`, its hyperelliptic involution and its base, built from the gluing at every coprime `(P,Q)`, `Q ≤ 200` | `s7_8_surface.py` |
 | §9.1 — right-angle boundaries fold, acute ones never do; the `P = Q−2` orphan-flank pattern | `s9_1_folds.py` |
+| Remark 9.14 — `#`R-graze boundaries `=` `#`mirror pairs at every certified centre | `s9_14_adjacency.py` |
 | Remark 9.6 — the `8/15` decomposition (runs the minimal-component scripts) | `s9_4_remark_9_6.py` |
 | Figures 1–5 | `figures.py` (+ `partition_record.json`) |
 | the census record | `export_record.py` (from the research repository's census run) |

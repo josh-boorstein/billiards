@@ -10,6 +10,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 SCRIPTS = ['s1_named_counts.py', 's4_theorem_d.py', 's5_closed_forms.py',
            's5_5_three_sided.py', 's7_8_surface.py', 's9_1_folds.py', 's9_4_remark_9_6.py',
+           's9_14_adjacency.py',
            'figures.py']
 
 
