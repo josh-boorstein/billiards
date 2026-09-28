@@ -31,8 +31,9 @@ THE INDUCTION (intervalxt, faithfully).  Left Zorich-accelerated Rauzy induction
 (`_zorich`, with `subtractRepeated`'s Dehn twist); after each round: `_reduce` splits a reducible
 permutation (a separating connection / invariant subset); equal first lengths = a saddle
 connection, merged; a single interval = a CYLINDER.  Every `BOSH_EVERY` rounds, Boshernitzan
-(intervalxt gates it on SAF != 0, where alone it can succeed; the SAF test cost 70% of the run at
-`D = 208` and the certificate is verified exactly anyway, so here SAF is only reported): a periodic orbit through a component visits interval `j` `a_j >= 0` times with
+(gated, as in intervalxt, on SAF != 0, where alone it can succeed -- by an O(nD) exact random-
+projection test, `saf_nonzero`, since the dense test is O(nD^2); the LP has a `LP_SECONDS` limit,
+a stalled solve being 'no certificate yet'): a periodic orbit through a component visits interval `j` `a_j >= 0` times with
 `sum a_j t_j = 0` (`t_j` the translations, as Q-vectors in the power basis) -- so a Q-linear
 functional `y` with `y . t_j > 0` for ALL `j` (Gordan) PROVES there is no periodic trajectory.
 `y` is found by an LP and VERIFIED IN EXACT INTEGERS; the certificate is returned.
@@ -54,6 +55,7 @@ import sympy as sp
 from mpmath import iv
 
 BOSH_EVERY = 16
+LP_SECONDS = 20
 
 
 # ---------------------------------------------------------------------------------------------
@@ -468,6 +470,26 @@ class Decomposer:
         A = W - W.T
         return all(x == 0 for x in A.flat)
 
+    def saf_nonzero(self, c, trials=3):
+        """SAF(c) != 0, PROVED when True: the projection SAF(u, v) = sum_j (u.lam_j)(v.t_j) - (v.lam_j)(u.t_j)
+        onto random integer functionals u, v is exact, and nonzero there means nonzero.  False means
+        every projection vanished -- SAF = 0 up to a random-projection miss.  O(n D) per trial (the
+        dense `saf_zero` is O(n D^2)).  Used only to decide whether to ATTEMPT Boshernitzan, which
+        can succeed only when SAF != 0 (intervalxt's gate; 122/122 certified no-periodic components
+        on record have SAF != 0): a miss costs a certificate, never a wrong one."""
+        import random
+        tr = self.translations(c)
+        L = np.array([self.lam[l] for l in c.top], dtype=object)
+        T = np.array([tr[l] for l in c.top], dtype=object)
+        rng = random.Random(len(c.top) * 1000003 + c.steps)
+        D = self.F.D
+        for _ in range(trials):
+            u = np.array([rng.randint(-2 ** 20, 2 ** 20) for _ in range(D)], dtype=object)
+            v = np.array([rng.randint(-2 ** 20, 2 ** 20) for _ in range(D)], dtype=object)
+            if (L.dot(u) * T.dot(v) - L.dot(v) * T.dot(u)).sum() != 0:
+                return True
+        return False
+
     def boshernitzan(self, c):
         """A verified y in Z^D with y . t_j > 0 for all j, or None."""
         from scipy.optimize import linprog
@@ -484,7 +506,8 @@ class Decomposer:
         cost[-1] = -1.0
         A = np.hstack([-M, np.ones((len(T), 1))])
         res = linprog(cost, A_ub=A, b_ub=np.zeros(len(T)),
-                      bounds=[(-1, 1)] * D + [(None, 1)], method='highs')
+                      bounds=[(-1, 1)] * D + [(None, 1)], method='highs',
+                      options={'time_limit': LP_SECONDS})   # a stalled LP is 'no certificate yet'
         if res.status != 0 or res.x[-1] <= 1e-12:
             return None
         y0 = res.x[:D]
@@ -519,9 +542,10 @@ class Decomposer:
                 if c.steps >= cap:
                     c.kind = 'undetermined'
                     break
-                # (intervalxt skips Boshernitzan when SAF = 0, where it cannot succeed; here the
-                # certificate is verified exactly, so the costly SAF test is only reported, not gated)
-                if c.steps % BOSH_EVERY == 0 and c.steps > 0:
+                # intervalxt skips Boshernitzan when SAF = 0, where it cannot succeed; the gate is the
+                # O(nD) random-projection test (an ungated LP on an all-cylinder component can stall
+                # HiGHS for many minutes)
+                if c.steps % BOSH_EVERY == 0 and c.steps > 0 and self.saf_nonzero(c):
                     y = self.boshernitzan(c)
                     if y is not None:
                         c.kind, c.cert = 'no_periodic', y
