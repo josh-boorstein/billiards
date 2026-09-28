@@ -100,11 +100,12 @@ hypotenuse.
 |---|---|
 | Lemma 3.2a, Thms 3.1, 3.3, Cor 9.8, the swapped-edge detector, even-`Q` `C = Q/2` — every census class row | `s3_s9_identities.py` |
 | Thm 4.1, Cor 4.2, Rem 4.3 — the interval model at every odd `Q ≤ 31` class row | `s4_interval_model.py` |
+| Prop 9.10 — the corner witness: the four 5-step corner walks off `Fix(ι)` at each row, one swapped pair, one saddle connection across the leg swap; the unfolded `8/15` prong arriving exactly at `A`, its controls; the relation `2 sin 12° + 2 sin 24° + sin 36° = sin 60° + sin 72°` read off the arrival identity, exact in `ℚ(ζ₆₀)`, and its place in Remark 6.14's families | `s9_2_witness.py` |
 | Thms 10.2, 10.6, 10.7 — the window certificates, their controls and finite rows; the three families' counts at every centre `Q ≤ 60` (`--full`: `Q ≤ 100`) by `flow.py`, the finite rows by `flow.py` and `partition.py` both | `s10_windows.py` (+ `window_prover.py`) |
 | Figures 1–4 | `figures.py` |
 
 Not yet moved: §6 (prong-length and cylinder-area arithmetic, the lattice tests), §7.7's fold
-statistics, §9.2's `8/15` witness relation (Prop 9.10).
+statistics, and the float leaf launch placing Prop 9.10's swapped pair on the boundary of `M`.
 
 ### Legacy rows (necklace)
 

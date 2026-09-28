@@ -9,7 +9,8 @@ import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SCRIPTS = ['s3_s9_identities.py', 's4_interval_model.py', 's10_windows.py', 'figures.py']
+SCRIPTS = ['s3_s9_identities.py', 's4_interval_model.py', 's9_2_witness.py', 's10_windows.py',
+           'figures.py']
 
 
 def main():
