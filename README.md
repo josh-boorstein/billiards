@@ -17,9 +17,6 @@ The minimal-component and orphan papers are done. The necklace paper is being mo
 `neck/` (`lib/necklace.py`; see MANIFEST.md for what has moved); the rest still uses the legacy
 layout — the research code as it ran, with session-numbered script names — and moves over
 next; the legacy tree is removed when it has.
-While the move is in progress `neck/run_all.py` reports two known failures, neither a mismatch with
-the paper: a §10 check with no rows yet to test (its centres are not in the partition record), and
-a §3 detector check whose readout is still being settled.
 
 ## The minimal-component paper: `lib/` and `minimal_component/`
 

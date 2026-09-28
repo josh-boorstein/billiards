@@ -83,14 +83,24 @@ statements it checks.
 
 ## The necklace paper (`neck/`) — rebuild in progress
 
-Built on `lib/` (`closure.py` walks, `necklace.py` readout and interval model). The legacy rows
-below it remain until every statement has moved.
+Built on `lib/` (`closure.py` walks, `necklace.py` readout and interval model; `flow.py`, the
+exact flow decomposition, for the branch counts of §10). The legacy rows below it remain until
+every statement has moved.
+
+`lib/flow.py` decomposes a rational-triangle billiard in any direction of the `π/2d` grid into
+cylinders and components without periodic trajectory, exactly (a port of the decision procedure
+of flatsurf's intervalxt: Zorich-accelerated Rauzy induction, saddle-connection merges, and a
+Boshernitzan certificate verified in integers; Kac's mass balance asserted exactly on every run).
+`n_flow(P, Q)` reads `n(P/Q)` off it — every perpendicular beam retraces, so a branch is one
+crossing of an `L1` edge by a cylinder, certified by the cylinders' exact tiling of that edge —
+and agrees with `partition.py` wherever both have run; `beam='h'` does the same for the
+hypotenuse.
 
 | Statement | Script |
 |---|---|
 | Lemma 3.2a, Thms 3.1, 3.3, Cor 9.8, the swapped-edge detector, even-`Q` `C = Q/2` — every census class row | `s3_s9_identities.py` |
 | Thm 4.1, Cor 4.2, Rem 4.3 — the interval model at every odd `Q ≤ 31` class row | `s4_interval_model.py` |
-| Thms 10.2, 10.6, 10.7 — the window certificates, their controls and finite rows | `s10_windows.py` (+ `window_prover.py`) |
+| Thms 10.2, 10.6, 10.7 — the window certificates, their controls and finite rows; the three families' counts at every centre `Q ≤ 60` (`--full`: `Q ≤ 100`) by `flow.py`, the finite rows by `flow.py` and `partition.py` both | `s10_windows.py` (+ `window_prover.py`) |
 | Figures 1–4 | `figures.py` |
 
 Not yet moved: §6 (prong-length and cylinder-area arithmetic, the lattice tests), §7.7's fold

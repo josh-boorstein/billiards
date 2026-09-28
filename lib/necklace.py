@@ -19,6 +19,8 @@ From those, per class (the necklace paper's notation):
       (a capped walk can only undercount f, so a capped row's D is an upper bound);
   E   the number of edges of the critical graph (Theorem 3.1: E = Q on a CP class);
   multi   RESOLVED edges meeting the vertical arcs more than once -- Lemma 3.2a says none;
+  cap_conf the capped separatrices that never met a vertical arc (so are not in f): the s of the
+      swapped-edge detector 2p = D - s/2;
   swapped the iota-swapped PAIRS among the resolved edges: iota sends the prong germ in kite k to
       the one in kite -k, so an edge with germs (a, k), (b, l) has image (a, -k), (b, -l); it is
       iota-INVARIANT when that is the same edge and swapped otherwise.  (An edge joining germs
@@ -128,6 +130,11 @@ def readout(P, Q, eps, step_cap=3_000_000, with_seps=False):
         if m_vertical:
             out['n_sigma']['H'] = fm + 1
         out['D'] = Q - out['h'] - out['f']
+        # the capped separatrices f has NOT banked (no kite-0 transit, and no interface-m crossing
+        # when m is vertical) -- the s of 2p = D - s/2.  A capped ray that crossed an arc before
+        # capping is already in f, so counting it in s as well debits it twice.
+        out['cap_conf'] = sum(1 for s in traced if s['ends'][1] == 'CAP' and s['t0'] == 0
+                              and not (m_vertical and s['onm'] > 0))
         out['multi'] = sum(1 for s in resolved
                            if s['t0'] + (s['onm'] if m_vertical else 0) > 1)
     else:

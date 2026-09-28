@@ -10,7 +10,8 @@ Statements checked (h, v, f, D, E, the swapped edges: `lib/necklace.py`):
     covering law (Corollary 3.4) holds on all of them;
   * (Corollary 9.8) D = 0 certifies complete periodicity: every row with D = 0 is a CP row;
   * (after Corollary 9.8) the swapped-edge detector 2p = D - s/2, s the non-closing rays (the
-    capped walks), is cutoff-free and fires on exactly the two rows 8/15 eps 0 and 7/15 eps 1,
+    capped walks that never met a vertical arc -- one that crossed before capping is already in
+    f, so is not counted again: `cap_conf`), is cutoff-free and fires on exactly the two rows 8/15 eps 0 and 7/15 eps 1,
     where D = 8 = 2p + s/2 = 2 + 6 at 8/15 eps 0;
   * (after Theorem 9.8e) at even Q every completely periodic eps = 0 row has C = Q/2 cylinders,
     C = (Q - b)/2 + kappa - 1 read off the critical graph (Theorem 3.1).
@@ -42,11 +43,11 @@ def main():
             if o['D'] == 0:
                 n_d0 += 1
                 d0_cp += cp
-            det = o['D'] - o['capped'] // 2
+            det = o['D'] - o['cap_conf'] // 2
             if det != 0:
                 fires.append((r['P'], r['Q'], r['eps'], det, 2 * o['swapped']))
             if (r['P'], r['Q'], r['eps']) == (8, 15, 0):
-                at815 = (o['D'], o['capped'] // 2, det)
+                at815 = (o['D'], o['cap_conf'] // 2, det)
         elif cp and r['eps'] == 0:
             even_cp0 += 1
             c_ok += o['C'] == r['Q'] // 2

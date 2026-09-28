@@ -8,20 +8,20 @@ Statements checked:
     P = 7, r = 6, far: 3 window cells, 90 inequalities, root-free for Q >= 20;
   * the prover refuses a family whose walk is unbounded (P = 5, r = 2): nothing is claimed;
   * the families' conclusions, n(5, 5m+1) = 5 (Q >= 14), n(5, 5m+4) = 4m + 1 (Q >= 28),
-    n(7, 7m+6) = 6m + 3 (Q >= 20), hold at every such centre of the orphan paper's partition
-    record -- an independent engine (the exact perpendicular partition, `lib/partition.py`);
+    n(7, 7m+6) = 6m + 3 (Q >= 20), hold at every such centre with Q <= 60 (--full: Q <= 100)
+    by an independent engine, the exact flow decomposition (`lib/flow.py`: the branches are the
+    cylinders' crossings of L1, certified by their exact tiling of it);
   * the finite rows the theorems do not cover, by exact computation: n(5/11) = 7, n(5/6) = 5,
     n_H(3/7) = 5 (the beam perpendicular to the hypotenuse), and the rows Q = 24 at P = 5 and
-    Q = 13, 20 at P = 7, whose certified counts agree with 4m + 1 and 6m + 3.
+    Q = 13, 20 at P = 7, whose certified counts agree with 4m + 1 and 6m + 3 -- each by the
+    flow decomposition AND by the exact perpendicular partition (`lib/partition.py`).
 """
-import json
-import os
-
-from common import HERE, check, done
+from common import FULL, check, done
+from flow import n_flow
 from partition import partition
 from window_prover import prove
 
-RECORD = os.path.join(HERE, '..', 'orphan', 'partition_record.json')
+QMAX = 100 if FULL else 60
 
 
 def main():
@@ -36,19 +36,18 @@ def main():
         got = None if out is None else f'{out[0]} cells, {out[3]} checks, Q >= {out[1]}'
         check(f'({P}, {r}, {side}): {got}', ok)
     check('(5, 2, near): unbounded, nothing claimed', prove(5, 2, 'near', verbose=False) is None)
-    rec = json.load(open(RECORD))
     fam = [(5, 1, 14, lambda m: 5), (5, 4, 28, lambda m: 4 * m + 1), (7, 6, 20, lambda m: 6 * m + 3)]
     for P, r, q0, f in fam:
-        rows = [v for v in rec.values() if v['P'] == P and v['Q'] % P == r and v['Q'] >= q0]
-        ok = sum(v['n'] == f(v['Q'] // P) for v in rows)
-        check(f'n({P}, {P}m+{r}) at every recorded Q >= {q0} '
-              f'(Q = {sorted(v["Q"] for v in rows)}): {ok}/{len(rows)}', ok == len(rows) and rows)
+        qs = [Q for Q in range(q0, QMAX + 1) if Q % P == r]
+        bad = [(Q, n) for Q in qs if (n := n_flow(P, Q)['n']) != f(Q // P)]
+        check(f'n({P}, {P}m+{r}) at every Q in [{q0}, {QMAX}] ({len(qs)} centres), flow '
+              f'decomposition: mismatches {bad}', not bad)
     fin = [((5, 11), 7), ((5, 6), 5), ((5, 24), 17), ((7, 13), 9), ((7, 20), 15)]
     for (P, Q), n in fin:
-        got = partition(P, Q)['n']
-        check(f'n({P}/{Q}) = {got}  (paper: {n})', got == n)
-    got = partition(3, 7, beam='h')['n']
-    check(f'n_H(3/7) = {got}  (paper: 5)', got == 5)
+        a, b = n_flow(P, Q)['n'], partition(P, Q)['n']
+        check(f'n({P}/{Q}) = {a} (flow) = {b} (partition)  (paper: {n})', a == b == n)
+    a, b = n_flow(3, 7, beam='h')['n'], partition(3, 7, beam='h')['n']
+    check(f'n_H(3/7) = {a} (flow) = {b} (partition)  (paper: 5)', a == b == 5)
     done()
 
 
