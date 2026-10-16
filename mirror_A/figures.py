@@ -250,7 +250,7 @@ def verify(verbose=True):
         f"mirror-symmetric in the fold diagonal (control theta+0.05: levels {lc}, "
         f"mirror error {mirror_err(seqc):.3f}); Lemma 2.4 moves checked per step")
 
-    # (2) tiles: Table 3 ends vs a direct Lemma 6.2 test, with the outside-the-tile control.
+    # (2) tiles: Table 2 ends vs a direct Lemma 6.2 test, with the outside-the-tile control.
     tiles, ends = tile_ends()
     for w, (lo, hi) in tiles.items():
         for x in (lo + 1e-4, (lo + hi) / 2, hi - 1e-4):

@@ -14,8 +14,6 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, '..', 'lib'))
 
-FULL = '--full' in sys.argv
-
 
 def load(name):
     return json.load(open(os.path.join(HERE, name)))

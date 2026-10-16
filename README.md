@@ -85,13 +85,12 @@ slice of it from scratch on every run; `--full` recomputes all of it.
 ## The mirror-direction paper: `lib/` and `mirror_A/`
 
 ```sh
-.venv/bin/python mirror_A/run_all.py          # a few minutes; the census from census_verdicts.json
-.venv/bin/python mirror_A/run_all.py --full   # every census row re-certified, about half an hour
+.venv/bin/python mirror_A/run_all.py          # about a minute
 .venv/bin/python mirror_A/figures.py          # the four figures -> mirror_A/figs/
 ```
 
 The paper's §5 exhibits periodic cylinders at triangles with `cos 2a` algebraic and `a/π`
-irrational, and its Table 2 counts them; each is certified here **from its word alone** by
+irrational; each is certified here **from its word alone** by
 `lib/mirror.py`, on top of `lib/numfield.py`:
 
 | Module | What it is |
@@ -102,12 +101,11 @@ irrational, and its Table 2 counts them; each is certified here **from its word 
 **What is exact and what is not.** Every certificate is decided in `ℚ(2 cos a)` with no
 tolerance; a float is used only to propose a candidate direction index, which is then checked
 exactly. The words come from the research searches' tracers and are stored in the records
-(`table1_record.json`, `census_record.json`); how a word was found does not enter its
-certificate. Theorem 5.3's clearance is a symbolic certificate (Sturm sequences over `ℚ` on
-`274` rational functions of `t`), and its members `n ≤ 8` are certified exactly as well. The
-tiles of §6 are exact (sympy, real roots). The census is exact per row and one-sided: it
-certifies the cylinders it lists, and a triangle it does not list is no verdict. The figures
-are float drawings whose captioned numbers are checked first.
+(`table1_record.json`, `sqrt41_record.json`); how a word was found does not enter its
+certificate. The family §5.3 quotes from [B] is certified exactly at its members `n ≤ 8`; the
+same script carries [B]'s symbolic proof for every `n` (Sturm sequences over `ℚ` on `274`
+rational functions of `t`). The tiles of §6 are exact (sympy, real roots). The figures are float
+drawings whose captioned numbers are checked first.
 
 ## The legacy layout (necklace paper)
 

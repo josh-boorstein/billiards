@@ -42,14 +42,14 @@ alone (`numfield.py`, `mirror.py`). Each script's docstring lists the statements
 |---|---|
 | §5.1 — Examples 5.1 and 5.2: words, periods, classes, the translation `4e(2a)`, launch intervals and the width `√7/56` exactly, smallest angles; controls | `s5_1_examples.py` |
 | §5.2 — Table 1: the `14` cylinders at rational `cos 2a`, `q ≤ 20`, their classes and periods; Niven; the `1 : √(4m − 1)` rows | `s5_2_rational_table.py` (+ `table1_record.json`) |
-| §5.3 — Theorem 5.3: irreducibility and `a_n/π ∉ ℚ`; the blocks' translations; the alignment identity symbolically in `m`; the `274`-function clearance certificate; formal non-perpendicularity; the members `n ≤ 8` and the period-`30` cylinder at `y_c`, exactly | `s5_3_family.py` |
-| §5.5 — Table 2: every census row certified; the counts per class, the degrees, the overlaps and `(1 + √41)/8` | `s5_5_census.py` (+ `census_record.json`, `census_verdicts.json`) |
-| §6.3 — Proposition 6.6 and Table 3: the five tiles, their end polynomials, the cover, the leg swaps; Lemma 6.3/6.4 at one angle in each tile | `s6_3_tiles.py` |
+| §5.3 — the triangle `cos 2a = (1 + √41)/8`: its four cylinders, one per class, exactly; controls | `s5_3_sqrt41.py` (+ `sqrt41_record.json`) |
+| §5.3 — the family quoted from [B]: the members `n ≤ 8` (period `30n + 6`) and the period-`30` cylinder at `y_c`, exactly; and [B]'s proof for every `n` (irreducibility and `a_n/π ∉ ℚ`, the alignment identity symbolically in `m`, the `274`-function clearance certificate, formal non-perpendicularity) | `s5_3_family.py` |
+| §6.3 — Proposition 6.6 and Table 2: the five tiles, their end polynomials, the cover, the leg swaps, the five `F_W` and their non-degeneracy; Lemmas 6.3 and 6.4 at one angle in each tile | `s6_3_tiles.py` |
 | Figures 1–4 | `figures.py` |
 
-⚠ **Scope.** A certificate proves that the cylinder it names exists. Table 1's blank cells and
-every triangle absent from Table 2 are searches that found nothing, not proofs of absence, and
-nothing here checks them. §§3–4 and §§6.1–6.2, 6.4–7 are proofs in the paper and have no script.
+⚠ **Scope.** A certificate proves that the cylinder it names exists. Table 1's blank cells are
+searches that found nothing, not proofs of absence, and nothing here checks them. §§2–4,
+§§6.1–6.2, 6.4 and §7 are proofs in the paper and have no script.
 
 ---
 
