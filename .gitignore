@@ -4,3 +4,4 @@ __pycache__/
 data/*.json
 probes/figs/
 minimal_component/figs/
+mirror_A/figs/

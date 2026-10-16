@@ -1,6 +1,7 @@
 # Billiards in rational right triangles — code deposit
 
-Exact-arithmetic code supporting three papers on rational right triangles:
+Exact-arithmetic code supporting four papers on right triangles — three on rational right
+triangles, and one on right triangles whose angle is an irrational multiple of `π`:
 
 - **A minimal component in a rational right triangle: an exact decomposition, and a
   conjecture of Boshernitzan** — `lib/` + `minimal_component/`
@@ -8,8 +9,10 @@ Exact-arithmetic code supporting three papers on rational right triangles:
   `lib/` + `orphan/`
 - **The necklace of a rational right triangle: exact counting and integrality in genus
   zero** — `engine/` + `probes/` (legacy layout)
+- **Non-perpendicular periodic orbits in mirror directions of right triangles** —
+  `lib/` + `mirror_A/`
 
-All three are in preparation. `MANIFEST.md` maps each script to the statement it supports.
+All four are in preparation. `MANIFEST.md` maps each script to the statement it supports.
 
 **The repository is being rebuilt paper by paper** into a small core library (`lib/`) and
 one directory per paper holding one script per statement, each named for what it checks.
@@ -79,6 +82,33 @@ drawn; Figure 4 is a float model checked to `10⁻⁹`.
 computed by `partition.py` on a resumable step ladder. The scripts read it and re-verify a
 slice of it from scratch on every run; `--full` recomputes all of it.
 
+## The mirror-direction paper: `lib/` and `mirror_A/`
+
+```sh
+.venv/bin/python mirror_A/run_all.py          # a few minutes; the census from census_verdicts.json
+.venv/bin/python mirror_A/run_all.py --full   # every census row re-certified, about half an hour
+.venv/bin/python mirror_A/figures.py          # the four figures -> mirror_A/figs/
+```
+
+The paper's §5 exhibits periodic cylinders at triangles with `cos 2a` algebraic and `a/π`
+irrational, and its Table 2 counts them; each is certified here **from its word alone** by
+`lib/mirror.py`, on top of `lib/numfield.py`:
+
+| Module | What it is |
+|---|---|
+| `numfield.py` | exact arithmetic in a real number field `ℚ(θ)`, `θ` a chosen real root of an irreducible integer polynomial, with certified signs (interval evaluation on a refining enclosure of `θ`); and its CM extension `K(w)`, `w = e^{ia}`, `t = w + 1/w = 2 cos a`, in which `Im` signs are exact |
+| `mirror.py` | the triangle in `ℚ(2 cos a)(w)` and the cylinder certificate: the word unfolds to a translation exactly parallel to a mirror direction (whose class is read off, not assumed), and the open strip of parallel lines separating every crossed edge strictly is non-empty — its two ends are exact field elements, so the cylinder's width is exact; perpendicularity is decided exactly; `a/π ∉ ℚ` is decided from the minimal polynomial |
+
+**What is exact and what is not.** Every certificate is decided in `ℚ(2 cos a)` with no
+tolerance; a float is used only to propose a candidate direction index, which is then checked
+exactly. The words come from the research searches' tracers and are stored in the records
+(`table1_record.json`, `census_record.json`); how a word was found does not enter its
+certificate. Theorem 5.3's clearance is a symbolic certificate (Sturm sequences over `ℚ` on
+`274` rational functions of `t`), and its members `n ≤ 8` are certified exactly as well. The
+tiles of §6 are exact (sympy, real roots). The census is exact per row and one-sided: it
+certifies the cylinders it lists, and a triangle it does not list is no verdict. The figures
+are float drawings whose captioned numbers are checked first.
+
 ## The legacy layout (necklace paper)
 
 The legacy tree also still carries the orphan paper's original engine, whose Appendix A
@@ -134,6 +164,7 @@ directly (`python3 probes/<name>.py`) once `PYTHONPATH` is set; some write JSON 
 lib/, minimal_component/   the minimal-component paper (above)
 lib/, orphan/              the orphan paper (above)
 lib/, neck/                the necklace paper, in progress
+lib/, mirror_A/            the mirror-direction paper (above)
 engine/      18 modules — the reusable exact-arithmetic core
 probes/      58 modules — the per-result scripts, named by the session that wrote them
 reproduce/   drivers that regenerate the headline numbers
