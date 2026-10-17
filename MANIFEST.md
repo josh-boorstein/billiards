@@ -43,7 +43,7 @@ alone (`numfield.py`, `mirror.py`). Each script's docstring lists the statements
 | §5.1 — Examples 5.1 and 5.2: words, periods, classes, the translation `4e(2a)`, launch intervals and the width `√7/56` exactly, smallest angles; controls | `s5_1_examples.py` |
 | §5.2 — Table 1: the `14` cylinders at rational `cos 2a`, `q ≤ 20`, their classes and periods; Niven; the `1 : √(4m − 1)` rows | `s5_2_rational_table.py` (+ `table1_record.json`) |
 | §5.3 — the triangle `cos 2a = (1 + √41)/8`: its four cylinders, one per class, exactly; controls | `s5_3_sqrt41.py` (+ `sqrt41_record.json`) |
-| §5.3 — the family quoted from [B]: the members `n ≤ 8` (period `30n + 6`) and the period-`30` cylinder at `y_c`, exactly; and [B]'s proof for every `n` (irreducibility and `a_n/π ∉ ℚ`, the alignment identity symbolically in `m`, the `274`-function clearance certificate, formal non-perpendicularity) | `s5_3_family.py` |
+| §5.3 — the family `y_n → y_c`: the members `n ≤ 8` (period `30n + 6`) and the period-`30` cylinder at `y_c`, exactly — what the paper claims; beyond the paper, the symbolic checks that the family continues for every `n` (irreducibility and `a_n/π ∉ ℚ`, the alignment identity in `m`, the `274`-function clearance certificate, formal non-perpendicularity) | `s5_3_family.py` |
 | §6.3 — Proposition 6.6 and Table 2: the five tiles, their end polynomials, the cover, the leg swaps, the five `F_W` and their non-degeneracy; Lemmas 6.3 and 6.4 at one angle in each tile | `s6_3_tiles.py` |
 | Figures 1–4 | `figures.py` |
 
@@ -83,7 +83,7 @@ primitives the per-result scripts are built on.
 
 ## The orphan paper (`orphan/`)
 
-Built on `lib/` alone (`partition.py` for every count). Each script's docstring lists the
+Built on `lib/` alone (`partition.py` for every count; `flow.py` for Remark 9.6). Each script's docstring lists the
 statements it checks.
 
 | Statement | Script |
@@ -95,7 +95,7 @@ statements it checks.
 | Thm 7.1, Props 8.1, 8.2 — `S_α`, its hyperelliptic involution and its base, built from the gluing at every coprime `(P,Q)`, `Q ≤ 200` | `s7_8_surface.py` |
 | §9.1 — right-angle boundaries fold, acute ones never do; the `P = Q−2` orphan-flank pattern | `s9_1_folds.py` |
 | Remark 9.14 — `#`R-graze boundaries `=` `#`mirror pairs at every certified centre | `s9_14_adjacency.py` |
-| Remark 9.6 — the `8/15` decomposition (runs the minimal-component scripts) | `s9_4_remark_9_6.py` |
+| Remark 9.6 — at `8/15`: a component without periodic trajectory in the `L1` class (Boshernitzan certificate) and the other class completely periodic, both exactly (`lib/flow.py`, the procedure of [DR22]); the leg's edges tiled by cylinders, `n = 6`; controls | `s9_4_remark_9_6.py` |
 | Figures 1–5 | `figures.py` (+ `partition_record.json`) |
 | the census record | `export_record.py` (from the research repository's census run) |
 

@@ -76,7 +76,9 @@ every centre where both have run (the research repository's gate: every complete
 its branch store, cell by cell). The surface of §§7–8 is BUILT from the gluing
 (`s7_8_surface.py`), not read off the formulas it checks. The folded orbits and developments
 in the figures are 60-digit traces, and each must reproduce the exact word before it is
-drawn; Figure 4 is a float model checked to `10⁻⁹`.
+drawn; Figure 4 is a float model checked to `10⁻⁹`. Remark 9.6 cites [DR22] for the minimal
+component at `8/15`; `s9_4_remark_9_6.py` reproduces it exactly with `lib/flow.py`, a port of
+the procedure [DR22] ran (described in `MANIFEST.md`, necklace section).
 
 `orphan/partition_record.json` holds the census of every centre the paper's ranges need,
 computed by `partition.py` on a resumable step ladder. The scripts read it and re-verify a
@@ -102,8 +104,8 @@ irrational; each is certified here **from its word alone** by
 tolerance; a float is used only to propose a candidate direction index, which is then checked
 exactly. The words come from the research searches' tracers and are stored in the records
 (`table1_record.json`, `sqrt41_record.json`); how a word was found does not enter its
-certificate. The family §5.3 quotes from [B] is certified exactly at its members `n ≤ 8`; the
-same script carries [B]'s symbolic proof for every `n` (Sturm sequences over `ℚ` on `274`
+certificate. The family of §5.3 is certified exactly at its members `n ≤ 8`, which is all the
+paper claims; the same script also carries the symbolic proof that it continues for every `n` (Sturm sequences over `ℚ` on `274`
 rational functions of `t`). The tiles of §6 are exact (sympy, real roots). The figures are float
 drawings whose captioned numbers are checked first.
 

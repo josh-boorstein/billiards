@@ -376,11 +376,12 @@ def fig1(chain):
         lev = (lev + 1) % 2 if lastx is not None and pr.real - lastx < 0.4 else 0
         lastx = pr.real
         ax2.plot([pr.real], [pr.imag], "o", color=INK, ms=3)
-        ax2.text(pr.real, pr.imag - 0.09 - 0.11 * lev, half(k), ha="center", va="top",
-                 fontsize=7.5, color=ACC,
+        above = lev == 1                            # a close neighbour: put this label above the line
+        ax2.text(pr.real, pr.imag + (0.07 if above else -0.07), half(k), ha="center",
+                 va="bottom" if above else "top", fontsize=7.5, color=ACC,
                  bbox=dict(fc="white", ec="none", pad=0.4, alpha=0.85))
     ax2.set_aspect("equal"); ax2.axis("off")
-    ax2.set_title(f"(b) a line of direction $\\theta = 2a\\cdot{j}$ (class $\\perp OB$) "
+    ax2.set_title(f"(b) a line of direction $\\theta = {2 * j}a$ (class $\\perp OB$) "
                   f"through the chain;\nfold level $\\ell^* = {j}$ shaded, doors $k$ at the crossings",
                   fontsize=10)
     fig.tight_layout()
@@ -426,9 +427,10 @@ def fig2():
     ax2.plot([z.real for z in pts], [z.imag for z in pts], color=PERP, lw=1.6)
     for nm, z, off in [("O", 0j, (-0.07, -0.07)), ("A", 1 + 0j, (0.02, -0.06)),
                        ("B", V["B"], (-0.06, 0.02))]:
-        ax2.annotate(nm, (z.real + off[0], z.imag + off[1]), fontsize=10)
+        ax2.text(z.real + off[0], z.imag + off[1], f"${nm}$", fontsize=10)
     ax2.set_aspect("equal"); ax2.axis("off")
-    ax2.set_title("(b) folded: the corner path and a nearby path (period 14)", fontsize=10)
+    ax2.set_title("(b) folded: the corner path (red) and a nearby path (blue),\n"
+                  "along $L_{\\varepsilon}$ and back along $L_{-\\varepsilon}$; period 14", fontsize=10)
     fig.tight_layout()
     save(fig, "fig3_corner")
 
@@ -449,22 +451,23 @@ def fig3(tiles_ends):
             axx.plot([max(lo, x0), min(hi, x1)], [y, y], color=cols[r], lw=7,
                      solid_capstyle="butt")
             if axx is az:
-                for x, nm, ha in [(lo, names[w][0], "right"), (hi, names[w][1], "left")]:
+                for x, nm in [(lo, names[w][0]), (hi, names[w][1])]:
                     if nm and x0 < x < x1:
-                        axx.text(x + (0.003 if ha == "left" else -0.003), y + 0.32, nm,
-                                 ha=ha, va="bottom", fontsize=8)
+                        axx.text(x, y + 0.32, nm, ha="center", va="bottom", fontsize=8)
                         axx.plot([x, x], [-0.5, y], color=FADE, lw=0.5, ls=":")
+                axx.text(x1 + 0.006, y, w, va="center", fontsize=8, family="monospace")
             else:
                 axx.text(H + 0.03, y, w, va="center", fontsize=9, family="monospace")
         axx.plot([x0, x1], [-0.5, -0.5], color=INK, lw=1)
-        axx.set_xlim(x0 - 0.01, x1 + (0.3 if axx is ax else 0.01)); axx.set_ylim(-1.6, 5.0)
+        axx.set_xlim(x0 - 0.01, x1 + (0.3 if axx is ax else 0.1)); axx.set_ylim(-1.6, 5.0)
         axx.spines[:].set_visible(False); axx.set_yticks([])
     ax.set_xticks([0, H / 4, H / 2, 3 * H / 4, H],
                   ["0", "$\\pi/8$", "$\\pi/4$", "$3\\pi/8$", "$\\pi/2$"])
     ax.axvspan(0.55, 1.02, color=FADE, alpha=0.15, lw=0)
-    az.set_xticks([0.6, 0.7, 0.8, 0.9, 1.0])
+    az.set_xticks([3 * H / 8, 7 * H / 16, H / 2, 9 * H / 16, 5 * H / 8],
+                  ["$3\\pi/16$", "$7\\pi/32$", "$\\pi/4$", "$9\\pi/32$", "$5\\pi/16$"])
     ax.set_title("(a) the five tiles $R_W$ cover $(0, \\pi/2)$ (the angle $a$)", fontsize=10)
-    az.set_title("(b) the shaded window $0.55 < a < 1.02$: the overlaps "
+    az.set_title("(b) the shaded window of (a), enlarged: the overlaps "
                  "$a_2 < a_1$, $a_4 < a_3$ and their mirror images", fontsize=10)
     fig.tight_layout()
     save(fig, "fig4_tiles")
@@ -488,7 +491,7 @@ def fig4():
         ax1.text(z.real + off[0], z.imag + off[1], nm, fontsize=10)
     ax1.set_aspect("equal"); ax1.axis("off")
     ax1.set_title("(a) the cylinder in $T$, $\\cos 2a = 3/4$: the middle path (red), two paths near"
-                  " its edges (blue), the launch interval on $OB$ (gold)", fontsize=9)
+                  " its edges (blue); the gold bar is the launch interval on $OB$", fontsize=9)
 
     gs, edges, copies = unfold(EX_WORD, a)
     rot = cmath.exp(-2j * a)
@@ -508,7 +511,7 @@ def fig4():
         ax2.add_patch(Polygon([(0, 0)], fc=c, ec=INK, lw=0.4, label=f"level {n}"))
     ax2.legend(loc="upper right", fontsize=8, frameon=False)
     ax2.set_aspect("equal"); ax2.axis("off")
-    ax2.set_title("(b) its development: the 17 copies of $T$ by level (doors, i.e. $H$-edges, bold),"
+    ax2.set_title("(b) its development, rotated so that the direction $2a$ is horizontal: the 17 copies of $T$ by level (doors, i.e. $H$-edges, bold),\n"
                   " the strip of width $\\sqrt{7}/56$ (gold); the fold level $1$ is never entered",
                   fontsize=9)
     save(fig, "fig2_example")

@@ -2,7 +2,7 @@
 cylinders in all four mirror classes.
 
 Each of the four words in `sqrt41_record.json` (rows of the research census; the census
-itself is the subject of [C]) is certified EXACTLY at its algebraic y (`lib/mirror.py`); the
+itself is left for later work) is certified EXACTLY at its algebraic y (`lib/mirror.py`); the
 class is read off the certificate, then normalised to the paper's convention (a triangle is
 {y, -y}, listed at y > 0 where OB is the shorter leg).
 

@@ -1,12 +1,13 @@
-"""Section 5.3, the family quoted from [B]: the infinite family of non-perpendicular cylinders
-in the class perpendicular to OB, accumulating at y_c = (sqrt 17 - 1)/4.
+"""Section 5.3, the family y_n -> y_c: non-perpendicular cylinders in the class perpendicular
+to OB, accumulating at y_c = (sqrt 17 - 1)/4.
 
-The paper states the family (y_n the positive root of n(8y^3 + 8y^2 - 6y - 4) + (4y^2 - 2y - 1),
-a cylinder of period 30n + 6; at y_c the block closes up into one of period 30) and proves it in
-[B], where it is a theorem with parts (1)-(3) below.  The members n <= 8 and the cylinder at
-y_c are certified exactly here; the symbolic all-n checks are that theorem's proof.
+The paper records the family (y_n the positive root of n(8y^3 + 8y^2 - 6y - 4) + (4y^2 - 2y - 1),
+a cylinder of period 30n + 6; at y_c the block closes up into one of period 30) and claims only
+the members n <= 8 and the cylinder at y_c, certified exactly here (the (3) and y_c items below).
+That the family continues for every n the paper leaves to later work; the symbolic all-n checks
+below are that proof, carried here beyond what the paper uses.
 
-Statements checked (the words X, Y = X reversed, P1 are [B]'s):
+Statements checked (parts (1)-(3) of the all-n statement; X, Y = X reversed, P1 the block words):
   * (1) for every n >= 1 the cubic Q_n is irreducible and a_n/pi is irrational: the resultant
     behind the hand argument is -1, and, as a check, Q_n has no rational root and a/pi is
     irrational (lib/mirror.py) for n <= 60;
