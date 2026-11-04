@@ -58,7 +58,7 @@ odd `Q ≤ 39` and even `Q ≤ 40`; `s5_census.py` recomputes any of them.
 ```sh
 .venv/bin/python orphan/run_all.py          # minutes; counts read from orphan/partition_record.json
 .venv/bin/python orphan/run_all.py --full   # every count recomputed from scratch (hours)
-.venv/bin/python orphan/figures.py          # the five figures -> orphan/figs/
+.venv/bin/python orphan/figures.py          # the four figures -> orphan/figs/
 ```
 
 Two modules join `lib/`:
@@ -66,19 +66,20 @@ Two modules join `lib/`:
 | Module | What it is |
 |---|---|
 | `partition.py` | the perpendicular partition of a side at a fixed centre, **exactly**: the development is carried in `ℤ[ζ_4Q]` without division (a reflection is an index gather and a reduction modulo `Φ_4Q`), each step is ONE comparison — the beam height against the height of the copy's opposite vertex — decided exactly (a float only when its own error bound is far below the gap, a certified evaluation otherwise), and there is no width floor. The first-return map `J` is read off the development and matched endpoint for endpoint as field elements. Beams perpendicular to any side; resumable walk state. |
-| `trans_surface.py` | a floating-point model of a translation surface glued from polygons, cut on separatrices and flowed; used only for the double regular `Q`-gon of Figure 4 |
+| `trans_surface.py` | a floating-point model of a translation surface glued from polygons, cut on separatrices and flowed; used only for the necklace paper's double regular `Q`-gon figure (`neck/from_orphan/`) |
 
 **What is exact and what is not.** Every branch count, width, boundary type, orphan and
 pairing is `partition.py`'s and exact. This is stronger than the paper's Appendix A, which
 describes the partition tree the counts were first computed on — there side order and orbit
 closure are decided numerically, under a `10⁻¹¹` width floor — and the two engines agree on
 every centre where both have run (the research repository's gate: every complete centre of
-its branch store, cell by cell). The surface of §§7–8 is BUILT from the gluing
-(`s7_8_surface.py`), not read off the formulas it checks. The folded orbits and developments
+its branch store, cell by cell). The surface of §§6–7 is BUILT from the gluing
+(`s6_7_surface.py`), not read off the formulas it checks. The folded orbits and developments
 in the figures are 60-digit traces, and each must reproduce the exact word before it is
-drawn; Figure 4 is a float model checked to `10⁻⁹`. Remark 9.6 cites [DR22] for the minimal
-component at `8/15`; `s9_4_remark_9_6.py` reproduces it exactly with `lib/flow.py`, a port of
-the procedure [DR22] ran (described in `MANIFEST.md`, necklace section).
+drawn; Figure 4's leaves are float traces from three heights of the exact orphan branch, and
+every claim of its caption is asserted before it is drawn. The paper cites [DR22] for the
+minimal component at `8/15` (§2.1) and proves nothing about it; the necklace paper's check,
+`neck/from_orphan/s9_4_remark_9_6.py`, reproduces it exactly with `lib/flow.py`.
 
 `orphan/partition_record.json` holds the census of every centre the paper's ranges need,
 computed by `partition.py` on a resumable step ladder. The scripts read it and re-verify a

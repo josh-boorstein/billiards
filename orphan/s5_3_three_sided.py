@@ -1,4 +1,4 @@
-"""Theorem 5.5, the three-sided refinement, at the 116 coprime centres with 4 <= Q <= 19.
+"""Theorem 5.3, the three-sided refinement, at the 116 coprime centres with 4 <= Q <= 19.
 
 Statements checked, for the beams perpendicular to each of the three sides:
   * a side carries a retracing cell (a branch whose orbit meets another side head-on and
@@ -27,7 +27,7 @@ def retracing(P, Q, beam):
 
 
 def main():
-    print('Theorem 5.5 -- the three-sided refinement\n')
+    print('Theorem 5.3 -- the three-sided refinement\n')
     rows = [(P, Q) for Q in range(4, 20) for P in range(1, Q) if math.gcd(P, Q) == 1]
     pattern_ok = one_each = partner_ok = width_ok = engine_ok = 0
     for P, Q in rows:

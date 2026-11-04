@@ -1,6 +1,7 @@
-"""Sections 7 and 8: the unfolded surface S_alpha, its hyperelliptic involution and its base,
-BUILT from the gluing and checked against Theorem 7.1, Propositions 8.1 and 8.2, at every
-coprime (P, Q) with Q <= 200.
+"""Sections 6 and 7: the unfolded surface S_alpha, its hyperelliptic involution and its base,
+BUILT from the gluing and checked against Theorem 6.1, Corollary 6.2, Propositions 7.1 and 7.2,
+Theorem 7.3 and Remark 7.4 at every coprime (P, Q) with Q <= 200, and against McMullen's
+Weierstrass criterion on the slice min(P, Q - P) = 1 (Section 7.5, Appendix A.4).
 
 How.  Nothing below uses the formulas it checks.  A copy of T in the Katok-Zemlyakov
 unfolding is labelled by its linear part g, an element z -> zeta^k z or z -> zeta^k conj z of
@@ -15,13 +16,21 @@ the reflection in the base side s.  The copies are generated from the identity, 
   * the base S_alpha / tau has, at a fixed point of order d, cone angle pi (d + 1), i.e. order
     d - 1, and at a swapped pair of order d one point of order 2d.
 Statements checked:
-  * 4Q copies; genus g = floor(Q/2); the cone orders are Theorem 7.1's row, and sum to 2g - 2;
-  * the Q points over R are regular (order 0);
-  * (Prop 8.2) tau has exactly Q + [P odd] + [Q - P odd] = 2g + 2 fixed points: the Q points
-    over R, the point over O iff P odd, the point over A iff Q - P odd; so S_alpha / tau has
-    genus 0 (Riemann-Hurwitz) and tau is the hyperelliptic involution;
-  * (Prop 8.1) the base's singular orders are {P - 2, Q - P - 2, -1 (Q times)}, Gauss-Bonnet
-    sum -4.
+  * (Thm 6.1) 4Q copies; genus g = floor(Q/2); the Q points over R are regular; the cone
+    orders over O and A are the theorem's row, and sum to 2g - 2;
+  * (Cor 6.2) at P = 1, P = 2, P = Q - 2 and P = Q - 1 the stratum is H(2g - 2) or
+    H(g - 1, g - 1), as the corollary lists them;
+  * (Props 7.1, 7.2) tau fixes exactly the Q points over R, the point over O iff P odd and the
+    point over A iff Q - P odd -- 2g + 2 points, so tau is the hyperelliptic involution -- and
+    the base's singular orders are {P - 2, Q - P - 2, -1 (Q times)}, Gauss-Bonnet sum -4;
+  * (Thm 7.3) the cone point over O is tau-fixed iff P is odd; when P is even it has two
+    preimages and tau swaps them;
+  * (Rem 7.4) 5/8, 3/5 and 3/7 lie in H(4, 2), H(2, 0, 0) and H(2, 1, 1);
+  * (Section 7.5) on min(P, Q - P) = 1, Q = 4..15: Kenyon-Smillie's model is the regular
+    n-gon, n = 2Q, of genus g, and McMullen's criterion -- its cone point is a Weierstrass point
+    iff n != 4g + 2 -- agrees with tau-fixedness of the built surface's cone points over O at
+    P = Q - 1 and over A at P = 1, in both parities of Q: one fixed point when n = 4g, two
+    swapped ones when n = 4g + 2 (the n-gon's two vertex classes).  g is the built genus.
 """
 import math
 from collections import Counter
@@ -70,19 +79,21 @@ class Surface:
         return orbits
 
     def analyse(self):
+        """(copies, genus, {vertex: [(order, tau-fixed, tau-image index)]})."""
         P, Q, M = self.P, self.Q, self.M
         angle = {'O': P, 'A': Q - P, 'R': Q}                   # vertex angles, units pi/2Q
         sides = {'O': ('L2', 'H'), 'A': ('L1', 'H'), 'R': ('L1', 'L2')}
         tau = (2 * Q % M, 0)
         pts = {}
         for v in 'ORA':
+            orbs = self.vertex_orbits(*sides[v])
             pts[v] = []
-            for orb in self.vertex_orbits(*sides[v]):
+            for orb in orbs:
                 num = len(orb) * angle[v]                      # cone angle, units pi/2Q
                 assert num % M == 0
                 d = num // M - 1                               # order
-                fixed = frozenset(self.mul(tau, g) for g in orb) == orb
-                pts[v].append((d, fixed))
+                img = frozenset(self.mul(tau, g) for g in orb)
+                pts[v].append((d, img == orb, orbs.index(img)))
         F = len(self.copies)
         V = sum(len(x) for x in pts.values())
         chi = V - 3 * F // 2 + F
@@ -97,29 +108,36 @@ def expected_row(P, Q):
     return [P // 2 - 1] * 2, [Q - P - 1]
 
 
+def stratum(pts):
+    return sorted((d for v in 'OA' for d, _, _ in pts[v]), reverse=True)
+
+
 def main():
-    print(f'Sections 7-8 -- S_alpha built from the gluing, every coprime (P, Q), Q <= {QMAX}\n')
+    print(f'Sections 6-7 -- S_alpha built from the gluing, every coprime (P, Q), Q <= {QMAX}\n')
     rows = [(P, Q) for Q in range(2, QMAX + 1) for P in range(1, Q) if math.gcd(P, Q) == 1]
     c = Counter()
+    ext = Counter()
     for P, Q in rows:
         F, g, pts = Surface(P, Q).analyse()
         c['copies'] += F == 4 * Q
         c['genus'] += g == Q // 2
         eo, ea = expected_row(P, Q)
-        dO = sorted(d for d, _ in pts['O'])
-        dA = sorted(d for d, _ in pts['A'])
+        dO = sorted(d for d, _, _ in pts['O'])
+        dA = sorted(d for d, _, _ in pts['A'])
         c['row'] += dO == sorted(eo) and dA == sorted(ea)
         c['sum'] += sum(dO) + sum(dA) == 2 * g - 2
-        c['R_regular'] += len(pts['R']) == Q and all(d == 0 for d, _ in pts['R'])
-        fix = {v: sum(f for _, f in pts[v]) for v in 'ORA'}
+        c['R_regular'] += len(pts['R']) == Q and all(d == 0 for d, _, _ in pts['R'])
+        fix = {v: sum(f for _, f, _ in pts[v]) for v in 'ORA'}
         c['W_R'] += fix['R'] == Q
         c['W_O'] += fix['O'] == (P % 2)
         c['W_A'] += fix['A'] == ((Q - P) % 2)
         c['W_count'] += sum(fix.values()) == 2 * g + 2
+        c['T73'] += (len(pts['O']) == 1 and pts['O'][0][1]) if P % 2 else (
+            len(pts['O']) == 2 and pts['O'][0][2] == 1 and pts['O'][1][2] == 0)
         base = []
         for v in 'ORA':
             done_pairs = Counter()
-            for d, f in pts[v]:
+            for d, f, _ in pts[v]:
                 if f:
                     base.append(d - 1)
                 else:
@@ -129,20 +147,53 @@ def main():
         sing = sorted(e for e in base if e != 0)
         want = sorted([e for e in (P - 2, Q - P - 2) if e != 0] + [-1] * Q)
         c['base'] += sing == want and sum(base) == -4
+        # Cor 6.2: the extremes, as the corollary lists them (zero orders are regular points)
+        st = [d for d in stratum(pts) if d]
+        cases = []
+        if P == 1 or P == Q - 1:
+            cases.append([2 * g - 2] if Q % 2 == 0 else [g - 1, g - 1])
+        if P == 2 or (P == Q - 2 and Q % 2):
+            cases.append([2 * g - 2])
+        for want_st in cases:
+            ext['n'] += 1
+            ext['ok'] += st == [d for d in want_st if d]
     n = len(rows)
     n3 = sum(1 for P, Q in rows if Q >= 3)
     check(f'{n} coprime (P, Q) with Q <= {QMAX} ({n3} with Q >= 3; the extra one is 1/2)', n > 0)
     for key, label in [('copies', '4Q copies of T'),
                        ('genus', 'genus g = floor(Q/2), from V - E + F'),
-                       ('row', "cone orders over O and over A = Theorem 7.1's row"),
+                       ('row', "cone orders over O and over A = Theorem 6.1's row"),
                        ('sum', 'the orders sum to 2g - 2'),
                        ('R_regular', 'the Q points over R are regular'),
                        ('W_R', 'tau fixes all Q points over R'),
                        ('W_O', 'tau fixes the point over O iff P is odd'),
                        ('W_A', 'tau fixes the point over A iff Q - P is odd'),
-                       ('W_count', 'tau has exactly 2g + 2 fixed points (hyperelliptic)'),
-                       ('base', 'the base has orders {P-2, Q-P-2, -1^Q}, sum -4 (Prop 8.1)')]:
+                       ('W_count', 'tau has exactly 2g + 2 fixed points (hyperelliptic; Prop 7.2)'),
+                       ('T73', 'Thm 7.3: one tau-fixed point over O at odd P, two swapped at even P'),
+                       ('base', 'the base has orders {P-2, Q-P-2, -1^Q}, sum -4 (Prop 7.1)')]:
         check(f'{label}: {c[key]}/{n}', c[key] == n)
+    check(f'Cor 6.2: the stratum at P = 1, 2, Q-2, Q-1 is the one listed: {ext["ok"]}/{ext["n"]}',
+          ext['n'] > 0 and ext['ok'] == ext['n'])
+    rem = {(5, 8): [4, 2], (3, 5): [2, 0, 0], (3, 7): [2, 1, 1]}
+    for (P, Q), want_st in rem.items():
+        st = stratum(Surface(P, Q).analyse()[2])
+        check(f'Rem 7.4: {P}/{Q} lies in H{tuple(st)}', st == want_st)
+    # Section 7.5: McMullen's criterion on min(P, Q - P) = 1
+    agree = total = 0
+    for Q in range(4, 16):
+        for P, v in ((Q - 1, 'O'), (1, 'A')):
+            if math.gcd(P, Q) != 1:
+                continue
+            _F, g, pts = Surface(P, Q).analyse()
+            cone = [x for x in pts[v] if x[0] > 0]
+            n_gon = 2 * Q
+            mcm = n_gon != 4 * g + 2
+            total += 1
+            # n = 4g: one vertex class; n = 4g + 2: two, which tau must swap (so neither is fixed)
+            agree += len(cone) == (1 if mcm else 2) and all(f == mcm for _, f, _ in cone)
+    check(f'Section 7.5: McMullen\'s criterion (n = 2Q, cone point Weierstrass iff n != 4g + 2) '
+          f'= tau-fixedness of the built surface, P in {{1, Q-1}}, Q = 4..15: {agree}/{total}',
+          total > 0 and agree == total)
     done()
 
 

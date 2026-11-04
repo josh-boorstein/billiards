@@ -83,21 +83,24 @@ primitives the per-result scripts are built on.
 
 ## The orphan paper (`orphan/`)
 
-Built on `lib/` alone (`partition.py` for every count; `flow.py` for Remark 9.6). Each script's docstring lists the
+Built on `lib/` alone (`partition.py` for every count). Each script's docstring lists the
 statements it checks.
 
 | Statement | Script |
 |---|---|
-| §1.2, §5, Rem 5.4, §9.1, §10 item 2, §A.3 — the named counts `n(5/22)`, `n(5/24)`, `n(17/22)`, `n(19/24)`, `n(8/15)`, `n(5/9)`, `n(2/9)`, `n(2/3)`, `n(3/4)`, `n(3/29)` | `s1_named_counts.py` |
-| Theorem D (Thms 4.6, 4.7), Cor 5.1, Prop 4.4 | `s4_theorem_d.py` |
-| Props 5.2, 5.3, 9.4 — the closed-form counts, and Prop 5.2's boundary pattern | `s5_closed_forms.py` |
-| Theorem 5.5 — the three-sided refinement at the 116 centres `4 ≤ Q ≤ 19` | `s5_5_three_sided.py` |
-| Thm 7.1, Props 8.1, 8.2 — `S_α`, its hyperelliptic involution and its base, built from the gluing at every coprime `(P,Q)`, `Q ≤ 200` | `s7_8_surface.py` |
-| §9.1 — right-angle boundaries fold, acute ones never do; the `P = Q−2` orphan-flank pattern | `s9_1_folds.py` |
-| Remark 9.14 — `#`R-graze boundaries `=` `#`mirror pairs at every certified centre | `s9_14_adjacency.py` |
-| Remark 9.6 — at `8/15`: a component without periodic trajectory in the `L1` class (Boshernitzan certificate) and the other class completely periodic, both exactly (`lib/flow.py`, the procedure of [DR22]); the leg's edges tiled by cylinders, `n = 6`; controls | `s9_4_remark_9_6.py` |
-| Figures 1–5 | `figures.py` (+ `partition_record.json`) |
+| §4.3, Rem 5.2, Fig 3, §A.3 — the named counts `n(8/15)`, `n(5/22)`, `n(5/24)`, `n(5/9)`, `n(2/9)`, `n(3/29)`, and the `311`-letter return word of the orphan at `5/24` | `s1_named_counts.py` |
+| Theorem D (Thms 4.6, 4.7), Prop 4.4, Cor 5.1 at every centre of the record; §A.3's record tallies (`598` centres, `572` certified, the `26` open, `394` / `245` / `178`) | `s4_theorem_d.py` |
+| Theorem 5.3 — the three-sided refinement at the `116` centres `4 ≤ Q ≤ 19` | `s5_3_three_sided.py` |
+| Thm 6.1, Cor 6.2, Props 7.1, 7.2, Thm 7.3, Rem 7.4 — `S_α`, its hyperelliptic involution and its base, built from the gluing at every coprime `(P,Q)`, `Q ≤ 200`; §7.5's McMullen correspondence on `min(P, Q−P) = 1`, `Q = 4, …, 15` | `s6_7_surface.py` |
+| §A.1, Rem A.3 — the longest passage at `11/41` (`397,153` reflections) and the size of its coefficients | `sA_passage.py` |
+| Figures 1–4 | `figures.py` (+ `partition_record.json`) |
 | the census record | `export_record.py` (from the research repository's census run) |
+
+⚠ **Scope.** §§2–4 and Appendix B are proofs: Theorems 4.11, 4.18, 4.23, Prop 4.18a, Cor 4.19
+and Lemmas 4.20–4.22 have no script. Each script checks a statement the paper proves, over the
+range it names, as Appendix A.4 says; §A.4's enumeration of §5.2's congruence at `Q ≤ 60` is
+elementary and is not repeated. The statements the s740 re-cut moved from this paper to the
+necklace paper are checked in `neck/from_orphan/` (below).
 
 ---
 
@@ -123,6 +126,7 @@ hypotenuse.
 | Prop 9.10 — the corner witness: the four 5-step corner walks off `Fix(ι)` at each row, one swapped pair, one saddle connection across the leg swap; the unfolded `8/15` prong arriving exactly at `A`, its controls; the relation `2 sin 12° + 2 sin 24° + sin 36° = sin 60° + sin 72°` read off the arrival identity, exact in `ℚ(ζ₆₀)`, and its place in Remark 6.14's families | `s9_2_witness.py` |
 | Thms 10.2, 10.6, 10.7 — the window certificates, their controls and finite rows; the three families' counts at every centre `Q ≤ 60` (`--full`: `Q ≤ 100`) by `flow.py`, the finite rows by `flow.py` and `partition.py` both | `s10_windows.py` (+ `window_prover.py`) |
 | Figures 1–4 | `figures.py` |
+| carried from the orphan paper at the re-cut, still in its OLD numbering until this section is rebuilt: the counts `n(17/22)`, `n(19/24)`, `n(2/3)`, `n(3/4)`; the closed forms (old Props 5.2, 5.3, 9.4); the folds (old §9.1); old Remark 9.14; old Remark 9.6 (`8/15`, [DR22] reproduced exactly with `lib/flow.py`); the double `Q`-gon and deficit figures (old Figures 4–5) | `from_orphan/` (`run_all.py`) |
 
 Not yet moved: §6 (prong-length and cylinder-area arithmetic, the lattice tests), §7.7's fold
 statistics, and the float leaf launch placing Prop 9.10's swapped pair on the boundary of `M`.

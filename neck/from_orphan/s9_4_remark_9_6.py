@@ -28,7 +28,7 @@ import sys
 
 from common import HERE, centre, check, done
 
-sys.path.insert(0, os.path.join(HERE, '..', 'lib'))
+sys.path.insert(0, os.path.join(HERE, '..', '..', 'lib'))
 import flow  # noqa: E402
 
 CONTROLS = [(2, 13), (4, 13), (6, 13), (8, 13), (2, 15), (4, 15), (6, 17), (8, 17), (10, 17)]

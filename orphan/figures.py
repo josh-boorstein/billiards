@@ -1,16 +1,18 @@
-"""The five figures of the orphan paper, each re-derived before it is drawn.
+"""The four figures of the orphan paper, each re-derived before it is drawn.
 
   python figures.py            verify every caption, then draw  -> orphan/figs/
-  python figures.py --full     also recompute Figure 5's counts from scratch (hours)
 
 What is exact and what is float.  Every branch partition, every width, the pairing J and the
-orphan are `lib/partition.py`'s: exact in Z[zeta_4Q].  Two things are drawn from floats and say
-so: the folded orbits and developments (a 60-digit trace, `lib/tracer.py`, whose side sequence is
-REQUIRED to equal the exact word before anything is drawn), and Figure 4's double Q-gon
-(`lib/trans_surface.py`, a float polygon model cut on separatrices and flowed; its closed forms are
-checked to 1e-9).  Figure 5 plots the partition record (`partition_record.json`), and its caption's
-arithmetic -- parity, the even-P exception, the P = 1 and P = 3 laws, the coverage -- is checked
-on every run; `--full` recomputes every count in it.
+orphan are `lib/partition.py`'s: exact in Z[zeta_4Q].  The folded orbits and developments of
+Figures 1-2 are a 60-digit trace (`lib/tracer.py`) whose side sequence is REQUIRED to equal the
+exact word before anything is drawn.  Figure 4 places the leaves of the orphan's cylinder on the
+rhombus presentation of S_alpha by a float trace from three heights of the exact orphan branch;
+its caption's claims -- one word across the branch, every leaf closing on lambda_1 and missing
+lambda_2, the two vertical hypotenuse copies, the midpoint crossing, Z and tau Z disjoint -- are
+asserted before it is drawn.
+
+The companion paper's two figures that used to be drawn here (the double Q-gon and the deficit
+plot) moved with their statements to `neck/from_orphan/`.
 """
 import json
 import math
@@ -26,7 +28,6 @@ from mpmath import mp, mpf
 
 from common import HERE
 sys.path.insert(0, os.path.join(HERE, "..", "lib"))
-import trans_surface as TS  # noqa: E402
 from partition import partition as exact_partition  # noqa: E402
 from tracer import Billiard, scan_words  # noqa: E402
 
@@ -168,7 +169,7 @@ def verify():
     tr, _pts, head_on = folded_orbit(3, 5, s)
     copies, stop = develop(3, 5, s)
     assert head_on is not None, "3/5 orphan has no head-on hit"
-    assert head_on * 2 == len(tr.hits), (head_on, len(tr.hits))       # Lemma 4.5
+    assert head_on * 2 == len(tr.hits), (head_on, len(tr.hits))       # Lemma 2.1a
     assert stop == "H", stop                                          # Thm 4.6, Q odd
     assert len(copies) == head_on, (len(copies), head_on)             # Lemma 3.1(2)
     assert sum(1 for c in copies[:-1] if c[3]) == 0                   # Prop 4.4: unique
@@ -217,53 +218,18 @@ def verify():
                    f"{len(fixed)} fixed point(s), worst in-pair width gap {max(gaps):.2e}; "
                    f"a 60-digit float scan finds the same {n} words in the same order")
 
-    # s8.1-s8.3's base arithmetic.  ⚠ NO LONGER A CAPTION CHECK: the base figure was
-    # CUT at s594 and its drawer with it, but the prose of s8.1, s8.2 and Theorem 8.3
-    # still asserts every number below, so the check outlives the picture it came from.
+    # Prop 7.1's base arithmetic and Prop 7.2's count, at the two centres of Figure 3's
+    # denominator.  NOT A CAPTION CHECK (the base figure was cut); s6_7_surface.py checks both
+    # at every Q <= 200 from the built surface, and this stays as the figures' own sanity check.
     for P, Q in ((5, 9), (4, 9)):
         orders = [P - 2, Q - P - 2] + [-1] * Q
         g = Q // 2
         weier = Q + (P % 2) + ((Q - P) % 2)
         assert sum(orders) == -4, (P, Q, sum(orders))                 # Gauss-Bonnet
-        assert weier == 2 * g + 2, (P, Q, weier, g)                   # Prop 8.2
+        assert weier == 2 * g + 2, (P, Q, weier, g)                   # Prop 7.2
         out.append(f"{P}/{Q} base Q({P-2}, {Q-P-2}, -1^{Q}): sum of orders = -4, "
                    f"g = {g}, Weierstrass points = {weier} = 2g+2")
 
-
-    # Fig 5 -- the double `Q`-gon of s9.5.  Every closed form Theorem 9.8's proof states,
-    # re-derived from the polygon model by separatrix cut and flow, at three odd `Q`.
-    for Q in (5, 7, 11):
-        D = qgon(Q)
-        m, a = D["m"], D["a"]
-        assert len(D["H"]) == m and len(D["V"]) == m, (Q, len(D["H"]), len(D["V"]))
-        for i in range(1, m + 1):                                   # Step 1, Step 2
-            h = 2 * math.sin(2 * math.pi * i / Q)
-            assert abs(D["H"][i]["height"] - h) < 1e-9
-            assert abs(D["H"][i]["circ"] - 4 / math.tan(math.pi / Q)
-                       * math.sin(2 * math.pi * i / Q)) < 1e-8
-            assert abs(D["V"][i]["height"] - h * math.tan(a)) < 1e-9
-        mods = {round(D["H"][i]["height"] / D["H"][i]["circ"], 12) for i in D["H"]}
-        assert mods == {round(math.tan(math.pi / Q) / 2, 12)}, mods   # one modulus
-        hp = [D["V"][i]["height"] for i in D["V"]]
-        assert len({round(z, 10) for z in hp}) == m                   # pairwise distinct
-        assert abs(sum(hp) - 1.0) < 1e-9, sum(hp)                     # = |L1|
-        # Steps 3 and 4: `S0` meets each perpendicular cylinder twice, `L1` exactly once,
-        # the two halves exchanged by `sigma`, and the leg is partitioned.
-        tot = 0.0
-        for i, iv in D["cuts"].items():
-            assert len(iv) == 2, (Q, i, iv)                           # Step 3
-            pos = [z for z in iv if z[0] > -1e-12]
-            assert len(pos) == 1, (Q, i, iv)                          # Step 4
-            lo, hi_ = pos[0]
-            assert abs((hi_ - lo) - D["V"][i]["height"]) < 1e-9
-            assert any(abs(z[0] + hi_) < 1e-9 and abs(z[1] + lo) < 1e-9
-                       for z in iv), (Q, i, iv)                       # sigma-mirror
-            tot += hi_ - lo
-        assert abs(tot - 1.0) < 1e-9, tot
-        assert 2 * m == Q - 1                                         # n(2/Q) = Q - 1
-        out.append(f"double {Q}-gon: {m} cylinders each direction, one modulus "
-                   f"tan(pi/{Q})/2, perp heights distinct and summing to 1, "
-                   f"S0 meets each perp cylinder twice and L1 once, n(2/{Q}) = {Q - 1}")
 
     return out
 
@@ -400,11 +366,10 @@ def fig2(path):
     copiesA, stopA = develop(3, 5, s)
     _draw_development(
         axA, 3, 5, s,
-        f"(a)  DATA — $2\\alpha/\\pi = 3/5$, $P$ odd.  The ray meets the UNIQUE interior "
-        f"vertical wall-copy,\n"
-        f"      of type ${TEX_SIDE[stopA]}$ (Prop. 4.4), at developed copy "
-        f"{len(copiesA)} of the {len(tr.hits)}-hit return — its temporal midpoint "
-        f"(Lemma 4.5).")
+        f"(a)  DATA — $2\\alpha/\\pi = 3/5$, $P$ odd.  The ray meets a vertical wall-copy of type "
+        f"${TEX_SIDE[stopA]}$,\n"
+        f"      the only interior vertical class (Prop. 4.4), at developed copy {len(copiesA)} of the\n"
+        f"      {len(tr.hits)}-hit return — its temporal midpoint (Lemma 2.1a).")
 
     cells2, _ = partition(2, 5)
     cell = min(cells2, key=lambda z: _hits(2, 5, z))
@@ -498,325 +463,196 @@ def fig3(path):
     _save(fig, path)
 
 
-# ------------------------------------------------------------------------------ fig 4
+# ------------------------------------------------- fig 4: the cut locus at 3/5 (Section 7.6)
 
-# --------------------------------------------- Figure 4: the double `Q`-gon of s9.5
+def _kz(P, Q):
+    """The rhombus presentation of `S_alpha` (s7.1's labelled copies, grouped by the image of
+    `R` they surround).  Group elements are `(k, f)` = `rho^k r_0^f`, `rho` the rotation through
+    `pi/Q`, `r_0` the reflection in `L2`; copy `g` of `T` is drawn as `X_j + M_g (p - R)` in
+    rhombus `j = k mod Q`.  The flow of the perpendicular beam is horizontal in every copy."""
+    alpha, c, tri = triangle(P, Q)
+    N, Rp = 2 * Q, tri["R"]
+    refl = {"L1": (Q, 1), "L2": (0, 1), "H": (P, 1)}
 
-# The colour of a cylinder is its INDEX in the side-parallel decomposition, and the same
-# index colours its image under `Phi` in the perpendicular one -- that pairing is the
-# figure's whole point, so the two panels must never be coloured independently.
-CYL_COL = ["#2f6f9f", "#c0392b", "#4a8f6d", "#c08a3e", "#7d5ba6",
-           "#3d9aa1", "#a85a2f", "#6b7b8c"]
+    def mul(a, b):
+        return ((a[0] + (b[0] if a[1] == 0 else -b[0])) % N, (a[1] + b[1]) % 2)
 
+    def M(g):
+        t = g[0] * math.pi / Q
+        ct, st = math.cos(t), math.sin(t)
+        return (ct, st, st, -ct) if g[1] else (ct, -st, st, ct)
 
-def qgon(Q):
-    """Everything Figure 5 draws, and everything its caption asserts, at one odd `Q`.
+    def ap(m, v):
+        return (m[0] * v[0] + m[1] * v[1], m[2] * v[0] + m[3] * v[1])
 
-    ⚠ DIRECTION INDEXING IS THE TRAP HERE (`s529_leg_surjectivity` trap (iv)): on
-    `double_Qgon` `axis = 1` is the SIDE-parallel (horizontal) direction -- s9.5's Step 1,
-    where every closed form is proved -- and `axis = 0` is the PERPENDICULAR (vertical)
-    one.  Getting them the wrong way round draws a picture of the wrong theorem.
+    def X(j):
+        return (2.6 * j, 0.0)
 
-    ⚠ AND THE STRIPS ARE NOT THE CYLINDERS (`s520_polygon_staircase` trap (i)): that
-    shortcut is the `2Q`-gon's.  Here the decomposition comes from `Surface.cylinders`,
-    which cuts on separatrices and flows; nothing below assumes a strip is a cylinder.
-    """
-    S = TS.double_Qgon(Q)
-    m = (Q - 1) // 2
-    H = S.cylinders(1)                       # side-parallel  (s9.5 Step 1)
-    V = S.cylinders(0)                       # perpendicular  (s9.5 Step 2)
-    a = math.pi / (2 * Q)
+    def place(g, pt):
+        v = ap(M(g), (pt[0] - Rp[0], pt[1] - Rp[1]))
+        x = X(g[0] % Q)
+        return (x[0] + v[0], x[1] + v[1])
 
-    # index both decompositions by `i = 1..m` through the closed forms of Steps 1 and 2,
-    # so the two panels share a colour exactly when `Phi` relates the two cylinders.
-    def by_height(cyls, pred):
-        out = {}
-        for c in cyls:
-            i = min(range(1, m + 1), key=lambda j: abs(c["height"] - pred(j)))
-            assert abs(c["height"] - pred(i)) < 1e-9, (c["height"], pred(i))
-            assert i not in out, f"two cylinders at index {i}"
-            out[i] = c
-        return out
-
-    hi = by_height(H, lambda i: 2 * math.sin(2 * math.pi * i / Q))
-    vi = by_height(V, lambda i: 2 * math.tan(a) * math.sin(2 * math.pi * i / Q))
-
-    # `S0` is side 0 of `Pi`: horizontal, length 2, midpoint at `x = 0` an image of `R`.
-    (x0, y0), (x1, y1) = S.side(0, 0)
-    assert abs(y0 - y1) < 1e-12, "side 0 is not horizontal"
-    assert abs(abs(x1 - x0) - 2.0) < 1e-9, abs(x1 - x0)
-    assert abs(x0 + x1) < 1e-12, "side 0 is not centred on x = 0"
-
-    # the partition of `S0` by vertical cylinder: a member of `V` in polygon 0 is an
-    # x-interval, and `S0` spans `x in [-1, 1]`, so no flowing is needed here.
-    cuts = {}
-    for i, c in vi.items():
-        iv = []
-        for (pp, lo, hi_) in c["members"]:
-            if pp != 0:
+    def exit_(pt, d):
+        best = None
+        for nm, (u, v) in SIDES.items():
+            a, b = tri[u], tri[v]
+            ex, ey = b[0] - a[0], b[1] - a[1]
+            den = d[0] * ey - d[1] * ex
+            if abs(den) < 1e-14:
                 continue
-            lo_, hi__ = max(lo, -1.0), min(hi_, 1.0)
-            if hi__ - lo_ > 1e-9:
-                iv.append((lo_, hi__))
-        cuts[i] = sorted(iv)
-    return dict(S=S, Q=Q, m=m, a=a, H=hi, V=vi, S0=(x0, x1, y0), cuts=cuts)
+            t = ((a[0] - pt[0]) * ey - (a[1] - pt[1]) * ex) / den
+            w = ((a[0] - pt[0]) * d[1] - (a[1] - pt[1]) * d[0]) / den
+            if t > 1e-12 and -1e-12 <= w <= 1 + 1e-12 and (best is None or t < best[0]):
+                best = (t, nm)
+        t, nm = best
+        return nm, (pt[0] + t * d[0], pt[1] + t * d[1])
+
+    def leaf(s, maxn=2000):
+        """The leaf through height `s` of `lambda_1`, to the perpendicular return:
+        `[(copy, exit side, developed start, developed end)]`, and the final copy."""
+        g, pt, d, out = (0, 0), (c, s), (-1.0, 0.0), []
+        for _ in range(maxn):
+            nm, q = exit_(pt, d)
+            out.append((g, nm, place(g, pt), place(g, q)))
+            if nm == "L1" and abs(d[1]) < 1e-12 and d[0] > 0:
+                return out, g
+            d = ap(M(refl[nm]), d)
+            g, pt = mul(g, refl[nm]), q
+        raise RuntimeError("leaf did not return")
+
+    G = [(k, f) for k in range(N) for f in (0, 1)]
+    return dict(tri=tri, c=c, N=N, refl=refl, mul=mul, place=place, leaf=leaf, X=X, G=G)
 
 
-def _draw_qgon_panel(ax, D, axis, title):
-    """One polygon pair with the `axis`-direction cylinders shaded."""
-    S, Q = D["S"], D["Q"]
-    R = 1.0 / math.sin(math.pi / Q)
-    dx = 2.35 * R                                     # display offset for `Pi'`
-    cyls = D["H"] if axis == 1 else D["V"]
-    for i, c in sorted(cyls.items()):
-        col = CYL_COL[(i - 1) % len(CYL_COL)]
-        for (pp, lo, hi_) in c["members"]:
-            piece = TS._clip(S.polys[pp], axis, lo, hi_)
-            if len(piece) < 3:
-                continue
-            off = dx if pp == 1 else 0.0
-            ax.add_patch(Polygon([(x + off, y) for (x, y) in piece], closed=True,
-                                 facecolor=col, edgecolor="none", alpha=0.42, zorder=1))
-    for pp, name in ((0, "$\\Pi$"), (1, "$\\Pi\'$")):
-        off = dx if pp == 1 else 0.0
-        pts = [(x + off, y) for (x, y) in S.polys[pp]]
-        ax.add_patch(Polygon(pts, closed=True, facecolor="none",
-                             edgecolor=INK, lw=1.3, zorder=3))
-        cx = sum(x for x, _ in pts) / len(pts)
-        cy = sum(y for _, y in pts) / len(pts)
-        ax.text(cx, cy, name, ha="center", va="center", fontsize=13,
-                color=INK, zorder=4)
-        # side numbers -- the gluing is side `r` of `Pi` to side `r` of `Pi'`.
-        # ⚠ pushed OUT along the side midpoint's radius and set in ink, not grey: ref-3's
-        # note on Figure 2 was that low-contrast numbers over the drawing do not read.
-        for r in range(Q):
-            if pp == 0 and r == 0:
-                continue          # that is `S_0`, named in full below -- a digit there
-            (ax0, ay0), (ax1, ay1) = S.side(pp, r)   # would land on the marked point `R`
-            mx, my = (ax0 + ax1) / 2, (ay0 + ay1) / 2
-            ax.text(mx * (1 + 0.13) + off, my * (1 + 0.13), str(r),
-                    ha="center", va="center", fontsize=7.5, color=INK,
-                    alpha=0.75, zorder=4)
-    ax.set_title(title, fontsize=10.5, color=INK)
+def _cutlocus_data(P=3, Q=5):
+    K = _kz(P, Q)
+    cells, _ = partition(P, Q)
+    orph = next(cl for cl in cells if cl["is_orphan"])
+    eps = 1e-9 * max(1.0, orph["width"])
+    lo, mid, hi = orph["lo"] + eps, 0.5 * (orph["lo"] + orph["hi"]), orph["hi"] - eps
+    leaves = {k: K["leaf"](s) for k, s in (("lo", lo), ("mid", mid), ("hi", hi))}
+
+    def side(g, nm):
+        u, v = SIDES[nm]
+        return K["place"](g, K["tri"][u]), K["place"](g, K["tri"][v])
+
+    def vertical(g, nm):
+        a, b = side(g, nm)
+        return abs(a[0] - b[0]) < 1e-9
+
+    pair = lambda g, nm: frozenset([g, K["mul"](g, K["refl"][nm])])
+    Q_ = Q
+    lam1, lam2 = pair((0, 0), "L1"), pair((Q_, 0), "L1")
+    Wkeys = {}
+    for g in K["G"]:
+        if vertical(g, "H"):
+            Wkeys.setdefault(pair(g, "H"), []).append(side(g, "H"))
+    return K, orph, leaves, side, vertical, pair, lam1, lam2, Wkeys
+
+
+def verify_cutlocus():
+    """Every claim Figure 4's caption makes, checked before it is drawn."""
+    out = []
+    K, orph, leaves, side, vertical, pair, lam1, lam2, Wkeys = _cutlocus_data()
+    words = {k: [x[1] for x in v[0]] for k, v in leaves.items()}
+    assert words["lo"] == words["mid"] == words["hi"], "word changes across the orphan branch"
+    assert orph["lo"] == 0.0 and abs(orph["hi"] - (3 - math.sqrt(5)) / 2) < 1e-12, "caption's branch"
+    out.append(f"Fig 4: orphan branch at 3/5 is [{orph['lo']:.6f}, {orph['hi']:.6f}), one word "
+               f"of {len(words['mid'])} letters across it")
+    for k, (segs, _) in leaves.items():
+        for g, nm, a, b in segs:
+            assert abs(a[1] - b[1]) < 1e-9, "developed segment not horizontal"
+    out.append("Fig 4: every developed segment is horizontal (the flow is one direction)")
+    for k, (segs, gfin) in leaves.items():
+        assert pair(gfin, "L1") == lam1, f"leaf {k} closes on lambda_2"
+        assert not any(nm == "L1" and pair(g, "L1") == lam2 for g, nm, _, _ in segs), "leaf meets lambda_2"
+    out.append("Fig 4: every leaf of Z closes on lambda_1 and meets lambda_2 nowhere")
+    assert len(Wkeys) == 2 and all(len(v) == 2 for v in Wkeys.values()), "vertical H-copies"
+    segs = leaves["mid"][0]
+    wh = [i for i, (g, nm, _, _) in enumerate(segs) if nm == "H" and vertical(g, "H")]
+    assert len(wh) == 1 and 2 * (wh[0] + 1) == len(segs), "W crossing is not the unique midpoint hit"
+    out.append("Fig 4: two vertical H-copies (four edge appearances); the leaf crosses one, once, "
+               "at its temporal midpoint")
+    # Z and tau Z disjoint: tau is the half-turn about each rhombus centre, and Z's strips in
+    # each rhombus lie on one side of that centre's horizontal line through it?  Check by
+    # sampling: no point of a Z strip lies in the half-turned image of a Z strip.
+    strips = _strips(K, leaves)
+    import matplotlib.path as mpath
+    tauS = [[(2 * K["X"](j)[0] - x, 2 * K["X"](j)[1] - y) for x, y in poly] for j, poly in strips]
+    for (j, poly) in strips:
+        cx = sum(x for x, _ in poly) / len(poly); cy = sum(y for _, y in poly) / len(poly)
+        for (j2, _), tp in zip(strips, tauS):
+            if j2 == j and mpath.Path(tp).contains_point((cx, cy)):
+                raise AssertionError("Z meets tau Z")
+    out.append("Fig 4: Z and tau Z have disjoint interiors")
+    return out
+
+
+def _strips(K, leaves):
+    lo, hi = leaves["lo"][0], leaves["hi"][0]
+    return [(g[0] % (K["N"] // 2), [a0, b0, b1, a1])
+            for (g, _, a0, b0), (_, _, a1, b1) in zip(lo, hi)]
+
+
+def fig_cutlocus(path):
+    K, orph, leaves, side, vertical, pair, lam1, lam2, Wkeys = _cutlocus_data()
+    Q = K["N"] // 2
+    fig, ax = plt.subplots(figsize=(11, 2.6))
+    strips = _strips(K, leaves)
+    for j, poly in strips:
+        ax.add_patch(Polygon(poly, closed=True, fc="#f3d9a4", ec="none", zorder=1))
+        cx, cy = K["X"](j)
+        ax.add_patch(Polygon([(2 * cx - x, 2 * cy - y) for x, y in poly], closed=True,
+                             fc="none", ec=FADE, hatch="////", lw=0, zorder=1))
+    for g in K["G"]:
+        for nm in SIDES:
+            (x1, y1), (x2, y2) = side(g, nm)
+            ax.plot([x1, x2], [y1, y2], color=INK if nm == "H" else FADE,
+                    lw=0.9 if nm == "H" else 0.6, zorder=2)
+    mid_segs = leaves["mid"][0]
+    wa = next(pair(g, "H") for g, nm, _, _ in mid_segs if nm == "H" and vertical(g, "H"))
+    letters, nxt = {}, iter("abcdefghijklmnopqrstuvwxyz")
+    for g in K["G"]:
+        key = pair(g, "H")
+        (x1, y1), (x2, y2) = side(g, "H")
+        m = ((x1 + x2) / 2, (y1 + y2) / 2)
+        cx, cy = K["X"](g[0] % Q)
+        ox, oy = m[0] - cx, m[1] - cy
+        r = math.hypot(ox, oy)
+        if key in Wkeys:
+            lab, col, fs = (r"$W_a$" if key == wa else r"$W_b$"), SIDE_COL["H"], 10
+            ax.plot([x1, x2], [y1, y2], color=col, lw=2.6, zorder=4)
+            k = 0.26
+        else:
+            if key not in letters:
+                letters[key] = next(nxt)
+            lab, col, fs, k = letters[key], INK, 8, 0.17
+        ax.text(m[0] + k * ox / r, m[1] + k * oy / r, lab, fontsize=fs, ha="center",
+                va="center", color=col, style="italic" if key not in Wkeys else "normal")
+    for key, name in ((lam1, r"$\lambda_1$"), (lam2, r"$\lambda_2$")):
+        g = min(key)
+        (x1, y1), (x2, y2) = side(g, "L1")
+        ax.plot([x1, x2], [y1, y2], color=SIDE_COL["L1"], lw=2.6, zorder=4)
+        ax.text((x1 + x2) / 2 + 0.12, (y1 + y2) / 2, name, color=SIDE_COL["L1"], fontsize=10,
+                va="center")
+    for g, nm, a, b in mid_segs:
+        ax.annotate("", xy=b, xytext=a, zorder=5,
+                    arrowprops=dict(arrowstyle="-|>", color=INK, lw=0.9, mutation_scale=7))
+    for j in range(Q):
+        ax.plot(*K["X"](j), "o", color=INK, ms=3.5, zorder=6)
+    seen = set()
+    for g in K["G"]:
+        for v in "OA":
+            pt = K["place"](g, K["tri"][v])
+            key = (round(pt[0], 6), round(pt[1], 6))
+            if key not in seen:
+                seen.add(key)
+                ax.plot(*pt, "o", mfc="white", mec=INK, ms=3.5, zorder=6)
     ax.set_aspect("equal")
     ax.axis("off")
-    return dx
-
-
-def fig4(path):
-    """The double regular `Q`-gon of s9.5 -- the model, both decompositions, and `S0`.
-
-    ⇒ THIS IS FIGURE 4.  It REPLACED the genus-zero base picture at s594 (referee 3:
-    that figure's "entire informational content is `3 is odd, 2 is even`", it was
-    schematic in a paper whose other figures are not, and it hung on the result s592
-    demoted, while s9.5 -- which carries Theorem 9.8 -- had no illustration at all).
-    """
-    Q = 7
-    D = qgon(Q)
-    S, m = D["S"], D["m"]
-    x0, x1, y0 = D["S0"]
-    R = 1.0 / math.sin(math.pi / Q)
-
-    fig = plt.figure(figsize=(12.6, 5.6))
-    gs = fig.add_gridspec(2, 2, height_ratios=[1.0, 0.34], hspace=0.05, wspace=0.04)
-    axA, axB = fig.add_subplot(gs[0, 0]), fig.add_subplot(gs[0, 1])
-    axS = fig.add_subplot(gs[1, :])
-
-    # ---- (a) the side-parallel direction, and `Gamma`
-    dx = _draw_qgon_panel(axA, D, 1, "(a) DATA. The side-parallel direction (Step 1), "
-                                     f"and $\\Gamma$ (Step 3)")
-    for off in (0.0, dx):
-        ys = [y for (_, y) in S.polys[0 if off == 0.0 else 1]]
-        axA.plot([off, off], [min(ys), max(ys)], color=PERP, lw=1.6, zorder=5)
-    axA.text(0.0, max(y for (_, y) in S.polys[0]) + 0.18, "$\\Gamma$", color=PERP,
-             ha="center", fontsize=11)
-    axA.plot([x0, x1], [y0, y0], color=INK, lw=3.2, solid_capstyle="butt", zorder=6)
-    axA.plot([0.0], [y0], marker="o", ms=5.5, color=INK, zorder=7)
-    axA.text(0.0, y0 - 0.78, "$R$", ha="center", fontsize=10, color=INK)
-    axA.text(1.02, y0 - 0.34, "$\\lambda_1\\!=\\!L_1$", ha="left", fontsize=9, color=ACC)
-    axA.text(-1.02, y0 - 0.34, "$\\lambda_2$", ha="right", fontsize=9, color=ACC)
-    axA.text(0.0, y0 + 0.26, "$S_0 = \\Lambda$ (side 0)", ha="center", fontsize=9.5,
-             color=INK)
-
-    # ---- (b) the perpendicular direction
-    _draw_qgon_panel(axB, D, 0, "(b) DATA. The perpendicular direction (Step 2), "
-                                "the image of (a) under $\\Phi$")
-    axB.plot([x0, x1], [y0, y0], color=INK, lw=3.2, solid_capstyle="butt", zorder=6)
-    axB.plot([0.0], [y0], marker="o", ms=5.5, color=INK, zorder=7)
-    axB.text(0.0, y0 - 0.62, "$S_0$ crosses each cylinder twice", ha="center",
-             fontsize=9, color=INK)
-
-    # ---- `S0` magnified: the partition of the leg, one interval per cylinder
-    for i, iv in sorted(D["cuts"].items()):
-        col = CYL_COL[(i - 1) % len(CYL_COL)]
-        for (lo, hi_) in iv:
-            axS.add_patch(plt.Rectangle((lo, 0.0), hi_ - lo, 1.0, facecolor=col,
-                                        edgecolor="white", lw=1.2, alpha=0.62))
-            axS.text((lo + hi_) / 2, 0.5, str(i), ha="center", va="center",
-                     fontsize=9, color=INK)
-    axS.plot([0, 0], [-0.18, 1.18], color=INK, lw=1.4)
-    axS.plot([0.0], [0.0], marker="o", ms=6, color=INK, clip_on=False, zorder=6)
-    axS.annotate("", xy=(1.0, -0.42), xytext=(0.0, -0.42),
-                 arrowprops=dict(arrowstyle="<->", color=ACC, lw=1.2))
-    axS.text(0.5, -0.78, "$\\lambda_1 = L_1$, length 1", ha="center", fontsize=9,
-             color=ACC)
-    axS.annotate("", xy=(0.0, -0.42), xytext=(-1.0, -0.42),
-                 arrowprops=dict(arrowstyle="<->", color=FADE, lw=1.2))
-    axS.text(-0.5, -0.78, "$\\lambda_2 = \\sigma(\\lambda_1)$", ha="center",
-             fontsize=9, color=FADE)
-    axS.text(0.06, 1.12, "$R$", ha="left", fontsize=10, color=INK)
-    axS.set_title("(c) DATA. $S_0 = \\Lambda$ magnified: its partition by perpendicular "
-                  "cylinder (Steps 3 and 4). Each index appears exactly once in "
-                  "$\\lambda_1$ and once in $\\lambda_2$.", fontsize=10.5, color=INK)
-    axS.set_xlim(-1.08, 1.08)
-    axS.set_ylim(-0.95, 1.30)
-    axS.axis("off")
-
-    # ⚠ NOT `tight_layout`: it does not understand `set_aspect("equal")` axes and warns,
-    # and the row gap it leaves is most of the figure.  Limits are set by hand instead.
-    for ax in (axA, axB):
-        ax.set_xlim(-R - 0.45, 2.35 * R + R + 0.45)
-        ax.set_ylim(-R - 1.15, R + 0.75)
-    fig.subplots_adjust(left=0.015, right=0.985, top=0.93, bottom=0.03)
-    _save(fig, path)
-
-
-# ----------------------------------------------------------------------------- driver
-
-# --------------------------------------------------------------- figure 5: the deficit
-#
-# The counts come from the partition record (every centre of the window the census closed, on
-# the exact engine), and `--full` recomputes each from scratch.  The table the figure was first
-# drawn from -- 160 counts certified on the CosPoly tree -- is kept as a CONTROL: every one of
-# them must equal the record's count.
-LEGACY_COUNTS = {
-    1: {2: 1, 3: 1, 4: 1, 5: 1, 7: 1, 8: 1, 11: 1, 16: 1, 25: 1},
-    2: {3: 2, 5: 4, 7: 6, 9: 8, 11: 10, 13: 12, 15: 14, 17: 16, 19: 18, 21: 20, 23: 22,
-        25: 24, 41: 40},
-    3: {4: 3, 5: 3, 7: 3, 8: 5, 10: 5, 11: 7, 13: 7, 14: 9, 16: 9, 17: 11, 19: 11,
-        20: 13, 22: 13, 25: 15, 26: 17, 28: 17, 29: 19, 35: 23},
-    4: {5: 4, 9: 8, 11: 10, 13: 12, 15: 14, 17: 16, 19: 18, 23: 22, 27: 26, 31: 30,
-        35: 34, 39: 38},
-    5: {6: 5, 7: 3, 8: 3, 11: 7, 12: 5, 13: 9, 14: 7, 16: 5, 17: 5, 18: 11, 19: 11,
-        21: 5, 22: 5, 23: 13, 24: 17, 26: 5, 27: 7, 28: 15, 29: 21, 31: 5, 32: 11,
-        33: 17, 34: 25, 36: 5, 37: 13, 38: 19, 39: 29, 41: 5, 42: 15, 47: 17, 52: 19,
-        57: 21},
-    6: {7: 6, 13: 12, 17: 16, 19: 18, 23: 22, 25: 24, 29: 28, 31: 30, 35: 34, 37: 36,
-        41: 40, 43: 42},
-    7: {8: 7, 9: 5, 10: 5, 15: 11, 16: 3, 17: 9, 18: 13, 19: 11, 20: 15, 22: 17, 23: 3,
-        24: 5, 25: 17, 26: 11, 27: 21, 29: 15, 30: 15, 31: 17, 32: 15, 33: 17, 34: 27,
-        36: 23, 37: 19, 38: 7, 39: 15, 40: 23, 45: 7, 46: 17, 52: 7, 59: 13},
-    8: {9: 8, 15: 6, 17: 16, 19: 18, 21: 20, 23: 22, 25: 24, 29: 28, 33: 32, 37: 36,
-        39: 38, 45: 44},
-    9: {10: 9, 11: 5, 19: 15, 20: 11, 22: 13, 23: 13, 25: 13, 26: 17, 28: 9, 29: 9,
-        31: 13, 32: 13, 34: 19, 35: 21, 37: 15, 40: 17, 41: 13, 43: 23, 44: 27, 47: 17,
-        49: 9, 58: 23},
-}
-QMAX5 = 60
-
-
-def window_counts():
-    from common import centre, record
-    rec = record()
-    flat = {}
-    for P in range(1, 10):
-        for Q in range(P + 1, QMAX5 + 1):
-            if math.gcd(P, Q) != 1:
-                continue
-            r = centre(P, Q) if "--full" in sys.argv else rec.get(f"{P}/{Q}")
-            if r is not None and r.get("n") is not None:
-                flat[(P, Q)] = r["n"]
-    return flat
-
-
-def verify_counts_table():
-    """Everything Figure 5's caption states, checked on the counts actually plotted."""
-    out = []
-    flat = window_counts()
-    legacy = {(P, Q): n for P, row in LEGACY_COUNTS.items() for Q, n in row.items()}
-    miss = [k for k in legacy if k not in flat]
-    bad = [(k, legacy[k], flat[k]) for k in legacy if k in flat and flat[k] != legacy[k]]
-    assert not bad, f"legacy CosPoly counts disagree with the exact engine: {bad}"
-    out.append(f"figure 5: {len(legacy) - len(miss)} of the {len(legacy)} legacy CosPoly counts "
-               f"are in the record and all agree" + (f" ({len(miss)} not yet recorded)"
-                                                      if miss else ""))
-    bad = [(P, Q) for (P, Q), n in flat.items() if n % 2 != P % 2]
-    assert not bad, f"Corollary 5.1 (n = P mod 2) fails at {bad}"
-    out.append(f"figure 5: n = P (mod 2) on all {len(flat)} plotted rows (Corollary 5.1)")
-    bado = [(P, Q) for (P, Q), n in flat.items()
-            if P % 2 == 1 and ((Q - 1 - n) - Q) % 2 != 0]
-    assert not bado, f"d = Q (mod 2) fails at odd P: {bado}"
-    out.append("figure 5: d = Q (mod 2) on every odd-P row (s10 item 2's congruence)")
-    ex = sorted((P, Q, Q - 1 - n) for (P, Q), n in flat.items()
-                if P % 2 == 0 and n != Q - 1)
-    assert ex == [(8, 15, 8)], f"even-P exceptions: {ex}"
-    out.append("figure 5: d = 0 at every even-P centre but 8/15, where d = 8")
-    assert all(n == 1 for (P, Q), n in flat.items() if P == 1)
-    b3 = [(Q, n) for (P, Q), n in flat.items()
-          if P == 3 and Q >= 5 and n != 2 * round(Q / 3) - 1]
-    assert not b3, f"Proposition 5.2 fails at {b3}"
-    out.append("figure 5: n = 1 at P = 1; Proposition 5.2 holds on every P = 3 row")
-    dmax = max(Q - 1 - n for (P, Q), n in flat.items() if P % 2 == 1 and P >= 5)
-    out.append(f"figure 5: largest odd-P deficit in the window is d = {dmax}")
-    cov, tot = {}, 0
-    for P in range(1, 10):
-        allq = [Q for Q in range(P + 1, QMAX5 + 1) if math.gcd(P, Q) == 1]
-        tot += len(allq)
-        cov[P] = round(100 * sum(1 for (p, _q) in flat if p == P) / len(allq))
-    assert tot == 322, tot
-    out.append(f"figure 5: coverage {len(flat)}/{tot} of the window; by P: "
-               + ", ".join(f"{P}:{cov[P]}%" for P in range(1, 10)))
-    return out, flat
-
-
-def fig5(path):
-    """DATA.  The deficit `d = Q-1-n` of every certified centre with `P <= 9`, `Q <= 60`.
-
-    Deficit rather than the count itself, so that what is PROVED becomes the axis: every
-    even-`P` centre but `8/15` has `d = 0`, and the whole plotting area is then the open
-    odd-`P` range that s10 item 2 is about.
-    """
-    lines, flat = verify_counts_table()
-    fig, ax = plt.subplots(figsize=(7.4, 4.5))
-    cols = {5: "#c0392b", 7: "#7b4397", 9: "#1f7a5a"}
-
-    ax.axhline(0, color=FADE, lw=1.2, zorder=1)
-    ax.plot([2, QMAX5], [0, QMAX5 - 2], color=FADE, lw=1.0, ls=":", zorder=1)
-    ax.text(QMAX5 - 1, QMAX5 - 4, r"$d=Q-2$  (i.e. $n=1$)", color="#8a949e",
-            fontsize=8, ha="right", va="top")
-
-    # the three families with a known count get their own light marks: lumping them
-    # would put P = 1 on the d = Q-2 bound and P even on d = 0 in one colour, which
-    # reads as one class behaving two ways.
-    ev = sorted((Q, Q - 1 - n) for (P, Q), n in flat.items() if P % 2 == 0)
-    ax.scatter(*zip(*ev), s=22, color=FADE, marker="s", lw=0, zorder=2,
-               label=r"$P$ even (verified; $P=2$ is Theorem 9.8)")
-    for P, mk, lab in ((1, "^", r"$P=1$ ($n=1$)"),
-                       (3, "v", r"$P=3$ (Proposition 5.2)")):
-        pts = sorted((Q, Q - 1 - n) for (p, Q), n in flat.items() if p == P)
-        ax.plot(*zip(*pts), color="#8a949e", lw=.7, ls="-", alpha=.6, zorder=2)
-        ax.scatter(*zip(*pts), s=22, color="#8a949e", marker=mk, lw=0, zorder=2,
-                   label=lab)
-    for P in (5, 7, 9):
-        pts = [(Q, Q - 1 - n) for (p, Q), n in flat.items() if p == P]
-        ax.scatter(*zip(*pts), s=30, color=cols[P], lw=0, alpha=.85, zorder=3,
-                   label=rf"$P={P}$  (open)")
-
-    ax.annotate(r"$8/15$", xy=(15, 8), xytext=(19, 26), fontsize=9, color=INK,
-                arrowprops=dict(arrowstyle="-", color=INK, lw=.7, shrinkA=0, shrinkB=3))
-    ax.text(QMAX5 - 1, 1.8, r"$d=0$: the count is maximal, $n=Q-1$",
-            color="#8a949e", fontsize=8, ha="right")
-    ax.set_xlabel(r"$Q$")
-    ax.set_ylabel(r"deficit $\ d = Q-1-n(P/Q)$")
-    ax.set_xlim(0, QMAX5 + 2)
-    ax.set_ylim(-3, QMAX5 - 9)
-    for s in ("top", "right"):
-        ax.spines[s].set_visible(False)
-    ax.legend(frameon=False, fontsize=9, loc="upper left")
     fig.tight_layout()
     _save(fig, path)
-    plt.close(fig)
-    return lines
 
 
 def _save(fig, path):
@@ -829,15 +665,13 @@ def _save(fig, path):
 def main():
     os.makedirs(OUT, exist_ok=True)
     print("verifying every claim the captions make ...")
-    for line in verify():
+    for line in verify() + verify_cutlocus():
         print("  ok  " + line)
     print("drawing ...")
     fig1(f"{OUT}/fig1_triangle")
     fig2(f"{OUT}/fig2_development")
     fig3(f"{OUT}/fig3_transversal")
-    fig4(f"{OUT}/fig4_qgon")
-    for line in fig5(f"{OUT}/fig5_deficit"):
-        print("  ok  " + line)
+    fig_cutlocus(f"{OUT}/fig4_cutlocus")
 
 
 if __name__ == "__main__":
