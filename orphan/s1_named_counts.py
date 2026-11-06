@@ -7,7 +7,7 @@ Statements checked:
   * n(5/9) = 7 (odd, P odd, one orphan) and n(2/9) = 8 (even, no orphan)   (Figure 3);
   * n(3/29) = 19, the plateau example                                (Appendix A.3);
   * the orphan's return word at 5/24 has 311 letters, against 2Q = 48  (Section 4.3): the
-    engine stops at the head-on letter, and by Lemma 2.1a the return word is that prefix
+    engine stops at the head-on letter, and by Lemma 2.1 the return word is that prefix
     followed by its reversal about the head-on letter, so 2 x prefix - 1 letters.
 Each partition is complete (no interval open), its branches tile the leg exactly, and J is an
 exact width-preserving involution on the returning branches.

@@ -89,15 +89,15 @@ statements it checks.
 | Statement | Script |
 |---|---|
 | §4.3, Rem 5.2, Fig 3, §A.3 — the named counts `n(8/15)`, `n(5/22)`, `n(5/24)`, `n(5/9)`, `n(2/9)`, `n(3/29)`, and the `311`-letter return word of the orphan at `5/24` | `s1_named_counts.py` |
-| Theorem D (Thms 4.6, 4.7), Prop 4.4, Cor 5.1 at every centre of the record; §A.3's record tallies (`598` centres, `572` certified, the `26` open, `394` / `245` / `178`) | `s4_theorem_d.py` |
+| Theorem A (Thms 4.6, 4.7), Prop 4.5, Cor 5.1 at every centre of the record; §A.3's record tallies (`598` centres, `572` certified, the `26` open, `394` / `245` / `178`) | `s4_theorem_a.py` |
 | Theorem 5.3 — the three-sided refinement at the `116` centres `4 ≤ Q ≤ 19` | `s5_3_three_sided.py` |
 | Thm 6.1, Cor 6.2, Props 7.1, 7.2, Rems 7.3, 7.4 — `S_α`, its hyperelliptic involution and its base, built from the gluing at every coprime `(P,Q)`, `Q ≤ 200`; §7.5's McMullen correspondence on `min(P, Q−P) = 1`, `Q = 4, …, 15` | `s6_7_surface.py` |
-| §A.1, Rem A.3 — the longest passage at `11/41` (`397,153` reflections) and the size of its coefficients | `sA_passage.py` |
+| §A.1, Rem A.4 — the longest passage at `11/41` (`397,153` reflections) and the size of its coefficients | `sA_passage.py` |
 | Figures 1–4 | `figures.py` (+ `partition_record.json`) |
 | the census record | `export_record.py` (from the research repository's census run) |
 
-⚠ **Scope.** §§2–4 and Appendix B are proofs: Theorems 4.11, 4.18, 4.23, Prop 4.18a, Cor 4.19
-and Lemmas 4.20–4.22 have no script. Each script checks a statement the paper proves, over the
+⚠ **Scope.** §§2–4 and Appendix B are proofs: Theorems 4.11, 4.18, 4.24, Prop 4.19, Cor 4.20
+and Lemmas 4.21–4.23 have no script. Each script checks a statement the paper proves, over the
 range it names, as Appendix A.4 says; §A.4's enumeration of §5.2's congruence at `Q ≤ 60` is
 elementary and is not repeated. The statements the s740 re-cut moved from this paper to the
 necklace paper are checked in `neck/from_orphan/` (below).

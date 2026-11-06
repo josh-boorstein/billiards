@@ -169,10 +169,10 @@ def verify():
     tr, _pts, head_on = folded_orbit(3, 5, s)
     copies, stop = develop(3, 5, s)
     assert head_on is not None, "3/5 orphan has no head-on hit"
-    assert head_on * 2 == len(tr.hits), (head_on, len(tr.hits))       # Lemma 2.1a
+    assert head_on * 2 == len(tr.hits), (head_on, len(tr.hits))       # Lemma 2.1
     assert stop == "H", stop                                          # Thm 4.6, Q odd
     assert len(copies) == head_on, (len(copies), head_on)             # Lemma 3.1(2)
-    assert sum(1 for c in copies[:-1] if c[3]) == 0                   # Prop 4.4: unique
+    assert sum(1 for c in copies[:-1] if c[3]) == 0                   # Prop 4.5: unique
     word = "".join({"L1": "1", "L2": "2", "H": "h"}[c[1]] for c in copies)
     assert word == orphan["word"], (word, orphan["word"])             # float = exact word
     out.append(f"3/5 orphan: {len(tr.hits)} hits, head-on at {head_on} = half, "
@@ -368,8 +368,8 @@ def fig2(path):
         axA, 3, 5, s,
         f"(a)  DATA — $2\\alpha/\\pi = 3/5$, $P$ odd.  The ray meets a vertical wall-copy of type "
         f"${TEX_SIDE[stopA]}$,\n"
-        f"      the only interior vertical class (Prop. 4.4), at developed copy {len(copiesA)} of the\n"
-        f"      {len(tr.hits)}-hit return — its temporal midpoint (Lemma 2.1a).")
+        f"      the only interior vertical class (Prop. 4.5), at developed copy {len(copiesA)} of the\n"
+        f"      {len(tr.hits)}-hit return — its temporal midpoint (Lemma 2.1).")
 
     cells2, _ = partition(2, 5)
     cell = min(cells2, key=lambda z: _hits(2, 5, z))

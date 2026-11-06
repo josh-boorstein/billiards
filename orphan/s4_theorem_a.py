@@ -1,4 +1,4 @@
-"""Section 4: Theorem D (Theorems 4.6 and 4.7), Proposition 4.4 and Corollary 5.1, at every
+"""Section 4: Theorem A (Theorems 4.6 and 4.7), Proposition 4.5 and Corollary 5.1, at every
 centre of the partition record, and the record's own tallies (Appendix A.3).
 
 Statements checked:
@@ -9,7 +9,7 @@ Statements checked:
   * (Cor 5.1) n(P/Q) = P (mod 2) wherever P is even or the orphan exists (every record centre);
   * the partition is complete, tiles L1 exactly, and J is an exact width-preserving involution
     on the other branches;
-  * (Prop 4.4) over one return period k = 0, ..., Q-1 the interior vertical wall-copies number
+  * (Prop 4.5) over one return period k = 0, ..., Q-1 the interior vertical wall-copies number
     exactly 1 when P is odd (type H at odd Q, L2 at even Q) and 0 when P is even -- the
     congruence count, at every coprime pair with 5 <= Q < 60;
   * (Appendix A.3) the record: 598 centres -- the stated ranges (P <= 9 and Q <= 60; the rows
@@ -30,7 +30,7 @@ from common import FULL, centre, check, done, record
 
 
 def wall_copies(P, Q):
-    """Interior vertical wall-copies over one return period, by type (Prop 4.4's congruences)."""
+    """Interior vertical wall-copies over one return period, by type (Prop 4.5's congruences)."""
     out = {'L1': 0, 'L2': 0, 'H': 0}
     for k in range(Q):
         if k and (k * P) % Q == 0:
@@ -45,7 +45,7 @@ def wall_copies(P, Q):
 def main():
     rec = record()
     rows = sorted(rec.values(), key=lambda r: (r['Q'], r['P']))
-    print(f'Theorem D -- {len(rows)} centres of the partition record\n')
+    print(f'Theorem A -- {len(rows)} centres of the partition record\n')
     exist = unique = side = parity = engine = 0
     for r in rows:
         P, Q = r['P'], r['Q']
@@ -77,7 +77,7 @@ def main():
             ok += w == ({'L1': 0, 'L2': 0, 'H': 1} if Q % 2 else {'L1': 0, 'L2': 1, 'H': 0})
         else:
             ok += w == {'L1': 0, 'L2': 0, 'H': 0}
-    check(f'Prop 4.4: one vertical wall-copy per return iff P odd, of the stated type, at every '
+    check(f'Prop 4.5: one vertical wall-copy per return iff P odd, of the stated type, at every '
           f'coprime pair with 5 <= Q < 60: {ok}/{len(pairs)}', ok == len(pairs))
 
     ranges = set()

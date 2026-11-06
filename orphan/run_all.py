@@ -8,7 +8,7 @@ import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SCRIPTS = ['s1_named_counts.py', 's4_theorem_d.py', 's5_3_three_sided.py',
+SCRIPTS = ['s1_named_counts.py', 's4_theorem_a.py', 's5_3_three_sided.py',
            's6_7_surface.py', 'sA_passage.py', 'figures.py']
 
 

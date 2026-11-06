@@ -1,4 +1,4 @@
-"""Appendix A.1 / Remark A.3: the coefficient growth along the longest passage at 2 alpha / pi
+"""Appendix A.1 / Remark A.4: the coefficient growth along the longest passage at 2 alpha / pi
 = 11/41, recomputed from scratch (about a minute).
 
 Statements checked:
@@ -7,7 +7,7 @@ Statements checked:
   * every vertex is carried as an integer vector of length 4Q = 164 over the powers of zeta,
     reduced modulo Phi_164 at creation; the largest coefficient of the two vertices of the copy
     that ends that passage is printed, with its ratio to the passage length, and the ratio is
-    checked to be below 1 -- the linear growth of Remark A.3 with a small constant.  The same
+    checked to be below 1 -- the linear growth of Remark A.4 with a small constant.  The same
     bound is checked over the end copies of every returning branch.
 The number the paper quotes for the end coefficient is a measurement, not a statement: this
 script prints the value the engine gives.
