@@ -1,4 +1,4 @@
-"""A mechanical prover for bounded interval-model walks (the necklace paper, Section 10).
+"""A mechanical prover for bounded interval-model walks (the necklace paper, Section 10.4).
 
 For a family (P, r, side) -- Q = mP + r, class eps = 0, and `side` the NEAR arc (the L1 copy in
 kite 0) or the FAR arc (the last vertical arc) -- every leaf from the arc's interval is followed
@@ -6,7 +6,7 @@ into the chain D symbolically, and the cell count is certified for ALL large m.
 
 Method.  The walk is run at a concrete m0 to fix the discrete path; each coordinate is carried
 as +-Y + (a Z-combination of s_j = sin(j x)), Y the start point.  Along a monotone run the
-intervals nest (Proposition 7.2), so a stretch of crossings is decided by the interval at its
+intervals nest (Proposition 6.10), so a stretch of crossings is decided by the interval at its
 lowest point: the emitted constraints are y in I_t at every local minimum passed and at the last
 interface before a fold, and y not in I_next at the fold.  Every interface that appears must have
 c_t within JMAX of 0 or 2Q (so sin(pi c_t / 2Q) = s_j with j small and m-independent) -- otherwise
@@ -18,7 +18,7 @@ Cells = bands + interior poles.  The symbolic output is required to be IDENTICAL
 m0+2, m0+3 (the m-independence gate).  Fold-kite orientation is fixed in float at m0; it is
 uniform because every listed interface index is <= 23 < Q.  `arm_S` checks the skeleton the
 proof reads -- the local minima and the O-sector kites -- over a range of m; it is not the
-m-independence argument, which is the paper's explicit interface list (Theorem 10.7's proof).
+m-independence argument, which is the paper's explicit interface lists (the proofs of Theorems 10.8 and 10.12).
 """
 from __future__ import annotations
 

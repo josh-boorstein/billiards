@@ -8,7 +8,7 @@ Figures 2-4 are DATA.
   fig1_kite       (a) the kite of Proposition 2.1, built from two copies of T glued along both
                   legs and folded at R; (b) B as the cyclic chain of Q kites, the iota axis,
                   and D = B / iota shaded.
-  fig2_gluing     Remark 2.3: kite K_j carries H-edges at directions {P + 2j, -P + 2j} (mod 2Q),
+  fig2_gluing     Proposition 2.2: kite K_j carries H-edges at directions {P + 2j, -P + 2j} (mod 2Q),
                   so the gluing cycle is the star polygon {Q/P} on the kite indices; (a) P = 1,
                   (b) P = 3, at Q = 7.
   fig3_chain      D = B / iota of Proposition 2.4 at 3/11, both classes, each kite marked with
@@ -398,7 +398,7 @@ def fig2_gluing(Q=7, path=None):
              r"boxed number = the shared $H$-direction $P(2t+1)$ mod $2Q$   ·   "
              r"red arrow = the step out of $K_0$",
              fontsize=9.5, color=INK, ha="center")
-    fig.suptitle(r"DATA — Remark 2.3: kite $K_j$ has $H$-edges at $\{P+2j,\,-P+2j\}$, so a "
+    fig.suptitle(r"DATA — Proposition 2.2: kite $K_j$ has $H$-edges at $\{P+2j,\,-P+2j\}$, so a "
                  r"shared direction forces $j' = j \pm P$." "\n"
                  r"The naive $+1$ reading agrees with the truth only at $P = 1$ and "
                  r"$P = Q-1$.", fontsize=11, color=INK)
@@ -602,12 +602,12 @@ def fig4_intervals(P=3, Q=11, path=None):
     axR.annotate(r"$|J_i| = |\cos(iP\pi/Q)|$   (PAIRED),   "
                  r"$|\sin(iP\pi/Q)|$   (LONE)", (m / 2, yhi + 2.6 * pad), fontsize=10.5,
                  color=ACC, ha="center", va="bottom")
-    axR.annotate(r"$p = 0$  $\Longleftrightarrow$  every interior pole of the path "
-                 r"escapes to an END of it" "\n"
-                 r"— a statement about $(Q+1)/2$ nested intervals, and OPEN."
+    axR.annotate(r"$p = 0$  $\Longrightarrow$  every interior pole of the path "
+                 r"escapes to an END of it  (Corollary 4.2)" "\n"
+                 r"— a statement about $(Q+1)/2$ nested intervals; the converse is open in general."
                  "\n"
                  r"There is no static criterion: escaping on the FIRST run is common and "
-                 r"not universal (Rem. 4.3).",
+                 r"not universal.",
                  (m / 2, ylo - 3.3 * pad), fontsize=9.5, color=INK, ha="center",
                  va="top")
     axR.set_title(r"(b) DATA — the $\iota$ quotient (Cor. 4.2): the path "

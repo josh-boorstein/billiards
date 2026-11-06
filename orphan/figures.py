@@ -12,7 +12,7 @@ lambda_2, the two vertical hypotenuse copies, the midpoint crossing, Z and tau Z
 asserted before it is drawn.
 
 The companion paper's two figures that used to be drawn here (the double Q-gon and the deficit
-plot) moved with their statements to `neck/from_orphan/`.
+plot) moved with their statements to `neck/figures_5_6.py`.
 """
 import json
 import math

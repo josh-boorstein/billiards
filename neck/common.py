@@ -4,8 +4,11 @@ The separatrix diagram of a perpendicular direction class is walked by `lib/clos
 exact kite maps; `lib/necklace.py` adds the incidences with Fix(iota) (h, v, f, D, E, the
 swapped edges).  The class rows and the cap each needs are the census record of the
 minimal-component paper (`minimal_component/census_record.json`), which decides every class
-with odd Q <= 39 and even Q <= 40 by the same certificate.
+with odd Q <= 39 and even Q <= 40 by the same certificate.  Branch partitions come from the orphan
+paper's record (`orphan/partition_record.json`, `lib/partition.py`) through `record` and `centre`;
+flow decompositions from `band_record.json` (`lib/flow.py`), read by the scripts that use it.
 """
+import importlib.util
 import json
 import os
 import sys
@@ -14,6 +17,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, '..', 'lib'))
 
 from necklace import readout  # noqa: E402
+
+# the orphan paper's partition record and its per-centre loader (`orphan/common.py`), for the
+# scripts that read branch partitions
+_spec = importlib.util.spec_from_file_location(
+    'orphan_common', os.path.join(HERE, '..', 'orphan', 'common.py'))
+_oc = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_oc)
+record, centre = _oc.record, _oc.centre
 
 CENSUS = os.path.join(HERE, '..', 'minimal_component', 'census_record.json')
 FULL = '--full' in sys.argv

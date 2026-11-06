@@ -15,7 +15,7 @@ From those, per class (the necklace paper's notation):
   h   the separatrices lying in Fix(iota) (its horizontal side-copies);
   v   the vertical side-copies: 2 when interface m is vertical (the PAIRED class), else 1;
   f   the points of the critical graph on the vertical arcs, counted once per EDGE;
-  D   = Q - h - f, Corollary 9.8's covering defect; D = 0 certifies complete periodicity
+  D   = Q - h - f, Corollary 7.8's covering defect; D = 0 certifies complete periodicity
       (a capped walk can only undercount f, so a capped row's D is an upper bound);
   E   the number of edges of the critical graph (Theorem 3.1: E = Q on a CP class);
   multi   RESOLVED edges meeting the vertical arcs more than once -- Lemma 3.2a says none;

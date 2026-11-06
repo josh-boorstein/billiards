@@ -12,7 +12,7 @@ Statements checked:
 Each partition is complete (no interval open), its branches tile the leg exactly, and J is an
 exact width-preserving involution on the returning branches.
 
-The named counts of the companion necklace paper moved with it (`neck/from_orphan/`).
+The named counts of the companion necklace paper moved with it (`neck/named_counts.py`).
 """
 from common import centre, check, done
 

@@ -4,7 +4,7 @@ Which script supports which statement. Each script's own docstring carries its
 pre-registration, its arms and its controls: **the manuscript presents, the docstring is
 the source.** Where a docstring and this table disagree, the docstring wins.
 
-The minimal-component, orphan and neck scripts need no setup. The legacy necklace scripts run with `PYTHONPATH=engine:probes` set; some write JSON to `data/`.
+The per-paper scripts need no setup. The legacy scripts (`engine/`, `probes/`, `reproduce/`) run with `PYTHONPATH=engine:probes` set; some write JSON to `data/`.
 
 ---
 
@@ -53,10 +53,12 @@ searches that found nothing, not proofs of absence, and nothing here checks them
 
 ---
 
-## The exact-arithmetic core (`engine/`)
+## The legacy exact-arithmetic core (`engine/`)
 
-These are the four ingredients of the orphan paper's Appendix A, plus the shared
-primitives the per-result scripts are built on.
+The research code's core, kept until the next paper's directory is added; no per-paper script
+imports it. The necklace paper's Appendix A.1 backend is `ring_cyc.py`, `exact_state_ring.py`
+and `cyl_diagram.py`; the rest is the orphan paper's original partition engine, superseded by
+`lib/partition.py`.
 
 | Module | Role |
 |---|---|
@@ -100,81 +102,44 @@ statements it checks.
 and Lemmas 4.21–4.23 have no script. Each script checks a statement the paper proves, over the
 range it names, as Appendix A.4 says; §A.4's enumeration of §5.2's congruence at `Q ≤ 60` is
 elementary and is not repeated. The statements the s740 re-cut moved from this paper to the
-necklace paper are checked in `neck/from_orphan/` (below).
+necklace paper are checked in `neck/` (below).
 
 ---
 
-## The necklace paper (`neck/`) — rebuild in progress
+## The necklace paper (`neck/`)
 
-Built on `lib/` (`closure.py` walks, `necklace.py` readout and interval model; `flow.py`, the
-exact flow decomposition, for the branch counts of §10). The legacy rows below it remain until
-every statement has moved.
-
-`lib/flow.py` decomposes a rational-triangle billiard in any direction of the `π/2d` grid into
-cylinders and components without periodic trajectory, exactly (a port of the decision procedure
-of flatsurf's intervalxt: Zorich-accelerated Rauzy induction, saddle-connection merges, and a
-Boshernitzan certificate verified in integers; Kac's mass balance asserted exactly on every run).
-`n_flow(P, Q)` reads `n(P/Q)` off it — every perpendicular beam retraces, so a branch is one
-crossing of an `L1` edge by a cylinder, certified by the cylinders' exact tiling of that edge —
-and agrees with `partition.py` wherever both have run; `beam='h'` does the same for the
-hypotenuse.
+*The necklace of a rational right triangle: exact counting and complete periodicity.* Built on
+`lib/` (`closure.py` walks and `necklace.py` readout for §§3–4 and 7; `partition.py` for branch
+partitions; `flow.py`, the exact flow decomposition of Appendix A.2, for every branch count and
+complete-periodicity verdict on the band `Q ≤ 60`). Each script's docstring lists the statements
+it checks.
 
 | Statement | Script |
 |---|---|
-| Lemma 3.2a, Thms 3.1, 3.3, Cor 9.8, the swapped-edge detector, even-`Q` `C = Q/2` — every census class row | `s3_s9_identities.py` |
-| Thm 4.1, Cor 4.2, Rem 4.3 — the interval model at every odd `Q ≤ 31` class row | `s4_interval_model.py` |
-| Prop 9.10 — the corner witness: the four 5-step corner walks off `Fix(ι)` at each row, one swapped pair, one saddle connection across the leg swap; the unfolded `8/15` prong arriving exactly at `A`, its controls; the relation `2 sin 12° + 2 sin 24° + sin 36° = sin 60° + sin 72°` read off the arrival identity, exact in `ℚ(ζ₆₀)`, and its place in Remark 6.14's families | `s9_2_witness.py` |
-| Thms 10.2, 10.6, 10.7 — the window certificates, their controls and finite rows; the three families' counts at every centre `Q ≤ 60` (`--full`: `Q ≤ 100`) by `flow.py`, the finite rows by `flow.py` and `partition.py` both | `s10_windows.py` (+ `window_prover.py`) |
+| Lemma 3.2a, Thms 3.1, 3.3, Cor 3.4, Cor 7.8 and the swapped-edge detector after it (`D = 8 = 2 + 6` at `8/15`), Cor 7.20 at even `Q` — every census class row (odd `Q ≤ 39`, even `Q ≤ 40`) | `s3_s7_identities.py` |
+| Thm 4.1, Cor 4.2 — the interval model at every odd `Q ≤ 31` class row | `s4_interval_model.py` |
+| Prop 5.2(ii) at the right angle (every `R`-graze boundary a fold, its flanking cells a mirror pair, neither the orphan); no fold at `O` or `A`; Thm 10.3's `A`-graze pattern on the row `P = Q − 2` — every centre with `Q ≤ 30` | `s5_1_folds.py` |
+| Rem 9.6 — `R`-graze boundaries as many as mirror pairs, at every centre of the orphan paper's record, `8/15` included | `s9_6_adjacency.py` |
+| Thms 10.2, 10.3, 10.6 — the lattice-locus counts at every `Q ≤ 60` | `s10_2_lattice_counts.py` |
+| Thms 10.8, 10.12 — the two walks certified by the mechanical prover; their counts and Cor 10.9 (`n(3/Q) = 2 round(Q/3) − 1`, the class completely periodic) at every centre `Q ≤ 60`; the rows `n_H(3/7)`, `n(3/4)`, `n(5/11)`, `n(5/6)` | `s10_windows.py` (+ `window_prover.py`) |
+| App A.3 — the printed conditions C1–C12c and D1–D13, root-free and positive; the remarks at `Q = 7` and `Q = 11`; the prover regenerating the printed lists (all but D11) | `sA3_conditions.py` |
+| §11 — all `2202` class rows on `2 ≤ Q ≤ 60` decided, `2200` completely periodic; `8/15`'s `6` cylinders and `2` certified minimal components; `⊥H` at the `373` even-`Q` centres (`n_H = Q`, Cor 7.15) and the `212` odd-`Q ≤ 31` controls; the closure certificate's `424` rows; Prop 11.1 and its second witness; Rem 10.10a (`P = 3`, `Q ≤ 60`, and `3/385`); Rem 10.14's `307` even-`P` centres | `s11_cp_band.py` (+ `band_record.json`) |
+| Rem 10.14, §13, §5.1 — the named counts `n(8/15)`, `n(5/22)`, `n(5/24)`, `n(17/22)`, `n(19/24)`, `n(2/3)`, by both exact engines | `named_counts.py` |
 | Figures 1–4 | `figures.py` |
-| carried from the orphan paper at the re-cut, still in its OLD numbering until this section is rebuilt: the counts `n(17/22)`, `n(19/24)`, `n(2/3)`, `n(3/4)`; the closed forms (old Props 5.2, 5.3, 9.4); the folds (old §9.1); old Remark 9.14; old Remark 9.6 (`8/15`, [DR22] reproduced exactly with `lib/flow.py`); the double `Q`-gon and deficit figures (old Figures 4–5) | `from_orphan/` (`run_all.py`) |
+| Figures 5–6 | `figures_5_6.py` (+ `band_record.json`) |
+| the band record | `export_band_record.py` (from the research repository's sweeps) |
 
-Not yet moved: §6 (prong-length and cylinder-area arithmetic, the lattice tests), §7.7's fold
-statistics, and the float leaf launch placing Prop 9.10's swapped pair on the boundary of `M`.
-
-### Legacy rows (necklace)
-
-
-Taken from the paper's own provenance table.
-
-| § | Script |
-|---|---|
-| 2 — the necklace, coordinates | `probes/s447_overlap_disk.py`, `probes/s449_necklace.py`, `probes/s450_chain_maps.py` |
-| 3 — the counting identity, the covering law | `probes/s444_base_graph.py`, `probes/s446_covering_identity.py` |
-| 4 — the interval model, and that it closes | `probes/s451_quotient_path.py`, `probes/s455_closure_proof.py` |
-| 5.1 | `probes/s453_pole_module.py`, `probes/s454_composite_q.py`, `engine/zlattice.py` |
-| 5.2 | `probes/s454_self_hit.py` |
-| 5.4 / 5.5 — the corner analogue | `probes/s454_self_hit.py` (`step`'s terminal `"pole"` branch), `probes/s456_neckgb.py` (`corner_start`), `probes/s492_corner_selfhit.py` (census and interiority arms), `probes/s494_lemma_interiority.py` (Lemma 5.4's arms and its control) |
-| 6 — the reduction, and the dead routes | `probes/s456_neckgb.py`, `probes/s462_zz_relation.py`, `probes/s466_triv_gap.py`, `probes/s467_form_lattice.py` |
-| 6.3 — the rank law | `probes/s463_rank_law.py` |
-| 7 — the Veech locus | `probes/s468_ordering.py`, `probes/s469_profile_proof.py`, `probes/s470_tent_proof.py` |
-| 8 — overlap | `probes/s447_overlap_disk.py`; figures `probes/s447_figure.py`; Cor. 8.2's even-`P` half `probes/s472_legswap_existence.py` |
-| 9 — complete periodicity | `probes/s457_cp_char.py`, `probes/s459_corner_deep.py`, `probes/s466_cp_transfer.py` |
-| **the four figures** — Fig. 1 the kite, and `B` as the necklace; Fig. 2 the `+P` gluing as the star polygon `{Q/P}`; Fig. 3 the chain `D` with its through band, fold and two degeneracies; Fig. 4 the interval model and the quotient path | `probes/s506_necklace_figures.py` |
-
-⚠ `probes/s506_necklace_figures.py` is a figure generator and asserts nothing new: its `verify()`
-re-derives every quantity its captions state — the Euler count, both cone angles, the gluing law
-`j' = j ± P` from the direction arithmetic alone, the closed form for the interface measures, the
-palindrome, the closure of the global coordinate, the nesting, and `|J_i| = |cos(iPπ/Q)|` — and raises
-before drawing if any of them fails. Three of those checks are scored against a control that FAILS
-(the `+1` and `+2` gluing orders, and a perturbed sector rule), so they are not vacuous. Two of the
-four figures are DATA and two are SCHEMATIC, and each says which on its own face.
-
-Also in the strand, cited outside the table: `probes/s464_realisable.py` (realisability),
-`probes/s482_boundary_incidence.py` and `probes/s482_regular_leaves.py` (the surface-side
-boundary-incidence statements).
-
-⚠ **(G0b) is the strand's one unproved input**, and several statements above are
-additionally conditional on complete periodicity. The scripts verify over stated finite
-ranges; they do not discharge either hypothesis. Each conditional statement carries its
+⚠ **Scope.** Every other statement of the paper is a proof and has no script. The scripts check
+proved statements over the finite ranges they name, and the certificates the paper uses — the
+counts of §10, the verdicts of §11, the conditions of A.3 — exactly. They do not discharge complete
+periodicity or hypothesis (E) where a statement assumes them; each such statement carries its
 scope on its face in the paper.
-
----
 
 ## Transitive dependencies
 
-These are imported by the scripts above and are included so the deposit runs, but they
-belong to a third strand (the counting-law / fan-chain work) and support no statement in
-either paper:
+These are imported by the legacy scripts and are included so the legacy tree runs, but they
+belong to another strand (the counting-law / fan-chain work) and support no statement in any of
+the papers:
 
 `s238_fan_anatomy`, `s242_m0fan`, `s252_chain_model`, `s253_proof_ineqs`,
 `s254_avoidance_proof`, `s256_leftover`, `s257_warmup_tiling`, `s274_mu_closed`,
