@@ -11,7 +11,7 @@ Figures 2-4 are DATA.
   fig2_gluing     Proposition 2.2: kite K_j carries H-edges at directions {P + 2j, -P + 2j} (mod 2Q),
                   so the gluing cycle is the star polygon {Q/P} on the kite indices; (a) P = 1,
                   (b) P = 3, at Q = 7.
-  fig3_chain      D = B / iota of Proposition 2.4 at 3/11, both classes, each kite marked with
+  fig3_chain      D = B / iota of Proposition 2.3 at 3/11, both classes, each kite marked with
                   its far and near interface, its sector and its transverse measures.
   fig4_intervals  the interval model of Theorem 4.1 and Corollary 4.2 at 3/11, paired class:
                   the interfaces as nested intervals, and the iota quotient path J_0 .. J_m.
@@ -40,7 +40,7 @@ OUT = os.path.join(HERE, "figs")
 
 
 def chain(P, Q, eps, sector=None):
-    """`closure.Chain`, with the class label of Proposition 2.4 (LONE iff eps = P mod 2) and,
+    """`closure.Chain`, with the class label of Proposition 2.3 (LONE iff eps = P mod 2) and,
     for the firing control of check (5b) only, the sector rule shifted by one kite."""
     ch = Chain(P, Q, eps)
     ch.lone = (eps == P % 2)
@@ -214,7 +214,7 @@ def verify(verbose=True):
     log(f"  (7) |J_i| = |cos(iPpi/Q)| PAIRED / |sin(iPpi/Q)| LONE   "
         f"{len(small)}/{len(small)}")
 
-    # (8) The two degeneracies of Proposition 2.4, both FORCED: the tie is kite 0, and the
+    # (8) The two degeneracies of Proposition 2.3, both FORCED: the tie is kite 0, and the
     #     empty through band occurs exactly at the two kites flanking a zero interface,
     #     which happens exactly in the LONE class.
     zc = {True: set(), False: set()}
@@ -413,7 +413,7 @@ def fig2_gluing(Q=7, path=None):
 def _chain_panel(ax, P, Q, eps):
     """`D` drawn in the GLOBAL coordinate: position `t` occupies `[t, t+1]` and is bounded
     by interfaces `t-1` and `t`, each a vertical segment `[u, u + ell]`.  That is the frame
-    in which Proposition 2.4's content is visible rather than asserted -- the through band
+    in which Proposition 2.3's content is visible rather than asserted -- the through band
     is the overlap of the two bounding segments and the fold is the protruding tail."""
     ch, lo, hi, closes = interval_model(P, Q, eps)
     assert closes
@@ -497,7 +497,7 @@ def fig3_chain(P=3, Q=11, path=None):
              r"boundary is $Z_A$ (angle $(Q-P)\pi/2$)." "\n"
              "Green = the through band, gold = the fold, and the pole is the fold's "
              "FIXED POINT.", fontsize=9.5, color=INK, ha="center")
-    fig.suptitle(r"DATA — $D = B/\iota$ (Prop. 2.4): the half-kite $0$ followed by "
+    fig.suptitle(r"DATA — $D = B/\iota$ (Prop. 2.3): the half-kite $0$ followed by "
                  r"$m$ kites, bounded by the two arcs of $\mathrm{Fix}(\iota)$." "\n"
                  r"On each kite the fold lives on the FAR (larger) interface and the "
                  r"NEAR one is entirely a through band.", fontsize=11, color=INK)

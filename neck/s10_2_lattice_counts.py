@@ -1,4 +1,4 @@
-"""Sections 10.2-10.3: the counts on the lattice locus -- Theorems 10.2, 10.3 and 10.6 -- at every
+"""Sections 10.2-10.3: the counts on the lattice locus -- Theorems 10.2, 10.3 and 10.5 -- at every
 centre of their rows with Q <= 60 (the paper: "the certificate of Appendix A confirms all four at
 every Q <= 60").
 
@@ -6,7 +6,7 @@ Statements checked:
   * (Theorem 10.2) n(1/Q) = 1 and n((Q-1)/Q) = Q - 1 at every 2 <= Q <= 60; at P = 1 the whole
     leg is the orphan branch (J the identity) -- by `lib/partition.py`, Q <= 30;
   * (Theorem 10.3) n((Q-2)/Q) = 2 floor((Q-1)/4) + 1 at every odd 3 <= Q <= 59;
-  * (Theorem 10.6) n(2/Q) = Q - 1 at every odd 5 <= Q <= 59.
+  * (Theorem 10.5) n(2/Q) = Q - 1 at every odd 5 <= Q <= 59.
 Every count is the exact flow decomposition's (`lib/flow.py`: the branches are the cylinders'
 crossings of L1, certified by their exact tiling of it); the P = 1 orphan is the exact partition's.
 """
@@ -43,7 +43,7 @@ def main():
          lambda Q: Q - 1)
     rows('Theorem 10.3: n((Q-2)/Q) = 2 floor((Q-1)/4) + 1',
          [(Q - 2, Q) for Q in range(3, QMAX, 2)], lambda Q: 2 * ((Q - 1) // 4) + 1)
-    rows('Theorem 10.6: n(2/Q) = Q - 1', [(2, Q) for Q in range(5, QMAX, 2)], lambda Q: Q - 1)
+    rows('Theorem 10.5: n(2/Q) = Q - 1', [(2, Q) for Q in range(5, QMAX, 2)], lambda Q: Q - 1)
     ok = 0
     for Q in range(2, 31):
         r = partition(1, Q)

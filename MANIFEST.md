@@ -116,15 +116,15 @@ it checks.
 
 | Statement | Script |
 |---|---|
-| Lemma 3.2a, Thms 3.1, 3.3, Cor 3.4, Cor 7.8 and the swapped-edge detector after it (`D = 8 = 2 + 6` at `8/15`), Cor 7.20 at even `Q` — every census class row (odd `Q ≤ 39`, even `Q ≤ 40`) | `s3_s7_identities.py` |
+| Lemma 3.3, Thms 3.1, 3.4, Cor 3.5, Cor 7.8 and the swapped-edge detector after it (`D = 8 = 2 + 6` at `8/15`), Cor 7.14 at even `Q` — every census class row (odd `Q ≤ 39`, even `Q ≤ 40`) | `s3_s7_identities.py` |
 | Thm 4.1, Cor 4.2 — the interval model at every odd `Q ≤ 31` class row | `s4_interval_model.py` |
-| Prop 5.2(ii) at the right angle (every `R`-graze boundary a fold, its flanking cells a mirror pair, neither the orphan); no fold at `O` or `A`; Thm 10.3's `A`-graze pattern on the row `P = Q − 2` — every centre with `Q ≤ 30` | `s5_1_folds.py` |
-| Rem 9.6 — `R`-graze boundaries as many as mirror pairs, at every centre of the orphan paper's record, `8/15` included | `s9_6_adjacency.py` |
-| Thms 10.2, 10.3, 10.6 — the lattice-locus counts at every `Q ≤ 60` | `s10_2_lattice_counts.py` |
-| Thms 10.8, 10.12 — the two walks certified by the mechanical prover; their counts and Cor 10.9 (`n(3/Q) = 2 round(Q/3) − 1`, the class completely periodic) at every centre `Q ≤ 60`; the rows `n_H(3/7)`, `n(3/4)`, `n(5/11)`, `n(5/6)` | `s10_windows.py` (+ `window_prover.py`) |
+| Prop 5.3(ii) at the right angle (every `R`-graze boundary a fold, its flanking cells a mirror pair, neither the orphan); no fold at `O` or `A`; Thm 10.3's `A`-graze pattern on the row `P = Q − 2` — every centre with `Q ≤ 30` | `s5_1_folds.py` |
+| Rem 9.5 — `R`-graze boundaries as many as mirror pairs, at every centre of the orphan paper's record, `8/15` included | `s9_5_adjacency.py` |
+| Thms 10.2, 10.3, 10.5 — the lattice-locus counts at every `Q ≤ 60` | `s10_2_lattice_counts.py` |
+| Thms 10.7, 10.11 — the two walks certified by the mechanical prover; their counts and Cor 10.8 (`n(3/Q) = 2 round(Q/3) − 1`, the class completely periodic) at every centre `Q ≤ 60`; the rows `n_H(3/7)`, `n(3/4)`, `n(5/11)`, `n(5/6)` | `s10_windows.py` (+ `window_prover.py`) |
 | App A.3 — the printed conditions C1–C12c and D1–D13, root-free and positive; the remarks at `Q = 7` and `Q = 11`; the prover regenerating the printed lists (all but D11) | `sA3_conditions.py` |
-| §11 — all `2202` class rows on `2 ≤ Q ≤ 60` decided, `2200` completely periodic; `8/15`'s `6` cylinders and `2` certified minimal components; `⊥H` at the `373` even-`Q` centres (`n_H = Q`, Cor 7.15) and the `212` odd-`Q ≤ 31` controls; the closure certificate's `424` rows; Prop 11.1 and its second witness; Rem 10.10a (`P = 3`, `Q ≤ 60`, and `3/385`); Rem 10.14's `307` even-`P` centres | `s11_cp_band.py` (+ `band_record.json`) |
-| Rem 10.14, §13, §5.1 — the named counts `n(8/15)`, `n(5/22)`, `n(5/24)`, `n(17/22)`, `n(19/24)`, `n(2/3)`, by both exact engines | `named_counts.py` |
+| §11 — all `2202` class rows on `2 ≤ Q ≤ 60` decided, `2200` completely periodic; `8/15`'s `6` cylinders and `2` certified minimal components; `⊥H` at the `373` even-`Q` centres (`n_H = Q`, Cor 7.11) and the `212` odd-`Q ≤ 31` controls; the closure certificate's `424` rows; Prop 11.1 and its second witness; Rem 10.10 (`P = 3`, `Q ≤ 60`, and `3/385`); Rem 10.12's `307` even-`P` centres | `s11_cp_band.py` (+ `band_record.json`) |
+| Rem 10.12, §13, §5.1 — the named counts `n(8/15)`, `n(5/22)`, `n(5/24)`, `n(17/22)`, `n(19/24)`, `n(2/3)`, by both exact engines | `named_counts.py` |
 | Figures 1–4 | `figures.py` |
 | Figures 5–6 | `figures_5_6.py` (+ `band_record.json`) |
 | the band record | `export_band_record.py` (from the research repository's sweeps) |

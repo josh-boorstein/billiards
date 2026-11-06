@@ -3,12 +3,12 @@ engines: the perpendicular partition (`lib/partition.py`) and the flow decomposi
 (`lib/flow.py`).
 
 Statements checked:
-  * n(8/15) = 6, n(5/22) = 5, n(5/24) = 17                       (Remark 10.14, Section 13 item 1);
+  * n(8/15) = 6, n(5/22) = 5, n(5/24) = 17                       (Remark 10.12, Section 13 item 1);
   * n(17/22) = 17, n(19/24) = 7                                  (Section 13 item 1);
   * n(2/3) = 2                                                   (Section 5.1).
 For the partition: complete (no interval open), its branches tile the leg exactly, and J is an
 exact width-preserving involution on the returning branches.  For the flow: the cylinders tile
-every L1 edge exactly.  The counts quoted with Theorems 10.8 and 10.12 and Corollary 10.9
+every L1 edge exactly.  The counts quoted with Theorems 10.7 and 10.11 and Corollary 10.8
 (n(5/11), n(5/6), n(3/4), n_H(3/7)) are in `s10_windows.py`, and Proposition 11.1's in
 `s11_cp_band.py`.
 """

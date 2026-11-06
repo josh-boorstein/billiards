@@ -1,14 +1,14 @@
-"""Appendix A.3: the conditions C1-C12c (Theorem 10.8) and D1-D13 (Theorem 10.12), exactly as printed.
+"""Appendix A.3: the conditions C1-C12c (Theorem 10.7) and D1-D13 (Theorem 10.11), exactly as printed.
 
 Statements checked:
   * each printed condition, written out below from the paper's list, is an odd polynomial in
     S = sin x, with no root in (0, sin(pi/20)] (C) resp. (0, sin(pi/28)] (D), and positive there --
     by exact real-root isolation (sympy) on the polynomial with the trivial factor S^k removed;
-  * the remarks of Theorem 10.8's proof: C6 and C9a vanish to first order in x and are positive at
+  * the remarks of Theorem 10.7's proof: C6 and C9a vanish to first order in x and are positive at
     third order, 16 x^3 and 32 x^3; at Q = 7 (x = pi/14) C3, C4 and C12b fail and C2 and C6 are
     equalities, C6 through its factor 8S^3 - 4S^2 - 4S + 1, which vanishes at S = sin(pi/14);
     C12a repeats C4 and C9b repeats C8;
-  * the remark of Theorem 10.12's proof: the tightest condition is D9, the only one failing at
+  * the remark of Theorem 10.11's proof: the tightest condition is D9, the only one failing at
     Q = 11 (x = pi/22);
   * the control of A.3: the window prover (`window_prover.py`), which derives the conditions of a
     walk mechanically, generates every printed C-condition on the far arc at P = 3, r = 1, and
@@ -81,7 +81,7 @@ def at(e, Q):
 
 
 def main():
-    print('Appendix A.3 -- the printed conditions of Theorems 10.8 and 10.12\n')
+    print('Appendix A.3 -- the printed conditions of Theorems 10.7 and 10.11\n')
     for name, lst, Q0 in (('C1-C12c', C, 10), ('D1-D13', D, 14)):
         bad = [k for k, e in lst.items() if not positive_on(e, Q0)[0]]
         check(f'{name}: {len(lst)} odd polynomials in sin x, root-free and positive on '

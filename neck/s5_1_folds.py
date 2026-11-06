@@ -1,4 +1,4 @@
-"""Section 5.1, Proposition 5.2(ii): at a branch boundary grazing a copy of the right angle the
+"""Section 5.1, Proposition 5.3(ii): at a branch boundary grazing a copy of the right angle the
 limit orbit folds back on itself, and the two flanking cells are the two members of one mirror pair.
 
 A boundary y between branches c and c' is a FOLD when the first-return map J, extended to y
@@ -6,7 +6,7 @@ from each side, returns y to itself: the limit orbit at y runs to the grazed ver
 J is affine of slope +-1 on each branch, so its one-sided limits at y are endpoints of the
 image intervals, and "= y" is decided exactly in Z[zeta_4Q].
 Statements checked, at every centre of the partition record with Q <= 30:
-  * (the proof of Proposition 5.2(ii), the corner retroreflector) every boundary at an image of R
+  * (the proof of Proposition 5.3(ii), the corner retroreflector) every boundary at an image of R
     is a fold from each side, and its two flanking branches are J-partners, neither of them the
     orphan;
   * (the contrast the proof draws: O and A rotate by 2 alpha and pi - 2 alpha, and neither reverses
@@ -71,7 +71,7 @@ def main():
             else:
                 nOA += 1
                 foldOA += any(f is True for f in fl)
-    check(f'Proposition 5.2(ii): boundaries at R that fold from both sides: {foldR}/{nR}', foldR == nR)
+    check(f'Proposition 5.3(ii): boundaries at R that fold from both sides: {foldR}/{nR}', foldR == nR)
     check(f'... whose flanking branches are J-partners, neither the orphan: {partner}/{nR}',
           partner == nR)
     check(f'boundaries at O or A that fold from a returning side: {foldOA} of {nOA}', foldOA == 0)

@@ -10,7 +10,7 @@ import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SCRIPTS = ['s3_s7_identities.py', 's4_interval_model.py', 's5_1_folds.py', 's9_6_adjacency.py',
+SCRIPTS = ['s3_s7_identities.py', 's4_interval_model.py', 's5_1_folds.py', 's9_5_adjacency.py',
            's10_2_lattice_counts.py', 's10_windows.py', 'sA3_conditions.py', 's11_cp_band.py',
            'named_counts.py', 'figures.py', 'figures_5_6.py']
 

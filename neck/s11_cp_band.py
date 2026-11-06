@@ -1,5 +1,5 @@
 """Section 11 and Proposition 11.1: the complete-periodicity verdict on every class row of the band
-2 <= Q <= 60, and the two rows where it fails; with Remarks 10.10a and 10.14's band statements.
+2 <= Q <= 60, and the two rows where it fails; with Remarks 10.10 and 10.12's band statements.
 
 Statements checked (`band_record.json`, from `lib/flow.py`'s exact flow decomposition; a slice is
 recomputed from scratch on every run, all of it with --full):
@@ -13,16 +13,16 @@ recomputed from scratch on every run, all of it with --full):
     class is completely periodic -- perpendicular to L2 and to OA (one direction at odd Q) every
     component is a cylinder, the same ones, and that class is the L1 class at 7/15;
   * (Section 11) perpendicular to H at every even Q <= 60 (373 centres) the class is completely
-    periodic and n_H = Q, as Corollary 7.15 requires; at odd Q <= 31 the H decomposition agrees with
+    periodic and n_H = Q, as Corollary 7.11 requires; at odd Q <= 31 the H decomposition agrees with
     the verdict of the paired class on all 212 rows;
   * (Section 11) the exact closure certificate (`minimal_component/census_record.json`, the
     minimal-component paper's census, `lib/closure.py`) gives the same verdicts on the 424 class
     rows with odd Q <= 31: complete periodicity on all but the same two, which it leaves capped;
   * (Proposition 11.1) n(8/15) = 6 by the flow and by `lib/partition.py`; and the second witness,
     n_L2(8/15) + n_H(8/15) = 11 + 5 = 16 = Q + 1, so D = 0 on the other class (Corollary 7.8);
-  * (Remark 10.10a) every P = 3 centre with Q <= 60 is completely periodic, and so is 3/385, with
+  * (Remark 10.10) every P = 3 centre with Q <= 60 is completely periodic, and so is 3/385, with
     n = 255 = 2 round(385/3) - 1, recomputed on every run (about a minute);
-  * (Remark 10.14) among the even-P centres off the lattice locus with Q <= 60 (P not in
+  * (Remark 10.12) among the even-P centres off the lattice locus with Q <= 60 (P not in
     {2, Q - 2, Q - 1}, i.e. min(P, Q - P) > 2) there are 307, and 8/15 is the only one whose count is not maximal;
   * control: at nine other odd-Q centres (Q = 13, 15, 17) every perpendicular direction is
     completely periodic, so the verdict at 8/15 is not the instrument's default.
@@ -149,16 +149,16 @@ def main():
           (nl2, nh) == (11, 5))
 
     p3 = [(P, Q) for P, Q in centres if P == 3]
-    check(f'Remark 10.10a: every P = 3 centre with Q <= {QMAX} completely periodic: '
+    check(f'Remark 10.10: every P = 3 centre with Q <= {QMAX} completely periodic: '
           f'{sum(cp(L1[f"3/{Q}"]) for _, Q in p3)}/{len(p3)}', all(cp(L1[f'3/{Q}']) for _, Q in p3))
     t = time.time()
     r = flow.n_flow(3, 385)
-    check(f'Remark 10.10a: 3/385 completely periodic, n = {r["n"]} = 2 round(385/3) - 1, tiled '
+    check(f'Remark 10.10: 3/385 completely periodic, n = {r["n"]} = 2 round(385/3) - 1, tiled '
           f'({time.time() - t:.0f} s)', r['all_cyl'] and all(r['tiled']) and r['n'] == 255)
 
     off = [(P, Q) for P, Q in centres if P % 2 == 0 and min(P, Q - P) > 2]
     low = [f'{P}/{Q}' for P, Q in off if L1[f'{P}/{Q}']['n'] != Q - 1]
-    check(f'Remark 10.14: {len(off)} even-P centres off the lattice locus, Q <= {QMAX} (paper: 307); '
+    check(f'Remark 10.12: {len(off)} even-P centres off the lattice locus, Q <= {QMAX} (paper: 307); '
           f'count not maximal at {low}', len(off) == 307 and low == ['8/15'])
 
     bad = [f'{P}/{Q}' for P, Q in CONTROLS if not all(cylinders_only(r) for r in perp(P, Q))]

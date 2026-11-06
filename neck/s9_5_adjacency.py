@@ -1,7 +1,7 @@
-"""Remark 9.6: at every certified centre, the interior branch boundaries grazing a copy of R are
+"""Remark 9.5: at every certified centre, the interior branch boundaries grazing a copy of R are
 exactly as many as the mirror pairs.
 
-The proof of Proposition 5.2(ii) makes every R-graze boundary pair-internal, and distinct ones give
+The proof of Proposition 5.3(ii) makes every R-graze boundary pair-internal, and distinct ones give
 distinct pairs, so  #{R-graze boundaries} <= #{mirror pairs}  always, with equality exactly when
 every pair is adjacent -- which the paper has from the orphan paper's Corollary 4.14.  The count is read off the partition: a boundary's source vertex is
 recorded with it, and #{mirror pairs} = (n - #orphans) / 2.  Every centre of the record, including
@@ -17,7 +17,7 @@ def counts(r):
 def main():
     rec = record()
     rows = sorted(rec.values(), key=lambda r: (r['Q'], r['P']))
-    print(f'Remark 9.6 -- adjacency count at {len(rows)} certified centres, '
+    print(f'Remark 9.5 -- adjacency count at {len(rows)} certified centres, '
           f'Q up to {max(r["Q"] for r in rows)}\n')
     eq = [r for r in rows if counts(r)[0] == counts(r)[1]]
     check(f'#R-graze boundaries = #mirror pairs: {len(eq)}/{len(rows)}', len(eq) == len(rows))

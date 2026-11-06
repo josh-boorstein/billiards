@@ -2,7 +2,7 @@
 
   python figures_5_6.py        verify every caption, then draw -> neck/figs/
 
-  fig5_qgon      the double regular Q-gon at Q = 7 and the four steps of Theorem 10.6: the
+  fig5_qgon      the double regular Q-gon at Q = 7 and the four steps of Theorem 10.5: the
                  side-parallel and the perpendicular cylinders, and the side S0 partitioned by
                  perpendicular cylinder -- built from the polygon model (`lib/trans_surface.py`, a
                  float model cut on separatrices and flowed), every closed form the caption and the
@@ -10,8 +10,8 @@
   fig6_deficit   the deficit d = Q - 1 - n(P/Q) at every coprime centre with P <= 9, Q <= 60 (all
                  322, each count certified by the exact flow decomposition: `band_record.json`);
                  every quantity the caption names is asserted first -- the parity d = Q (mod 2) at
-                 odd P, d = 0 at every even P but 8/15, P = 1, 2, 3 and Q - 2 on Theorems 10.2, 10.6,
-                 Corollary 10.9 and Theorem 10.3, and n = 1 only at P = 1 (Theorem 8.2(3)).
+                 odd P, d = 0 at every even P but 8/15, P = 1, 2, 3 and Q - 2 on Theorems 10.2, 10.5,
+                 Corollary 10.8 and Theorem 10.3, and n = 1 only at P = 1 (Theorem 8.2(3)).
 Figures 1-4 are `figures.py`.
 """
 import json
@@ -53,7 +53,7 @@ def qgon(Q):
     """Everything Figure 5 draws, and everything its caption asserts, at one odd `Q`.
 
     ⚠ DIRECTION INDEXING IS THE TRAP HERE (`s529_leg_surjectivity` trap (iv)): on
-    `double_Qgon` `axis = 1` is the SIDE-parallel (horizontal) direction -- Theorem 10.6's Step 1,
+    `double_Qgon` `axis = 1` is the SIDE-parallel (horizontal) direction -- Theorem 10.5's Step 1,
     where every closed form is proved -- and `axis = 0` is the PERPENDICULAR (vertical)
     one.  Getting them the wrong way round draws a picture of the wrong theorem.
 
@@ -63,8 +63,8 @@ def qgon(Q):
     """
     S = TS.double_Qgon(Q)
     m = (Q - 1) // 2
-    H = S.cylinders(1)                       # side-parallel  (Theorem 10.6, Step 1)
-    V = S.cylinders(0)                       # perpendicular  (Theorem 10.6, Step 2)
+    H = S.cylinders(1)                       # side-parallel  (Theorem 10.5, Step 1)
+    V = S.cylinders(0)                       # perpendicular  (Theorem 10.5, Step 2)
     a = math.pi / (2 * Q)
 
     # index both decompositions by `i = 1..m` through the closed forms of Steps 1 and 2,
@@ -149,7 +149,7 @@ def fig5(path):
     ⇒ THIS IS FIGURE 4.  It REPLACED the genus-zero base picture at s594 (referee 3:
     that figure's "entire informational content is `3 is odd, 2 is even`", it was
     schematic in a paper whose other figures are not, and it hung on the result s592
-    demoted, while s9.5 -- which carries Theorem 9.8 -- had no illustration at all).
+    demoted, while s9.5 -- which carries Theorem 9.6 -- had no illustration at all).
     """
     Q = 7
     D = qgon(Q)
@@ -291,8 +291,8 @@ def verify_deficit(flat):
     assert all(n == Q - 1 for (P, Q), n in flat.items() if P == Q - 1)
     b3 = [(Q, n) for (P, Q), n in flat.items() if P == 3 and Q >= 5 and n != 2 * round(Q / 3) - 1]
     assert not b3, b3
-    out.append("P = 2: n = Q - 1 (Theorem 10.6); P = Q - 1: n = Q - 1 (Theorem 10.2); "
-               "P = 3: n = 2 round(Q/3) - 1 on every row Q >= 5 (Corollary 10.9)")
+    out.append("P = 2: n = Q - 1 (Theorem 10.5); P = Q - 1: n = Q - 1 (Theorem 10.2); "
+               "P = 3: n = 2 round(Q/3) - 1 on every row Q >= 5 (Corollary 10.8)")
     lat = [(P, Q, n) for (P, Q), n in flat.items() if P == Q - 2]
     assert all(n == 2 * ((Q - 1) // 4) + 1 for P, Q, n in lat), lat
     out.append(f"P = Q - 2 rows in the window ({len(lat)}) on Theorem 10.3")
@@ -308,7 +308,7 @@ def fig6(flat, path):
             va="bottom")
     ev = sorted((Q, Q - 1 - n) for (P, Q), n in flat.items() if P % 2 == 0)
     ax.scatter(*zip(*ev), s=22, color=FADE, marker="s", lw=0, zorder=2, label=r"$P$ even")
-    for P, mk, lab in ((1, "^", r"$P=1$ (Theorem 10.2)"), (3, "v", r"$P=3$ (Corollary 10.9)")):
+    for P, mk, lab in ((1, "^", r"$P=1$ (Theorem 10.2)"), (3, "v", r"$P=3$ (Corollary 10.8)")):
         pts = sorted((Q, Q - 1 - n) for (p, Q), n in flat.items() if p == P)
         ax.plot(*zip(*pts), color="#8a949e", lw=.7, ls="-", alpha=.6, zorder=2)
         ax.scatter(*zip(*pts), s=22, color="#8a949e", marker=mk, lw=0, zorder=2, label=lab)
@@ -334,7 +334,7 @@ def fig6(flat, path):
 def verify():
     """Every claim a caption makes, checked before anything is drawn."""
     out = []
-    # Fig 5 -- the double `Q`-gon of Section 10.3.  Every closed form Theorem 10.6's proof states,
+    # Fig 5 -- the double `Q`-gon of Section 10.3.  Every closed form Theorem 10.5's proof states,
     # re-derived from the polygon model by separatrix cut and flow, at three odd `Q`.
     for Q in (5, 7, 11):
         D = qgon(Q)

@@ -18,7 +18,7 @@ Cells = bands + interior poles.  The symbolic output is required to be IDENTICAL
 m0+2, m0+3 (the m-independence gate).  Fold-kite orientation is fixed in float at m0; it is
 uniform because every listed interface index is <= 23 < Q.  `arm_S` checks the skeleton the
 proof reads -- the local minima and the O-sector kites -- over a range of m; it is not the
-m-independence argument, which is the paper's explicit interface lists (the proofs of Theorems 10.8 and 10.12).
+m-independence argument, which is the paper's explicit interface lists (the proofs of Theorems 10.7 and 10.11).
 """
 from __future__ import annotations
 
