@@ -1,6 +1,6 @@
 """Sections 6 and 7: the unfolded surface S_alpha, its hyperelliptic involution and its base,
 BUILT from the gluing and checked against Theorem 6.1, Corollary 6.2, Propositions 7.1 and 7.2,
-Theorem 7.3 and Remark 7.4 at every coprime (P, Q) with Q <= 200, and against McMullen's
+Remark 7.3 and Remark 7.4 at every coprime (P, Q) with Q <= 200, and against McMullen's
 Weierstrass criterion on the slice min(P, Q - P) = 1 (Section 7.5, Appendix A.4).
 
 How.  Nothing below uses the formulas it checks.  A copy of T in the Katok-Zemlyakov
@@ -23,10 +23,10 @@ Statements checked:
   * (Props 7.1, 7.2) tau fixes exactly the Q points over R, the point over O iff P odd and the
     point over A iff Q - P odd -- 2g + 2 points, so tau is the hyperelliptic involution -- and
     the base's singular orders are {P - 2, Q - P - 2, -1 (Q times)}, Gauss-Bonnet sum -4;
-  * (Thm 7.3) the cone point over O is tau-fixed iff P is odd; when P is even it has two
+  * (Rem 7.3, the parity match at O) the cone point over O is tau-fixed iff P is odd; when P is even it has two
     preimages and tau swaps them;
   * (Rem 7.4) 5/8, 3/5 and 3/7 lie in H(4, 2), H(2, 0, 0) and H(2, 1, 1);
-  * (Section 7.5) on min(P, Q - P) = 1, Q = 4..15: Kenyon-Smillie's model is the regular
+  * (Section 7.5) on min(P, Q - P) = 1, Q = 4..15: the regular-polygon model is the regular
     n-gon, n = 2Q, of genus g, and McMullen's criterion -- its cone point is a Weierstrass point
     iff n != 4g + 2 -- agrees with tau-fixedness of the built surface's cone points over O at
     P = Q - 1 and over A at P = 1, in both parities of Q: one fixed point when n = 4g, two
@@ -169,7 +169,7 @@ def main():
                        ('W_O', 'tau fixes the point over O iff P is odd'),
                        ('W_A', 'tau fixes the point over A iff Q - P is odd'),
                        ('W_count', 'tau has exactly 2g + 2 fixed points (hyperelliptic; Prop 7.2)'),
-                       ('T73', 'Thm 7.3: one tau-fixed point over O at odd P, two swapped at even P'),
+                       ('T73', 'Rem 7.3: one tau-fixed point over O at odd P, two swapped at even P'),
                        ('base', 'the base has orders {P-2, Q-P-2, -1^Q}, sum -4 (Prop 7.1)')]:
         check(f'{label}: {c[key]}/{n}', c[key] == n)
     check(f'Cor 6.2: the stratum at P = 1, 2, Q-2, Q-1 is the one listed: {ext["ok"]}/{ext["n"]}',
