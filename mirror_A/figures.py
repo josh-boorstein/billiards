@@ -159,13 +159,13 @@ def chain_walk(a, p0, d, nsteps, n0=0):
         V2 = rhombus(a, n + dn, c2)
         Vr = [2 * (P + ((x - P) * e.conjugate()).real * e / abs(e) ** 2) - x for x in V]
         assert all(min(abs(x - y) for y in V2) < 1e-9 for x in Vr), "chain reflection"
-        # ... and the offset moves by Lemma 2.4's mu_k (in the frame theta = +e_x)
+        # ... and the offset moves by Lemma 7.1's mu_k (in the frame theta = +e_x)
         k = n + dn / 2
         thd = cmath.phase(dd)                       # the frame of the direction of motion
         chi = math.pi / 2 + 2 * a * k - thd
         mu = -2 * h * math.copysign(1, math.cos(chi)) * math.sin(chi)
         ds = -(dd.conjugate() * (c2 - c)).imag
-        assert abs(ds - mu) < 1e-9, ("Lemma 2.4", ds, mu)
+        assert abs(ds - mu) < 1e-9, ("Lemma 7.1", ds, mu)
         return n + dn, c2, p + t * dd, k
 
     out = {}
@@ -219,7 +219,7 @@ def example_path(y0, nb=16):
 def verify(verbose=True):
     log = (lambda s: print(s)) if verbose else (lambda s: None)
 
-    # (1) chain walk from the fold level l* = j: Lemma 2.3's labels and Lemma 2.4's moves are
+    # (1) chain walk from the fold level l* = j: Lemma 2.3's labels and Lemma 7.1's moves are
     #     asserted step by step inside chain_walk; the level sequence obeys the fold r -> 2l* - r.
     a, j = 0.42, 2
     th = 2 * a * j
@@ -248,7 +248,7 @@ def verify(verbose=True):
     assert mirror_err(seqc) > 1e-3, mirror_err(seqc)
     log(f"  (1) chain at a={a}, theta=2a*{j}, from l*: levels {levels} (r -> 2l*-r); centres "
         f"mirror-symmetric in the fold diagonal (control theta+0.05: levels {lc}, "
-        f"mirror error {mirror_err(seqc):.3f}); Lemma 2.4 moves checked per step")
+        f"mirror error {mirror_err(seqc):.3f}); Lemma 7.1 moves checked per step")
 
     # (2) tiles: Table 2 ends vs a direct Lemma 6.2 test, with the outside-the-tile control.
     tiles, ends = tile_ends()

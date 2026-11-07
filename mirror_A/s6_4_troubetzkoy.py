@@ -10,8 +10,9 @@ Statements checked:
     the smaller angle and OA the leg adjacent to it; a/pi is irrational;
   * the word in `tro05_record.json` is a primitive, non-perpendicular periodic cylinder in a mirror direction,
     certified EXACTLY (`lib/mirror.py`), of period 944, in the class perp OA at y (its width printed);
-  * controls: the word does not close at the nearby rational cos 2a = 2/5, and no one-letter change of it certifies
-    (a fixed sample of positions).
+  * controls: the word does not close at the nearby rational cos 2a = -2/5 (the word is certified at y = -(sqrt 7 - 1)/4
+    in perp OB and read at |y| in perp OA by the leg swap, so -2/5 is its neighbour; the leg-swapped 2/5), and no
+    one-letter change of it certifies (a fixed sample of positions).
 """
 import math
 import random

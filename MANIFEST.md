@@ -105,10 +105,11 @@ alone (`numfield.py`, `mirror.py`). Each script's docstring lists the statements
 | §5.3 — the triangle `cos 2a = (1 + √41)/8`: its four cylinders, one per class, exactly; controls | `s5_3_sqrt41.py` (+ `sqrt41_record.json`) |
 | §5.3 — the family `y_n → y_c`: the members `n ≤ 8` (period `30n + 6`) and the period-`30` cylinder at `y_c`, exactly — what the paper claims; beyond the paper, the symbolic checks that the family continues for every `n` (irreducibility and `a_n/π ∉ ℚ`, the alignment identity in `m`, the `274`-function clearance certificate, formal non-perpendicularity) | `s5_3_family.py` |
 | §6.3 — Proposition 6.6 and Table 2: the five tiles, their end polynomials, the cover, the leg swaps, the five `F_W` and their non-degeneracy; Lemmas 6.3 and 6.4 at one angle in each tile | `s6_3_tiles.py` |
+| §6.4 — Remark 6.10: `cos 2a = (√7 − 1)/4` lies in `π/6 < a < π/4`, `a/π ∉ ℚ`; the period-`944` primitive non-perpendicular cylinder in `⊥OA`, exactly; controls (no closure at the neighbouring rational `−2/5` in the word's frame, no one-letter change certifies) | `s6_4_troubetzkoy.py` (+ `tro05_record.json`) |
 | Figures 1–4 | `figures.py` |
 
 ⚠ **Scope.** A certificate proves that the cylinder it names exists. Table 1's blank cells are
 searches that found nothing, not proofs of absence, and nothing here checks them. §§2–4,
-§§6.1–6.2, 6.4 and §7 are proofs in the paper and have no script.
+§§6.1–6.2, §6.4 apart from Remark 6.10's instance, and §7 are proofs in the paper and have no script.
 
 ---

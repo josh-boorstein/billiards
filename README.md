@@ -136,7 +136,7 @@ Theorems 2–5 and the rest of the paper are proofs and have no script.
 ## The mirror-direction paper: `lib/` and `mirror_A/`
 
 ```sh
-.venv/bin/python mirror_A/run_all.py          # about a minute
+.venv/bin/python mirror_A/run_all.py          # under two minutes
 .venv/bin/python mirror_A/figures.py          # the four figures -> mirror_A/figs/
 ```
 
@@ -155,7 +155,9 @@ exactly. The words come from the research searches' tracers and are stored in th
 (`table1_record.json`, `sqrt41_record.json`); how a word was found does not enter its
 certificate. The family of §5.3 is certified exactly at its members `n ≤ 8`, which is all the
 paper claims; the same script also carries the symbolic proof that it continues for every `n` (Sturm sequences over `ℚ` on `274`
-rational functions of `t`). The tiles of §6 are exact (sympy, real roots). The figures are float
+rational functions of `t`). Remark 6.10's period-`944` cylinder at `cos 2a = (√7 − 1)/4`, in the
+class `⊥OA` inside the range `π/6 < a < π/4` of Troubetzkoy's claim (the paper's [Tro05], abstract (iii)), is certified the same way
+(`tro05_record.json`). The tiles of §6 are exact (sympy, real roots). The figures are float
 drawings whose captioned numbers are checked first.
 
 ## Layout
