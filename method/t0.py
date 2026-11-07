@@ -3,7 +3,7 @@
 T0 is the right triangle with angles (4/15, 7/30, 1/2) pi: centre P/Q = 8/15,
 alpha = 4 pi / 15.  Directions are integers m mod 60 standing for m pi / 30
 (`lib/triangle.py`); the horizontal direction pi is m = 30, and the transversal of
-Section 3, Sigma_Hbar = L1 read in direction theta_Hbar = 11 pi / 15, is m = 22.
+III Proposition 6.4's proof, Sigma_Hbar = L1 read in direction theta_Hbar = 11 pi / 15, is m = 22.
 
 The words are PROPOSED by the 60-digit tracer from a scan of L1 and then VERIFIED
 exactly by the scripts that use them (a word's exact validity interval, and the exact

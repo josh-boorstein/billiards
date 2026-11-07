@@ -1,4 +1,4 @@
-"""Section 2 (and the field facts of Sections 3.1 and 3.3): the directions met, the phase
+"""III Proposition 6.4, the setting of its proof: the directions met, the phase
 space, its area, and the field K.
 
 Statements checked:
@@ -12,7 +12,7 @@ Statements checked:
     cos(pi/5) = 4c^3 - 3c, and the change of basis from {1, c, c^2, c^3} to
     {1, cos(pi/15), cos(2pi/15), cos(pi/5)} is triangular with determinant 8.
   * cot(alpha) has minimal polynomial x^8 - 28x^6 + 134x^4 - 92x^2 + 1, of degree 8, so
-    cot(alpha) is not in K (Section 3.3).
+    cot(alpha) is not in K (beyond III).
 """
 from t0 import P, Q, KAPPA, check, done, trunc
 
@@ -20,7 +20,7 @@ import sympy as sp
 
 
 def main():
-    print('Section 2 -- directions, phase space, the field K\n')
+    print('III Proposition 6.4 -- directions, phase space, the field K\n')
     # the reflection group on directions, in units of pi/30, by closure
     gens = [lambda m: (30 - m) % 60, lambda m: (-m) % 60, lambda m: (2 * P - m) % 60]
     orbit, frontier = {30}, [30]

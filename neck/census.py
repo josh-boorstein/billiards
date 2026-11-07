@@ -1,4 +1,10 @@
-"""Section 5 (and the abstract, Section 6): the census of perpendicular directions.
+"""The census record of perpendicular directions, `census_record.json`: the class rows and the cap
+each needs, read by this directory's `common.py` and by `s11_cp_band.py`.
+
+(Moved here from the deposit's former `minimal_component/` when that write-up was absorbed into the
+method paper. The figures below were that write-up's census table; no current paper prints them, and
+they are kept as consistency checks of the record. The method paper's own census remarks, Remarks 6.3
+and 6.6, are *found by computation* and are not deposited.)
 
 Every class row (P, Q, eps) -- a centre and one of its two perpendicular direction
 classes -- is decided by the exact closure certificate of `lib/closure.py`: every
@@ -6,16 +12,15 @@ separatrix of the base B is walked until it arrives at a singularity, arrival de
 exact equality in Z[zeta_4Q].  capped == 0 PROVES complete periodicity; a capped row is
 NO verdict.
 
-Statements checked (odd Q <= 31, the table of Section 5):
+Record checks (odd Q <= 31):
   * 212 coprime centres -> 424 classes, all decided; 154 non-Veech centres
     (min(P, Q-P) >= 3) -> 308 classes -> 154 distinct directions on 77 triangles;
     153 certified completely periodic; exactly one direction is not certified, the
-    direction of Theorem 1 (8/15 eps 0, and its leg-swap image 7/15 eps 1), which Section 3
-    settles; the 58 Veech centres' 116 classes are all certified, none capped.
+    direction of T0 (8/15 eps 0, and its leg-swap image 7/15 eps 1), which the method paper's
+    Proposition 6.4 settles; the 58 Veech centres' 116 classes are all certified, none capped.
   * The non-Veech population is phi(Q) - 4 directions at each odd Q >= 7 and none at
     Q = 3, 5: 0 0 2 2 6 8 4 12 14 8 18 16 14 24 26.
-  * The class rows of T0 (Section 5, "What the certificate is"; Section 6): the direction
-    of Theorem 1 has h = 2 separatrices on the fixed arcs and 2Q - 2h = 26 walked; the
+  * The class rows of T0: the direction of Proposition 6.4 has h = 2 separatrices on the fixed arcs and 2Q - 2h = 26 walked; the
     other perpendicular direction has h = 1 and 28 walked, all of which close, the longest
     after 40 steps.
   * Beyond the table (from the record, see below): odd Q = 33..39 add 88 non-Veech
@@ -30,13 +35,13 @@ Statements checked (odd Q <= 31, the table of Section 5):
   * 15 | Q: at Q = 30 the 6 non-Veech directions are all certified.
 
 MODES
-  python s5_census.py            recompute odd Q <= 31, each row at the cap the record
+  python census.py            recompute odd Q <= 31, each row at the cap the record
                                  says it needs (about 1.5 hours), and check it against the
                                  record and the paper
-  python s5_census.py --quick    the same for odd Q <= 19 (a few minutes)
-  python s5_census.py --record   read every verdict from census_record.json and check
+  python census.py --quick    the same for odd Q <= 19 (a few minutes)
+  python census.py --record   read every verdict from census_record.json and check
                                  all the figures above without recomputing
-  python s5_census.py --rows Q [Q ...] [--cap N]
+  python census.py --rows Q [Q ...] [--cap N]
                                  recompute the given denominators at cap N (default: the
                                  record's cap per row) and compare with the record
 census_record.json was produced by the same algorithm in the research repository
@@ -51,7 +56,7 @@ import os
 import sys
 from math import gcd
 
-from t0 import check, done
+from common import check, done
 
 import closure
 
@@ -115,7 +120,7 @@ def table31(rows):
     cp = [d for d in Dn if d['cp']]
     bad = [d for d in Dn if not d['cp']]
     check(f'{len(cp)} certified completely periodic (expect 153)', len(cp) == 153)
-    check(f'not certified: {[d["key"] for d in bad]} -- the direction of Theorem 1 only',
+    check(f'not certified: {[d["key"] for d in bad]} -- T0'"'"'s direction only (III Proposition 6.4)',
           len(bad) == 1 and {bad[0]['key'], bad[0]['pair']} == {(8, 15, 0), (7, 15, 1)})
     vc = [(P, Q, e) for P, Q in C if veech(P, Q) for e in (0, 1)]
     check(f'{len(vc)} Veech classes, all certified with no capped separatrix (expect 116)',
@@ -164,7 +169,7 @@ def beyond(rows):
 def t0_rows():
     a = closure.certify(8, 15, 0, 200_000)
     b = closure.certify(8, 15, 1, 3_000_000)
-    check(f'Theorem 1\'s direction (8/15 eps 0): h = {a["h"]}, {a["n_walked"]} walked',
+    check(f'T0\'s direction (8/15 eps 0): h = {a["h"]}, {a["n_walked"]} walked',
           a['h'] == 2 and a['n_walked'] == 26)
     check(f'the other perpendicular direction (8/15 eps 1): h = {b["h"]}, {b["n_walked"]} '
           f'walked, all close: {b["cp"]}, longest {b["max_steps"]} steps',
@@ -196,7 +201,7 @@ def recompute(qs, cap=None, rec=None):
 
 
 def main(argv):
-    print('Section 5 -- the census\n')
+    print('The census record (class rows read by the neck scripts)\n')
     rec = load_record()
     t0_rows()
     if '--record' in argv:

@@ -1,11 +1,15 @@
-"""Section 3.3: the cylinder table, the Kac integral, and Proposition 5.
+"""III Proposition 6.4, *Nothing else*: the cylinder traces and areas, the Kac mass, and their sum Q = 15.
+
+Arms marked (beyond III) check figures III does not print; they come from the long-form write-up of
+this decomposition that III absorbed, and are kept because they still constrain the computation.
+
 
 Statements checked:
   * The three cylinders (from the six branches of `s4_branch_count.py`): return count
     N = 25 / 53 / 9 (core orbit of N + 1 = 26 / 54 / 10 reflections), height = the pair
     sum of the two branch widths, return length l = the length of the first-return path
     to L1 in the perpendicular direction (the half-orbit up to the head-on hit, constant
-    on the branch), area mass = height x l.  Every entry as printed (truncated).
+    on the branch), area mass = height x l (beyond III: N, l and the decimals).
   * Heights exactly 2cos(2pi/5), 1 - 2cos(2pi/5) - 2sin(pi/30), 2sin(pi/30); the three
     l / cot(alpha) exactly 1 + 4cos(pi/15) + 2cos(pi/5), 4 + 4cos(pi/15) + 6cos(2pi/15),
     2 + 2cos(2pi/15) - 2cos(pi/5); the ratios l / N = 0.2352..., 0.2275..., 0.2210....
@@ -16,7 +20,7 @@ Statements checked:
     mu(M) = 7.37080915208558428506..., mu(M)/cot(alpha) =
     12 + 4cos(pi/15) - 12cos(2pi/15) + 4cos(pi/5); the widths w_j and roofs r_j of the
     seven words as tabulated, with w1 = l1, w2 = l2, w3 + ... + w7 = l3.
-  * Proposition 5: Sigma_cyl / cot(alpha) + mu(M) / cot(alpha) = Q = 15 exactly;
+  * III: Sigma_cyl / cot(alpha) + mu(M) / cot(alpha) = Q = 15 exactly;
     Sigma_cyl / cot(alpha) = 6 l1 + 7 l2 + 8 l3 and mu(M) / cot(alpha) = 9 l1 + 8 l2 + 7 l3.
 
 INDEPENDENCE.  The cylinder side is computed from the six horizontal branch words on L1
@@ -25,8 +29,8 @@ else.  No quantity of one enters the other, so their sum being the integer 15 is
 check that could have failed.
 """
 from t0 import T, F, Q, KAPPA, M_H, M_PERP, cpi15, c, return_words, check, done, trunc
-from s3_1_return_map import lambdas
-from s4_branch_count import branches, cylinders
+from s6_4_return_map import lambdas
+from s6_4_cylinders import branches, cylinders
 
 
 def cylinder_side():
@@ -60,7 +64,7 @@ def kac_side():
 
 
 def main():
-    print('Section 3.3 -- the mass identity\n')
+    print('III Proposition 6.4 -- nothing else: cylinders plus Kac mass = Q\n')
     cyl = sorted(cylinder_side(), key=lambda d: {25: 0, 53: 1, 9: 2}[d['N']])
     paper = [(25, '0.618033988749', '5.880200614063', '3.634163840159'),
              (53, '0.172909084714', '12.059888547943', '2.085264290587'),
@@ -70,7 +74,7 @@ def main():
         row = (d['N'], trunc(d['height'].value(), 12), trunc(d['ell'].value(), 12),
                trunc(d['area'].value(), 12))
         print(f'  C{k}        {row[0]:<4d} {row[1]}  {row[2]:<16s} {row[3]}')
-        check(f'C{k} row as printed', row == p)
+        check(f'C{k} row as recorded', row == p)
     check('core orbits make N + 1 = 26 / 54 / 10 reflections',
           [d['N'] + 1 for d in cyl] == [26, 54, 10])
     ratios = [trunc((d['ell'].value() / d['N']), 4) for d in cyl]
@@ -81,7 +85,7 @@ def main():
           [d['height'] for d in cyl] == [2 * cos2pi5, 1 - 2 * cos2pi5 - 2 * sin30, 2 * sin30])
     want_l = [1 + 4 * cpi15(1) + 2 * cpi15(3), 4 + 4 * cpi15(1) + 6 * cpi15(2),
               2 + 2 * cpi15(2) - 2 * cpi15(3)]
-    check('l / cot(alpha) as printed', all(d['ell'] / KAPPA == wl for d, wl in zip(cyl, want_l)))
+    check('l / cot(alpha) as recorded', all(d['ell'] / KAPPA == wl for d, wl in zip(cyl, want_l)))
     sigma = cyl[0]['area'] + cyl[1]['area'] + cyl[2]['area']
     g15 = sigma / KAPPA
     check(f'Sigma_cyl = {trunc(sigma.value(), 15)}...', trunc(sigma.value(), 15) == '6.135251512382014')
@@ -99,7 +103,7 @@ def main():
     for j, (t, w_, r_) in enumerate(zip(table, pw, pr), 1):
         got = (trunc(t['w'].value(), 12), trunc(t['r'].value(), 12))
         print(f'  {j}     {t["N"]:<4d} {got[0]}    {got[1]}')
-        check(f'word {j} row as printed', got == (w_, r_) and t['r_const'])
+        check(f'word {j} row as recorded', got == (w_, r_) and t['r_const'])
     w = [t['w'] for t in table]
     check('w1 = l1, w2 = l2, w3 + ... + w7 = l3',
           w[0] == l1 and w[1] == l2 and w[2] + w[3] + w[4] + w[5] + w[6] == l3)

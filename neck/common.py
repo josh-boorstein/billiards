@@ -2,8 +2,8 @@
 
 The separatrix diagram of a perpendicular direction class is walked by `lib/closure.py`'s
 exact kite maps; `lib/necklace.py` adds the incidences with Fix(iota) (h, v, f, D, E, the
-swapped edges).  The class rows and the cap each needs are the census record of the
-minimal-component paper (`minimal_component/census_record.json`), which decides every class
+swapped edges).  The class rows and the cap each needs are the census record (`census_record.json`,
+checked by `census.py`), which decides every class
 with odd Q <= 39 and even Q <= 40 by the same certificate.  Branch partitions come from the orphan
 paper's record (`orphan/partition_record.json`, `lib/partition.py`) through `record` and `centre`;
 flow decompositions from `band_record.json` (`lib/flow.py`), read by the scripts that use it.
@@ -26,7 +26,7 @@ _oc = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_oc)
 record, centre = _oc.record, _oc.centre
 
-CENSUS = os.path.join(HERE, '..', 'minimal_component', 'census_record.json')
+CENSUS = os.path.join(HERE, 'census_record.json')
 FULL = '--full' in sys.argv
 QUICK_CAP = 3_000_000
 

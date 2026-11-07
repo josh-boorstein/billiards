@@ -2,6 +2,7 @@
 # The exact-arithmetic core (engine/) is stdlib-only; these are needed by the
 # per-result scripts under probes/ and by the figure scripts.
 numpy
+scipy
 mpmath
 sympy
 matplotlib

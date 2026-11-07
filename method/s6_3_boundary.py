@@ -1,22 +1,26 @@
-"""Section 6, "What the direction does carry": the saddle connection and its arithmetic.
+"""III Section 6.3: the connection O -> A lies on the boundary of Proposition 6.4's minimal component.
+
+Arms marked (beyond III) check figures III does not print; they come from the long-form write-up of
+this decomposition that III absorbed, and are kept because they still constrain the computation.
+
 
 Statements checked:
   * The billiard path leaving O at 12 degrees to L2 reaches the vertex A after 13
     reflections (it arrives at A on its 14th contact with the boundary): the word is
     proposed by the tracer and the arrival is verified EXACTLY in Q(zeta_60), every
     earlier contact strictly inside its side.
-  * Leaves launched parallel to it within 1e-25 on either side show the minimal component
+  * Leaves launched parallel to it at distance 1e-12 (III) and 1e-25 on either side show the minimal component
     on one side (they reach Sigma_Hbar, which lies in M) and a closed orbit, i.e. a
     cylinder, on the other.
-  * Its arrival condition, derived by formal development of the word, is the vanishing
+  * (beyond III) Its arrival condition, derived by formal development of the word, is the vanishing
     sine sum 2 sin 12 + 2 sin 24 + sin 36 = sin 60 + sin 72 (degrees); that identity and
     the boundary-5 identity sin 12 + 2 sin 24 + sin 36 = sin 48 + sin 60 both hold exactly.
-  * Neither identity follows from the 3-family (with the sign relations) alone, nor from
+  * (beyond III) Neither identity follows from the 3-family (with the sign relations) alone, nor from
     the 5-family alone: a combination of the first kind still vanishes with 12 degrees
     replaced by 60, of the second kind with 12 replaced by 36, and both identities fail at
     both angles.  (Checked also algebraically: as elements of Z[x]/(x^30 + 1), x =
     e^{i pi/30}, neither vanishes at a primitive 12th or 20th root of unity.)
-  * The connection persists under deformation of the triangle, but its direction moves
+  * (beyond III) The connection persists under deformation of the triangle, but its direction moves
     at a rate that is not an even integer, so it leaves the directions +-2k alpha + m pi
     of the horizontal flow at once.
 """
@@ -102,7 +106,7 @@ def classify(S):
 
 
 def main():
-    print('Section 6 -- the saddle connection and its arithmetic\n')
+    print('III Section 6.3 -- the connection on the boundary of the minimal component\n')
     B = Billiard(mp.pi * 8 / 30)
     orb = B.orbit(mpf(0), mpf(0), pi / 15, 40)
     hit = next(j for j, (s, x, y) in enumerate(orb, 1)
@@ -125,16 +129,16 @@ def main():
         mids.append(((px + x) / 2, (py + y) / 2, ux, uy))
         ux, uy = B.reflect(s, ux, uy)
         px, py = x, y
-    sides_ok = True
-    for kk in (0, 4, 8, 12):
-        mx, my, vx, vy = mids[kk]
-        nx, ny = -vy, vx
-        e = mpf('1e-25')
-        l = leaf_class(B, mx + e * nx, my + e * ny, vx, vy)[0]
-        r = leaf_class(B, mx - e * nx, my - e * ny, vx, vy)[0]
-        print(f'  segment {kk + 1:2d}: left {l}, right {r}')
-        sides_ok &= {l, r} == {'M', 'closed'}
-    check('within 1e-25: the minimal component on one side, a cylinder on the other', sides_ok)
+    for e in (mpf('1e-12'), mpf('1e-25')):        # III prints 10^-12; 1e-25 as a control on the scale
+        sides_ok = True
+        for kk in (0, 4, 8, 12):
+            mx, my, vx, vy = mids[kk]
+            nx, ny = -vy, vx
+            l = leaf_class(B, mx + e * nx, my + e * ny, vx, vy)[0]
+            r = leaf_class(B, mx - e * nx, my - e * ny, vx, vy)[0]
+            print(f'  {mp.nstr(e, 2)}, segment {kk + 1:2d}: left {l}, right {r}')
+            sides_ok &= {l, r} == {'M', 'closed'}
+        check(f'at distance {mp.nstr(e, 2)}: the minimal component on one side, a cylinder on the other', sides_ok)
 
     S_conn = arrival_sines(word[:-1])
     S_id = {12: 2, 24: 2, 36: 1, 60: -1, 72: -1}

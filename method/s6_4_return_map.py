@@ -1,4 +1,8 @@
-"""Section 3.1: the first return map to Sigma_Hbar is an exchange of three intervals.
+"""III Proposition 6.4, *The return map*: the first return to Sigma_Hbar is an exchange of three intervals.
+
+Arms marked (beyond III) check figures III does not print; they come from the long-form write-up of
+this decomposition that III absorbed, and are kept because they still constrain the computation.
+
 
 Statements checked:
   * The first return to Sigma_Hbar = {(cot alpha, s)} with outgoing theta_Hbar = 11pi/15
@@ -7,14 +11,14 @@ Statements checked:
     and the s-coefficient is exactly 1), with only three distinct translations,
     +(l2+l3), (l3-l1), -(l1+l2).
   * The six internal boundaries (from the exact tiling, `s3_4_completeness.py`) are all
-    vertex grazes, at the positions, vertices and segments of the paper's table; the
+    vertex grazes, at the recorded positions, vertices and segments (beyond III); the
     translation changes at exactly two of them, s = l1 and s = l1 + l2.
   * l1 = 1 + 4cos(pi/5) - 4cos(2pi/15) = 1 - 4 sin(pi/30),
     l2 = 3 + 4cos(pi/15) - 4cos(2pi/15) - 4cos(pi/5),
     l3 = -3 - 4cos(pi/15) + 8cos(2pi/15);
     coordinates (1,0,-4,4), (3,4,-4,-4), (-3,-4,8,0) in the basis
     {1, cos(pi/15), cos(2pi/15), cos(pi/5)} of K, summing to (1,0,0,0).
-  * The printed decimals (truncated, 19 places).
+  * (beyond III) The decimals (truncated, 19 places).
 
 How: each word is unfolded exactly in Q(zeta_60) (`lib/triangle.py`); every cut is one
 linear solve over that field.  No value is fitted or recognised from a decimal.  The
@@ -40,7 +44,7 @@ def lambdas():
 
 
 def main():
-    print('Section 3.1 -- the first return map to Sigma_Hbar\n')
+    print('III Proposition 6.4 -- the return map to Sigma_Hbar\n')
     words = return_words()
     Ns = [len(w) for w in words]
     check(f'seven return words, N = {Ns}', Ns == [6, 52, 46, 46, 46, 66, 66])
@@ -88,7 +92,7 @@ def main():
         ok = (trunc(s.value(), 19) == paper[0] and vtx == paper[1] == vtx2 and
               j == paper[2] and (len(a['word']), len(nxt['word'])) == paper[3] and
               ch == paper[4])
-        check(f'boundary {b} matches the paper\'s row', ok)
+        check(f'boundary {b} matches the recorded row', ok)
     check('exactly two boundaries change the translation, at l1 and l1 + l2',
           len(changes) == 2 and changes[0] == l1 and changes[1] == l1 + l2)
     done()

@@ -1,4 +1,8 @@
-"""Section 4, the second route to Theorem 2: the branch count n(8/15) = 6.
+"""III Proposition 6.4, *Nothing else* (the cylinder side): read horizontally, L1 meets only the three cylinders.
+
+Arms marked (beyond III) check figures III does not print; they come from the long-form write-up of
+this decomposition that III absorbed, and are kept because they still constrain the computation.
+
 
 Statements checked:
   * Launched perpendicular to L1 (horizontally), the orbits from L1 fall into exactly
@@ -6,11 +10,11 @@ Statements checked:
     to the perpendicular (head-on) hit, after which the orbit retraces itself.  The six
     exact validity intervals TILE [0, 1] = L1, so there is no seventh branch.
   * Every launch other than the five cuts ends in a head-on hit, hence is periodic, so L1
-    meets no minimal component (Section 3, "Why not the obvious strip"; Figure 1(a)).
+    meets no minimal component (III: read horizontally, L1 meets only cylinders).
   * The branches fall into three adjacent pairs of equal width, one pair per cylinder;
     the pair-sums total 1 = |L1|.  The half-words of a pair differ by one transposition
-    of a '1' and a '2' (Appendix).
-  * n(8/15) = 6 < Q - 1 = 14, so by [Orph, Thm 9.15] the direction is not completely
+    of a '1' and a '2' (`s6_4_words.py`).
+  * (beyond III) n(8/15) = 6 < Q - 1 = 14, so by the orphan paper's count the direction is not completely
     periodic.
 
 How: the branch words are proposed by the tracer and each is certified by its exact
@@ -37,7 +41,7 @@ def cylinders(rows):
 
 
 def main():
-    print('Section 4 -- the branch count\n')
+    print('III Proposition 6.4 -- the cylinder side: the horizontal branches of L1\n')
     rows, tiles, defects = branches()
     n = len(rows)
     for r in rows:

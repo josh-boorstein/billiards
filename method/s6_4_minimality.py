@@ -1,10 +1,10 @@
-"""Section 3.2: minimality and unique ergodicity -- Lemma 3, Lemma 4, the roof.
+"""III Proposition 6.4, *Minimality* and *Unique ergodicity*: the rank, the circle rotation, the roof.
 
 Statements checked:
-  * Lemma 3: the 3 x 4 integer matrix of coordinates of l1, l2, l3 (Section 3.1) has
+  * The 3 x 4 integer matrix of coordinates of l1, l2, l3 (`s6_4_return_map.py`) has
     rank 3 over Q, so l1, l2, l3 are linearly independent over Q.
   * The symmetric permutation (3 2 1) is irreducible (Keane's condition then applies).
-  * Lemma 4: tau is the first return to [0,1) of the rotation by l2 + l3 of the circle
+  * tau is the first return to [0,1) of the rotation by l2 + l3 of the circle
     R/(1 + l2)Z, with return time 1 on [0, l1) u [l1 + l2, 1) and 2 on [l1, l1 + l2):
     the three cases are exact identities in K (with l1 + l2 + l3 = 1), and a numerical
     simulation on random points agrees.  (l2 + l3)/(1 + l2) = p/q forces
@@ -22,15 +22,15 @@ import sympy as sp
 from mpmath import mp, mpf, nstr
 
 from t0 import T, M_H, k_coords, return_words, check, done, trunc
-from s3_1_return_map import lambdas
+from s6_4_return_map import lambdas
 
 
 def main():
-    print('Section 3.2 -- minimality and unique ergodicity\n')
+    print('III Proposition 6.4 -- minimality and unique ergodicity\n')
     l1, l2, l3 = lambdas()
     Mx = sp.Matrix([k_coords(x) for x in (l1, l2, l3)])
     print(f'  coordinate matrix = {Mx.tolist()}')
-    check(f'Lemma 3: rank {Mx.rank()} = 3 over Q', Mx.rank() == 3)
+    check(f'rank {Mx.rank()} = 3 over Q', Mx.rank() == 3)
     perm = (3, 2, 1)
     irreducible = all(set(perm[:k]) != set(range(1, k + 1)) for k in range(1, 3))
     check('(3 2 1) is irreducible', irreducible)
@@ -80,7 +80,7 @@ def main():
         worst = max(worst, abs(y - tau(x)))
         times[n] += 1
     print(f'  20000 random points: max |tau - induced| = {nstr(worst, 3)}, return times {times}')
-    check('Lemma 4 numerically', worst < mpf(10) ** -45 and set(times) == {1, 2})
+    check('the circle rotation, numerically', worst < mpf(10) ** -45 and set(times) == {1, 2})
 
     # the roof
     words = return_words()
@@ -92,7 +92,7 @@ def main():
         roofs.append(T0_)
     vals = sorted({trunc(r.value(), 12) for r in roofs})
     print(f'  distinct roof values: {vals}')
-    check('four values, as printed',
+    check('four values, as recorded',
           vals == ['19.136181234849', '2.972579301909', '22.108760536759', '27.750141644774'])
     check('2.9 < r < 27.8', all(2.9 < float(r.value()) < 27.8 for r in roofs))
     done()

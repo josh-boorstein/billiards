@@ -1,8 +1,8 @@
-"""Appendix: the words of the certificate.
+"""III Proposition 6.4 and *Code availability*: the words of the certificate, deposited here.
 
-Prints the two tables of the Appendix -- the seven return words of Section 3.1 with their
-validity intervals, and the six branch half-words of the three cylinders of Section 3.3 --
-from the exact computation, and checks them against the tables as printed in the paper.
+Prints the two tables III does not print -- the seven return words of *The return map* with their
+validity intervals, and the six branch half-words of the three cylinders of *Nothing else* --
+from the exact computation, and checks them against the tables recorded below.
 Words list the sides met in order: '1' = L1, '2' = L2, 'h' = H.
 """
 from t0 import T, M_H, M_PERP, return_words, branch_words, check, done, trunc
@@ -31,12 +31,12 @@ def six(x):
 
 
 def main():
-    print('Appendix -- the words of the certificate\n')
+    print('III Proposition 6.4 -- the words of the certificate\n')
     rows, tiles, _ = T.tile(return_words(), M_H)
     got = [(len(r['word']), six(r['lo']), six(r['hi']), r['word']) for r in rows]
     for g in got:
         print(f'  {g[0]:3d}  [{g[1]}, {g[2]})  {g[3]}')
-    check('the seven return words and intervals, as printed', tiles and got == PAPER_RETURN)
+    check('the seven return words and intervals, as recorded', tiles and got == PAPER_RETURN)
 
     rows, tiles, _ = T.tile(branch_words(), M_PERP)
     by_word = {r['word']: r for r in rows}
@@ -50,7 +50,7 @@ def main():
     print()
     for name, N, hits, w in PAPER_CYL:
         print(f'  {name}  N = {N:2d}  hits {hits:2d}  {w}')
-    check('the six cylinder half-words, as printed (pairs of equal width)', ok)
+    check('the six cylinder half-words, as recorded (pairs of equal width)', ok)
     done()
 
 

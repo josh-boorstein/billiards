@@ -15,7 +15,7 @@ recomputed from scratch on every run, all of it with --full):
   * (Section 11) perpendicular to H at every even Q <= 60 (373 centres) the class is completely
     periodic and n_H = Q, as Corollary 7.11 requires; at odd Q <= 31 the H decomposition agrees with
     the verdict of the paired class on all 212 rows;
-  * (Section 11) the exact closure certificate (`minimal_component/census_record.json`, the
+  * (Section 11) the exact closure certificate (`neck/census_record.json`, the
     minimal-component paper's census, `lib/closure.py`) gives the same verdicts on the 424 class
     rows with odd Q <= 31: complete periodicity on all but the same two, which it leaves capped;
   * (Proposition 11.1) n(8/15) = 6 by the flow and by `lib/partition.py`; and the second witness,
@@ -42,7 +42,7 @@ from necklace import interval_model  # noqa: E402
 from partition import partition  # noqa: E402
 
 RECORD = os.path.join(HERE, 'band_record.json')
-CENSUS = os.path.join(HERE, '..', 'minimal_component', 'census_record.json')
+CENSUS = os.path.join(HERE, 'census_record.json')
 QMAX = 60
 SLICE = 60 if FULL else 20
 CONTROLS = [(2, 13), (4, 13), (6, 13), (8, 13), (2, 15), (4, 15), (6, 17), (8, 17), (10, 17)]

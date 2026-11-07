@@ -1,4 +1,4 @@
-"""Section 3.4: why "three branches" is complete, and the mass budget.
+"""III Proposition 6.4, *The return map*: seven domains tile [0, 1] exactly, so there is no eighth word.
 
 Statements checked:
   * Each of the seven words is a FIRST return to Sigma_Hbar in direction theta_Hbar: no
@@ -10,19 +10,19 @@ Statements checked:
     excludes an eighth word.
   * Of the six internal boundaries exactly two change the translation, at l1 and l1 + l2,
     and all six are vertex grazes (the binding constraint on each side names a vertex).
-  * The mass budget: half of area(B) is 6.7530303322337...; mu(M) exceeds it by
+  * (beyond III) The mass budget: half of area(B) is 6.7530303322337...; mu(M) exceeds it by
     0.6177788...; each of the two iota-blocks carries 3.68540457604279214..., 54.57% of
     its disc; and the excess is not (sqrt 5 - 1)/2 = 0.6180339887....
 """
 from mpmath import sqrt, mpf
 
 from t0 import T, F, Q, KAPPA, M_H, return_words, check, done, trunc
-from s3_1_return_map import lambdas
-from s3_3_mass_identity import kac_side
+from s6_4_return_map import lambdas
+from s6_4_mass import kac_side
 
 
 def main():
-    print('Section 3.4 -- completeness of the three branches, and the mass budget\n')
+    print('III Proposition 6.4 -- the tiling: no eighth word\n')
     words = return_words()
     check('all seven are first-return words', all(T.first_return_ok(w, M_H) for w in words))
     rows, tiles, defects = T.tile(words, M_H)
