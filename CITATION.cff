@@ -11,6 +11,7 @@ abstract: >-
 authors:
   - family-names: Boorstein
     given-names: Joshua
+    orcid: "https://orcid.org/0009-0007-1291-2321"
 version: "v1.0"
 date-released: "2026-11-07"
 license: MIT
