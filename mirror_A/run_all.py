@@ -8,7 +8,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SCRIPTS = ['s5_1_examples.py', 's5_2_rational_table.py', 's5_3_sqrt41.py', 's5_3_family.py',
-           's6_3_tiles.py', 'figures.py']
+           's6_3_tiles.py', 's6_4_troubetzkoy.py', 'figures.py']
 
 
 def main():
