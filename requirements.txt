@@ -1,6 +1,4 @@
-# Python 3.13.
-# The exact-arithmetic core (engine/) is stdlib-only; these are needed by the
-# per-result scripts under probes/ and by the figure scripts.
+# Python 3.13. Needed by lib/, the per-paper scripts and the figure scripts.
 numpy
 scipy
 mpmath

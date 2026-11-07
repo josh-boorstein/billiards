@@ -4,82 +4,7 @@ Which script supports which statement. Each script's own docstring carries its
 pre-registration, its arms and its controls: **the manuscript presents, the docstring is
 the source.** Where a docstring and this table disagree, the docstring wins.
 
-The per-paper scripts need no setup. The legacy scripts (`engine/`, `probes/`, `reproduce/`) run with `PYTHONPATH=engine:probes` set; some write JSON to `data/`.
-
----
-
-## The minimal-component paper (`minimal_component/`)
-
-Built on `lib/` alone. Each script's docstring lists the statements it checks.
-
-| Statement | Script |
-|---|---|
-| §2 — the 30 directions met, the phase space and `area(B)`; the field `K`, its basis and determinant `8`; `cot α ∉ K` (§3.3) | `s2_phase_space.py` |
-| §3.1 — the first return to `Σ_H̄` is a three-interval exchange: the seven words, the exact translations, `λ₁, λ₂, λ₃` and their coordinates, the boundary table | `s3_1_return_map.py` |
-| §3.1 — *why boundary 5 is different*: `V(α)`, the `12°` identity, the rates `85.21` and `114.7`, the trace of the deformed flow; Figure 2's data | `s3_1_boundary5.py` |
-| §3.2 — Lemma 3 (rank `3`), Lemma 4, the tower, the roof's four values | `s3_2_minimality.py` |
-| §3.3 — the cylinder table, `15 g_len`, the Kac integral `μ(M)`, **Proposition 5** | `s3_3_mass_identity.py` |
-| §3.4 — first-return condition, the exact tiling of `[0,1]` by seven intervals, the mass budget | `s3_4_completeness.py` |
-| §4 — the second route: `n(8/15) = 6` by an exact tiling of `L1`, three equal-width pairs | `s4_branch_count.py` |
-| §5 — every direction of `S¹(2d′)` is an image of a perpendicular direction (`Q ≤ 120`) | `s5_coverage.py` |
-| §5, abstract, §6 — the census: the table at odd `Q ≤ 31`, the per-`Q` counts, *beyond the table*, 2.2(e) at `d ≤ 50`, `T₀`'s two class rows | `s5_census.py` (+ `census_record.json`) |
-| §6 — the saddle connection `O → A`, its arrival identity, the `3`/`5`-family test, the leaves either side, its rate under deformation | `s6_connection.py` |
-| Appendix — the seven return words and the six cylinder half-words | `appendix_words.py` |
-| Figures 1–4 | `figures.py` |
-
-⚠ **Scope.** The census is exact per row and one-sided: `capped == 0` proves complete
-periodicity, a capped row is no verdict, and the undecided rows are listed by name. The
-failure at `T₀` is not certified by the census at all; it is §3's result.
-
----
-
-## The mirror-direction paper (`mirror_A/`)
-
-*Non-perpendicular periodic orbits in mirror directions of right triangles.* Built on `lib/`
-alone (`numfield.py`, `mirror.py`). Each script's docstring lists the statements it checks.
-
-| Statement | Script |
-|---|---|
-| §5.1 — Examples 5.1 and 5.2: words, periods, classes, the translation `4e(2a)`, launch intervals and the width `√7/56` exactly, smallest angles; controls | `s5_1_examples.py` |
-| §5.2 — Table 1: the `14` cylinders at rational `cos 2a`, `q ≤ 20`, their classes and periods; Niven; the `1 : √(4m − 1)` rows | `s5_2_rational_table.py` (+ `table1_record.json`) |
-| §5.3 — the triangle `cos 2a = (1 + √41)/8`: its four cylinders, one per class, exactly; controls | `s5_3_sqrt41.py` (+ `sqrt41_record.json`) |
-| §5.3 — the family `y_n → y_c`: the members `n ≤ 8` (period `30n + 6`) and the period-`30` cylinder at `y_c`, exactly — what the paper claims; beyond the paper, the symbolic checks that the family continues for every `n` (irreducibility and `a_n/π ∉ ℚ`, the alignment identity in `m`, the `274`-function clearance certificate, formal non-perpendicularity) | `s5_3_family.py` |
-| §6.3 — Proposition 6.6 and Table 2: the five tiles, their end polynomials, the cover, the leg swaps, the five `F_W` and their non-degeneracy; Lemmas 6.3 and 6.4 at one angle in each tile | `s6_3_tiles.py` |
-| Figures 1–4 | `figures.py` |
-
-⚠ **Scope.** A certificate proves that the cylinder it names exists. Table 1's blank cells are
-searches that found nothing, not proofs of absence, and nothing here checks them. §§2–4,
-§§6.1–6.2, 6.4 and §7 are proofs in the paper and have no script.
-
----
-
-## The legacy exact-arithmetic core (`engine/`)
-
-The research code's core, kept until the next paper's directory is added; no per-paper script
-imports it. The necklace paper's Appendix A.1 backend is `ring_cyc.py`, `exact_state_ring.py`
-and `cyl_diagram.py`; the rest is the orphan paper's original partition engine, superseded by
-`lib/partition.py`.
-
-| Module | Role |
-|---|---|
-| `cos_poly.py` | `CosPoly` — an element of `ℤ[½][cos 2α]` as an integer coefficient vector |
-| `cos_poly_fast.py` | numpy-backed drop-in for `cos_poly` |
-| `exact_state.py` | `ExactTriangleState` — the symbolic (multi-angle) triangle state |
-| `exact_state_fast.py` | drop-in for `exact_state` over `cos_poly_fast` |
-| `word_tree.py` | the reflection-word partition tree |
-| `word_tree_fast.py` | the same tree, faster node expansion |
-| `word_tree_nofrac.py` | fully algebraic split-ordering — no float tracer in the tree |
-| `n_exact.py` | **`n_pq_certified`** (A.3, the completeness certificate), **`exact_key`** (A.2, cyclotomic deduplication), `cyclotomic_poly` |
-| `ring_cyc.py` | the cyclotomic ring `ℤ[ζ_{2Q}]` — `RingContext`, `RingElem` (A.4) |
-| `exact_state_ring.py` | fixed-angle exact state over the ring (A.4); cost per reflection depends on `φ(2Q)`, not on depth |
-| `ring_cache.py` | persistent on-disk cache for the ring backend |
-| `cyclo_heights.py` | exact cylinder heights of a `π/(2Q)` direction class |
-| `orphan_region.py` | `find_orphan_ring`, `orphan_width_ring`, `trace_headon`, `locate_orphan` |
-| `exact_unfold.py` | exact affine unfolding of an orbit |
-| `cyl_diagram.py` | `CylinderDiagram` — genus and stratum of a translation surface |
-| `right_triangle_billiards.py` | plain float tracer, for cheap localization only — never for a count |
-| `cell_store.py` | the per-branch measurement store |
-| `zlattice.py` | exact `ℤ`-lattice arithmetic on integer row vectors |
+The scripts need no setup: each puts `lib/` on the path itself.
 
 ---
 
@@ -132,15 +57,58 @@ it checks.
 ⚠ **Scope.** Every other statement of the paper is a proof and has no script. The scripts check
 proved statements over the finite ranges they name, and the certificates the paper uses — the
 counts of §10, the verdicts of §11, the conditions of A.3 — exactly. They do not discharge complete
-periodicity or hypothesis (E) where a statement assumes them; each such statement carries its
+periodicity or hypothesis (OB) where a statement assumes them; each such statement carries its
 scope on its face in the paper.
 
-## Transitive dependencies
+---
 
-These are imported by the legacy scripts and are included so the legacy tree runs, but they
-belong to another strand (the counting-law / fan-chain work) and support no statement in any of
-the papers:
+## The method paper (`method/`)
 
-`s238_fan_anatomy`, `s242_m0fan`, `s252_chain_model`, `s253_proof_ineqs`,
-`s254_avoidance_proof`, `s256_leftover`, `s257_warmup_tiling`, `s274_mu_closed`,
-`s275_flow_exact`, `s302_model`, `s340_glen_enum`, `s356_rung_exact`, `s357_fanword`.
+*No arrivals: complete periodicity and degenerate orbits in rational right triangles.* Built on
+`lib/` alone (`triangle.py`, `tracer.py` for §6; `mpmath`, `sympy`, `scipy` for the appendices and
+Theorem 6). One script per computation of the paper's *Code availability*. Each script's
+docstring lists the statements it checks.
+
+| Statement | Script |
+|---|---|
+| Prop 6.4, its setting — the directions met, the phase space and its area, the field `K` | `s6_4_field.py` |
+| Prop 6.4, *The return map* — the first return to `Σ_H̄` is a three-interval exchange: words, exact translations, `λ₁, λ₂, λ₃` and coordinates | `s6_4_return_map.py` |
+| Prop 6.4, *The return map* — seven domains tile `[0, 1]` exactly, so there is no eighth word | `s6_4_tiling.py` |
+| Prop 6.4, *Minimality*, *Unique ergodicity* — rank `3`, the circle rotation, the roof | `s6_4_minimality.py` |
+| Prop 6.4, *Nothing else* — `L1` meets only the three cylinders | `s6_4_cylinders.py` |
+| Prop 6.4, *Nothing else* — the cylinder traces and areas, the Kac mass, their sum `Q = 15` | `s6_4_mass.py` |
+| Prop 6.4, *Code availability* — the seven return words and the six cylinder half-words | `s6_4_words.py` |
+| §6.3 — the connection `O → A` on the boundary of the minimal component | `s6_3_boundary.py` |
+| §6.3 — the arrival at `T₀ = 8/15`, the swapped connection it is, the reversed orbit at `7/15` | `s6_3_arrival.py` |
+| Theorem 6 — on each of `I₁`, `I₂`, `I₃`: the words and their exact tiling, every constraint certified on the interval, the symmetric three-interval exchange, the Galois step (`φ(d) ≤ 20 ⟹ d ≤ 66`, least denominators `92`, `242`, `223`), the periodic orbits of `282`, `118`, `126` bounces | `s9_2_theorem6.py` |
+| Prop A.12 — the certificate, `1 672` cases | `sA_12_certificate.py` |
+| Lemma A.15 — the finite check at the eight 3-smooth `80 < Q < 280`, `258` good classes | `sA_15_finite_check.py` |
+| Prop A.23 — the census at `Q ≤ 80`, `95 394` cases | `sA_23_census.py` (+ `sA_23_record.json`) |
+| §B.4 — the fourteen inequalities of Theorem 7.11's proof at every `m ≥ 3`, and the `R`-prongs at `m = 1, 2` | `sB_4_certificate.py` (+ `sB_4_record.json`) |
+
+⚠ **Scope.** Theorems 2–5, Proposition 9.1 and the rest of the paper are proofs and have no
+script. Remarks 6.3 and 6.6 report censuses the paper calls *found by computation*; they are not
+deposited. Theorem 6's words are proposed by a floating-point tracer at one point of each
+interval; what is certified is that those words tile the transversal on the whole interval.
+
+---
+
+## The mirror-direction paper (`mirror_A/`)
+
+*Non-perpendicular periodic orbits in mirror directions of right triangles.* Built on `lib/`
+alone (`numfield.py`, `mirror.py`). Each script's docstring lists the statements it checks.
+
+| Statement | Script |
+|---|---|
+| §5.1 — Examples 5.1 and 5.2: words, periods, classes, the translation `4e(2a)`, launch intervals and the width `√7/56` exactly, smallest angles; controls | `s5_1_examples.py` |
+| §5.2 — Table 1: the `14` cylinders at rational `cos 2a`, `q ≤ 20`, their classes and periods; Niven; the `1 : √(4m − 1)` rows | `s5_2_rational_table.py` (+ `table1_record.json`) |
+| §5.3 — the triangle `cos 2a = (1 + √41)/8`: its four cylinders, one per class, exactly; controls | `s5_3_sqrt41.py` (+ `sqrt41_record.json`) |
+| §5.3 — the family `y_n → y_c`: the members `n ≤ 8` (period `30n + 6`) and the period-`30` cylinder at `y_c`, exactly — what the paper claims; beyond the paper, the symbolic checks that the family continues for every `n` (irreducibility and `a_n/π ∉ ℚ`, the alignment identity in `m`, the `274`-function clearance certificate, formal non-perpendicularity) | `s5_3_family.py` |
+| §6.3 — Proposition 6.6 and Table 2: the five tiles, their end polynomials, the cover, the leg swaps, the five `F_W` and their non-degeneracy; Lemmas 6.3 and 6.4 at one angle in each tile | `s6_3_tiles.py` |
+| Figures 1–4 | `figures.py` |
+
+⚠ **Scope.** A certificate proves that the cylinder it names exists. Table 1's blank cells are
+searches that found nothing, not proofs of absence, and nothing here checks them. §§2–4,
+§§6.1–6.2, 6.4 and §7 are proofs in the paper and have no script.
+
+---

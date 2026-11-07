@@ -3,54 +3,40 @@
 Exact-arithmetic code supporting four papers on right triangles — three on rational right
 triangles, and one on right triangles whose angle is an irrational multiple of `π`:
 
-- **A minimal component in a rational right triangle: an exact decomposition, and a
-  conjecture of Boshernitzan** — `lib/` + `minimal_component/`
 - **The orphan theorem: degenerate perpendicular orbits in rational right triangles** —
   `lib/` + `orphan/`
 - **The necklace of a rational right triangle: exact counting and complete periodicity** —
   `lib/` + `neck/`
+- **No arrivals: complete periodicity and degenerate orbits in rational right triangles** —
+  `lib/` + `method/`
 - **Non-perpendicular periodic orbits in mirror directions of right triangles** —
   `lib/` + `mirror_A/`
 
 All four are in preparation. `MANIFEST.md` maps each script to the statement it supports.
 
-**The repository is being rebuilt paper by paper** into a small core library (`lib/`) and
-one directory per paper holding one script per statement, each named for what it checks.
-All four papers are done. The legacy layout — the research code as it ran, with
-session-numbered script names — remains only until a fifth paper's directory is added; it is
-then removed.
-
-## The minimal-component paper: `lib/` and `minimal_component/`
+The repository is a small core library (`lib/`) and one directory per paper holding one script
+per statement, each named for what it checks.
 
 ```sh
 python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python minimal_component/run_all.py          # about 3 minutes
-.venv/bin/python minimal_component/run_all.py --full   # recomputes the census, about an hour
-.venv/bin/python minimal_component/figures.py          # the four figures -> minimal_component/figs/
 ```
 
 No `PYTHONPATH` is needed: each script puts `lib/` on the path itself. Every script prints
 the statements it checks, one line each, and exits nonzero if any fails.
 
-`lib/` holds five modules, and everything in the paper is computed from them:
+`lib/` begins with five modules; the paper sections below add the rest.
 
 | Module | What it is |
 |---|---|
 | `cyclofield.py` | exact arithmetic in `ℚ(ζ_N)`; the sign of a real element is read off a certified interval enclosure, zero off the reduced polynomial |
 | `triangle.py` | the triangle and the exact unfolding of an orbit along a fixed word: positions, hitting times and path lengths are affine in the launch parameter with coefficients in `ℚ(ζ_4Q)`, so a word's validity region is one interval with exact endpoints, and a tiling of a segment by such intervals is a complete certificate |
-| `closure.py` | the closure certificate of §5: every separatrix of the genus-zero base walked to its end, arrival decided by exact equality in `ℤ[ζ_4Q]` |
+| `closure.py` | the closure certificate: every separatrix of the genus-zero base walked to its end, arrival decided by exact equality in `ℤ[ζ_4Q]` |
 | `develop.py` | the formal development of a word, giving a return word's translation as a function of the angle |
-| `tracer.py` | a 60-digit floating-point tracer, used only to **propose** words (which the exact code then verifies or rejects) and to trace the deformed flow of §3.1 |
+| `tracer.py` | a 60-digit floating-point tracer, used only to **propose** words (which the exact code then verifies or rejects) |
 
-**What is exact and what is not.** Every statement of §§2–4 and §6 about `T₀` is decided in
-`ℚ(ζ₆₀)`, with no tolerance: the interval lengths, both cuts, the seven validity intervals
-and their tiling of `Σ_H̄`, the six branch intervals and their tiling of `L1`, the cylinder
-table, the Kac integral and Proposition 5. The words themselves come from the tracer, but
-a missed word leaves a gap in a tiling and a wrong one has an empty interval, so neither
-can pass. The deformed-angle statements of §3.1 compare an exact formula with a 60-digit
-trace, as the paper says. The census of §5 is exact per row and **one-sided**: a capped row
-is no verdict. `minimal_component/census_record.json` holds every class row's verdict for
-odd `Q ≤ 39` and even `Q ≤ 40`; `s5_census.py` recomputes any of them.
+**Notation.** The scripts write `eps` for the direction-class label that the necklace paper and
+the method paper print as `𝔢` (the class `8/15 eps 0` is the paper's `8/15`, `𝔢 = 0`), and
+`(E)`, `(G0b)` in older docstrings for the hypotheses the papers print as (OB) and (ZZ).
 
 ## The orphan paper: `lib/` and `orphan/`
 
@@ -113,6 +99,40 @@ and at odd `Q ≤ 31`); `export_band_record.py` wrote it from the research repos
 are drawn from exact data except Figure 5's polygon model (a float model whose closed forms are
 checked to `1e-9`), and every caption claim is asserted before drawing.
 
+## The method paper: `lib/` and `method/`
+
+```sh
+.venv/bin/python method/run_all.py          # about ten minutes
+.venv/bin/python method/run_all.py --full   # Proposition A.23's census recomputed to Q <= 80 (about half an hour more)
+```
+
+One script per computation the paper's *Code availability* names, built on `lib/` alone (and
+`mpmath`, `sympy`, `scipy`):
+
+- **Proposition 6.4 and §6.3** (the minimal component at `T₀ = 8/15`, and the arrival `O → A` on
+  its boundary): `s6_4_*.py`, `s6_3_*.py`, on `t0.py`'s triangle and words. Every statement about
+  `T₀` is decided in `ℚ(ζ₆₀)` with no tolerance — the interval lengths, both cuts, the seven
+  validity intervals and their tiling, the six branch intervals and their tiling of `L1`, the
+  cylinder table and the Kac mass. The words come from the tracer, but a missed word leaves a gap
+  in a tiling and a wrong one has an empty interval, so neither can pass. Arms marked *(beyond
+  III)* check figures the paper does not print; they come from the long-form write-up of this
+  decomposition that the paper absorbed.
+- **Proposition A.12 and Lemma A.15**: exact rational arithmetic, every case of the finite check.
+- **Proposition A.23** (the census at `Q ≤ 80`): a functional is found by a floating-point LP
+  (`scipy`) and then verified by an exact integer Bellman–Ford computation; the LP's word is never
+  used. `sA_23_record.json` holds every case; the default run recomputes `Q ≤ 40` against it.
+- **Theorem 6** (the counterexamples to Conjecture 2.2(a)): the words are proposed by a 50-digit
+  tracer at one point of each interval; every constraint, tiling join, slope and translation is
+  then an exact Laurent polynomial in `e^{iπx}` over `ℤ[i]`, each identity is checked exactly and
+  each inequality by interval arithmetic (`mpmath.iv`) on the whole interval; the Galois step is
+  exact (`sympy`).
+- **§B.4** (the `(4, 3)` ladder): the fourteen inequalities in outward-rounded interval arithmetic
+  at every `3 ≤ m ≤ 3000`, and by an exact Taylor bound with Lagrange remainder for
+  `θ ≤ 1/7600`; `sB_4_record.json` holds the fourteen numerators, orders and margins. At
+  `m = 1, 2` every `R`-prong is traced in interval arithmetic.
+
+Theorems 2–5 and the rest of the paper are proofs and have no script.
+
 ## The mirror-direction paper: `lib/` and `mirror_A/`
 
 ```sh
@@ -138,83 +158,31 @@ paper claims; the same script also carries the symbolic proof that it continues 
 rational functions of `t`). The tiles of §6 are exact (sympy, real roots). The figures are float
 drawings whose captioned numbers are checked first.
 
-## The legacy layout
-
-`engine/`, `probes/` and `reproduce/` are the research code as it ran, kept until the next
-paper's directory is added. No per-paper directory imports them. The necklace paper's
-Appendix A.1 names one ingredient that lives only here, the fixed-angle backend in `ℤ[ζ_{2Q}]`
-that computed §5.1's cylinder data: `engine/ring_cyc.py`, `engine/exact_state_ring.py`,
-`engine/cyl_diagram.py`. The rest of this tree — the orphan paper's original partition engine,
-symbolic in `cos 2α` (`engine/cos_poly.py`, `engine/exact_state.py`, `engine/word_tree*.py`,
-`engine/n_exact.py`), superseded by `lib/partition.py` — is described in the research
-repository's notes and is not needed to check any statement of the four papers.
-
-⚠ That engine decides side order and orbit closure in floating point; what is exact is the value
-carried at each node. And two places in it are where an obvious implementation is silently
-wrong: the numbers `cos(kPπ/Q)` are `ℚ`-linearly dependent, so two equal boundaries can carry
-different coefficient vectors and a coefficient-wise comparison over-counts (`n_exact.exact_key`
-compares by value); and odd-`P` counts *plateau* — `n(3/29)` sits at `4` well past depth `10³`
-before climbing to `19` — so only a truncation certificate (`n_exact.n_pq_certified`) is reliable.
-
-## Running the legacy scripts
-
-Python 3.13. The per-paper directories need no setup. In the legacy tree there is no package
-and no `__init__.py` — modules import one another by
-**bare name**, resolved by putting both source directories on the path. The layout is
-preserved from the research repository deliberately, so that the deposited scripts are
-byte-identical to the ones that produced the results rather than a repackaging of them.
-
-```sh
-python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt
-export PYTHONPATH=engine:probes
-```
-
-Two drivers reproduce what the research code computed first:
-
-```sh
-.venv/bin/python reproduce/orphan_counts.py            # ~5s;  --max-q 31 for more
-.venv/bin/python reproduce/orphan_counts.py --slow     # adds the n(3/29) plateau check
-.venv/bin/python reproduce/necklace_checks.py          # ~10s
-```
-
-`reproduce/orphan_counts.py` reproduces `n(2/Q) = Q − 1` on odd `Q` and, with `--slow`,
-the plateau trap that motivates the certificate. `reproduce/necklace_checks.py` runs the
-counting identity of §3 and the necklace prong census of §§2–3. Individual scripts run
-directly (`python3 probes/<name>.py`) once `PYTHONPATH` is set; some write JSON to
-`data/` and some take minutes.
-
 ## Layout
 
 ```
-lib/, minimal_component/   the minimal-component paper (above)
-lib/, orphan/              the orphan paper (above)
-lib/, neck/                the necklace paper (above)
-lib/, mirror_A/            the mirror-direction paper (above)
-engine/      18 modules — legacy: the research code's exact-arithmetic core
-probes/      58 modules — legacy: per-result scripts, named by the session that wrote them
-reproduce/   legacy: drivers for the research code's headline numbers
-data/        output directory (created on demand)
-MANIFEST.md  script → paper statement
+lib/          the core library (above)
+orphan/       the orphan paper
+neck/         the necklace paper
+method/       the method paper
+mirror_A/     the mirror-direction paper
+MANIFEST.md   script → paper statement
 ```
-
-`engine/` and `probes/` are the transitive import closure of the legacy scripts; all 76
-modules import cleanly, and nothing outside the closure is included.
 
 ## Scope, and what the code does not establish
 
 The scripts compute; they do not prove, and the papers are explicit about which is which.
-Three points matter for anyone reading the output:
+Two points matter for anyone reading the output:
 
 - **Several of the necklace paper's statements are conditional** — on complete periodicity,
-  or on the existence of an orphan branch (hypothesis (E)). Running the checks does not
+  or on the existence of an orphan branch (hypothesis (OB)). Running the checks does not
   discharge either hypothesis; the paper tags each statement with its own scope.
 - **Coverage is finite and is quoted where it matters.** A check reported as
   `6040/6040 class rows` means exactly that range and no more.
 
 Script docstrings carry cross-references to the research project's internal ledgers
 (bracketed IDs such as `[NCYL-283]`, and filenames such as `future_directions.md`). Those
-ledgers are not part of this deposit. The docstrings are reproduced unedited rather than
-rewritten, so that what is deposited is the code as it ran.
+ledgers are not part of this deposit.
 
 ## License
 

@@ -476,7 +476,7 @@ def _chain_panel(ax, P, Q, eps):
             "\n" r"have an empty through band, and that is $h = 2$: forced, not imposed.")
     ax.annotate(note, (0.5, -0.30), xycoords=("axes fraction", "axes fraction"),
                 fontsize=9, color=PERP if ch.lone else ACC, ha="center", va="center")
-    ax.set_title(rf"({'a' if not ch.lone else 'b'}) ${P}/{Q}$, $\varepsilon = {eps}$ — "
+    ax.set_title(rf"({'a' if not ch.lone else 'b'}) ${P}/{Q}$, $\mathfrak{{e}} = {eps}$ — "
                  rf"{cls}.   $m = (Q\!-\!1)/2 = {m}$ interior poles $R_1,\dots,R_m$.",
                  fontsize=10.5, color=INK)
     ax.set_xlim(0.1, m + 1.75)
