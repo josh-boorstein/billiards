@@ -113,3 +113,30 @@ searches that found nothing, not proofs of absence, and nothing here checks them
 §§6.1–6.2, §6.4 apart from Remark 6.10's instance, and §7 are proofs in the paper and have no script.
 
 ---
+
+---
+
+## The polygon note (`polygon/`)
+
+*Singular perpendicular orbits and complete periodicity in rational triangles.* Built on `lib/`
+(`flow.py`, `beams.py`, `slots.py`; `closure.py` and `necklace.py` for the halves of isosceles
+triangles at odd `N`; `sympy` for Proposition 8.2). One script per item of §9, and one for
+Proposition 8.2's computer-assisted step.
+
+| Statement | Script |
+|---|---|
+| Theorem 4.2 (with Lemma 4.1), Proposition 5.1, Theorem 5.2 — on every class of the `456` scalene triangles with odd `N ≤ 21` or even `N ≤ 34` (`820` classes); the control `(7, 8, 15)`: `s′ = 6`, `p = 1`, `Σ n_σ = 6` | `s4_s5_slots_and_bands.py` |
+| §9, odd `N` — `1578` scalene triangles with odd `N ≤ 51`: `p ≥ 1` on `18`, all among the `626` with some `gcd(a_i, N) ≥ 3`, all with `s′ = 0`; the four with `N ≤ 21` and `Σ n_σ = N + 1`; `p = 0` at prime `N` | `s9_odd_census.py` |
+| Theorem 1.4, Propositions 8.1–8.2, Remark 8.3 — the families to `N ≤ 303`: completely periodic, `p = 1`, resp. `p = m` | `s8_families.py` |
+| Proposition 8.2 — the containment step: the direction identity, the harmonic form of the side functions, the exact root counts and the fourteen sign conditions | `s8_2_containment.py` |
+| Theorem 6.2 (1)–(2) — the leg and base beams of the `47` isosceles triangles with even `N ≤ 30` against their halves | `s6_isosceles_beams.py` |
+| Remark 8.5 — the `158` isosceles triangles with odd `N ≤ 39`: completely periodic with `p = 0` (`157` by the half's certificate, all `158` by the triangle's own decomposition) | `s8_5_isosceles_odd.py` |
+| Proposition 8.6 and §9 — the `91` isosceles triangles with even `N ≤ 60`, `b < 2a`: both classes completely periodic; the controls `(7, 7, 16)`, `(4, 4, 7)` | `s8_6_isosceles_even.py` |
+| Figures 1–3 | `figures.py` |
+
+⚠ **Scope.** Everything else in the note is proved by hand and has no script, except that the case of
+Proposition 8.6 in which `N` has one odd prime factor imports the method paper's Corollary 8.1, part 1,
+whose computer-assisted steps (its Appendix A.4–A.6) are in `method/` (`sA_12_certificate.py`,
+`sA_15_finite_check.py`, `sA_23_census.py`). The classifier's
+branch positions are 40-digit evaluations (counts and kinds are exact); the figures' paths are
+floating-point drawings whose content is asserted against the exact classifier first.

@@ -1,24 +1,26 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite it as below, together with the paper it supports."
 type: software
-title: "Billiards in right triangles: code deposit for four papers"
+title: "Billiards in triangles: code deposit for five papers"
 abstract: >-
-  Exact-arithmetic code supporting four papers on billiards in right triangles: The orphan
-  theorem; The necklace of a rational right triangle; No arrivals; and Non-perpendicular
-  periodic orbits in mirror directions of right triangles. A small core library (lib/) and one
+  Exact-arithmetic code supporting five papers on billiards in triangles: The orphan
+  theorem; The necklace of a rational right triangle; No arrivals; Non-perpendicular
+  periodic orbits in mirror directions of right triangles; and Singular perpendicular orbits
+  and complete periodicity in rational triangles. A small core library (lib/) and one
   directory per paper holding one script per statement; MANIFEST.md maps each script to the
   statement it supports.
 authors:
   - family-names: Boorstein
     given-names: Joshua
     orcid: "https://orcid.org/0009-0007-1291-2321"
-version: "v1.0"
-date-released: "2026-11-07"
+version: "v1.1"
+date-released: "2026-11-09"
 license: MIT
 repository-code: "https://github.com/josh-boorstein/billiards"
 keywords:
   - billiards
   - right triangles
+  - rational triangles
   - translation surfaces
   - periodic orbits
   - exact arithmetic

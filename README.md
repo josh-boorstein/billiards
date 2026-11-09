@@ -1,18 +1,20 @@
-# Billiards in rational right triangles — code deposit
+# Billiards in triangles — code deposit
 
-Exact-arithmetic code supporting four papers on right triangles — three on rational right
-triangles, and one on right triangles whose angle is an irrational multiple of `π`:
+Exact-arithmetic code supporting five papers — three on rational right triangles, one on right
+triangles whose angle is an irrational multiple of `π`, and one on rational triangles in general:
 
 - **The orphan theorem: degenerate perpendicular orbits in rational right triangles** —
-  `lib/` + `orphan/`
+  `lib/` + `orphan/` (Hexagon, hexagon:2611.00191)
 - **The necklace of a rational right triangle: exact counting and complete periodicity** —
-  `lib/` + `neck/`
+  `lib/` + `neck/` (Hexagon, hexagon:2611.00213)
 - **No arrivals: complete periodicity and degenerate orbits in rational right triangles** —
-  `lib/` + `method/`
+  `lib/` + `method/` (Hexagon, hexagon:2611.00250)
 - **Non-perpendicular periodic orbits in mirror directions of right triangles** —
-  `lib/` + `mirror_A/`
+  `lib/` + `mirror_A/` (in preparation)
+- **Singular perpendicular orbits and complete periodicity in rational triangles** —
+  `lib/` + `polygon/` (in preparation)
 
-All four are in preparation. `MANIFEST.md` maps each script to the statement it supports.
+`MANIFEST.md` maps each script to the statement it supports.
 
 The repository is a small core library (`lib/`) and one directory per paper holding one script
 per statement, each named for what it checks.
@@ -160,6 +162,37 @@ class `⊥OA` inside the range `π/6 < a < π/4` of Troubetzkoy's claim (the pap
 (`tro05_record.json`). The tiles of §6 are exact (sympy, real roots). The figures are float
 drawings whose captioned numbers are checked first.
 
+## The polygon note: `lib/` and `polygon/`
+
+```sh
+.venv/bin/python polygon/run_all.py          # about twenty-five minutes
+.venv/bin/python polygon/figures.py          # the three figures -> polygon/figs/
+```
+
+The note works in an arbitrary rational triangle, angles `π(a₀, a₁, a₂)/N`. Two modules join
+`lib/`, both on `flow.py`'s exact interval exchange of a direction on the unfolded surface:
+
+| Module | What it is |
+|---|---|
+| `beams.py` | every branch of a perpendicular beam, exactly classified by its first head-on collision — retracing, or paired by the return map as a mirror or translation pair; the branch partition is gated by an exact tiling of every entry edge of the side |
+| `slots.py` | the classes of perpendicular directions, and every slot's prong traced exactly to its first perpendicular collision, to a vertex, or to the cap; vertex-to-vertex prongs matched with their reverses |
+
+One script per item of the note's §9, and one for its single computer-assisted step:
+
+- **Proposition 8.2's containment step** (`s8_2_containment.py`), the one step of a proof that is
+  a computation: exact Sturm counts over `ℚ(√3)` (`sympy`), no floating point.
+- **The slot identity, the band count and the band bound** on every class of `456` scalene
+  triangles: the classifier and the tracer are independent readings of the same partition and
+  must agree side by side.
+- **The odd-`N` census** (`1578` triangles), **Theorem 1.4's families** (`N ≤ 303`) and the
+  **isosceles checks**. At odd `N` an isosceles triangle's class is certified on its right half by
+  `closure.py` / `necklace.py` (the necklace paper's certificate) and, independently, by `flow.py`
+  on the triangle itself; at even `N` both classes are decomposed by `flow.py`, whose control finds
+  the known minimal components of `(7, 7, 16)` and `(4, 4, 7)`.
+
+A prong or separatrix that reaches its step cap gives no verdict; every script reports what it
+certified and nothing about what it did not.
+
 ## Layout
 
 ```
@@ -168,6 +201,7 @@ orphan/       the orphan paper
 neck/         the necklace paper
 method/       the method paper
 mirror_A/     the mirror-direction paper
+polygon/      the polygon note
 MANIFEST.md   script → paper statement
 ```
 
