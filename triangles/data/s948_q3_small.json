@@ -1,0 +1,114 @@
+{
+ "F1 m=1": {
+  "slots": 27,
+  "perp": 25,
+  "vertex": 2,
+  "certified": 25,
+  "fail": [],
+  "ok": true
+ },
+ "F1 m=2": {
+  "slots": 45,
+  "perp": 41,
+  "vertex": 4,
+  "certified": 41,
+  "fail": [],
+  "ok": true
+ },
+ "F1 m=3": {
+  "slots": 63,
+  "perp": 57,
+  "vertex": 6,
+  "certified": 57,
+  "fail": [],
+  "ok": true
+ },
+ "F1 m=4": {
+  "slots": 81,
+  "perp": 73,
+  "vertex": 8,
+  "certified": 73,
+  "fail": [],
+  "ok": true
+ },
+ "F1 m=5": {
+  "slots": 99,
+  "perp": 89,
+  "vertex": 10,
+  "certified": 89,
+  "fail": [],
+  "ok": true
+ },
+ "F1 m=6": {
+  "slots": 117,
+  "perp": 105,
+  "vertex": 12,
+  "certified": 105,
+  "fail": [],
+  "ok": true
+ },
+ "F2 m=1": {
+  "slots": 27,
+  "perp": 25,
+  "vertex": 2,
+  "certified": 25,
+  "fail": [],
+  "ok": true
+ },
+ "F2 m=2": {
+  "slots": 45,
+  "perp": 41,
+  "vertex": 4,
+  "certified": 41,
+  "fail": [],
+  "ok": true
+ },
+ "F2 m=3": {
+  "slots": 63,
+  "perp": 57,
+  "vertex": 6,
+  "certified": 57,
+  "fail": [],
+  "ok": true
+ },
+ "F2 m=4": {
+  "slots": 81,
+  "perp": 73,
+  "vertex": 8,
+  "certified": 73,
+  "fail": [],
+  "ok": true
+ },
+ "F2 m=5": {
+  "slots": 99,
+  "perp": 89,
+  "vertex": 10,
+  "certified": 89,
+  "fail": [],
+  "ok": true
+ },
+ "F2 m=6": {
+  "slots": 117,
+  "perp": 105,
+  "vertex": 12,
+  "certified": 105,
+  "fail": [],
+  "ok": true
+ },
+ "control F1 m=3": {
+  "perturbed_words": 230,
+  "wrongly_certified": 0
+ },
+ "control F1 m=5": {
+  "perturbed_words": 365,
+  "wrongly_certified": 0
+ },
+ "control F2 m=3": {
+  "perturbed_words": 218,
+  "wrongly_certified": 0
+ },
+ "control F2 m=5": {
+  "perturbed_words": 346,
+  "wrongly_certified": 0
+ }
+}

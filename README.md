@@ -1,7 +1,7 @@
 # Billiards in triangles — code deposit
 
-Exact-arithmetic code supporting five papers — three on rational right triangles, one on right
-triangles whose angle is an irrational multiple of `π`, and one on rational triangles in general:
+Exact-arithmetic code supporting six papers — three on rational right triangles, one on right
+triangles whose angle is an irrational multiple of `π`, and two on rational triangles in general:
 
 - **The orphan theorem: degenerate perpendicular orbits in rational right triangles** —
   `lib/` + `orphan/` (Hexagon, hexagon:2611.00191)
@@ -10,9 +10,11 @@ triangles whose angle is an irrational multiple of `π`, and one on rational tri
 - **No arrivals: complete periodicity and degenerate orbits in rational right triangles** —
   `lib/` + `method/` (Hexagon, hexagon:2611.00250)
 - **Non-perpendicular periodic orbits in mirror directions of right triangles** —
-  `lib/` + `mirror_A/` (in preparation)
+  `lib/` + `mirror_A/` (Hexagon, hexagon:2611.00303)
 - **Singular perpendicular orbits and complete periodicity in rational triangles** —
-  `lib/` + `polygon/` (in preparation)
+  `lib/` + `polygon/` (Hexagon, hexagon:2611.00304)
+- **Complete periodicity of perpendicular billiards in rational triangles of prime denominator** —
+  `lib/` + `triangles/` (in preparation)
 
 `MANIFEST.md` maps each script to the statement it supports.
 
@@ -193,6 +195,34 @@ One script per item of the note's §9, and one for its single computer-assisted 
 A prong or separatrix that reaches its step cap gives no verdict; every script reports what it
 certified and nothing about what it did not.
 
+## The prime-denominator paper: `lib/` and `triangles/`
+
+```sh
+.venv/bin/python triangles/run_all.py           # about fifteen minutes, one core
+.venv/bin/python triangles/run_all.py --quick   # about two minutes: everything but Appendix B's m >= 7 part
+.venv/bin/python triangles/figures.py           # the three figures -> triangles/figs/
+```
+
+This paper's computer-assisted steps are Proposition 6.1's symbolic identities and the certificates of Theorems C and D
+(Appendices B and C). **Unlike the other directories, `triangles/` is not a port:** its scripts are the research keepers
+themselves, copied verbatim except for their imports of each other (renamed to the names below), their paths (records to
+`triangles/data/`, figures to `triangles/figs/`) and a first docstring paragraph naming the research file. So each
+docstring is the audited source, and its usage lines are the research repository's — run the scripts through
+`run_all.py`, which also checks each record against the figures the paper prints. Two modules join `lib/`:
+
+| Module | What it is |
+|---|---|
+| `word_family.py` | formal billiard words in a one-parameter family of rational triangles: vertex images as formal sums of roots of unity `ζ_{4N}^{αm+βt+γ}`, and a word's crossing conditions and terminal event as finite cosine sums in `(m, t)`, per parity class |
+| `cos_cert.py` | rigorous sign certificates for those cosine sums on regions touching `x = π/2N = 0` (every `m ≥ M0` at once): Taylor charts of `f/x^k`, the vanishing order `k` decided exactly in `ℚ(ζ_L)`, corner charts where the leading coefficient vanishes, bisection; and the exact zero test |
+
+Theorem C's certificate is a pipeline: step 1 traces every slot walk of the two families for `m = 4 … 30` (40-digit
+floating point, used only to **propose** the word families, which steps 3–5 then certify), step 2 proves Proposition B.1,
+steps 3–5 certify the cases `m ≥ 100`, `7 ≤ m ≤ 100` and `m ≤ 6`. Theorem D's certificate runs in ball arithmetic
+(`python-flint`, Arb) at 200 bits; its four core words are in its record, `triangles/data/s946_family_cert.json`.
+
+The census checks of the paper's §8 are checks, not inputs, and are not reproduced here except the three that `MANIFEST.md`
+lists (the band census rows, the direct trace for Theorem C, the exact points of Theorem D).
+
 ## Layout
 
 ```
@@ -202,6 +232,7 @@ neck/         the necklace paper
 method/       the method paper
 mirror_A/     the mirror-direction paper
 polygon/      the polygon note
+triangles/    the prime-denominator paper
 MANIFEST.md   script → paper statement
 ```
 

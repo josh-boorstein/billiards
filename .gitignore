@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 .venv/
 mirror_A/figs/
+triangles/data/s947_q3_walks_*.json

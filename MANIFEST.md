@@ -140,3 +140,28 @@ whose computer-assisted steps (its Appendix A.4–A.6) are in `method/` (`sA_12_
 `sA_15_finite_check.py`, `sA_23_census.py`). The classifier's
 branch positions are 40-digit evaluations (counts and kinds are exact); the figures' paths are
 floating-point drawings whose content is asserted against the exact classifier first.
+
+## The prime-denominator paper (`triangles/`)
+
+*Complete periodicity of perpendicular billiards in rational triangles of prime denominator.* The scripts are the
+research keepers, copied (README); `run_all.py` runs them in order and checks each record against the paper's figures.
+Theorems A and B and everything in §§2–5 and §7 are proved by hand and have no script.
+
+| Statement | Script | Research name |
+|---|---|---|
+| Proposition 6.1 (and Appendix A) — the band word `W_{q,m}` and its `m` relatives are swapped prongs on `(KA, B_up)`: the exact symbolic identities (Laurent polynomials, `k`, `j` free), with 40-digit unfoldings and controls on a `(q, m)` grid | `s6_1_band_identities.py` | `s921_band_qm.py` |
+| Proposition 6.2 — the length law `ℓ_j = R cos((2m−1−2j)A/2)`: the derivation's two root-of-unity sums, the closed form against the 40-digit unfolding, and the `102` census rows with `p ≥ 2` of §8 (*Bands*; input `data/s942_single_run.jsonl`) | `s6_2_length_law.py` | `s942_band_cos.py` |
+| Theorem 6.4 (Theorem C), Appendix B, step 1 — every slot walk of `(3, 6m+2, 12m+4)` and `(3, 6m+1, 12m+5)`, `m = 4 … 30`: exactly `2m` end at a vertex, none capped (§8, *Theorem C*); the word families (`28`, `24` ending at a right angle), affine on `m = 7 … 19`, held out on `m = 20 … 30`; four transcendental boundaries each | `appB_1_families.py` | `s947_q3_families.py` |
+| Proposition B.1 — the eight boundary functions: the four-term form (exact), Mann's theorem and the matching congruences, interval arithmetic at `m ∈ {2, 3, 17}` | `appB_2_boundaries.py` | `s947_q3_graze.py` |
+| Appendix B, the case `m ≥ 100` — every crossing condition (`2 084`, `1 936`) and every perpendicular ending certified on its family's region; the control (`19` families extended one slot lose their certificate) | `appB_3_legality.py` (`F1`, `F2`, `control`) | `s948_q3_legality.py` |
+| Appendix B, *Tiling* (every `m ≥ 7`) and the case `7 ≤ m ≤ 100` (`81 310` slots per triangle; `787 290`, `737 279` conditions) | `appB_4_lattice.py` | `s948_q3_lattice.py` |
+| Appendix B, the case `m ≤ 6`, and the control at `m = 3, 5` (`1 159` perturbed words, none certified) | `appB_5_small.py` | `s948_q3_small.py` |
+| Theorem 6.5 (Theorem D), Appendix C — the four families `(n, |c|) = (9, 576), (15, 712), (15, 756), (27, 1408)`: (i), (ii), (iv) exact, (iii) in ball arithmetic on the printed `J`; `W < 0` just outside; the `13` exact free-cylinder points of §8 (*Theorem D*) lie in their family's `J` (input `data/s944_window_search.jsonl`, the cores) | `appC_certificate.py` | `s946_family_cert.py` |
+| Figures 1–3 (content asserted against exact data first) | `figures.py` | `s949_tri_figures.py` |
+
+Helpers, imported by the scripts above: `poly_slots.py` (`s910_poly_slots.py`, the slot tracer), `slot_walk.py`
+(`s929_asym_witness.py`), `asym_free.py` (`s929_asym_free.py`), `poly_thmP.py` (`s928_poly_thmP.py`), `word_classify.py`
+(`s939_q5_families.py`), `band_shooter.py` (`s922_band_shooter.py`, the 30-digit developer), `laurent.py` (`s944_laurent.py`).
+
+⚠ **Scope.** Step 1 is floating point and only proposes; the proof of Theorem C is steps 2–5 with Proposition 6.1 and the
+counting argument of Appendix B. The §8 census bullets other than those named above are not scripted here.

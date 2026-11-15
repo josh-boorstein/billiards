@@ -1,0 +1,15 @@
+{
+ "fam": "F1",
+ "M0": 100,
+ "tiling_problems": [],
+ "run_span_problems": [],
+ "lattice": {
+  "slots": 81310,
+  "conds": 787290,
+  "fallback": 0,
+  "fail": [],
+  "run_checks": 183644,
+  "n_fail": 0
+ },
+ "all_ok": true
+}
