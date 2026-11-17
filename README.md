@@ -1,7 +1,8 @@
 # Billiards in triangles — code deposit
 
-Exact-arithmetic code supporting six papers — three on rational right triangles, one on right
-triangles whose angle is an irrational multiple of `π`, and two on rational triangles in general:
+Exact-arithmetic code supporting seven papers — three on rational right triangles, one on right
+triangles whose angle is an irrational multiple of `π`, two on rational triangles in general and one on rational
+polygons:
 
 - **The orphan theorem: degenerate perpendicular orbits in rational right triangles** —
   `lib/` + `orphan/` (Hexagon, hexagon:2611.00191)
@@ -15,6 +16,7 @@ triangles whose angle is an irrational multiple of `π`, and two on rational tri
   `lib/` + `polygon/` (Hexagon, hexagon:2611.00304)
 - **Complete periodicity of perpendicular billiards in rational triangles of prime denominator** —
   `lib/` + `triangles/` (in preparation)
+- **Perpendicular billiards in rational polygons of odd denominator** — `odd_polygons/` (in preparation)
 
 `MANIFEST.md` maps each script to the statement it supports.
 
@@ -223,6 +225,40 @@ steps 3–5 certify the cases `m ≥ 100`, `7 ≤ m ≤ 100` and `m ≤ 6`. Theo
 The census checks of the paper's §8 are checks, not inputs, and are not reproduced here except the three that `MANIFEST.md`
 lists (the band census rows, the direct trace for Theorem C, the exact points of Theorem D).
 
+## The odd-denominator polygon paper: `odd_polygons/`
+
+```sh
+.venv/bin/python odd_polygons/run_all.py           # about two and a half hours, one core
+.venv/bin/python odd_polygons/run_all.py --quick   # about 15 minutes: everything but the long certificates and scans
+.venv/bin/python odd_polygons/run_all.py --check   # only the checks, on the records in odd_polygons/data/
+```
+
+This paper's computer-assisted steps are Theorem 5.4's identities and inequality certificates (Appendix B), the exact flow
+decompositions behind Example 5.2 and Proposition 5.3(b), the finite checks of Remarks 6.9 and 6.10, and the certificates of
+Appendix A. Like `triangles/`, **`odd_polygons/` is not a port:** its scripts are the research keepers, copied verbatim except
+for their imports of each other (renamed to the names in `MANIFEST.md`), their paths (records to `odd_polygons/data/`, figures
+to `odd_polygons/figs/`) and a first docstring paragraph naming the research file. **The directory is self-contained** — it
+uses nothing from `lib/`; its own engines are
+
+| Module | What it is |
+|---|---|
+| `flow_decomp.py` | the exact flow decomposition of a rational triangle in a direction: an exact-arithmetic port of the decision procedure of `intervalxt` (Delecroix–Rüth), Boshernitzan certificates verified in exact integer arithmetic |
+| `flow_poly.py` | the same for a convex rational polygon with cyclotomic vertices |
+| `poly_seps.py`, `poly_corners.py` | exact saddle connections with the component on each side; free components and their corners |
+| `poly_exact.py` | exact prong tracking on a one-parameter family of convex polygons with sides affine in the parameter |
+| `signed_relation.py` | the exact test of Theorem 3.1's hypothesis (a signed relation among integer vectors) |
+
+`run_all.py` runs the scripts in order and checks each record against the figures the paper prints. It recomputes the
+catalogue of non-periodic triangle classes (`28` triangles, all six directions, about 20 minutes) from scratch and compares it
+with the research record, shipped as `odd_polygons/data/s626_noncp_catalogue_shipped.json`; `--quick` reads the shipped record
+instead.
+
+The measured statements of §4 (the kite census, the asymmetric witnesses) are evaluations at 50–60 digits along words read
+off a floating-point walk, as the paper says; they are measurements, not proofs. Not reproduced here: the Monte Carlo and
+perturbation checks of Remark 4.5, the parallelogram sweeps of Example 4.6 beyond its four ratios, the precision figures and
+the control family of Example 4.7, the analysis of the six exceptions in Remark 5.6, and the measurement that every chord
+`c_b` of Appendix A is a swapped connection.
+
 ## Layout
 
 ```
@@ -233,6 +269,7 @@ method/       the method paper
 mirror_A/     the mirror-direction paper
 polygon/      the polygon note
 triangles/    the prime-denominator paper
+odd_polygons/ the odd-denominator polygon paper
 MANIFEST.md   script → paper statement
 ```
 

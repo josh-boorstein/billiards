@@ -1,0 +1,124 @@
+{
+ "rows": [
+  {
+   "N": 13,
+   "a": [
+    2,
+    5,
+    8,
+    11
+   ],
+   "slots": 26,
+   "stage0": {
+    "exit": 22,
+    "perp": 4
+   },
+   "fams": 846,
+   "W0": 0,
+   "maxtransits": 6,
+   "bp_kinds": {
+    "('vertex', 'B')": 8,
+    "('vertex', 'V1')": 5,
+    "('vertex', 'V3')": 2,
+    "('vertex', 'V0')": 2,
+    "('vertex', 'V2')": 1
+   }
+  },
+  {
+   "N": 13,
+   "a": [
+    3,
+    4,
+    9,
+    10
+   ],
+   "slots": 26,
+   "stage0": {
+    "exit": 23,
+    "perp": 3
+   },
+   "fams": 3102,
+   "W0": 0,
+   "maxtransits": 8,
+   "bp_kinds": {
+    "('vertex', 'V2')": 2,
+    "('vertex', 'B')": 9,
+    "('vertex', 'V1')": 4,
+    "('vertex', 'V0')": 3,
+    "('vertex', 'V3')": 2
+   }
+  },
+  {
+   "N": 15,
+   "a": [
+    3,
+    5,
+    10,
+    12
+   ],
+   "slots": 30,
+   "stage0": {
+    "exit": 27,
+    "perp": 3
+   },
+   "fams": 3078,
+   "W0": 0,
+   "maxtransits": 6,
+   "bp_kinds": {
+    "('vertex', 'B')": 11,
+    "('vertex', 'V1')": 5,
+    "('vertex', 'V2')": 2,
+    "('vertex', 'V0')": 3,
+    "('vertex', 'V3')": 3
+   }
+  },
+  {
+   "N": 9,
+   "a": [
+    2,
+    3,
+    6,
+    7
+   ],
+   "slots": 18,
+   "stage0": {
+    "exit": 15,
+    "perp": 3
+   },
+   "fams": 230,
+   "W0": 0,
+   "maxtransits": 4,
+   "bp_kinds": {
+    "('vertex', 'B')": 5,
+    "('vertex', 'V1')": 3,
+    "('vertex', 'V2')": 1,
+    "('vertex', 'V3')": 1,
+    "('vertex', 'V0')": 2
+   }
+  },
+  {
+   "N": 9,
+   "a": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "slots": 18,
+   "stage0": {
+    "exit": 16,
+    "perp": 2
+   },
+   "fams": 1760,
+   "W0": 0,
+   "maxtransits": 6,
+   "bp_kinds": {
+    "('vertex', 'V1')": 4,
+    "('vertex', 'B')": 6,
+    "('vertex', 'V0')": 3,
+    "('vertex', 'V3')": 1
+   }
+  }
+ ],
+ "all_ok": true
+}

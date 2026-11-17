@@ -165,3 +165,39 @@ Helpers, imported by the scripts above: `poly_slots.py` (`s910_poly_slots.py`, t
 
 ⚠ **Scope.** Step 1 is floating point and only proposes; the proof of Theorem C is steps 2–5 with Proposition 6.1 and the
 counting argument of Appendix B. The §8 census bullets other than those named above are not scripted here.
+
+## The odd-denominator polygon paper (`odd_polygons/`)
+
+*Perpendicular billiards in rational polygons of odd denominator.* The scripts are the research keepers, copied (README);
+`run_all.py` runs them in order and checks each record against the paper's figures. §§2–3, Theorem 6.2, Lemmas 6.3–6.7 and
+Theorem 6.8 are proved by hand and have no script.
+
+| Statement | Script | Research name |
+|---|---|---|
+| Remark 4.5 — the kite census: `134` kites, `89` with `p = 1`, `44` of the `45` with `p ≥ 3` free, all prongs finite; Example 4.6's four ratios | `s4_5_kite_census.py` (helper `area_test.py`, Lemma 4.1 along words) | `s928_kites.py` (`s928_poly_thmP.py`) |
+| Proposition 4.4 — the rhombus `(3,2,3,2)π/5`: free fraction exactly `φ/5` | `s4_4_rhombus.py` | `s930_rhombus_exact.py` |
+| Example 4.7 — the witnesses `(2,4,5,7)π/9`, `(4,5,9,12)π/15` (130 digits, Monte Carlo cross-check) and the scan of five families | `s4_7_witnesses.py`, `s4_7_scan.py` | `s929_asym_witness.py`, `s929_asym_free.py` |
+| Remark 4.11 — the kite `(41,15,67,15)π/69`: `8` free components, two frontier connections each, `p = 19`; `(5,6,5,2)π/9`: one ι-invariant free component of four cylinders | `s4_11_counts.py` | `s958_free_counts.py` |
+| Example 5.2 — the three non-periodic kites; their parents' classes re-certified from scratch (Appendix B.2) | `s5_2_kites.py`, `noncp_catalogue.py` | `s929_kite_noncp.py`, `s626_noncp_catalogue.py` |
+| Proposition 5.3(b), Table 1 — the fold obstruction on the `28` catalogued triangles; the four octagons | `s5_3_fold.py` | `s933_reflection_tilings.py` |
+| Theorem 5.4, steps (i)–(ii), Appendix B.0 — the template and the identities in `ℚ(i)(z, w)` | `thmC_identities.py` | `s951_series_first_look.py` |
+| Theorem 5.4, step (iii), Appendix B.1 — `252` conditions, `16` formally zero and `2` more at `w = z^{2m}`; `m ≥ 4` in two variables, `m = 2, 3` per `m` (`402`, `570` pairs), controls | `thmC_cert.py` (machinery `thmC_cert_s951.py`) | `s952_s1_edge_cert.py` (`s951_s1_allm_cert.py`) |
+| Theorem 5.4 at `m = 1` — `254` conditions, `236` certified on `(0, 0.2095]`, continued to `π/14` | `pi_n_torus.py`, `thmC_m1.py` | `s935_pi_n_torus.py`, `s952_pi_family.py` |
+| Theorem 5.4 — the identities at real `x`; Lemma 5.5's fold check | `thmC_family.py` | `s952_s1_family.py` |
+| Remark 5.6 — the onset census (`188` rows below the edge, all periodic; control) | `s5_6_onset.py` | `s954_onset_converse.py` |
+| Remark 6.9 — the `78` trapezoid vectors, `32` acyclic; (B), (C) for chains `≤ 6` | `s6_9_census.py` | `s932_transfer_census.py` |
+| Remark 6.9 — (B), (C) for the five acyclic vectors without a `π/N` corner (`3102` wall families for `(3,4,9,10)/13`) | `s6_9_five.py` | `s932_five_acyclic.py` |
+| Remark 6.10 — `a₀ = 1`, `N ≤ 13`: families meet only as reverses; the isosceles controls | `s6_10_walls.py`, `s6_10_isosceles.py` | `s931_twist_walls.py`, `s932_iso_test.py` |
+| Proposition A.1 — the tori of `Π_N`: identities symbolic in `n`; per-`m` certificates `m ≤ 6`; two-variable certificate `m ≥ 7` (`336` conditions) and distinctness | `appA_1_identities.py`, `appA_1_per_m.py`, `appA_1_all_m.py` | `s935_torus_ladder.py`, `s935_ladder_perm_cert.py`, `s937_ladder_allm_cert.py` |
+| Proposition A.2 — the loop relation and its legality | `appA_2_identity.py`, `appA_2_legality.py` | `s938_pin_loop.py`, `s938_pin_legal.py` |
+| Proposition A.3 — the frontier of the tori | `appA_3_frontier.py` | `s941_chain_frontier.py` |
+| Appendix A, measured — for odd `15 ≤ N ≤ 63` the `2(M + 1)` tori are all the minimal components | `appA_chain_law.py` | `s940_pin_frontier.py` |
+| Appendix A, measured — for odd `15 ≤ N ≤ 63` each free component has one boundary cycle, three corners, genus `2M + 2` (Gauss–Bonnet, exact) | `appA_corners.py` | `s945_corner_census.py` |
+| Figures 1–4 (content asserted against exact data first) | `figures.py` | `s956_figures.py` |
+
+Engines: `flow_decomp.py`, `flow_poly.py`, `poly_seps.py`, `poly_corners.py`, `poly_exact.py`, `signed_relation.py`,
+`numfield.py` (research `engine/`, same names). Other helpers keep their research names without the `sNNN_` prefix.
+
+⚠ **Scope.** The §4 statements are evaluations along words read off a floating-point walk (Lemma 4.1 at 50–60 digits), and
+the paper labels them measurements; so are Remark 5.6 and the last paragraph of Appendix A. The README lists the measured
+statements that are not scripted here.

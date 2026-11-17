@@ -1,0 +1,487 @@
+{
+ "control": {
+  "shape": "(41,15,67,15)/69",
+  "counts": {
+   "cylinder": 66,
+   "no_periodic": 4
+  }
+ },
+ "5": {
+  "shapes": 32,
+  "mirror_free": 20,
+  "nonCP": 0,
+  "nonCP_mirror_free": 0,
+  "nonCP_rows": [],
+  "secs": 1
+ },
+ "7": {
+  "shapes": 132,
+  "mirror_free": 105,
+  "nonCP": 0,
+  "nonCP_mirror_free": 0,
+  "nonCP_rows": [],
+  "secs": 2
+ },
+ "9": {
+  "shapes": 370,
+  "mirror_free": 329,
+  "nonCP": 1,
+  "nonCP_mirror_free": 0,
+  "nonCP_rows": [
+   {
+    "key": [
+     2,
+     2,
+     12,
+     2,
+     7,
+     2
+    ],
+    "angles": [
+     2,
+     2,
+     7,
+     7
+    ],
+    "mirror_free": false,
+    "counts": {
+     "cylinder": 7,
+     "no_periodic": 2
+    },
+    "bad": 2
+   }
+  ],
+  "secs": 7
+ },
+ "11": {
+  "shapes": 900,
+  "mirror_free": 825,
+  "nonCP": 0,
+  "nonCP_mirror_free": 0,
+  "nonCP_rows": [],
+  "secs": 23
+ },
+ "13": {
+  "shapes": 1824,
+  "mirror_free": 1716,
+  "nonCP": 3,
+  "nonCP_mirror_free": 0,
+  "nonCP_rows": [
+   {
+    "key": [
+     2,
+     2,
+     20,
+     2,
+     11,
+     2
+    ],
+    "angles": [
+     2,
+     2,
+     11,
+     11
+    ],
+    "mirror_free": false,
+    "counts": {
+     "cylinder": 9,
+     "no_periodic": 2
+    },
+    "bad": 2
+   },
+   {
+    "key": [
+     2,
+     3,
+     18,
+     4,
+     10,
+     2
+    ],
+    "angles": [
+     3,
+     3,
+     10,
+     10
+    ],
+    "mirror_free": false,
+    "counts": {
+     "cylinder": 11,
+     "no_periodic": 2
+    },
+    "bad": 2
+   },
+   {
+    "key": [
+     2,
+     10,
+     4,
+     4,
+     3,
+     16
+    ],
+    "angles": [
+     3,
+     3,
+     10,
+     10
+    ],
+    "mirror_free": false,
+    "counts": {
+     "cylinder": 11,
+     "no_periodic": 2
+    },
+    "bad": 2
+   }
+  ],
+  "secs": 59
+ },
+ "15": {
+  "shapes": 3196,
+  "mirror_free": 3084,
+  "nonCP": 10,
+  "nonCP_mirror_free": 3,
+  "nonCP_rows": [
+   {
+    "key": [
+     9,
+     4,
+     13,
+     13,
+     2,
+     13
+    ],
+    "angles": [
+     11,
+     2,
+     13,
+     4
+    ],
+    "mirror_free": true,
+    "counts": {
+     "cylinder": 11,
+     "no_periodic": 2
+    },
+    "bad": 2
+   },
+   {
+    "key": [
+     5,
+     4,
+     17,
+     17,
+     4,
+     5
+    ],
+    "angles": [
+     11,
+     4,
+     11,
+     4
+    ],
+    "mirror_free": true,
+    "counts": {
+     "cylinder": 10,
+     "no_periodic": 2
+    },
+    "bad": 2
+   },
+   {
+    "key": [
+     9,
+     4,
+     13,
+     13,
+     4,
+     9
+    ],
+    "angles": [
+     11,
+     4,
+     11,
+     4
+    ],
+    "mirror_free": true,
+    "counts": {
+     "cylinder": 10,
+     "no_periodic": 2
+    },
+    "bad": 2
+   },
+   {
+    "key": [
+     3,
+     7,
+     13,
+     11,
+     8,
+     3
+    ],
+    "angles": [
+     7,
+     7,
+     8,
+     8
+    ],
+    "mirror_free": false,
+    "counts": {
+     "cylinder": 12,
+     "no_periodic": 2
+    },
+    "bad": 2
+   },
+   {
+    "key": [
+     1,
+     8,
+     13,
+     13,
+     7,
+     3
+    ],
+    "angles": [
+     8,
+     7,
+     7,
+     8
+    ],
+    "mirror_free": false,
+    "counts": {
+     "cylinder": 10,
+     "no_periodic": 2
+    },
+    "bad": 2
+   },
+   {
+    "key": [
+     2,
+     8,
+     12,
+     12,
+     7,
+     4
+    ],
+    "angles": [
+     8,
+     7,
+     7,
+     8
+    ],
+    "mirror_free": false,
+    "counts": {
+     "cylinder": 12,
+     "no_periodic": 2
+    },
+    "bad": 2
+   },
+   {
+    "key": [
+     5,
+     7,
+     11,
+     9,
+     8,
+     5
+    ],
+    "angles": [
+     7,
+     7,
+     8,
+     8
+    ],
+    "mirror_free": false,
+    "counts": {
+     "cylinder": 11,
+     "no_periodic": 2
+    },
+    "bad": 2
+   },
+   {
+    "key": [
+     3,
+     8,
+     11,
+     11,
+     7,
+     5
+    ],
+    "angles": [
+     8,
+     7,
+     7,
+     8
+    ],
+    "mirror_free": false,
+    "counts": {
+     "cylinder": 12,
+     "no_periodic": 2
+    },
+    "bad": 2
+   },
+   {
+    "key": [
+     7,
+     7,
+     9,
+     7,
+     8,
+     7
+    ],
+    "angles": [
+     7,
+     7,
+     8,
+     8
+    ],
+    "mirror_free": false,
+    "counts": {
+     "cylinder": 8,
+     "no_periodic": 4
+    },
+    "bad": 4
+   },
+   {
+    "key": [
+     6,
+     8,
+     8,
+     8,
+     7,
+     8
+    ],
+    "angles": [
+     7,
+     7,
+     8,
+     8
+    ],
+    "mirror_free": false,
+    "counts": {
+     "cylinder": 12,
+     "no_periodic": 2
+    },
+    "bad": 2
+   }
+  ],
+  "secs": 140
+ },
+ "17": {
+  "shapes": 5632,
+  "mirror_free": 5440,
+  "nonCP": 5,
+  "nonCP_mirror_free": 1,
+  "nonCP_rows": [
+   {
+    "key": [
+     11,
+     4,
+     15,
+     15,
+     2,
+     15
+    ],
+    "angles": [
+     13,
+     2,
+     15,
+     4
+    ],
+    "mirror_free": true,
+    "counts": {
+     "cylinder": 13,
+     "no_periodic": 2
+    },
+    "bad": 2
+   },
+   {
+    "key": [
+     2,
+     2,
+     28,
+     2,
+     15,
+     2
+    ],
+    "angles": [
+     2,
+     2,
+     15,
+     15
+    ],
+    "mirror_free": false,
+    "counts": {
+     "cylinder": 11,
+     "no_periodic": 2
+    },
+    "bad": 2
+   },
+   {
+    "key": [
+     2,
+     4,
+     24,
+     6,
+     13,
+     2
+    ],
+    "angles": [
+     4,
+     4,
+     13,
+     13
+    ],
+    "mirror_free": false,
+    "counts": {
+     "cylinder": 15,
+     "no_periodic": 2
+    },
+    "bad": 2
+   },
+   {
+    "key": [
+     4,
+     4,
+     22,
+     4,
+     13,
+     4
+    ],
+    "angles": [
+     4,
+     4,
+     13,
+     13
+    ],
+    "mirror_free": false,
+    "counts": {
+     "cylinder": 15,
+     "no_periodic": 2
+    },
+    "bad": 2
+   },
+   {
+    "key": [
+     2,
+     13,
+     6,
+     6,
+     4,
+     20
+    ],
+    "angles": [
+     4,
+     4,
+     13,
+     13
+    ],
+    "mirror_free": false,
+    "counts": {
+     "cylinder": 15,
+     "no_periodic": 2
+    },
+    "bad": 2
+   }
+  ],
+  "secs": 308
+ }
+}

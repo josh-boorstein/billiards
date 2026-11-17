@@ -1,0 +1,32 @@
+7,8,15 ten ([NCYL-626]/[NCYL-627]) ['right'] [('perp2', 2), ('par0', 2), ('par1', 2)] 1s
+7,7,16 ten ([NCYL-626]/[NCYL-627]) ['a = b (isosceles)'] [('perp0', 4), ('par1', 4), ('par2', 4)] 1s
+4,4,7 ten ([NCYL-626]/[NCYL-627]) ['a = b (isosceles)'] [('par0', 2), ('par1', 2), ('par2', 2)] 0s
+13,20,23 ten ([NCYL-626]/[NCYL-627]) [] [('perp0', 4), ('perp1', 4), ('par0', 4), ('par1', 4)] 4s
+15,30,47 ten ([NCYL-626]/[NCYL-627]) ['b = 2a'] [('perp2', 4), ('par2', 4)] 4s
+11,45,50 ten ([NCYL-626]/[NCYL-627]) [] [('perp0', 4), ('par1', 4), ('par2', 4)] 8s
+23,29,58 ten ([NCYL-626]/[NCYL-627]) ['c = 2b'] [('perp0', 4), ('par1', 4), ('par2', 4)] 8s
+19,38,55 ten ([NCYL-626]/[NCYL-627]) ['b = 2a'] [('perp0', 4), ('perp1', 4), ('par0', 4), ('par1', 4)] 11s
+11,22,103 ten ([NCYL-626]/[NCYL-627]) ['b = 2a'] [('perp0', 4), ('perp1', 4), ('par0', 4), ('par1', 4)] 20s
+30,41,67 ten ([NCYL-626]/[NCYL-627]) [] [('perp0', 4), ('perp2', 4), ('par1', 4)] 10s
+13,26,119 s624 line census ['b = 2a'] [('perp2', 4), ('par0', 4), ('par1', 4)] 20s
+15,30,131 s624 line census ['b = 2a'] [('perp2', 4), ('par2', 4)] 17s
+17,34,145 s624 line census ['b = 2a'] [('perp0', 4), ('perp1', 4), ('par0', 4), ('par1', 4)] 38s
+17,34,149 s624 line census ['b = 2a'] [('perp0', 4), ('perp1', 4), ('par0', 4), ('par1', 4)] 40s
+17,34,169 s624 line census ['b = 2a'] [('perp0', 4), ('perp1', 4), ('par0', 4), ('par1', 4)] 47s
+31,74,99 s624 line census [] [('perp2', 4), ('par2', 4)] 20s
+43,86,89 s624 line census ['b = 2a'] [('perp2', 4), ('par0', 4), ('par1', 4)] 48s
+49,67,98 s624 line census ['c = 2a'] [('perp0', 4), ('par1', 4), ('par2', 4)] 116s
+21,42,179 s625 windows ['b = 2a'] [('perp2', 4), ('par0', 4), ('par1', 4)] 57s
+23,46,201 s625 windows ['b = 2a'] [('perp0', 4), ('perp1', 4), ('par2', 4)] 47s
+25,50,213 s625 windows ['b = 2a'] [('perp0', 4), ('perp1', 4), ('par0', 4), ('par1', 4)] 83s
+31,62,159 s625 windows ['b = 2a'] [('perp2', 4), ('par2', 4)] 33s
+47,94,143 s625 windows ['b = 2a'] [('perp2', 4), ('par2', 4)] 63s
+51,102,155 s625 windows ['b = 2a'] [('perp2', 4), ('par2', 4)] 66s
+59,118,165 s625 windows ['b = 2a'] [('perp2', 4), ('par0', 4), ('par1', 4)] 118s
+17,34,217 s626 line scan ['b = 2a'] [('perp0', 4), ('perp1', 4), ('par0', 4), ('par1', 4)] 103s
+45,90,119 s626 line scan ['b = 2a'] [('perp0', 4), ('perp1', 4), ('par2', 4)] 74s
+51,71,102 s626 line scan ['c = 2a'] [('perp0', 4), ('par0', 4)] 34s
+
+real	18m9.890s
+user	17m29.986s
+sys	0m17.583s

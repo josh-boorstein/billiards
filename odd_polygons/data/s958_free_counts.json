@@ -1,0 +1,186 @@
+{
+ "kite (41,15,67,15)/69": {
+  "angles": [
+   41,
+   15,
+   67,
+   15
+  ],
+  "p": 19,
+  "n_free_components": 8,
+  "free_components": [
+   {
+    "comps": [
+     0,
+     3
+    ],
+    "kinds": [
+     "cylinder",
+     "cylinder"
+    ],
+    "iota_invariant": false,
+    "frontier": 2
+   },
+   {
+    "comps": [
+     1,
+     2
+    ],
+    "kinds": [
+     "cylinder",
+     "cylinder"
+    ],
+    "iota_invariant": false,
+    "frontier": 2
+   },
+   {
+    "comps": [
+     4,
+     9,
+     17,
+     18,
+     19
+    ],
+    "kinds": [
+     "cylinder",
+     "cylinder",
+     "no_periodic",
+     "cylinder",
+     "no_periodic"
+    ],
+    "iota_invariant": false,
+    "frontier": 2
+   },
+   {
+    "comps": [
+     5,
+     11,
+     12,
+     13,
+     14
+    ],
+    "kinds": [
+     "cylinder",
+     "cylinder",
+     "no_periodic",
+     "cylinder",
+     "no_periodic"
+    ],
+    "iota_invariant": false,
+    "frontier": 2
+   },
+   {
+    "comps": [
+     10,
+     22
+    ],
+    "kinds": [
+     "cylinder",
+     "cylinder"
+    ],
+    "iota_invariant": false,
+    "frontier": 2
+   },
+   {
+    "comps": [
+     15,
+     21
+    ],
+    "kinds": [
+     "cylinder",
+     "cylinder"
+    ],
+    "iota_invariant": false,
+    "frontier": 2
+   },
+   {
+    "comps": [
+     16
+    ],
+    "kinds": [
+     "cylinder"
+    ],
+    "iota_invariant": false,
+    "frontier": 2
+   },
+   {
+    "comps": [
+     20
+    ],
+    "kinds": [
+     "cylinder"
+    ],
+    "iota_invariant": false,
+    "frontier": 2
+   }
+  ],
+  "capped": 4
+ },
+ "(5,6,5,2)/9 key [3,6,3,7,2,7]": {
+  "angles": [
+   5,
+   6,
+   5,
+   2
+  ],
+  "p": 6,
+  "n_free_components": 1,
+  "free_components": [
+   {
+    "comps": [
+     0,
+     1,
+     2,
+     4
+    ],
+    "kinds": [
+     "cylinder",
+     "cylinder",
+     "cylinder",
+     "cylinder"
+    ],
+    "iota_invariant": true,
+    "frontier": 6
+   }
+  ],
+  "capped": 0
+ },
+ "control Pi_15": {
+  "angles": [
+   11,
+   4,
+   13,
+   2
+  ],
+  "p": 5,
+  "n_free_components": 2,
+  "free_components": [
+   {
+    "comps": [
+     0
+    ],
+    "kinds": [
+     "no_periodic"
+    ],
+    "iota_invariant": false,
+    "frontier": 3
+   },
+   {
+    "comps": [
+     1
+    ],
+    "kinds": [
+     "no_periodic"
+    ],
+    "iota_invariant": false,
+    "frontier": 3
+   }
+  ],
+  "capped": 2
+ },
+ "verdict": {
+  "kite: 8 free components, 2 frontier connections each, p = 19": true,
+  "(5,6,5,2)/9: one iota-invariant free component of four free cylinders": true,
+  "control Pi_15: 2 free components, p = 5": true
+ }
+}

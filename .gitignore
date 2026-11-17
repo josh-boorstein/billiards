@@ -3,3 +3,4 @@ __pycache__/
 .venv/
 mirror_A/figs/
 triangles/data/s947_q3_walks_*.json
+odd_polygons/data/*.pkl

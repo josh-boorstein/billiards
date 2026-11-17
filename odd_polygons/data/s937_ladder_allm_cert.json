@@ -1,0 +1,248 @@
+{
+ "main": {
+  "C7": 7,
+  "secs": 399,
+  "n_expr": 336,
+  "zero": 12,
+  "core_free": 152,
+  "atoms": 303,
+  "distinct_cores": 56,
+  "cores_ok": 56,
+  "corner_cores": 8,
+  "min_lb": 0.0025498531613321095,
+  "max_boxes": 29,
+  "corner_tests": [
+   {
+    "s2": 0.125,
+    "x2": 0.015625,
+    "A": 2.587678605299287,
+    "B": 0.9309154524087709
+   },
+   {
+    "s2": 0.25,
+    "x2": 0.03125,
+    "A": 1.8518939835371706,
+    "B": 1.5906430514905165
+   },
+   {
+    "s2": 0.25,
+    "x2": 0.03125,
+    "A": 4.877131353660675,
+    "B": 4.351420303930893
+   },
+   {
+    "s2": 0.0625,
+    "x2": 0.0078125,
+    "A": 6.133745554023929,
+    "B": 0.5026714908300434
+   },
+   {
+    "s2": 0.125,
+    "x2": 0.015625,
+    "A": 5.538584490386271,
+    "B": 0.32670383683246257
+   },
+   {
+    "s2": 0.5,
+    "x2": 0.0625,
+    "A": 2.090422203027886,
+    "B": 4.276998251847188
+   },
+   {
+    "s2": 0.25,
+    "x2": 0.03125,
+    "A": 4.858877492618084,
+    "B": 4.2650928912829515
+   },
+   {
+    "s2": 0.125,
+    "x2": 0.015625,
+    "A": 2.717448115616194,
+    "B": 1.6413922463872477
+   }
+  ],
+  "tight": [
+   "J0.seg2.10.all.p0.s0:a-p",
+   "J0.seg6.10.all.p1.s0:a-p",
+   "J0.seg9.23.rest.p1.s3:q-b",
+   "J1.seg4.23.all.p0.s3:q-b"
+  ],
+  "zero_names": [
+   "J0.seg1.20.all.p1.s0:a-p",
+   "J0.seg10.10.first.p0.s3:q-b",
+   "J0.seg7.23.first.p0.s0:a-p",
+   "J0.seg8.10.first.p0.s1:a-q",
+   "J0.seg8.10.first.p1.s1:a-q",
+   "J0.seg9.23.first.p0.s2:p-b",
+   "J0.seg9.23.first.p1.s2:p-b",
+   "J1.seg3.13.all.p1.s3:q-b",
+   "J1.seg5.20.all.p0.s2:p-b",
+   "J1.seg5.20.all.p1.s2:p-b",
+   "J1.seg9.13.all.p0.s1:a-q",
+   "J1.seg9.13.all.p1.s1:a-q"
+  ],
+  "flagged": [],
+  "why": {}
+ },
+ "control": {
+  "flagged": [
+   "J0.seg0.23.all.p0.s2:a-q",
+   "J0.seg0.23.all.p0.s3:a-p",
+   "J0.seg0.23.all.p1.s2:a-q",
+   "J0.seg0.23.all.p1.s3:a-p",
+   "J0.seg1.20.all.p0.s2:a-q",
+   "J0.seg1.20.all.p0.s3:a-p",
+   "J0.seg1.20.all.p1.s2:a-q",
+   "J0.seg10.10.first.p0.s1:p-b",
+   "J0.seg10.10.first.p1.s0:q-b",
+   "J0.seg10.10.first.p1.s1:p-b",
+   "J0.seg10.10.rest.p0.s0:q-b",
+   "J0.seg10.10.rest.p0.s1:p-b",
+   "J0.seg10.10.rest.p1.s0:q-b",
+   "J0.seg10.10.rest.p1.s1:p-b",
+   "J0.seg11.13.all.p0.s0:q-b",
+   "J0.seg11.13.all.p0.s1:p-b",
+   "J0.seg11.13.all.p1.s1:p-b",
+   "J0.seg11.13.all.p1.s3:a-p",
+   "J1.seg9.13.all.p1.s3:a-p"
+  ],
+  "numeric_neg_8n5": [
+   "J0.seg0.23.all.p0.s2:a-q",
+   "J0.seg0.23.all.p0.s3:a-p",
+   "J0.seg0.23.all.p1.s2:a-q",
+   "J0.seg0.23.all.p1.s3:a-p",
+   "J0.seg1.20.all.p0.s2:a-q",
+   "J0.seg1.20.all.p0.s3:a-p",
+   "J0.seg1.20.all.p1.s2:a-q",
+   "J0.seg10.10.first.p0.s1:p-b",
+   "J0.seg10.10.first.p1.s0:q-b",
+   "J0.seg10.10.first.p1.s1:p-b",
+   "J0.seg10.10.rest.p0.s0:q-b",
+   "J0.seg10.10.rest.p0.s1:p-b",
+   "J0.seg10.10.rest.p1.s0:q-b",
+   "J0.seg10.10.rest.p1.s1:p-b",
+   "J0.seg11.13.all.p0.s0:q-b",
+   "J0.seg11.13.all.p0.s1:p-b",
+   "J0.seg11.13.all.p1.s1:p-b",
+   "J0.seg11.13.all.p1.s3:a-p",
+   "J1.seg9.13.all.p1.s3:a-p"
+  ],
+  "numeric_neg_8n7": [],
+  "exact_match": true,
+  "why": {
+   "J0.seg0.23.all.p0.s3:a-p": [
+    "binomial (A)"
+   ],
+   "J0.seg0.23.all.p0.s2:a-q": [
+    "binomial (A)"
+   ],
+   "J0.seg0.23.all.p1.s2:a-q": [
+    "binomial (A)"
+   ],
+   "J0.seg0.23.all.p1.s3:a-p": [
+    "binomial (A)"
+   ],
+   "J0.seg1.20.all.p0.s3:a-p": [
+    "binomial (A)"
+   ],
+   "J0.seg1.20.all.p0.s2:a-q": [
+    "binomial (A)"
+   ],
+   "J0.seg1.20.all.p1.s2:a-q": [
+    "binomial (A)"
+   ],
+   "J0.seg10.10.first.p0.s1:p-b": [
+    "binomial (A)"
+   ],
+   "J0.seg10.10.first.p1.s1:p-b": [
+    "binomial (A)"
+   ],
+   "J0.seg10.10.first.p1.s0:q-b": [
+    "binomial (A)"
+   ],
+   "J0.seg10.10.rest.p0.s0:q-b": [
+    "binomial (A)"
+   ],
+   "J0.seg10.10.rest.p0.s1:p-b": [
+    "binomial (A)"
+   ],
+   "J0.seg10.10.rest.p1.s1:p-b": [
+    "binomial (A)"
+   ],
+   "J0.seg10.10.rest.p1.s0:q-b": [
+    "binomial (A)"
+   ],
+   "J0.seg11.13.all.p0.s0:q-b": [
+    "binomial (A)"
+   ],
+   "J0.seg11.13.all.p0.s1:p-b": [
+    "binomial (A)"
+   ],
+   "J0.seg11.13.all.p1.s1:p-b": [
+    "binomial (A)"
+   ],
+   "J1.seg9.13.all.p1.s3:a-p": [
+    "binomial (A)"
+   ],
+   "J0.seg11.13.all.p1.s3:a-p": [
+    "2D core"
+   ]
+  }
+ },
+ "generator_validation": {
+  "1": {
+   "n_perm": 504,
+   "n_fam": 504,
+   "maxdev": 1.762479051592436e-15
+  },
+  "2": {
+   "n_perm": 756,
+   "n_fam": 756,
+   "maxdev": 1.4710455076283324e-15
+  },
+  "3": {
+   "n_perm": 1008,
+   "n_fam": 1008,
+   "maxdev": 1.970645868709653e-15
+  },
+  "4": {
+   "n_perm": 1260,
+   "n_fam": 1260,
+   "maxdev": 1.4710455076283324e-15
+  },
+  "5": {
+   "n_perm": 1512,
+   "n_fam": 1512,
+   "maxdev": 1.6653345369377348e-15
+  },
+  "6": {
+   "n_perm": 1764,
+   "n_fam": 1764,
+   "maxdev": 2.0539125955565396e-15
+  }
+ },
+ "distinctness": {
+  "DM": [
+   0,
+   -4,
+   -2,
+   -4
+  ],
+  "start": "2n \u2212 1 (odd)",
+  "max_is_2n_plus_3": true,
+  "min_is_minus_2n_minus_1": true,
+  "small_n_expansion": {
+   "1": true,
+   "2": true,
+   "3": true,
+   "4": true,
+   "5": true,
+   "6": true,
+   "7": true
+  },
+  "n_forms": 72
+ },
+ "lambdas_positive": true,
+ "verdict": true,
+ "secs": 867
+}

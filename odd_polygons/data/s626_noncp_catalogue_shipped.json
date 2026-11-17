@@ -1,0 +1,8119 @@
+{
+ "7,8,15": {
+  "abc": [
+   7,
+   8,
+   15
+  ],
+  "d": 30,
+  "source": "ten ([NCYL-626]/[NCYL-627])",
+  "relations": [
+   "right"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 30,
+    "counts": {
+     "cylinder": 16
+    },
+    "bad_mass": 0,
+    "max_period": 178
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 74,
+    "counts": {
+     "cylinder": 16
+    },
+    "bad_mass": 0,
+    "max_period": 178
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 44,
+    "counts": {
+     "cylinder": 6,
+     "no_periodic": 2
+    },
+    "bad_mass": 0.5555953962683231,
+    "max_period": 54,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 7,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "16.2825370115844926228528626223",
+       "covol": "None",
+       "area_eq_covol": null
+      },
+      {
+       "n": 7,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "16.2825370115844926228528626223",
+       "covol": "None",
+       "area_eq_covol": null
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        1,
+        1
+       ]
+      ],
+      [
+       [
+        1,
+        1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       2
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "no_periodic": 2,
+     "cylinder": 6
+    },
+    "bad_mass": 0.5555953962683231,
+    "max_period": 54,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 7,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "16.2825370115844926228528626223",
+       "covol": "None",
+       "area_eq_covol": null
+      },
+      {
+       "n": 7,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "16.2825370115844926228528626223",
+       "covol": "None",
+       "area_eq_covol": null
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        1,
+        1
+       ]
+      ],
+      [
+       [
+        1,
+        1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       2
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 44,
+    "counts": {
+     "cylinder": 6,
+     "no_periodic": 2
+    },
+    "bad_mass": 0.5555953962683231,
+    "max_period": 54,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 7,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "16.2825370115844926228528626223",
+       "covol": "None",
+       "area_eq_covol": null
+      },
+      {
+       "n": 7,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "16.2825370115844926228528626223",
+       "covol": "None",
+       "area_eq_covol": null
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        1,
+        1
+       ]
+      ],
+      [
+       [
+        1,
+        1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       2
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 14,
+    "counts": {
+     "cylinder": 16
+    },
+    "bad_mass": 0,
+    "max_period": 178
+   }
+  ],
+  "secs": 2
+ },
+ "7,7,16": {
+  "abc": [
+   7,
+   7,
+   16
+  ],
+  "d": 30,
+  "source": "ten ([NCYL-626]/[NCYL-627])",
+  "relations": [
+   "a = b (isosceles)"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 30,
+    "counts": {
+     "cylinder": 6,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.5317420311183625,
+    "max_period": 40,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "7.29027421983243743000217156644",
+       "covol": "None",
+       "area_eq_covol": null
+      },
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "7.29027421983243743000217156644",
+       "covol": "None",
+       "area_eq_covol": null
+      },
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "7.29027421983243743000217156644",
+       "covol": "None",
+       "area_eq_covol": null
+      },
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "7.29027421983243743000217156644",
+       "covol": "None",
+       "area_eq_covol": null
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       [
+        1,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       1,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 76,
+    "counts": {
+     "cylinder": 16
+    },
+    "bad_mass": 0,
+    "max_period": 150
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 44,
+    "counts": {
+     "cylinder": 16
+    },
+    "bad_mass": 0,
+    "max_period": 150
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 16
+    },
+    "bad_mass": 0,
+    "max_period": 150
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 46,
+    "counts": {
+     "no_periodic": 4,
+     "cylinder": 6
+    },
+    "bad_mass": 0.5317420311183625,
+    "max_period": 40,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "7.29027421983243743000217156644",
+       "covol": "None",
+       "area_eq_covol": null
+      },
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "7.29027421983243743000217156644",
+       "covol": "None",
+       "area_eq_covol": null
+      },
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "7.29027421983243743000217156644",
+       "covol": "None",
+       "area_eq_covol": null
+      },
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "7.29027421983243743000217156644",
+       "covol": "None",
+       "area_eq_covol": null
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       [
+        1,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       1,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 14,
+    "counts": {
+     "cylinder": 6,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.5317420311183625,
+    "max_period": 40,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "7.29027421983243743000217156644",
+       "covol": "None",
+       "area_eq_covol": null
+      },
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "7.29027421983243743000217156644",
+       "covol": "None",
+       "area_eq_covol": null
+      },
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "7.29027421983243743000217156644",
+       "covol": "None",
+       "area_eq_covol": null
+      },
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "7.29027421983243743000217156644",
+       "covol": "None",
+       "area_eq_covol": null
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       [
+        1,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       1,
+       -1
+      ]
+     ]
+    }
+   }
+  ],
+  "secs": 5
+ },
+ "4,4,7": {
+  "abc": [
+   4,
+   4,
+   7
+  ],
+  "d": 15,
+  "source": "ten ([NCYL-626]/[NCYL-627])",
+  "relations": [
+   "a = b (isosceles)"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 15,
+    "counts": {
+     "cylinder": 9
+    },
+    "bad_mass": 0,
+    "max_period": 124
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 37,
+    "counts": {
+     "cylinder": 9
+    },
+    "bad_mass": 0,
+    "max_period": 124
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 23,
+    "counts": {
+     "cylinder": 9
+    },
+    "bad_mass": 0,
+    "max_period": 124
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 3,
+     "no_periodic": 2
+    },
+    "bad_mass": 0.556625123055528,
+    "max_period": 38,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "8.99226279175205519285069105585",
+       "covol": "None",
+       "area_eq_covol": null
+      },
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "8.99226279175205519285069105585",
+       "covol": "None",
+       "area_eq_covol": null
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       [
+        1,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       1,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 22,
+    "counts": {
+     "no_periodic": 2,
+     "cylinder": 3
+    },
+    "bad_mass": 0.556625123055528,
+    "max_period": 38,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "8.99226279175205519285069105585",
+       "covol": "None",
+       "area_eq_covol": null
+      },
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "8.99226279175205519285069105585",
+       "covol": "None",
+       "area_eq_covol": null
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       [
+        1,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       1,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 8,
+    "counts": {
+     "no_periodic": 2,
+     "cylinder": 3
+    },
+    "bad_mass": 0.556625123055528,
+    "max_period": 38,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "8.99226279175205519285069105585",
+       "covol": "None",
+       "area_eq_covol": null
+      },
+      {
+       "n": 3,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 3,
+       "area": "8.99226279175205519285069105585",
+       "covol": "None",
+       "area_eq_covol": null
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       [
+        1,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       1,
+       -1
+      ]
+     ]
+    }
+   }
+  ],
+  "secs": 2
+ },
+ "13,20,23": {
+  "abc": [
+   13,
+   20,
+   23
+  ],
+  "d": 56,
+  "source": "ten ([NCYL-626]/[NCYL-627])",
+  "relations": [],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 56,
+    "counts": {
+     "cylinder": 24,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.29401307056326087,
+    "max_period": 966,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        4,
+        3
+       ]
+      ],
+      [
+       [
+        4,
+        3
+       ]
+      ],
+      [
+       [
+        4,
+        3
+       ]
+      ],
+      [
+       [
+        4,
+        3
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       4,
+       3
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 128,
+    "counts": {
+     "cylinder": 24,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.29401307056326087,
+    "max_period": 966,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        4,
+        3
+       ]
+      ],
+      [
+       [
+        4,
+        3
+       ]
+      ],
+      [
+       [
+        4,
+        3
+       ]
+      ],
+      [
+       [
+        4,
+        3
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       4,
+       3
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 82,
+    "counts": {
+     "cylinder": 28
+    },
+    "bad_mass": 0,
+    "max_period": 532
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 24,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.29401307056326087,
+    "max_period": 966,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        4,
+        3
+       ]
+      ],
+      [
+       [
+        4,
+        3
+       ]
+      ],
+      [
+       [
+        4,
+        3
+       ]
+      ],
+      [
+       [
+        4,
+        3
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       4,
+       3
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 72,
+    "counts": {
+     "cylinder": 24,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.29401307056326087,
+    "max_period": 966,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "9.6497173059186116301927952317",
+       "covol": "9.6497173059186116301927952317",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        4,
+        3
+       ]
+      ],
+      [
+       [
+        4,
+        3
+       ]
+      ],
+      [
+       [
+        4,
+        3
+       ]
+      ],
+      [
+       [
+        4,
+        3
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       4,
+       3
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 26,
+    "counts": {
+     "cylinder": 28
+    },
+    "bad_mass": 0,
+    "max_period": 532
+   }
+  ],
+  "secs": 79
+ },
+ "15,30,47": {
+  "abc": [
+   15,
+   30,
+   47
+  ],
+  "d": 92,
+  "source": "ten ([NCYL-626]/[NCYL-627])",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 92,
+    "counts": {
+     "cylinder": 46
+    },
+    "bad_mass": 0,
+    "max_period": 10632
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 216,
+    "counts": {
+     "cylinder": 46
+    },
+    "bad_mass": 0,
+    "max_period": 10632
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 122,
+    "counts": {
+     "cylinder": 42,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.12367757290414434,
+    "max_period": 3116,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.7565584758895716495044447125",
+       "covol": "4.7565584758895716495044447125",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.7565584758895716495044447125",
+       "covol": "4.7565584758895716495044447125",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.7565584758895716495044447125",
+       "covol": "4.7565584758895716495044447125",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.7565584758895716495044447125",
+       "covol": "4.7565584758895716495044447125",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 46
+    },
+    "bad_mass": 0,
+    "max_period": 10632
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 124,
+    "counts": {
+     "cylinder": 46
+    },
+    "bad_mass": 0,
+    "max_period": 10632
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 30,
+    "counts": {
+     "cylinder": 42,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.12367757290414434,
+    "max_period": 3116,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.7565584758895716495044447125",
+       "covol": "4.7565584758895716495044447125",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.7565584758895716495044447125",
+       "covol": "4.7565584758895716495044447125",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.7565584758895716495044447125",
+       "covol": "4.7565584758895716495044447125",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.7565584758895716495044447125",
+       "covol": "4.7565584758895716495044447125",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   }
+  ],
+  "secs": 55
+ },
+ "11,45,50": {
+  "abc": [
+   11,
+   45,
+   50
+  ],
+  "d": 106,
+  "source": "ten ([NCYL-626]/[NCYL-627])",
+  "relations": [],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 106,
+    "counts": {
+     "cylinder": 48,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.08172672043716725,
+    "max_period": 4710,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "2.61070362835860754302309655814",
+       "covol": "2.61070362835860754302309655814",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "2.61070362835860754302309655814",
+       "covol": "2.61070362835860754302309655814",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "2.61070362835860754302309655814",
+       "covol": "2.61070362835860754302309655814",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "2.61070362835860754302309655814",
+       "covol": "2.61070362835860754302309655814",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        7,
+        3
+       ]
+      ],
+      [
+       [
+        7,
+        3
+       ]
+      ],
+      [
+       [
+        7,
+        3
+       ]
+      ],
+      [
+       [
+        7,
+        3
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       7,
+       3
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 228,
+    "counts": {
+     "cylinder": 54
+    },
+    "bad_mass": 0,
+    "max_period": 6674
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 128,
+    "counts": {
+     "cylinder": 54
+    },
+    "bad_mass": 0,
+    "max_period": 6674
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 54
+    },
+    "bad_mass": 0,
+    "max_period": 6674
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 122,
+    "counts": {
+     "cylinder": 48,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.08172672043716725,
+    "max_period": 4710,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "2.61070362835860754302309655814",
+       "covol": "2.61070362835860754302309655814",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "2.61070362835860754302309655814",
+       "covol": "2.61070362835860754302309655814",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "2.61070362835860754302309655814",
+       "covol": "2.61070362835860754302309655814",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "2.61070362835860754302309655814",
+       "covol": "2.61070362835860754302309655814",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        7,
+        3
+       ]
+      ],
+      [
+       [
+        7,
+        3
+       ]
+      ],
+      [
+       [
+        7,
+        3
+       ]
+      ],
+      [
+       [
+        7,
+        3
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       7,
+       3
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 22,
+    "counts": {
+     "cylinder": 48,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.08172672043716725,
+    "max_period": 4710,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "2.61070362835860754302309655814",
+       "covol": "2.61070362835860754302309655814",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "2.61070362835860754302309655814",
+       "covol": "2.61070362835860754302309655814",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "2.61070362835860754302309655814",
+       "covol": "2.61070362835860754302309655814",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "2.61070362835860754302309655814",
+       "covol": "2.61070362835860754302309655814",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        7,
+        3
+       ]
+      ],
+      [
+       [
+        7,
+        3
+       ]
+      ],
+      [
+       [
+        7,
+        3
+       ]
+      ],
+      [
+       [
+        7,
+        3
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       7,
+       3
+      ]
+     ]
+    }
+   }
+  ],
+  "secs": 127
+ },
+ "23,29,58": {
+  "abc": [
+   23,
+   29,
+   58
+  ],
+  "d": 110,
+  "source": "ten ([NCYL-626]/[NCYL-627])",
+  "relations": [
+   "c = 2b"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 110,
+    "counts": {
+     "cylinder": 50,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.0760618003542776,
+    "max_period": 916,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.66470228768365591478528972295",
+       "covol": "3.66470228768365591478528972295",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.66470228768365591478528972295",
+       "covol": "3.66470228768365591478528972295",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.66470228768365591478528972295",
+       "covol": "3.66470228768365591478528972295",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.66470228768365591478528972295",
+       "covol": "3.66470228768365591478528972295",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        1,
+        3
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       1,
+       3
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 272,
+    "counts": {
+     "cylinder": 56
+    },
+    "bad_mass": 0,
+    "max_period": 522
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 156,
+    "counts": {
+     "cylinder": 56
+    },
+    "bad_mass": 0,
+    "max_period": 522
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 56
+    },
+    "bad_mass": 0,
+    "max_period": 522
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 162,
+    "counts": {
+     "cylinder": 50,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.0760618003542776,
+    "max_period": 916,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.66470228768365591478528972295",
+       "covol": "3.66470228768365591478528972295",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.66470228768365591478528972295",
+       "covol": "3.66470228768365591478528972295",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.66470228768365591478528972295",
+       "covol": "3.66470228768365591478528972295",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.66470228768365591478528972295",
+       "covol": "3.66470228768365591478528972295",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        1,
+        3
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       1,
+       3
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 46,
+    "counts": {
+     "cylinder": 50,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.0760618003542776,
+    "max_period": 916,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.66470228768365591478528972295",
+       "covol": "3.66470228768365591478528972295",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.66470228768365591478528972295",
+       "covol": "3.66470228768365591478528972295",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.66470228768365591478528972295",
+       "covol": "3.66470228768365591478528972295",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.66470228768365591478528972295",
+       "covol": "3.66470228768365591478528972295",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       [
+        1,
+        3
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       1,
+       3
+      ]
+     ]
+    }
+   }
+  ],
+  "secs": 132
+ },
+ "19,38,55": {
+  "abc": [
+   19,
+   38,
+   55
+  ],
+  "d": 112,
+  "source": "ten ([NCYL-626]/[NCYL-627])",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 112,
+    "counts": {
+     "cylinder": 52,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.025763716870875288,
+    "max_period": 39026,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 260,
+    "counts": {
+     "cylinder": 52,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.025763716870875288,
+    "max_period": 39026,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 150,
+    "counts": {
+     "cylinder": 56
+    },
+    "bad_mass": 0,
+    "max_period": 10634
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 52,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.025763716870875288,
+    "max_period": 39026,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 148,
+    "counts": {
+     "cylinder": 52,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.025763716870875288,
+    "max_period": 39026,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28907537175624174356844159548",
+       "covol": "1.28907537175624174356844159548",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 38,
+    "counts": {
+     "cylinder": 56
+    },
+    "bad_mass": 0,
+    "max_period": 10634
+   }
+  ],
+  "secs": 193
+ },
+ "11,22,103": {
+  "abc": [
+   11,
+   22,
+   103
+  ],
+  "d": 136,
+  "source": "ten ([NCYL-626]/[NCYL-627])",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 136,
+    "counts": {
+     "cylinder": 64,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.06222226913375833,
+    "max_period": 14648,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 364,
+    "counts": {
+     "cylinder": 64,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.06222226913375833,
+    "max_period": 14648,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 158,
+    "counts": {
+     "cylinder": 68
+    },
+    "bad_mass": 0,
+    "max_period": 269542
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 64,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.06222226913375833,
+    "max_period": 14648,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 228,
+    "counts": {
+     "cylinder": 64,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.06222226913375833,
+    "max_period": 14648,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.751547352913919872043142676466",
+       "covol": "0.751547352913919872043142676466",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 22,
+    "counts": {
+     "cylinder": 68
+    },
+    "bad_mass": 0,
+    "max_period": 269542
+   }
+  ],
+  "secs": 348
+ },
+ "30,41,67": {
+  "abc": [
+   30,
+   41,
+   67
+  ],
+  "d": 138,
+  "source": "ten ([NCYL-626]/[NCYL-627])",
+  "relations": [],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 138,
+    "counts": {
+     "cylinder": 66,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.029272661726089295,
+    "max_period": 1732,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.99586873783103587715413917149",
+       "covol": "1.99586873783103587715413917149",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.99586873783103587715413917149",
+       "covol": "1.99586873783103587715413917149",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.99586873783103587715413917149",
+       "covol": "1.99586873783103587715413917149",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.99586873783103587715413917149",
+       "covol": "1.99586873783103587715413917149",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        1,
+        6
+       ]
+      ],
+      [
+       [
+        1,
+        6
+       ]
+      ],
+      [
+       [
+        1,
+        6
+       ]
+      ],
+      [
+       [
+        1,
+        6
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       1,
+       6
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 332,
+    "counts": {
+     "cylinder": 68
+    },
+    "bad_mass": 0,
+    "max_period": 3448
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 198,
+    "counts": {
+     "cylinder": 66,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.029272661726089295,
+    "max_period": 1732,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.99586873783103587715413917149",
+       "covol": "1.99586873783103587715413917149",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.99586873783103587715413917149",
+       "covol": "1.99586873783103587715413917149",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.99586873783103587715413917149",
+       "covol": "1.99586873783103587715413917149",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.99586873783103587715413917149",
+       "covol": "1.99586873783103587715413917149",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        1,
+        6
+       ]
+      ],
+      [
+       [
+        1,
+        6
+       ]
+      ],
+      [
+       [
+        1,
+        6
+       ]
+      ],
+      [
+       [
+        1,
+        6
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       1,
+       6
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 68
+    },
+    "bad_mass": 0,
+    "max_period": 3448
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 194,
+    "counts": {
+     "cylinder": 66,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.029272661726089295,
+    "max_period": 1732,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.99586873783103587715413917149",
+       "covol": "1.99586873783103587715413917149",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.99586873783103587715413917149",
+       "covol": "1.99586873783103587715413917149",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.99586873783103587715413917149",
+       "covol": "1.99586873783103587715413917149",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.99586873783103587715413917149",
+       "covol": "1.99586873783103587715413917149",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        1,
+        6
+       ]
+      ],
+      [
+       [
+        1,
+        6
+       ]
+      ],
+      [
+       [
+        1,
+        6
+       ]
+      ],
+      [
+       [
+        1,
+        6
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       1,
+       6
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 60,
+    "counts": {
+     "cylinder": 68
+    },
+    "bad_mass": 0,
+    "max_period": 3448
+   }
+  ],
+  "secs": 155
+ },
+ "13,26,119": {
+  "abc": [
+   13,
+   26,
+   119
+  ],
+  "d": 158,
+  "source": "s624 line census",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 158,
+    "counts": {
+     "cylinder": 80
+    },
+    "bad_mass": 0,
+    "max_period": 102666
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 422,
+    "counts": {
+     "cylinder": 80
+    },
+    "bad_mass": 0,
+    "max_period": 102666
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 184,
+    "counts": {
+     "cylinder": 74,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.09037499097589564,
+    "max_period": 9182,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28582633976758372145443054357",
+       "covol": "1.28582633976758372145443054357",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28582633976758372145443054357",
+       "covol": "1.28582633976758372145443054357",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28582633976758372145443054357",
+       "covol": "1.28582633976758372145443054357",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28582633976758372145443054357",
+       "covol": "1.28582633976758372145443054357",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 74,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.09037499097589564,
+    "max_period": 9182,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28582633976758372145443054357",
+       "covol": "1.28582633976758372145443054357",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28582633976758372145443054357",
+       "covol": "1.28582633976758372145443054357",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28582633976758372145443054357",
+       "covol": "1.28582633976758372145443054357",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28582633976758372145443054357",
+       "covol": "1.28582633976758372145443054357",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 264,
+    "counts": {
+     "cylinder": 74,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.09037499097589564,
+    "max_period": 9182,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28582633976758372145443054357",
+       "covol": "1.28582633976758372145443054357",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28582633976758372145443054357",
+       "covol": "1.28582633976758372145443054357",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28582633976758372145443054357",
+       "covol": "1.28582633976758372145443054357",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.28582633976758372145443054357",
+       "covol": "1.28582633976758372145443054357",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 26,
+    "counts": {
+     "cylinder": 80
+    },
+    "bad_mass": 0,
+    "max_period": 102666
+   }
+  ],
+  "secs": 332
+ },
+ "15,30,131": {
+  "abc": [
+   15,
+   30,
+   131
+  ],
+  "d": 176,
+  "source": "s624 line census",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 176,
+    "counts": {
+     "cylinder": 88
+    },
+    "bad_mass": 0,
+    "max_period": 73706
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 468,
+    "counts": {
+     "cylinder": 88
+    },
+    "bad_mass": 0,
+    "max_period": 73706
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 206,
+    "counts": {
+     "cylinder": 84,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.08819447425504644,
+    "max_period": 68636,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.49450884577873104572361610117",
+       "covol": "1.49450884577873104572361610117",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.49450884577873104572361610117",
+       "covol": "1.49450884577873104572361610117",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.49450884577873104572361610117",
+       "covol": "1.49450884577873104572361610117",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.49450884577873104572361610117",
+       "covol": "1.49450884577873104572361610117",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 88
+    },
+    "bad_mass": 0,
+    "max_period": 73706
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 292,
+    "counts": {
+     "cylinder": 88
+    },
+    "bad_mass": 0,
+    "max_period": 73706
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 30,
+    "counts": {
+     "cylinder": 84,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.08819447425504644,
+    "max_period": 68636,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.49450884577873104572361610117",
+       "covol": "1.49450884577873104572361610117",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.49450884577873104572361610117",
+       "covol": "1.49450884577873104572361610117",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.49450884577873104572361610117",
+       "covol": "1.49450884577873104572361610117",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.49450884577873104572361610117",
+       "covol": "1.49450884577873104572361610117",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   }
+  ],
+  "secs": 226
+ },
+ "17,34,145": {
+  "abc": [
+   17,
+   34,
+   145
+  ],
+  "d": 196,
+  "source": "s624 line census",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 196,
+    "counts": {
+     "cylinder": 94,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.04473844849601338,
+    "max_period": 547082,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 520,
+    "counts": {
+     "cylinder": 94,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.04473844849601338,
+    "max_period": 547082,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 230,
+    "counts": {
+     "cylinder": 98
+    },
+    "bad_mass": 0,
+    "max_period": 12946
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 94,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.04473844849601338,
+    "max_period": 547082,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 324,
+    "counts": {
+     "cylinder": 94,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.04473844849601338,
+    "max_period": 547082,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.920915698591137055549794868874",
+       "covol": "0.920915698591137055549794868874",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 34,
+    "counts": {
+     "cylinder": 98
+    },
+    "bad_mass": 0,
+    "max_period": 12946
+   }
+  ],
+  "secs": 598
+ },
+ "17,34,149": {
+  "abc": [
+   17,
+   34,
+   149
+  ],
+  "d": 200,
+  "source": "s624 line census",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 200,
+    "counts": {
+     "cylinder": 96,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.048649363872100906,
+    "max_period": 71606,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 532,
+    "counts": {
+     "cylinder": 96,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.048649363872100906,
+    "max_period": 71606,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 234,
+    "counts": {
+     "cylinder": 100
+    },
+    "bad_mass": 0,
+    "max_period": 143848
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 96,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.048649363872100906,
+    "max_period": 71606,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 332,
+    "counts": {
+     "cylinder": 96,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.048649363872100906,
+    "max_period": 71606,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.985525227001012302938177026296",
+       "covol": "0.985525227001012302938177026296",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 34,
+    "counts": {
+     "cylinder": 100
+    },
+    "bad_mass": 0,
+    "max_period": 143848
+   }
+  ],
+  "secs": 500
+ },
+ "17,34,169": {
+  "abc": [
+   17,
+   34,
+   169
+  ],
+  "d": 220,
+  "source": "s624 line census",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 220,
+    "counts": {
+     "cylinder": 106,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.05391102237676043,
+    "max_period": 135636,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 592,
+    "counts": {
+     "cylinder": 106,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.05391102237676043,
+    "max_period": 135636,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 254,
+    "counts": {
+     "cylinder": 110
+    },
+    "bad_mass": 0,
+    "max_period": 86732
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 106,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.05391102237676043,
+    "max_period": 135636,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 372,
+    "counts": {
+     "cylinder": 106,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.05391102237676043,
+    "max_period": 135636,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.908738331614683296585425532579",
+       "covol": "0.908738331614683296585425532579",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 34,
+    "counts": {
+     "cylinder": 110
+    },
+    "bad_mass": 0,
+    "max_period": 86732
+   }
+  ],
+  "secs": 516
+ },
+ "31,74,99": {
+  "abc": [
+   31,
+   74,
+   99
+  ],
+  "d": 204,
+  "source": "s624 line census",
+  "relations": [],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 204,
+    "counts": {
+     "cylinder": 102
+    },
+    "bad_mass": 0,
+    "max_period": 617950
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 464,
+    "counts": {
+     "cylinder": 102
+    },
+    "bad_mass": 0,
+    "max_period": 617950
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 266,
+    "counts": {
+     "cylinder": 98,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.015932662405663888,
+    "max_period": 97892,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.26024201532257036197258646345",
+       "covol": "1.26024201532257036197258646345",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.26024201532257036197258646345",
+       "covol": "1.26024201532257036197258646345",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.26024201532257036197258646345",
+       "covol": "1.26024201532257036197258646345",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.26024201532257036197258646345",
+       "covol": "1.26024201532257036197258646345",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        1
+       ]
+      ],
+      [
+       [
+        2,
+        1
+       ]
+      ],
+      [
+       [
+        2,
+        1
+       ]
+      ],
+      [
+       [
+        2,
+        1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       6,
+       3
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 102
+    },
+    "bad_mass": 0,
+    "max_period": 617950
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 260,
+    "counts": {
+     "cylinder": 102
+    },
+    "bad_mass": 0,
+    "max_period": 617950
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 62,
+    "counts": {
+     "cylinder": 98,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.015932662405663888,
+    "max_period": 97892,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.26024201532257036197258646345",
+       "covol": "1.26024201532257036197258646345",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.26024201532257036197258646345",
+       "covol": "1.26024201532257036197258646345",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.26024201532257036197258646345",
+       "covol": "1.26024201532257036197258646345",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.26024201532257036197258646345",
+       "covol": "1.26024201532257036197258646345",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        1
+       ]
+      ],
+      [
+       [
+        2,
+        1
+       ]
+      ],
+      [
+       [
+        2,
+        1
+       ]
+      ],
+      [
+       [
+        2,
+        1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       6,
+       3
+      ]
+     ]
+    }
+   }
+  ],
+  "secs": 289
+ },
+ "43,86,89": {
+  "abc": [
+   43,
+   86,
+   89
+  ],
+  "d": 218,
+  "source": "s624 line census",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 218,
+    "counts": {
+     "cylinder": 110
+    },
+    "bad_mass": 0,
+    "max_period": 61070
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 482,
+    "counts": {
+     "cylinder": 110
+    },
+    "bad_mass": 0,
+    "max_period": 61070
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 304,
+    "counts": {
+     "cylinder": 104,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.03806942063136784,
+    "max_period": 13951110,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.41654011798053848273433946955",
+       "covol": "4.41654011798053848273433946955",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.41654011798053848273433946955",
+       "covol": "4.41654011798053848273433946955",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.41654011798053848273433946955",
+       "covol": "4.41654011798053848273433946955",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.41654011798053848273433946955",
+       "covol": "4.41654011798053848273433946955",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 104,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.03806942063136784,
+    "max_period": 13951110,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.41654011798053848273433946955",
+       "covol": "4.41654011798053848273433946955",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.41654011798053848273433946955",
+       "covol": "4.41654011798053848273433946955",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.41654011798053848273433946955",
+       "covol": "4.41654011798053848273433946955",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.41654011798053848273433946955",
+       "covol": "4.41654011798053848273433946955",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 264,
+    "counts": {
+     "cylinder": 104,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.03806942063136784,
+    "max_period": 13951110,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.41654011798053848273433946955",
+       "covol": "4.41654011798053848273433946955",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.41654011798053848273433946955",
+       "covol": "4.41654011798053848273433946955",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.41654011798053848273433946955",
+       "covol": "4.41654011798053848273433946955",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "4.41654011798053848273433946955",
+       "covol": "4.41654011798053848273433946955",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 86,
+    "counts": {
+     "cylinder": 110
+    },
+    "bad_mass": 0,
+    "max_period": 61070
+   }
+  ],
+  "secs": 674
+ },
+ "49,67,98": {
+  "abc": [
+   49,
+   67,
+   98
+  ],
+  "d": 214,
+  "source": "s624 line census",
+  "relations": [
+   "c = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 214,
+    "counts": {
+     "cylinder": 102,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.026860166558375684,
+    "max_period": 1921190,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.14250389045104670623106081215",
+       "covol": "3.14250389045104670623106081215",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.14250389045104670623106081215",
+       "covol": "3.14250389045104670623106081215",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.14250389045104670623106081215",
+       "covol": "3.14250389045104670623106081215",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.14250389045104670623106081215",
+       "covol": "3.14250389045104670623106081215",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        3,
+        1
+       ]
+      ],
+      [
+       [
+        3,
+        1
+       ]
+      ],
+      [
+       [
+        3,
+        1
+       ]
+      ],
+      [
+       [
+        3,
+        1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       3,
+       1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 508,
+    "counts": {
+     "cylinder": 108
+    },
+    "bad_mass": 0,
+    "max_period": 78492
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 312,
+    "counts": {
+     "cylinder": 108
+    },
+    "bad_mass": 0,
+    "max_period": 78492
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 108
+    },
+    "bad_mass": 0,
+    "max_period": 78492
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 294,
+    "counts": {
+     "cylinder": 102,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.026860166558375684,
+    "max_period": 1921190,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.14250389045104670623106081215",
+       "covol": "3.14250389045104670623106081215",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.14250389045104670623106081215",
+       "covol": "3.14250389045104670623106081215",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.14250389045104670623106081215",
+       "covol": "3.14250389045104670623106081215",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.14250389045104670623106081215",
+       "covol": "3.14250389045104670623106081215",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        3,
+        1
+       ]
+      ],
+      [
+       [
+        3,
+        1
+       ]
+      ],
+      [
+       [
+        3,
+        1
+       ]
+      ],
+      [
+       [
+        3,
+        1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       3,
+       1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 98,
+    "counts": {
+     "cylinder": 102,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.026860166558375684,
+    "max_period": 1921190,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.14250389045104670623106081215",
+       "covol": "3.14250389045104670623106081215",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.14250389045104670623106081215",
+       "covol": "3.14250389045104670623106081215",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.14250389045104670623106081215",
+       "covol": "3.14250389045104670623106081215",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.14250389045104670623106081215",
+       "covol": "3.14250389045104670623106081215",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        3,
+        1
+       ]
+      ],
+      [
+       [
+        3,
+        1
+       ]
+      ],
+      [
+       [
+        3,
+        1
+       ]
+      ],
+      [
+       [
+        3,
+        1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       3,
+       1
+      ]
+     ]
+    }
+   }
+  ],
+  "secs": 597
+ },
+ "21,42,179": {
+  "abc": [
+   21,
+   42,
+   179
+  ],
+  "d": 242,
+  "source": "s625 windows",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 242,
+    "counts": {
+     "cylinder": 122
+    },
+    "bad_mass": 0,
+    "max_period": 15744
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 642,
+    "counts": {
+     "cylinder": 122
+    },
+    "bad_mass": 0,
+    "max_period": 15744
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 284,
+    "counts": {
+     "cylinder": 116,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.05167796177150982,
+    "max_period": 22376,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.30958988874285046370639750446",
+       "covol": "1.30958988874285046370639750446",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.30958988874285046370639750446",
+       "covol": "1.30958988874285046370639750446",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.30958988874285046370639750446",
+       "covol": "1.30958988874285046370639750446",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.30958988874285046370639750446",
+       "covol": "1.30958988874285046370639750446",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 116,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.05167796177150982,
+    "max_period": 22376,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.30958988874285046370639750446",
+       "covol": "1.30958988874285046370639750446",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.30958988874285046370639750446",
+       "covol": "1.30958988874285046370639750446",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.30958988874285046370639750446",
+       "covol": "1.30958988874285046370639750446",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.30958988874285046370639750446",
+       "covol": "1.30958988874285046370639750446",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 400,
+    "counts": {
+     "cylinder": 116,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.05167796177150982,
+    "max_period": 22376,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.30958988874285046370639750446",
+       "covol": "1.30958988874285046370639750446",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.30958988874285046370639750446",
+       "covol": "1.30958988874285046370639750446",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.30958988874285046370639750446",
+       "covol": "1.30958988874285046370639750446",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.30958988874285046370639750446",
+       "covol": "1.30958988874285046370639750446",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 42,
+    "counts": {
+     "cylinder": 122
+    },
+    "bad_mass": 0,
+    "max_period": 15744
+   }
+  ],
+  "secs": 618
+ },
+ "23,46,201": {
+  "abc": [
+   23,
+   46,
+   201
+  ],
+  "d": 270,
+  "source": "s625 windows",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 270,
+    "counts": {
+     "cylinder": 132,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.043102999465623376,
+    "max_period": 30978816,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.12232017767815843293268075682",
+       "covol": "1.12232017767815843293268075682",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.12232017767815843293268075682",
+       "covol": "1.12232017767815843293268075682",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.12232017767815843293268075682",
+       "covol": "1.12232017767815843293268075682",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.12232017767815843293268075682",
+       "covol": "1.12232017767815843293268075682",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 718,
+    "counts": {
+     "cylinder": 132,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.043102999465623376,
+    "max_period": 30978816,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.12232017767815843293268075682",
+       "covol": "1.12232017767815843293268075682",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.12232017767815843293268075682",
+       "covol": "1.12232017767815843293268075682",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.12232017767815843293268075682",
+       "covol": "1.12232017767815843293268075682",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.12232017767815843293268075682",
+       "covol": "1.12232017767815843293268075682",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 316,
+    "counts": {
+     "cylinder": 134
+    },
+    "bad_mass": 0,
+    "max_period": 418532
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 134
+    },
+    "bad_mass": 0,
+    "max_period": 418532
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 448,
+    "counts": {
+     "cylinder": 134
+    },
+    "bad_mass": 0,
+    "max_period": 418532
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 46,
+    "counts": {
+     "cylinder": 132,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.043102999465623376,
+    "max_period": 30978816,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.12232017767815843293268075682",
+       "covol": "1.12232017767815843293268075682",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.12232017767815843293268075682",
+       "covol": "1.12232017767815843293268075682",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.12232017767815843293268075682",
+       "covol": "1.12232017767815843293268075682",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.12232017767815843293268075682",
+       "covol": "1.12232017767815843293268075682",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   }
+  ],
+  "secs": 471
+ },
+ "25,50,213": {
+  "abc": [
+   25,
+   50,
+   213
+  ],
+  "d": 288,
+  "source": "s625 windows",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 288,
+    "counts": {
+     "cylinder": 140,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.052256968712766146,
+    "max_period": 146582,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 764,
+    "counts": {
+     "cylinder": 140,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.052256968712766146,
+    "max_period": 146582,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 338,
+    "counts": {
+     "cylinder": 144
+    },
+    "bad_mass": 0,
+    "max_period": 34028
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 140,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.052256968712766146,
+    "max_period": 146582,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 476,
+    "counts": {
+     "cylinder": 140,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.052256968712766146,
+    "max_period": 146582,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.57463639922682633283144368806",
+       "covol": "1.57463639922682633283144368806",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 50,
+    "counts": {
+     "cylinder": 144
+    },
+    "bad_mass": 0,
+    "max_period": 34028
+   }
+  ],
+  "secs": 535
+ },
+ "31,62,159": {
+  "abc": [
+   31,
+   62,
+   159
+  ],
+  "d": 252,
+  "source": "s625 windows",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 252,
+    "counts": {
+     "cylinder": 126
+    },
+    "bad_mass": 0,
+    "max_period": 224688
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 632,
+    "counts": {
+     "cylinder": 126
+    },
+    "bad_mass": 0,
+    "max_period": 224688
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 314,
+    "counts": {
+     "cylinder": 122,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.015807100917703015,
+    "max_period": 463280,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.967480761226229190756555154366",
+       "covol": "0.967480761226229190756555154366",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.967480761226229190756555154366",
+       "covol": "0.967480761226229190756555154366",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.967480761226229190756555154366",
+       "covol": "0.967480761226229190756555154366",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.967480761226229190756555154366",
+       "covol": "0.967480761226229190756555154366",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 126
+    },
+    "bad_mass": 0,
+    "max_period": 224688
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 380,
+    "counts": {
+     "cylinder": 126
+    },
+    "bad_mass": 0,
+    "max_period": 224688
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 62,
+    "counts": {
+     "cylinder": 122,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.015807100917703015,
+    "max_period": 463280,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.967480761226229190756555154366",
+       "covol": "0.967480761226229190756555154366",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.967480761226229190756555154366",
+       "covol": "0.967480761226229190756555154366",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.967480761226229190756555154366",
+       "covol": "0.967480761226229190756555154366",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.967480761226229190756555154366",
+       "covol": "0.967480761226229190756555154366",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   }
+  ],
+  "secs": 339
+ },
+ "47,94,143": {
+  "abc": [
+   47,
+   94,
+   143
+  ],
+  "d": 284,
+  "source": "s625 windows",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 284,
+    "counts": {
+     "cylinder": 142
+    },
+    "bad_mass": 0,
+    "max_period": 129816
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 664,
+    "counts": {
+     "cylinder": 142
+    },
+    "bad_mass": 0,
+    "max_period": 129816
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 378,
+    "counts": {
+     "cylinder": 138,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.05693901954560919,
+    "max_period": 64002,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "6.91863935288737040252178747948",
+       "covol": "6.91863935288737040252178747948",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "6.91863935288737040252178747948",
+       "covol": "6.91863935288737040252178747948",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "6.91863935288737040252178747948",
+       "covol": "6.91863935288737040252178747948",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "6.91863935288737040252178747948",
+       "covol": "6.91863935288737040252178747948",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 142
+    },
+    "bad_mass": 0,
+    "max_period": 129816
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 380,
+    "counts": {
+     "cylinder": 142
+    },
+    "bad_mass": 0,
+    "max_period": 129816
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 94,
+    "counts": {
+     "cylinder": 138,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.05693901954560919,
+    "max_period": 64002,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "6.91863935288737040252178747948",
+       "covol": "6.91863935288737040252178747948",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "6.91863935288737040252178747948",
+       "covol": "6.91863935288737040252178747948",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "6.91863935288737040252178747948",
+       "covol": "6.91863935288737040252178747948",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "6.91863935288737040252178747948",
+       "covol": "6.91863935288737040252178747948",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   }
+  ],
+  "secs": 844
+ },
+ "51,102,155": {
+  "abc": [
+   51,
+   102,
+   155
+  ],
+  "d": 308,
+  "source": "s625 windows",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 308,
+    "counts": {
+     "cylinder": 154
+    },
+    "bad_mass": 0,
+    "max_period": 262120
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 720,
+    "counts": {
+     "cylinder": 154
+    },
+    "bad_mass": 0,
+    "max_period": 262120
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 410,
+    "counts": {
+     "cylinder": 150,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.014728020205636351,
+    "max_period": 86842,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.94395569555713744586285151291",
+       "covol": "1.94395569555713744586285151291",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.94395569555713744586285151291",
+       "covol": "1.94395569555713744586285151291",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.94395569555713744586285151291",
+       "covol": "1.94395569555713744586285151291",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.94395569555713744586285151291",
+       "covol": "1.94395569555713744586285151291",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 154
+    },
+    "bad_mass": 0,
+    "max_period": 262120
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 412,
+    "counts": {
+     "cylinder": 154
+    },
+    "bad_mass": 0,
+    "max_period": 262120
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 102,
+    "counts": {
+     "cylinder": 150,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.014728020205636351,
+    "max_period": 86842,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.94395569555713744586285151291",
+       "covol": "1.94395569555713744586285151291",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.94395569555713744586285151291",
+       "covol": "1.94395569555713744586285151291",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.94395569555713744586285151291",
+       "covol": "1.94395569555713744586285151291",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.94395569555713744586285151291",
+       "covol": "1.94395569555713744586285151291",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   }
+  ],
+  "secs": 311
+ },
+ "59,118,165": {
+  "abc": [
+   59,
+   118,
+   165
+  ],
+  "d": 342,
+  "source": "s625 windows",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 342,
+    "counts": {
+     "cylinder": 172
+    },
+    "bad_mass": 0,
+    "max_period": 527418
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 790,
+    "counts": {
+     "cylinder": 172
+    },
+    "bad_mass": 0,
+    "max_period": 527418
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 460,
+    "counts": {
+     "cylinder": 166,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.02238489063974732,
+    "max_period": 149862,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.49547571529294805719270170139",
+       "covol": "3.49547571529294805719270170139",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.49547571529294805719270170139",
+       "covol": "3.49547571529294805719270170139",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.49547571529294805719270170139",
+       "covol": "3.49547571529294805719270170139",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.49547571529294805719270170139",
+       "covol": "3.49547571529294805719270170139",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 166,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.02238489063974732,
+    "max_period": 149862,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.49547571529294805719270170139",
+       "covol": "3.49547571529294805719270170139",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.49547571529294805719270170139",
+       "covol": "3.49547571529294805719270170139",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.49547571529294805719270170139",
+       "covol": "3.49547571529294805719270170139",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.49547571529294805719270170139",
+       "covol": "3.49547571529294805719270170139",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 448,
+    "counts": {
+     "cylinder": 166,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.02238489063974732,
+    "max_period": 149862,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.49547571529294805719270170139",
+       "covol": "3.49547571529294805719270170139",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.49547571529294805719270170139",
+       "covol": "3.49547571529294805719270170139",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.49547571529294805719270170139",
+       "covol": "3.49547571529294805719270170139",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "3.49547571529294805719270170139",
+       "covol": "3.49547571529294805719270170139",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 118,
+    "counts": {
+     "cylinder": 172
+    },
+    "bad_mass": 0,
+    "max_period": 527418
+   }
+  ],
+  "secs": 1370
+ },
+ "17,34,217": {
+  "abc": [
+   17,
+   34,
+   217
+  ],
+  "d": 268,
+  "source": "s626 line scan",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 268,
+    "counts": {
+     "cylinder": 130,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.030930198049976782,
+    "max_period": 507552,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 736,
+    "counts": {
+     "cylinder": 130,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.030930198049976782,
+    "max_period": 507552,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 302,
+    "counts": {
+     "cylinder": 134
+    },
+    "bad_mass": 0,
+    "max_period": 63138
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 130,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.030930198049976782,
+    "max_period": 507552,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 468,
+    "counts": {
+     "cylinder": 130,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.030930198049976782,
+    "max_period": 507552,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "0.370662731934200283990005816984",
+       "covol": "0.370662731934200283990005816984",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 34,
+    "counts": {
+     "cylinder": 134
+    },
+    "bad_mass": 0,
+    "max_period": 63138
+   }
+  ],
+  "secs": 1250
+ },
+ "45,90,119": {
+  "abc": [
+   45,
+   90,
+   119
+  ],
+  "d": 254,
+  "source": "s626 line scan",
+  "relations": [
+   "b = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 254,
+    "counts": {
+     "cylinder": 124,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.04665254384271024,
+    "max_period": 1045016,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "5.66329252212284420573277008628",
+       "covol": "5.66329252212284420573277008628",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "5.66329252212284420573277008628",
+       "covol": "5.66329252212284420573277008628",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "5.66329252212284420573277008628",
+       "covol": "5.66329252212284420573277008628",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "5.66329252212284420573277008628",
+       "covol": "5.66329252212284420573277008628",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 582,
+    "counts": {
+     "cylinder": 124,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.04665254384271024,
+    "max_period": 1045016,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "5.66329252212284420573277008628",
+       "covol": "5.66329252212284420573277008628",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "5.66329252212284420573277008628",
+       "covol": "5.66329252212284420573277008628",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "5.66329252212284420573277008628",
+       "covol": "5.66329252212284420573277008628",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "5.66329252212284420573277008628",
+       "covol": "5.66329252212284420573277008628",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 344,
+    "counts": {
+     "cylinder": 126
+    },
+    "bad_mass": 0,
+    "max_period": 2510568
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 126
+    },
+    "bad_mass": 0,
+    "max_period": 2510568
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 328,
+    "counts": {
+     "cylinder": 126
+    },
+    "bad_mass": 0,
+    "max_period": 2510568
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 90,
+    "counts": {
+     "cylinder": 124,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.04665254384271024,
+    "max_period": 1045016,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "5.66329252212284420573277008628",
+       "covol": "5.66329252212284420573277008628",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "5.66329252212284420573277008628",
+       "covol": "5.66329252212284420573277008628",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "5.66329252212284420573277008628",
+       "covol": "5.66329252212284420573277008628",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "5.66329252212284420573277008628",
+       "covol": "5.66329252212284420573277008628",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ],
+      [
+       [
+        2,
+        -1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       2,
+       -1
+      ]
+     ]
+    }
+   }
+  ],
+  "secs": 596
+ },
+ "51,71,102": {
+  "abc": [
+   51,
+   71,
+   102
+  ],
+  "d": 224,
+  "source": "s626 line scan",
+  "relations": [
+   "c = 2a"
+  ],
+  "dirs": [
+   {
+    "dir": "perp0",
+    "side": 0,
+    "j": 224,
+    "counts": {
+     "cylinder": 108,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.008667896874448456,
+    "max_period": 358074,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.05421263307985257451371911551",
+       "covol": "1.05421263307985257451371911551",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.05421263307985257451371911551",
+       "covol": "1.05421263307985257451371911551",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.05421263307985257451371911551",
+       "covol": "1.05421263307985257451371911551",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.05421263307985257451371911551",
+       "covol": "1.05421263307985257451371911551",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        3,
+        1
+       ]
+      ],
+      [
+       [
+        3,
+        1
+       ]
+      ],
+      [
+       [
+        3,
+        1
+       ]
+      ],
+      [
+       [
+        3,
+        1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       3,
+       1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "perp1",
+    "side": 1,
+    "j": 530,
+    "counts": {
+     "cylinder": 112
+    },
+    "bad_mass": 0,
+    "max_period": 1871254
+   },
+   {
+    "dir": "perp2",
+    "side": 2,
+    "j": 326,
+    "counts": {
+     "cylinder": 112
+    },
+    "bad_mass": 0,
+    "max_period": 1871254
+   },
+   {
+    "dir": "par0",
+    "side": 0,
+    "j": 0,
+    "counts": {
+     "cylinder": 108,
+     "no_periodic": 4
+    },
+    "bad_mass": 0.008667896874448456,
+    "max_period": 358074,
+    "anatomy": {
+     "hol": [
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.05421263307985257451371911551",
+       "covol": "1.05421263307985257451371911551",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.05421263307985257451371911551",
+       "covol": "1.05421263307985257451371911551",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.05421263307985257451371911551",
+       "covol": "1.05421263307985257451371911551",
+       "area_eq_covol": true
+      },
+      {
+       "n": 2,
+       "check": true,
+       "t_rank": 2,
+       "J_rank": 2,
+       "area": "1.05421263307985257451371911551",
+       "covol": "1.05421263307985257451371911551",
+       "area_eq_covol": true
+      }
+     ],
+     "loop_lines": [
+      [
+       [
+        3,
+        1
+       ]
+      ],
+      [
+       [
+        3,
+        1
+       ]
+      ],
+      [
+       [
+        3,
+        1
+       ]
+      ],
+      [
+       [
+        3,
+        1
+       ]
+      ]
+     ],
+     "shortest_H": [
+      [
+       3,
+       1
+      ]
+     ]
+    }
+   },
+   {
+    "dir": "par1",
+    "side": 1,
+    "j": 306,
+    "counts": {
+     "cylinder": 112
+    },
+    "bad_mass": 0,
+    "max_period": 1871254
+   },
+   {
+    "dir": "par2",
+    "side": 2,
+    "j": 102,
+    "counts": {
+     "cylinder": 112
+    },
+    "bad_mass": 0,
+    "max_period": 1871254
+   }
+  ],
+  "secs": 266
+ }
+}

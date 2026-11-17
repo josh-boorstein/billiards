@@ -1,0 +1,49 @@
+Pi 15 M 0 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 1s
+Pi 17 M 0 law True cut tori χ=−1 True cyl anomalies 0 stacked 1 2s
+Pi 19 M 0 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 3s
+Pi 21 M 0 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 4s
+Pi 23 M 1 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 6s
+Pi 25 M 1 law True cut tori χ=−1 True cyl anomalies 0 stacked 1 8s
+Pi 27 M 1 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 10s
+Pi 29 M 1 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 12s
+Pi 31 M 2 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 15s
+Pi 33 M 2 law True cut tori χ=−1 True cyl anomalies 0 stacked 1 18s
+Pi 35 M 2 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 21s
+Pi 37 M 2 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 25s
+Pi 39 M 3 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 29s
+Pi 41 M 3 law True cut tori χ=−1 True cyl anomalies 0 stacked 1 33s
+Pi 43 M 3 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 37s
+Pi 45 M 3 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 42s
+Pi 47 M 4 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 47s
+Pi 49 M 4 law True cut tori χ=−1 True cyl anomalies 0 stacked 1 52s
+Pi 51 M 4 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 57s
+Pi 53 M 4 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 63s
+Pi 55 M 5 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 69s
+Pi 57 M 5 law True cut tori χ=−1 True cyl anomalies 0 stacked 1 75s
+Pi 59 M 5 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 82s
+Pi 61 M 5 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 90s
+Pi 63 M 6 law True cut tori χ=−1 True cyl anomalies 0 stacked 0 98s
+census [2, 2, 7, 7] 9 [([(2, 3), (3, 3)], [])] cyl anomalies 0
+census [2, 2, 11, 11] 13 [([(2, 5), (3, 5)], [])] cyl anomalies 0
+census [3, 3, 10, 10] 13 [([(2, 3), (3, 3)], [])] cyl anomalies 0
+census [3, 10, 10, 3] 13 [([(1, 3), (2, 3)], [])] cyl anomalies 0
+census [11, 4, 13, 2] 15 [([(0, 2), (0, 2), (2, 5)], [])] cyl anomalies 0
+census [11, 4, 11, 4] 15 [([(0, 5), (2, 5)], [])] cyl anomalies 0
+census [11, 4, 11, 4] 15 [([(0, 3), (2, 3)], [])] cyl anomalies 0
+census [7, 7, 8, 8] 15 [([(0, 1), (1, 1), (2, 2), (3, 2)], [])] cyl anomalies 0
+census [7, 8, 8, 7] 15 [([(0, 1), (1, 4), (2, 4), (3, 1)], [])] cyl anomalies 0
+census [7, 8, 8, 7] 15 [([(1, 2), (2, 2)], [])] cyl anomalies 0
+census [7, 7, 8, 8] 15 [([(0, 2), (1, 2), (2, 4), (3, 4)], [0, 1])] cyl anomalies 0
+census [7, 8, 8, 7] 15 [([(0, 1), (1, 2), (2, 2), (3, 1)], [])] cyl anomalies 0
+census [7, 7, 8, 8] 15 [([(0, 3), (1, 3), (2, 4), (3, 4)], [0, 1])] cyl anomalies 0
+census [7, 8, 8, 7] 15 [([(1, 4), (2, 4)], [])] cyl anomalies 0
+census [13, 4, 15, 2] 17 [([(0, 2), (0, 2), (2, 5)], [])] cyl anomalies 0
+census [2, 2, 15, 15] 17 [([(2, 7), (3, 7)], [])] cyl anomalies 0
+census [4, 4, 13, 13] 17 [([(2, 3), (3, 3)], [])] cyl anomalies 0
+census [4, 4, 13, 13] 17 [([(2, 3), (3, 3)], [])] cyl anomalies 0
+census [4, 13, 13, 4] 17 [([(1, 3), (2, 3)], [])] cyl anomalies 0
+{'pi_law_all': True, 'pi_tori_all': True, 'pi_N': [15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63], 'census_rows': 19, 'rows_excess_at_acute': [([7, 7, 8, 8], 15), ([7, 7, 8, 8], 15)], 'rows_single_excess_vertex': [], 'rows_k_gt_half_a': [], 'cyl_anomalies': 0, 'secs': 164}
+
+real	2m44.240s
+user	2m41.061s
+sys	0m0.353s

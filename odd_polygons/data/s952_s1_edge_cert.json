@@ -1,0 +1,116 @@
+{
+ "main_C7_0": {
+  "C7": 0,
+  "secs": 57,
+  "n_expr": 252,
+  "zero": 16,
+  "core_free": 118,
+  "atoms": 194,
+  "distinct_cores": 30,
+  "cores_ok": 30,
+  "corner_cores": 0,
+  "min_lb": 0.032448099274366204,
+  "max_boxes": 7,
+  "corner_tests": [],
+  "tight": [
+   "J0.seg10.32.all.p0.s2:p-b",
+   "J1.seg4.23.all.p0.s3:q-b"
+  ],
+  "zero_names": [
+   "J0.seg11.3.all.p0.s3:q-b",
+   "J0.seg12.1013.all.p0.s3:q-b",
+   "J0.seg2.013.all.p0.s0:a-p",
+   "J0.seg2.013.all.p1.s0:a-p",
+   "J0.seg2.013.all.p1.s1:a-q",
+   "J0.seg2.013.all.p2.s1:a-q",
+   "J0.seg5.02.all.p0.s0:a-p",
+   "J0.seg5.02.all.p1.s0:a-p",
+   "J0.seg8.10.all.p0.s1:a-q",
+   "J0.seg8.10.all.p1.s1:a-q",
+   "J0.seg9.2.all.p0.s2:p-b",
+   "J1.seg3.3.all.p0.s3:q-b",
+   "J1.seg5.2.all.p0.s2:p-b",
+   "J1.seg6.02.all.p0.s2:p-b",
+   "J1.seg9.1013.all.p2.s1:a-q",
+   "J1.seg9.1013.all.p3.s1:a-q"
+  ],
+  "flagged": [],
+  "why": {}
+ },
+ "per_m": {
+  "2": {
+   "M": 2,
+   "XE": 0.1121997376282069,
+   "XA": "1088337/10000000",
+   "tight": 18,
+   "certified": 402,
+   "end_zero": 6,
+   "fails": [],
+   "boxes": 414
+  },
+  "3": {
+   "M": 3,
+   "XE": 0.07479982508547127,
+   "XA": "362779/5000000",
+   "tight": 18,
+   "certified": 570,
+   "end_zero": 6,
+   "fails": [],
+   "boxes": 588
+  }
+ },
+ "control_2d": {
+  "flagged": [
+   "J0.seg12.1013.all.p0.s1:p-b",
+   "J0.seg12.1013.all.p1.s0:q-b",
+   "J0.seg12.1013.all.p1.s1:p-b",
+   "J0.seg12.1013.all.p2.s0:q-b",
+   "J0.seg12.1013.all.p2.s1:p-b",
+   "J0.seg12.1013.all.p3.s1:p-b"
+  ],
+  "numeric_neg_14m_minus1": [
+   "J0.seg12.1013.all.p0.s1:p-b",
+   "J0.seg12.1013.all.p1.s0:q-b",
+   "J0.seg12.1013.all.p1.s1:p-b",
+   "J0.seg12.1013.all.p2.s0:q-b",
+   "J0.seg12.1013.all.p2.s1:p-b",
+   "J0.seg12.1013.all.p3.s1:p-b"
+  ],
+  "exact": true
+ },
+ "control_per_m": {
+  "2": {
+   "fails": 6,
+   "exact": true
+  },
+  "3": {
+   "fails": 6,
+   "exact": true
+  }
+ },
+ "control_edge_off": {
+  "flagged": [
+   "J0.seg12.1013.all.p0.s1:p-b",
+   "J0.seg12.1013.all.p1.s0:q-b",
+   "J0.seg12.1013.all.p1.s1:p-b",
+   "J0.seg12.1013.all.p2.s0:q-b",
+   "J0.seg12.1013.all.p2.s1:p-b",
+   "J0.seg12.1013.all.p3.s1:p-b"
+  ],
+  "fires": true
+ },
+ "control_end_wrongK": {
+  "2": {
+   "fails": 6,
+   "end_zero": 0,
+   "fires": true
+  },
+  "3": {
+   "fails": 6,
+   "end_zero": 0,
+   "fires": true
+  }
+ },
+ "verdict": true,
+ "secs": 897
+}

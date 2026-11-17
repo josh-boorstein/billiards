@@ -1,0 +1,375 @@
+{
+ "A1": [
+  {
+   "N": 59,
+   "m": 2,
+   "a": 2,
+   "angles": [
+    45,
+    16,
+    53,
+    4
+   ],
+   "shape_err": 4.440892098500626e-16,
+   "kinds": {
+    "cylinder": 52,
+    "no_periodic": 2
+   },
+   "rhos": [
+    0.4509324540370229,
+    0.17873045429017406
+   ],
+   "target": 0.17873045429017365,
+   "nonCP": true,
+   "torus_seen": true,
+   "containment_viol": 0,
+   "fold_survivors": 0,
+   "secs": 4.9
+  },
+  {
+   "N": 61,
+   "m": 2,
+   "a": 2,
+   "angles": [
+    47,
+    16,
+    55,
+    4
+   ],
+   "shape_err": 4.440892098500626e-16,
+   "kinds": {
+    "cylinder": 53,
+    "no_periodic": 2
+   },
+   "rhos": [
+    0.4543372521541308,
+    0.1673661910259898
+   ],
+   "target": 0.1673661910259905,
+   "nonCP": true,
+   "torus_seen": true,
+   "containment_viol": 0,
+   "fold_survivors": 0,
+   "secs": 4.9
+  },
+  {
+   "N": 89,
+   "m": 2,
+   "a": 3,
+   "angles": [
+    68,
+    24,
+    80,
+    6
+   ],
+   "shape_err": 1.1102230246251565e-15,
+   "kinds": {
+    "cylinder": 82,
+    "no_periodic": 2
+   },
+   "rhos": [
+    0.45152647974725213,
+    0.17675792344691574
+   ],
+   "target": 0.17675792344691627,
+   "nonCP": true,
+   "torus_seen": true,
+   "containment_viol": 0,
+   "fold_survivors": 0,
+   "secs": 5.9
+  },
+  {
+   "N": 91,
+   "m": 2,
+   "a": 3,
+   "angles": [
+    70,
+    24,
+    82,
+    6
+   ],
+   "shape_err": 1.7763568394002505e-15,
+   "kinds": {
+    "cylinder": 83,
+    "no_periodic": 2
+   },
+   "rhos": [
+    0.4537954711523119,
+    0.16918398294926168
+   ],
+   "target": 0.16918398294926734,
+   "nonCP": true,
+   "torus_seen": true,
+   "containment_viol": 0,
+   "fold_survivors": 0,
+   "secs": 6.4
+  },
+  {
+   "N": 87,
+   "m": 3,
+   "a": 2,
+   "angles": [
+    67,
+    24,
+    79,
+    4
+   ],
+   "shape_err": 4.440892098500626e-16,
+   "kinds": {
+    "cylinder": 76,
+    "no_periodic": 2
+   },
+   "rhos": [
+    0.18484916065808626,
+    0.18484916065808626
+   ],
+   "target": 0.1848491606580859,
+   "nonCP": true,
+   "torus_seen": true,
+   "containment_viol": 0,
+   "fold_survivors": 0,
+   "secs": 6.2
+  },
+  {
+   "N": 89,
+   "m": 3,
+   "a": 2,
+   "angles": [
+    69,
+    24,
+    81,
+    4
+   ],
+   "shape_err": 8.881784197001252e-16,
+   "kinds": {
+    "cylinder": 78,
+    "no_periodic": 2
+   },
+   "rhos": [
+    0.17675792344691238,
+    0.17675792344691238
+   ],
+   "target": 0.17675792344691627,
+   "nonCP": true,
+   "torus_seen": true,
+   "containment_viol": 0,
+   "fold_survivors": 0,
+   "secs": 6.1
+  },
+  {
+   "N": 173,
+   "m": 4,
+   "a": 3,
+   "angles": [
+    134,
+    48,
+    158,
+    6
+   ],
+   "shape_err": 4.440892098500626e-16,
+   "kinds": {
+    "cylinder": 159,
+    "no_periodic": 2
+   },
+   "rhos": [
+    0.4484407079896426,
+    0.1869582935405943
+   ],
+   "target": 0.18695829354059218,
+   "nonCP": true,
+   "torus_seen": true,
+   "containment_viol": 0,
+   "fold_survivors": 0,
+   "secs": 13.8
+  },
+  {
+   "N": 175,
+   "m": 4,
+   "a": 3,
+   "angles": [
+    136,
+    48,
+    160,
+    6
+   ],
+   "shape_err": 2.4424906541753444e-15,
+   "kinds": {
+    "cylinder": 160,
+    "no_periodic": 2
+   },
+   "rhos": [
+    0.4497103115254638,
+    0.18277532553424614
+   ],
+   "target": 0.1827753255342511,
+   "nonCP": true,
+   "torus_seen": true,
+   "containment_viol": 0,
+   "fold_survivors": 0,
+   "secs": 13.1
+  }
+ ],
+ "A2": [
+  {
+   "N": 57,
+   "m": 2,
+   "a": 2,
+   "angles": [
+    43,
+    16,
+    51,
+    4
+   ],
+   "shape_err": 2.220446049250313e-16,
+   "kinds": {
+    "cylinder": 50,
+    "no_periodic": 2
+   },
+   "rhos": [
+    0.4471210913901278,
+    0.19128567860484252
+   ],
+   "target": 0.191285678604845,
+   "nonCP": true,
+   "torus_seen": true,
+   "containment_viol": 0,
+   "secs": 0.9
+  },
+  {
+   "N": 85,
+   "m": 2,
+   "a": 3,
+   "angles": [
+    64,
+    24,
+    76,
+    6
+   ],
+   "shape_err": 1.9984014443252818e-15,
+   "kinds": {
+    "cylinder": 78,
+    "no_periodic": 2
+   },
+   "rhos": [
+    0.4464416824519842,
+    0.19350560130774414
+   ],
+   "target": 0.19350560130774222,
+   "nonCP": true,
+   "torus_seen": true,
+   "containment_viol": 0,
+   "secs": 2.1
+  },
+  {
+   "N": 85,
+   "m": 3,
+   "a": 2,
+   "angles": [
+    65,
+    24,
+    77,
+    4
+   ],
+   "shape_err": 7.771561172376096e-16,
+   "kinds": {
+    "cylinder": 74,
+    "no_periodic": 2
+   },
+   "rhos": [
+    0.193505601307743,
+    0.193505601307743
+   ],
+   "target": 0.19350560130774222,
+   "nonCP": true,
+   "torus_seen": true,
+   "containment_viol": 0,
+   "secs": 2.2
+  },
+  {
+   "N": 169,
+   "m": 4,
+   "a": 3,
+   "angles": [
+    130,
+    48,
+    154,
+    6
+   ],
+   "shape_err": 2.220446049250313e-16,
+   "kinds": {
+    "cylinder": 155,
+    "no_periodic": 2
+   },
+   "rhos": [
+    0.44574873181229063,
+    0.19576416438378244
+   ],
+   "target": 0.19576416438377878,
+   "nonCP": true,
+   "torus_seen": true,
+   "containment_viol": 0,
+   "secs": 8.5
+  }
+ ],
+ "B": {
+  "formal": "closure, returns, T^{16m+8}J0, T^{12m+6}J1, \u03bb0 = 4 sinx sin2mx sin4mx (2cos2mx\u22121), \u03bb1 = 16 sinx sin\u00b2mx sin2mx sin4mx (sides/cos x): FORMAL in w",
+  "cert_verdict": true,
+  "edge_control_viol": {
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "6": 0
+  }
+ },
+ "verdict": {
+  "A1": true,
+  "A2_CP": [
+   [
+    57,
+    2,
+    2,
+    false
+   ],
+   [
+    85,
+    2,
+    3,
+    false
+   ],
+   [
+    85,
+    3,
+    2,
+    false
+   ],
+   [
+    169,
+    4,
+    3,
+    false
+   ]
+  ],
+  "A3": true,
+  "A4_fold_survivors": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "B_containment_A1": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "B_edge_fires": false
+ }
+}

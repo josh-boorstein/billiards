@@ -1,0 +1,470 @@
+{
+ "stage_A": {
+  "A1": [
+   {
+    "N": 29,
+    "a2": 4,
+    "angles": [
+     21,
+     8,
+     25,
+     4
+    ],
+    "target_rho": 0.1848491606580859,
+    "dirs": {
+     "29": {
+      "kinds": {
+       "cylinder": 25,
+       "no_periodic": 2
+      },
+      "rhos": [
+       0.18484916065808538,
+       0.18484916065808538
+      ],
+      "n_at_target": 2
+     }
+    },
+    "nonCP": true,
+    "torus_seen": true,
+    "secs": 0.6
+   },
+   {
+    "N": 31,
+    "a2": 4,
+    "angles": [
+     23,
+     8,
+     27,
+     4
+    ],
+    "target_rho": 0.1620843767595387,
+    "dirs": {
+     "31": {
+      "kinds": {
+       "cylinder": 27,
+       "no_periodic": 2
+      },
+      "rhos": [
+       0.16208437675954007,
+       0.16208437675954007
+      ],
+      "n_at_target": 2
+     }
+    },
+    "nonCP": true,
+    "torus_seen": true,
+    "secs": 0.4
+   },
+   {
+    "N": 43,
+    "a2": 6,
+    "angles": [
+     31,
+     12,
+     37,
+     6
+    ],
+    "target_rho": 0.18910352501370678,
+    "dirs": {
+     "43": {
+      "kinds": {
+       "no_periodic": 2,
+       "cylinder": 39
+      },
+      "rhos": [
+       0.1891035250137055,
+       0.1891035250137055
+      ],
+      "n_at_target": 2
+     }
+    },
+    "nonCP": true,
+    "torus_seen": true,
+    "secs": 0.6
+   },
+   {
+    "N": 47,
+    "a2": 6,
+    "angles": [
+     35,
+     12,
+     41,
+     6
+    ],
+    "target_rho": 0.15870022664714245,
+    "dirs": {
+     "47": {
+      "kinds": {
+       "no_periodic": 2,
+       "cylinder": 43
+      },
+      "rhos": [
+       0.15870022664714184,
+       0.15870022664714184
+      ],
+      "n_at_target": 2
+     }
+    },
+    "nonCP": true,
+    "torus_seen": true,
+    "secs": 0.7
+   },
+   {
+    "N": 57,
+    "a2": 8,
+    "angles": [
+     41,
+     16,
+     49,
+     8
+    ],
+    "target_rho": 0.191285678604845,
+    "dirs": {
+     "57": {
+      "kinds": {
+       "cylinder": 53,
+       "no_periodic": 2
+      },
+      "rhos": [
+       0.19128567860484505,
+       0.19128567860484505
+      ],
+      "n_at_target": 2
+     }
+    },
+    "nonCP": true,
+    "torus_seen": true,
+    "secs": 1.0
+   },
+   {
+    "N": 59,
+    "a2": 8,
+    "angles": [
+     43,
+     16,
+     51,
+     8
+    ],
+    "target_rho": 0.17873045429017365,
+    "dirs": {
+     "59": {
+      "kinds": {
+       "cylinder": 55,
+       "no_periodic": 2
+      },
+      "rhos": [
+       0.1787304542901737,
+       0.1787304542901737
+      ],
+      "n_at_target": 2
+     }
+    },
+    "nonCP": true,
+    "torus_seen": true,
+    "secs": 1.1
+   },
+   {
+    "N": 71,
+    "a2": 10,
+    "angles": [
+     51,
+     20,
+     61,
+     10
+    ],
+    "target_rho": 0.19261304472559226,
+    "dirs": {
+     "71": {
+      "kinds": {
+       "no_periodic": 2,
+       "cylinder": 67
+      },
+      "rhos": [
+       0.19261304472559249,
+       0.19261304472559249
+      ],
+      "n_at_target": 2
+     }
+    },
+    "nonCP": true,
+    "torus_seen": true,
+    "secs": 1.6
+   },
+   {
+    "N": 73,
+    "a2": 10,
+    "angles": [
+     53,
+     20,
+     63,
+     10
+    ],
+    "target_rho": 0.18236472532099413,
+    "dirs": {
+     "73": {
+      "kinds": {
+       "no_periodic": 2,
+       "cylinder": 69
+      },
+      "rhos": [
+       0.18236472532099413,
+       0.18236472532099413
+      ],
+      "n_at_target": 2
+     }
+    },
+    "nonCP": true,
+    "torus_seen": true,
+    "secs": 1.8
+   }
+  ],
+  "A2": [
+   {
+    "N": 27,
+    "a2": 4,
+    "angles": [
+     19,
+     8,
+     23,
+     4
+    ],
+    "target_rho": 0.21273471935317548,
+    "dirs": {
+     "27": {
+      "kinds": {
+       "cylinder": 26
+      },
+      "rhos": [],
+      "n_at_target": 0
+     }
+    },
+    "nonCP": false,
+    "torus_seen": false,
+    "secs": 0.2
+   },
+   {
+    "N": 41,
+    "a2": 6,
+    "angles": [
+     29,
+     12,
+     35,
+     6
+    ],
+    "target_rho": 0.20766888607788872,
+    "dirs": {
+     "41": {
+      "kinds": {
+       "cylinder": 40
+      },
+      "rhos": [],
+      "n_at_target": 0
+     }
+    },
+    "nonCP": false,
+    "torus_seen": false,
+    "secs": 0.5
+   },
+   {
+    "N": 55,
+    "a2": 8,
+    "angles": [
+     39,
+     16,
+     47,
+     8
+    ],
+    "target_rho": 0.20520314261728315,
+    "dirs": {
+     "55": {
+      "kinds": {
+       "cylinder": 54
+      },
+      "rhos": [],
+      "n_at_target": 0
+     }
+    },
+    "nonCP": false,
+    "torus_seen": false,
+    "secs": 0.8
+   },
+   {
+    "N": 69,
+    "a2": 10,
+    "angles": [
+     49,
+     20,
+     59,
+     10
+    ],
+    "target_rho": 0.20374458927260772,
+    "dirs": {
+     "69": {
+      "kinds": {
+       "cylinder": 68
+      },
+      "rhos": [],
+      "n_at_target": 0
+     }
+    },
+    "nonCP": false,
+    "torus_seen": false,
+    "secs": 1.4
+   }
+  ],
+  "A3": {
+   "torus_dir": {
+    "N": 15,
+    "a2": 1,
+    "angles": [
+     13,
+     2,
+     14,
+     1
+    ],
+    "target_rho": 0.04370479853238871,
+    "dirs": {
+     "16": {
+      "kinds": {
+       "no_periodic": 6,
+       "cylinder": 1
+      },
+      "rhos": [
+       0.04370479853239377,
+       0.04370479853239028,
+       0.04370479853238819,
+       0.04370479853239377,
+       0.04370479853239028,
+       0.04370479853238819
+      ],
+      "n_at_target": 6
+     }
+    },
+    "nonCP": true,
+    "torus_seen": true,
+    "secs": 0.1
+   },
+   "perp": {
+    "N": 15,
+    "a2": 1,
+    "angles": [
+     13,
+     2,
+     14,
+     1
+    ],
+    "target_rho": 0.04370479853238871,
+    "dirs": {
+     "15": {
+      "kinds": {
+       "cylinder": 17
+      },
+      "rhos": [],
+      "n_at_target": 0
+     }
+    },
+    "nonCP": false,
+    "torus_seen": false,
+    "secs": 0.1
+   }
+  },
+  "verdict": {
+   "A1": true,
+   "A2_CP": [
+    [
+     27,
+     2,
+     true
+    ],
+    [
+     41,
+     3,
+     true
+    ],
+    [
+     55,
+     4,
+     true
+    ],
+    [
+     69,
+     5,
+     true
+    ]
+   ],
+   "A2_no_torus": true,
+   "A3": true
+  }
+ },
+ "stage_B": {
+  "identities": "closure, itinerary, copy rule = reflection composition (free ring), both returns, \u03bb0, \u03bb1: FORMAL (free Laurent)",
+  "inequalities": 254,
+  "formally_tight": 18,
+  "strict": 236,
+  "taylor_(0,XA]": {
+   "XA": 0.2095,
+   "min_lower_bound": 0.20641759778753532,
+   "orders": [
+    0,
+    2,
+    4
+   ]
+  },
+  "interval_[XA,XB]_boxes": 257,
+  "XB": 0.2203994752564138,
+  "vanish_at_pi14": [
+   "J0.0.s3.lo",
+   "J0.0.s2.lo",
+   "J0.1.s2.lo",
+   "J0.1.s3.lo",
+   "J0.2.s3.lo",
+   "J0.2.s2.lo",
+   "J0.3.s2.lo",
+   "J0.3.s3.lo",
+   "J0.4.s3.lo",
+   "J0.4.s2.lo",
+   "J0.5.s2.lo",
+   "J0.20.s1.hi",
+   "J0.21.s1.hi",
+   "J0.21.s0.hi",
+   "J0.22.s0.hi",
+   "J0.22.s1.hi",
+   "J0.23.s1.hi",
+   "J1.17.s3.lo"
+  ],
+  "end_tests": {
+   "J0.0.s3.lo": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.0.s2.lo": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.1.s2.lo": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.1.s3.lo": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.2.s3.lo": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.2.s2.lo": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.3.s2.lo": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.3.s3.lo": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.4.s3.lo": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.4.s2.lo": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.5.s2.lo": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.20.s1.hi": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.21.s1.hi": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.21.s0.hi": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.22.s0.hi": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.22.s1.hi": "f(\u03c0/14)=0 exact, f'<0",
+   "J0.23.s1.hi": "f(\u03c0/14)=0 exact, f'<0",
+   "J1.17.s3.lo": "f(\u03c0/14)=0 exact, f'<0"
+  },
+  "control_violations_at_x=pi/N": {
+   "14.5": 0,
+   "14.01": 0,
+   "13.99": 18,
+   "13.5": 19,
+   "13": 19
+  },
+  "rho_check": {
+   "2/29": 8.881784197001252e-16,
+   "3/43": 2.7755575615628914e-17,
+   "5/71": 6.661338147750939e-16,
+   "7/99": -9.71445146547012e-16
+  },
+  "secs": 41
+ }
+}

@@ -1,0 +1,26 @@
+{
+ "identities": "closure, itinerary, both returns, \u03bb0 = 4 sin4x sinx (2cos2x\u22121), \u03bb1 = 16 sin4x sin\u00b3x: all FORMAL",
+ "inequalities": {
+  "total": 254,
+  "formally_tight": 18,
+  "certified_on_(0,pi/15]": 236,
+  "leading_orders": [
+   0,
+   2,
+   4
+  ],
+  "min_lower_bound_f_over_x^n0": 0.20641759778753532
+ },
+ "control_violations_at_N": {
+  "15": 0,
+  "13": 19,
+  "11": 36,
+  "9": 64,
+  "7": 77
+ },
+ "rotation_number": {
+  "15": 0.1729090847147978,
+  "17": 0.1350555411912897,
+  "101": 0.0038688057327915634
+ }
+}

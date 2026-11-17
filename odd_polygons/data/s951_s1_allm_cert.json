@@ -1,0 +1,179 @@
+{
+ "main": {
+  "C7": 1,
+  "secs": 61,
+  "n_expr": 252,
+  "zero": 16,
+  "core_free": 118,
+  "atoms": 194,
+  "distinct_cores": 30,
+  "cores_ok": 30,
+  "corner_cores": 1,
+  "min_lb": 0.02150757419924722,
+  "max_boxes": 5,
+  "corner_tests": [
+   {
+    "s2": 0.5,
+    "x2": 0.25,
+    "A": 0.43885846008739554,
+    "B": 0.015398542459206861
+   }
+  ],
+  "tight": [
+   "J0.seg10.32.all.p0.s2:p-b",
+   "J1.seg4.23.all.p0.s3:q-b"
+  ],
+  "zero_names": [
+   "J0.seg11.3.all.p0.s3:q-b",
+   "J0.seg12.1013.all.p0.s3:q-b",
+   "J0.seg2.013.all.p0.s0:a-p",
+   "J0.seg2.013.all.p1.s0:a-p",
+   "J0.seg2.013.all.p1.s1:a-q",
+   "J0.seg2.013.all.p2.s1:a-q",
+   "J0.seg5.02.all.p0.s0:a-p",
+   "J0.seg5.02.all.p1.s0:a-p",
+   "J0.seg8.10.all.p0.s1:a-q",
+   "J0.seg8.10.all.p1.s1:a-q",
+   "J0.seg9.2.all.p0.s2:p-b",
+   "J1.seg3.3.all.p0.s3:q-b",
+   "J1.seg5.2.all.p0.s2:p-b",
+   "J1.seg6.02.all.p0.s2:p-b",
+   "J1.seg9.1013.all.p2.s1:a-q",
+   "J1.seg9.1013.all.p3.s1:a-q"
+  ],
+  "flagged": [],
+  "why": {}
+ },
+ "control": {
+  "flagged": [
+   "J0.seg12.1013.all.p0.s1:p-b",
+   "J0.seg12.1013.all.p1.s0:q-b",
+   "J0.seg12.1013.all.p1.s1:p-b",
+   "J0.seg12.1013.all.p2.s0:q-b",
+   "J0.seg12.1013.all.p2.s1:p-b",
+   "J0.seg12.1013.all.p3.s1:p-b"
+  ],
+  "numeric_neg_14m_minus1": [
+   "J0.seg12.1013.all.p0.s1:p-b",
+   "J0.seg12.1013.all.p1.s0:q-b",
+   "J0.seg12.1013.all.p1.s1:p-b",
+   "J0.seg12.1013.all.p2.s0:q-b",
+   "J0.seg12.1013.all.p2.s1:p-b",
+   "J0.seg12.1013.all.p3.s1:p-b"
+  ],
+  "numeric_neg_14m_plus1": [],
+  "exact_match": true,
+  "why": {
+   "J0.seg12.1013.all.p0.s1:p-b": [
+    "2D core"
+   ],
+   "J0.seg12.1013.all.p1.s1:p-b": [
+    "2D core"
+   ],
+   "J0.seg12.1013.all.p1.s0:q-b": [
+    "2D core"
+   ],
+   "J0.seg12.1013.all.p2.s0:q-b": [
+    "2D core"
+   ],
+   "J0.seg12.1013.all.p2.s1:p-b": [
+    "2D core"
+   ],
+   "J0.seg12.1013.all.p3.s1:p-b": [
+    "2D core"
+   ]
+  }
+ },
+ "per_m": {
+  "2": {
+   "M": 2,
+   "off": 1,
+   "XMAX": "270827/2500000",
+   "tight": 18,
+   "certified": 402,
+   "orders": [
+    1,
+    3,
+    5
+   ],
+   "minlb": 0.4129921353599768,
+   "fails": [],
+   "numneg": [],
+   "fails_eq_numneg": true
+  },
+  "3": {
+   "M": 3,
+   "off": 1,
+   "XMAX": "730603/10000000",
+   "tight": 18,
+   "certified": 570,
+   "orders": [
+    1,
+    3,
+    5
+   ],
+   "minlb": 0.27539516550799226,
+   "fails": [],
+   "numneg": [],
+   "fails_eq_numneg": true
+  }
+ },
+ "control_per_m": {
+  "2": {
+   "fails": 6,
+   "numneg": 6,
+   "exact": true
+  },
+  "3": {
+   "fails": 6,
+   "numneg": 6,
+   "exact": true
+  }
+ },
+ "control_run_extension": {
+  "numeric_neg": [
+   "J0.seg0.23.all.p1.s3:q-b",
+   "J0.seg10.32.all.p1.s2:p-b",
+   "J0.seg3.23.all.p1.s3:q-b",
+   "J0.seg6.32.all.p1.s2:p-b",
+   "J1.seg0.23.all.p1.s3:q-b",
+   "J1.seg4.23.all.p1.s3:q-b",
+   "J1.seg7.32.all.p1.s2:p-b"
+  ],
+  "flagged": [
+   "J0.seg0.23.all.p1.s3:q-b",
+   "J0.seg10.32.all.p1.s2:p-b",
+   "J0.seg3.23.all.p1.s3:q-b",
+   "J0.seg6.32.all.p1.s2:p-b",
+   "J1.seg0.23.all.p1.s3:q-b",
+   "J1.seg4.23.all.p1.s3:q-b",
+   "J1.seg7.32.all.p1.s2:p-b"
+  ],
+  "why": {
+   "J0.seg10.32.all.p1.s2:p-b": [
+    "binomial (A)"
+   ],
+   "J1.seg4.23.all.p1.s3:q-b": [
+    "binomial (A)"
+   ],
+   "J0.seg0.23.all.p1.s3:q-b": [
+    "sign (B)"
+   ],
+   "J0.seg3.23.all.p1.s3:q-b": [
+    "sign (B)"
+   ],
+   "J0.seg6.32.all.p1.s2:p-b": [
+    "sign (B)"
+   ],
+   "J1.seg0.23.all.p1.s3:q-b": [
+    "sign (B)"
+   ],
+   "J1.seg7.32.all.p1.s2:p-b": [
+    "sign (B)"
+   ]
+  },
+  "exact": true
+ },
+ "verdict": true,
+ "secs": 671
+}
