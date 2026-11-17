@@ -43,7 +43,8 @@
    "45,90,119"
   ],
   "rc": 0,
-  "secs": 131
+  "secs": 131,
+  "note": "this run recomputed only the three parents of Example 5.2 (an earlier run_all); the full rebuild is the entry below"
  },
  {
   "script": "s5_2_kites.py",
@@ -352,5 +353,19 @@
   "args": [],
   "rc": 0,
   "secs": 8
+ },
+ {
+  "script": "noncp_catalogue.py",
+  "args": [],
+  "rc": 0,
+  "secs": 1090,
+  "note": "all 28 rows from scratch, run separately after run_all was changed to rebuild the whole catalogue"
+ },
+ {
+  "script": "appA_corners.py",
+  "args": [],
+  "rc": 0,
+  "secs": 164,
+  "note": "added after the run; run separately"
  }
 ]
