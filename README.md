@@ -1,4 +1,4 @@
-# Billiards in triangles — code deposit
+# Billiards in triangles and polygons — code deposit
 
 Exact-arithmetic code supporting seven papers — three on rational right triangles, one on right
 triangles whose angle is an irrational multiple of `π`, two on rational triangles in general and one on rational
