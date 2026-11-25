@@ -4,3 +4,5 @@ __pycache__/
 mirror_A/figs/
 triangles/data/s947_q3_walks_*.json
 odd_polygons/data/*.pkl
+irrational_beams/data/*_sample.json
+irrational_beams/figs/*.png

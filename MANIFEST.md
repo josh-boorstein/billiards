@@ -201,3 +201,28 @@ Engines: `flow_decomp.py`, `flow_poly.py`, `poly_seps.py`, `poly_corners.py`, `p
 ⚠ **Scope.** The §4 statements are evaluations along words read off a floating-point walk (Lemma 4.1 at 50–60 digits), and
 the paper labels them measurements; so are Remark 5.6 and the last paragraph of Appendix A. The README lists the measured
 statements that are not scripted here.
+
+## The irrational-angle paper (`irrational_beams/`)
+
+*Finite perpendicular-beam partitions at irrational angles.* The scripts are the research keepers, copied (README), except the
+two marked *new*; `run_all.py` runs them in order and checks each record against the paper's figures. Theorem A, Proposition 4.3
+and everything in §§2–4 are proved by hand; the scripts marked *check* verify steps of those hand proofs and are not part of them.
+
+| Statement | Script | Research name |
+|---|---|---|
+| Lemma 4.1 (Appendix B), even `J` — the `201` admissible patterns of the six-term sum (Mann's theorem), their lattices in Hermite normal form (`191` with a constant `≤ 120`, `10` linear in `m`; the only vanishing form `4(m − 2)` at `m = 2`), and the `319` rationals `p′/Q`, `Q ≤ 120`, in the location windows excluded in interval arithmetic (`min |E| ≥ 2.5·10⁻⁵`) | `firr_J_even.py` | `s975_fmj_irrational.py` |
+| Lemma 4.1 (Appendix B), odd `J ≥ 3` — the same, with the sign of the `±(m − 1)` terms changed (`254` rationals, `min |E| ≥ 1.7·10⁻⁴`) | `firr_J_odd.py` | `s976_fmJ_irrational.py` |
+| Section 5, the table — the census points with `n(α) ≤ 6`: `193` found and certified with `n = 2, 4` (rational `x = 2/5, 2/3, 4/5`; `192` distinct angles), `611` found and `609` certified with `n = 6` (rational `x = 2/7, 4/7, 6/7, 8/15`; `x = 0.2446654957, 0.6729409541` uncertified in the root isolation), every irrational point a unit, every count even, minimal polynomials of degrees `1` to `33` | `census_exact.py` (*new*) over `census_sweep.exact_row` → `exact_partition.run_poly`; input `data/census_record.json` | drivers `s978/exact_n4.py`, `s979/exact_n6.py`, `s979/retry_failed.py`; `s977_connection_census.py`, `s973_exact_partition.py` |
+| Section 5, the sweep (`--sweep` only) — the grid `x ∈ [0.1, 0.9]`, step `2.5·10⁻⁵`, `5000` reflections, candidate `A`–`O` coincidences and the floating-point finiteness retest | `census_sweep.py sweep`, `census_retest.py` | `s977_connection_census.py`, `s977/retest.py` |
+| Section 5, second paragraph — of the `192` certified angles with `n ≤ 4`, `6` have one fan (five roots of (F) with `J = 1`, and `x = 2/3`), `184` a fan `(m, m)` and one palindromic fan, `2` a second fan of width `< 0.004` resolved only in part (floating point) | `shapes.py` | `s979/classify_n4.py` (counts rows; see its docstring) |
+| *Check* — Theorem A(ST), Section 4.2: the closed form of `M_{2k}`, the identity for `M_{2j−2}` at the root, `R` increasing, one root per window, and the control at `m = 2j − 2` | `st_count.py` | `s1009_st_count.py` |
+| *Check* — Proposition 4.3 at `m = 3`, Appendix A: the polynomial identities in `σ` and the rational values on `3.16 < σ < 3.17` | `prop_w_m3.py` (*new*) | — |
+| Figure 1 | `figures.py` | `s987_beam2_figures.py` (Figure 1 only) |
+
+Helpers, imported by the scripts above: `beam_families.py` (`s959_beam_families.py`, the floating-point beam tracer, which
+proposes), `launch_side.py` (`s960_launch_side.py`), `coincidence_census.py` (`s973_coincidence_census.py`, the retest),
+`fan_identity.py` (`s977_fan_identity.py`, exact height polynomials of a word), `fan_trace.py` (`s979/ftrace.py`, the
+floating-point fan scan in the polygon `P`).
+
+⚠ **Scope.** The census is a measurement: the sweep proposes in floating point, and the paper says it is neither complete nor
+saturated at `n = 6`. What is certified is each listed point, exactly.

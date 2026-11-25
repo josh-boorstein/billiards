@@ -1,6 +1,6 @@
 # Billiards in triangles and polygons — code deposit
 
-Exact-arithmetic code supporting seven papers — three on rational right triangles, one on right
+Exact-arithmetic code supporting eight papers — three on rational right triangles, two on right
 triangles whose angle is an irrational multiple of `π`, two on rational triangles in general and one on rational
 polygons:
 
@@ -15,8 +15,9 @@ polygons:
 - **Singular perpendicular orbits and complete periodicity in rational triangles** —
   `lib/` + `polygon/` (Hexagon, hexagon:2611.00304)
 - **Complete periodicity of perpendicular billiards in rational triangles of prime denominator** —
-  `lib/` + `triangles/` (in preparation)
+  `lib/` + `triangles/` (Hexagon, hexagon:2611.00726)
 - **Perpendicular billiards in rational polygons of odd denominator** — `odd_polygons/` (in preparation)
+- **Finite perpendicular-beam partitions at irrational angles** — `irrational_beams/` (in preparation)
 
 `MANIFEST.md` maps each script to the statement it supports.
 
@@ -259,6 +260,36 @@ perturbation checks of Remark 4.5, the parallelogram sweeps of Example 4.6 beyon
 the control family of Example 4.7, the analysis of the six exceptions in Remark 5.6, and the measurement that every chord
 `c_b` of Appendix A is a swapped connection.
 
+## The irrational-angle paper: `irrational_beams/`
+
+```sh
+.venv/bin/python irrational_beams/run_all.py           # the census re-certified on a 27-point sample (see below)
+.venv/bin/python irrational_beams/run_all.py --full    # all 804 census points re-certified (about four hours, two cores)
+.venv/bin/python irrational_beams/run_all.py --sweep   # the census sweep itself re-run first (about an hour more)
+```
+
+This paper's theorems are proved by hand; its computer-assisted steps are Lemma 4.1 (the irrationality of the roots of (F) for
+`J ≥ 2`: Mann's theorem, an enumeration of `201` patterns, and interval arithmetic at the few small denominators it leaves) and
+the certified census of Section 5. Like `triangles/`, **`irrational_beams/` is not a port:** its scripts are the research keepers,
+copied verbatim except for their imports of each other (renamed to the names in `MANIFEST.md`), their paths (records to
+`irrational_beams/data/`, figures to `irrational_beams/figs/`) and a first docstring paragraph naming the research file. The
+directory is self-contained (nothing from `lib/`). Two scripts are new: `census_exact.py`, the driver that re-certifies census
+points (it replaces three small research drivers), and `prop_w_m3.py`, a symbolic check of the hand proof of Proposition 4.3 at
+`m = 3`; `st_count.py` checks the uniqueness and beam-count steps of Theorem A(ST) against the raw recursion.
+
+**The census.** `census_sweep.py` splits the leg at each angle of the grid `x = 2α/π ∈ [0.1, 0.9]`, step `2.5·10⁻⁵`, up to
+`5000` reflections, and solves each nearby pair of an `A`-graze and an `O`-graze for an `A`–`O` coincidence; `census_retest.py`
+keeps the roots at which a floating-point trace finds a finite partition. That stage is floating point and only **proposes**.
+`census_exact.py` then certifies each point with `n(α) ≤ 6` from scratch: the coincidence polynomial `E(σ)` is rebuilt exactly
+from the two words and factored, the factor vanishing at the point is isolated, and every beam is traced exactly in `ℚ(σ)`
+(`exact_partition.py`); a point is certified only if the exact beam intervals tile `(0, 1)` with exactly equal shared ends,
+every sign being decided by an interval enclosure that excludes `0`. The research run's `804` proposed points, with their exact
+fields, are shipped as `irrational_beams/data/census_record.json`. The default run re-certifies the record's five uncertified
+rows (three of them were certified by the research run's retry, which never wrote back to the record — the default run
+recomputes them), its eight rational points and every 60th other point, and reads the rest from the record; `--full`
+re-certifies all `804`. `shapes.py` is the floating-point fan scan behind the paper's description of the shapes; it certifies
+nothing, as the paper says.
+
 ## Layout
 
 ```
@@ -270,6 +301,7 @@ mirror_A/     the mirror-direction paper
 polygon/      the polygon note
 triangles/    the prime-denominator paper
 odd_polygons/ the odd-denominator polygon paper
+irrational_beams/ the irrational-angle paper
 MANIFEST.md   script → paper statement
 ```
 
