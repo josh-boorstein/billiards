@@ -1,6 +1,6 @@
 # Billiards in triangles and polygons — code deposit
 
-Exact-arithmetic code supporting eight papers — three on rational right triangles, two on right
+Exact-arithmetic code supporting nine papers — three on rational right triangles, three on right
 triangles whose angle is an irrational multiple of `π`, two on rational triangles in general and one on rational
 polygons:
 
@@ -18,6 +18,7 @@ polygons:
   `lib/` + `triangles/` (Hexagon, hexagon:2611.00726)
 - **Perpendicular billiards in rational polygons of odd denominator** — `odd_polygons/` (in preparation)
 - **Finite perpendicular-beam partitions at irrational angles** — `irrational_beams/` (in preparation)
+- **Infinitely many perpendicular beams in right triangles at all but countably many irrational angles** — `lib/` + `beam_note/` (in preparation)
 
 `MANIFEST.md` maps each script to the statement it supports.
 
@@ -290,6 +291,31 @@ recomputes them), its eight rational points and every 60th other point, and read
 re-certifies all `804`. `shapes.py` is the floating-point fan scan behind the paper's description of the shapes; it certifies
 nothing, as the paper says.
 
+## The beam note: `lib/` and `beam_note/`
+
+```sh
+.venv/bin/python beam_note/run_all.py           # every computer-assisted statement of the note (under a minute)
+```
+
+The note's theorem is proved by hand. Its computer-assisted statements are **Proposition A.1** — at the two irrational angles with
+`σ = 4cos²α` the root `1.688892…` of `x³ − 5x² + 5x + 1` and the root `1.262360…` of `x⁴ − 7x³ + 15x² − 9x − 1`, both inside the
+range of Troubetzkoy's Lemma 12, the leg carries exactly `8`, resp. `10`, beams — and the **period-944 example of Remark 5.3**: a
+non-perpendicular periodic cylinder (from the mirror-direction paper, Remark 6.10) and a perpendicular periodic cylinder of period
+`7338` sharing a boundary saddle connection at `cos 2α = (1 − √7)/4`. Like `irrational_beams/`, **`beam_note/` is not a port:** its
+scripts are the research keepers, copied verbatim except for their imports (renamed to the names in `MANIFEST.md`), their paths
+(records to `beam_note/data/`) and a first docstring paragraph naming the research file. `exact_partition.py`, `launch_side.py` and
+`beam_families.py` are the same files as in `irrational_beams/`; `c944_boundary.py` uses `lib/mirror.py` and the cylinder record
+`mirror_A/tro05_record.json`.
+
+**The certificates.** `cert_lemma12.py` re-runs the exact certifier at the two angles (input: their rows of the research census,
+`beam_note/data/lemma12_angles.json`) and writes every beam's word and exact end points to `data/certificates_lemma12.txt`; a
+word's realisation interval is computed exactly in `ℚ(σ)(sin 2α)`, every sign decided by an interval enclosure that excludes `0`,
+and the intervals must tile `[0, 1]` with exactly equal shared ends. `appendix_codes.py` turns that file into the note's Appendix A
+and re-checks what it prints (the exact chain, the fan pairing, the decimals, and a 50-digit re-trace of every word).
+`c944_boundary.py` certifies the period-944 cylinder exactly in `ℚ(2 cos α)`, traces leaves just outside each end of its strip at
+50 digits, certifies the perpendicular period-7338 cylinder found across its lower end and checks that the two boundary lines
+coincide exactly. `data/certificates_c944.txt` gives the two cylinders' strips, direction and words as text.
+
 ## Layout
 
 ```
@@ -302,6 +328,7 @@ polygon/      the polygon note
 triangles/    the prime-denominator paper
 odd_polygons/ the odd-denominator polygon paper
 irrational_beams/ the irrational-angle paper
+beam_note/    the beam note
 MANIFEST.md   script → paper statement
 ```
 

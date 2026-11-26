@@ -226,3 +226,20 @@ floating-point fan scan in the polygon `P`).
 
 ⚠ **Scope.** The census is a measurement: the sweep proposes in floating point, and the paper says it is neither complete nor
 saturated at `n = 6`. What is certified is each listed point, exactly.
+
+## The beam note (`beam_note/`)
+
+*Infinitely many perpendicular beams in right triangles at all but countably many irrational angles.* The scripts are the research keepers, copied (README); `run_all.py` runs them in order and checks each record against the
+figures the note prints. The note's theorem is proved by hand; these scripts support its computer-assisted statements.
+
+| Statement | Script | Research name |
+|---|---|---|
+| Proposition A.1 — at the two angles, the exact certificates: every beam's word and exact end points in `ℚ(σ)`, the intervals tiling `[0, 1]` exactly (`8` and `10` beams) | `cert_lemma12.py` over `exact_partition.py`; input `data/lemma12_angles.json` → `data/certificates_lemma12.txt` | `s975_cert_export.py`, `s973_exact_partition.py` |
+| Appendix A — the list of end points and words, generated from the certificates; re-checks the exact chain, the fan pairing `b_(2k−1) = (b_(2k−2) + b_(2k))/2`, the printed decimals, and every word by a 50-digit trace from its beam's midpoint | `appendix_codes.py` → `data/appendix_codes.tex` | `s1011_beam_codes_tex.py` |
+| Remark 5.3 — the non-perpendicular cylinder of period `944` at `cos 2α = (1 − √7)/4` (heights `0.1007262`–`0.1017763`, angle `0.848062`), the adjacent perpendicular cylinder of period `7338` (heights `0.0982543`–`0.1007262`), both certified exactly, and their common boundary line | `c944_boundary.py` (with `lib/mirror.py`, `mirror_A/tro05_record.json`) → `data/c944_boundary.json`; words as text in `data/certificates_c944.txt` | `s963_c944_boundary.py` |
+
+Helpers, imported by the scripts above: `exact_partition.py` (`s973_exact_partition.py`), `beam_families.py` (`s959_beam_families.py`, the
+floating-point tracer, which proposes the words), `launch_side.py` (`s960_launch_side.py`) — the same files as in `irrational_beams/`.
+
+⚠ **Scope.** Remark 5.3's 60-digit traces of the leaves across the boundary at the two angles of Proposition A.1 are numerical
+observations in the note and are not in this directory.

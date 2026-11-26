@@ -1,0 +1,14 @@
+=== cert_lemma12.py
+  [ok] exit 0; last line:   right end =  (13 s)
+  [ok] Proposition A.1, first angle (sigma^3 - 5 sigma^2 + 5 sigma + 1): 8 beams tiling [0, 1] exactly
+  [ok] Proposition A.1, second angle (sigma^4 - 7 sigma^3 + 15 sigma^2 - 9 sigma - 1): 10 beams tiling [0, 1] exactly
+=== appendix_codes.py
+  [ok] exit 0; last line: wrote data/appendix_codes.tex  (1 s)
+  [ok] Appendix A, first angle: 8 beams; exact chain, fan pairing b_{2k-1} = (b_{2k-2} + b_{2k})/2, printed decimals, 50-digit re-trace of every word
+  [ok] Appendix A, second angle: 10 beams; the same checks
+=== c944_boundary.py
+  [ok] exit 0; last line: wrote data/c944_boundary.json  (34 s)
+  [ok] Remark 5.3: the non-perpendicular cylinder C of period 944 certified exactly; its strip leaves L_1 between the heights 0.1007262 and 0.1017763 at the angle 0.848062 from the normal
+  [ok] control: the midpoint of C's strip, traced at 50 digits, closes with C's word after 944 bounces
+  [ok] Remark 5.3: the adjacent strip, between the heights 0.0982543 and 0.1007262, belongs to a PERPENDICULAR periodic cylinder of period 7338, certified exactly; it shares C's lower boundary line exactly (in Q(2 cos alpha))
+ALL OK

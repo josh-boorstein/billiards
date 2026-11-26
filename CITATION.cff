@@ -1,22 +1,22 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite it as below, together with the paper it supports."
 type: software
-title: "Billiards in triangles: code deposit for eight papers"
+title: "Billiards in triangles: code deposit for nine papers"
 abstract: >-
-  Exact-arithmetic code supporting eight papers on billiards in triangles and polygons: The orphan
+  Exact-arithmetic code supporting nine papers on billiards in triangles and polygons: The orphan
   theorem; The necklace of a rational right triangle; No arrivals; Non-perpendicular
   periodic orbits in mirror directions of right triangles; Singular perpendicular orbits
-  and complete periodicity in rational triangles; and Complete periodicity of perpendicular
+  and complete periodicity in rational triangles; Complete periodicity of perpendicular
   billiards in rational triangles of prime denominator; Perpendicular billiards in rational
-  polygons of odd denominator; and Finite perpendicular-beam partitions at irrational angles. A small core library (lib/) and one
+  polygons of odd denominator; Finite perpendicular-beam partitions at irrational angles; and Infinitely many perpendicular beams in right triangles at all but countably many irrational angles. A small core library (lib/) and one
   directory per paper holding one script per statement; MANIFEST.md maps each script to the
   statement it supports.
 authors:
   - family-names: Boorstein
     given-names: Joshua
     orcid: "https://orcid.org/0009-0007-1291-2321"
-version: "v1.4"
-date-released: "2026-11-25"
+version: "v1.5"
+date-released: "2026-11-26"
 license: MIT
 repository-code: "https://github.com/josh-boorstein/billiards"
 keywords:
