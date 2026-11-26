@@ -1,0 +1,28 @@
+=== firr_J_even.py
+  [ok] exit 0; last line: 201 structures: 191 with a constant ≤ 120, 10 linear in m (vanishing only 4(m−2) at m = 2, excluded by hand); finite check: 319 rationals p'/Q (Q ≤ 120, mj ≤ 29  (2 s)
+  [ok] Lemma 4.1, even J: 201 admissible patterns, 191 with a constant <= 120, 10 linear in m
+  [ok] even J: the only vanishing linear form is 4(m - 2) at m = 2
+  [ok] even J: 319 rationals p'/Q, Q <= 120, excluded, min |E| > 2.5e-5
+=== firr_J_odd.py
+  [ok] exit 0; last line: finite check (odd J ≥ 3, Q ≤ 120): 254 rationals, min |E| ≥ 0.0001715 (interval)  (1 s)
+  [ok] Lemma 4.1, odd J: 201 patterns; linear forms 2(m-1), 4(m-2), 4(m-1), 4m
+  [ok] odd J >= 3: 254 rationals excluded, min |E| > 1.7e-4
+=== st_count.py
+  [ok] exit 0; last line:   C5 (control fires): HOLD  (60 s)
+=== prop_w_m3.py
+  [ok] exit 0; last line: ALL OK  (1 s)
+=== census_exact.py all
+  [ok] exit 0; last line: ALL OK  (13019 s)
+  [ok] 804 points re-certified from scratch, every one agreeing with the record
+  [ok] Section 5 table, n = 2 and 4: found 193, certified 193, rational x = 2/3, 2/5, 4/5
+  [ok] n = 2 and 4: irrational points all units, every branch count even, uncertified []
+  [ok] Section 5 table, n = 6: found 611, certified 609, rational x = 2/7, 4/7, 6/7, 8/15
+  [ok] n = 6: irrational points all units, every branch count even, uncertified [0.2446654957, 0.6729409541]
+  [ok] first row: 192 distinct angles (x = 2/5 found by two coincidences)
+  [ok] minimal polynomials of sigma of degrees 1 to 33 (paper: 1 to 33)
+=== shapes.py all
+  [ok] exit 0; last line: ALL OK  (4 s)
+  [ok] Section 5: of the 192 certified angles with n <= 4, 6 single fans, 184 = (m, m) + one palindromic fan, 2 resolved in part
+=== figures.py
+  [ok] exit 0; last line: ALL OK  (2 s)
+ALL OK

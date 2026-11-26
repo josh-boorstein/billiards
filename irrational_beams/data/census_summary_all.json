@@ -1,0 +1,38 @@
+{
+ "n2_4": {
+  "found": 193,
+  "certified": 193,
+  "rational": [
+   "2/3",
+   "2/5",
+   "4/5"
+  ],
+  "irrational_all_units": true,
+  "distinct_angles": 192,
+  "deg_min": 1,
+  "deg_max": 32,
+  "uncertified": [],
+  "all_even": true
+ },
+ "n6": {
+  "found": 611,
+  "certified": 609,
+  "rational": [
+   "2/7",
+   "4/7",
+   "6/7",
+   "8/15"
+  ],
+  "irrational_all_units": true,
+  "distinct_angles": 611,
+  "deg_min": 2,
+  "deg_max": 33,
+  "uncertified": [
+   0.2446654957,
+   0.6729409541
+  ],
+  "all_even": true
+ },
+ "recertified": 804,
+ "disagreements": 0
+}
